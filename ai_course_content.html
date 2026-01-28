@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김사부와 함께 AI 실무 마스터 클래스 | 8일 완성 과정</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .gradient-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-card {
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: scale(1.02);
+        }
+
+        .theory-tag {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .practice-tag {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <section class="gradient-hero min-h-[60vh] flex items-center justify-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+                <i class="fas fa-calendar-alt mr-2"></i>8일 완성 과정 · 이론 + 실습 + 앱 개발
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                AI 실무 마스터 클래스
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto mb-8">
+                업무 혁신을 이끄는 <b>10대 AI 도구</b>와 <b>바이브 코딩</b>을 8일 동안 마스터하세요
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                    <i class="fas fa-book mr-2"></i>이론 학습
+                </span>
+                <span class="px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                    <i class="fas fa-laptop-code mr-2"></i>실습 프로젝트
+                </span>
+                <span class="px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                    <i class="fas fa-mobile-alt mr-2"></i>직무 앱 개발
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 10 AI Tools Section -->
+    <section class="py-20 bg-white" id="tools">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Essential AI Tools</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-800">
+                    5일간 마스터할 <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">10대 AI
+                        도구</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Tool Cards -->
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-blue-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-search text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Perplexity</h3>
+                    <p class="text-gray-500 text-xs">AI 리서치</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-emerald-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-brain text-2xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">ChatGPT</h3>
+                    <p class="text-gray-500 text-xs">대화형 AI</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-orange-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-comments text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Claude</h3>
+                    <p class="text-gray-500 text-xs">장문 분석</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-red-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-book-open text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">NotebookLM</h3>
+                    <p class="text-gray-500 text-xs">문서 분석</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-violet-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-file-powerpoint text-2xl text-violet-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Gamma</h3>
+                    <p class="text-gray-500 text-xs">프레젠테이션</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-pink-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-palette text-2xl text-pink-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Midjourney</h3>
+                    <p class="text-gray-500 text-xs">이미지 생성</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-cyan-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-video text-2xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Runway</h3>
+                    <p class="text-gray-500 text-xs">AI 영상</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-amber-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-microphone text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">ElevenLabs</h3>
+                    <p class="text-gray-500 text-xs">음성 합성</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-slate-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-code text-2xl text-slate-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Cursor</h3>
+                    <p class="text-gray-500 text-xs">AI 코딩</p>
+                </div>
+
+                <div class="tool-card bg-white rounded-2xl p-6 border-2 border-indigo-500 shadow-lg text-center">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-plug text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-1">Make</h3>
+                    <p class="text-gray-500 text-xs">자동화</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Key Strengths Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white" id="strengths">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-purple-300 font-semibold text-sm uppercase tracking-wider">Why This Course</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">
+                    본 과정만의 <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">3대
+                        강점</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Strength 1: Data-Driven Decision Making -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition">
+                    </div>
+                    <div class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 h-full">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-3xl text-white"></i>
+                        </div>
+                        <span class="text-blue-300 text-sm font-semibold">STRENGTH 01</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">데이터 기반 의사결정 역량 강화</h3>
+                        <div class="space-y-4 text-gray-300 text-sm">
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-star text-yellow-400 mr-2"></i>강점</p>
+                                <p>6개월간의 매출, 마케팅 비용, 반품률 등 복잡한 수치를 AI로 분석하여 <b class="text-cyan-300">'경영진 보고서' 초안</b>을
+                                    뽑아내는 과정은 직장인들이 가장 필요로 하는 기능입니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-rocket text-emerald-400 mr-2"></i>기대효과</p>
+                                <p>수작업으로 몇 시간 걸리던 데이터 요약 및 인사이트 도출 작업을 <b class="text-emerald-300">단 몇 분 만에 해결</b>하는 '업무
+                                    생산성 혁명'을 체험합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strength 2: All-in-One Multimodal -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition">
+                    </div>
+                    <div class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 h-full">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-layer-group text-3xl text-white"></i>
+                        </div>
+                        <span class="text-violet-300 text-sm font-semibold">STRENGTH 02</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">올인원 멀티모달 마스터</h3>
+                        <div class="space-y-4 text-gray-300 text-sm">
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-star text-yellow-400 mr-2"></i>강점</p>
+                                <p><b class="text-pink-300">보고서 작성(Text)</b>, <b class="text-orange-300">마케팅 시각
+                                        자료(Image)</b>, <b class="text-cyan-300">홍보 영상(Video)</b>까지 AI 도구들을 체계적으로
+                                    연결(Pipeline)하여 사용하는 법을 배웁니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-rocket text-emerald-400 mr-2"></i>기대효과</p>
+                                <p>기획부터 홍보물 제작까지 혼자서 수행할 수 있는 <b class="text-emerald-300">'1인 기업가 수준'</b>의 실무 역량을 갖추게
+                                    됩니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strength 3: Performance-Oriented Project -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition">
+                    </div>
+                    <div class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 h-full">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-trophy text-3xl text-white"></i>
+                        </div>
+                        <span class="text-amber-300 text-sm font-semibold">STRENGTH 03</span>
+                        <h3 class="text-xl font-bold mt-2 mb-4">성과 중심 프로젝트 설계</h3>
+                        <div class="space-y-4 text-gray-300 text-sm">
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-star text-yellow-400 mr-2"></i>강점</p>
+                                <p>완성도, 창의성, 실용성 등 구체적인 <b class="text-yellow-300">KPI(핵심성과지표)</b>를 설정하여 학습 결과물을 평가합니다.
+                                    Lean/6Sigma의 '측정 가능한 개선' 철학을 적용합니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <p class="font-semibold text-white mb-2"><i
+                                        class="fas fa-rocket text-emerald-400 mr-2"></i>기대효과</p>
+                                <p>교육이 끝난 후 수강생의 손에는 <b class="text-emerald-300">'AI 기반 비즈니스 기획안'</b>이라는 현업에 바로 제출 가능한
+                                    실질적인 결과물이 남습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Day Curriculum Section -->
+    <section class="py-20 bg-gray-100" id="curriculum">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">8 Day Curriculum</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-800">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">8일
+                        완성</span> 커리큘럼
+                </h2>
+                <p class="text-gray-600 mt-4">AI 도구 마스터 + 바이브 코딩으로 나만의 앱까지 완성하세요</p>
+            </div>
+
+            <div class="space-y-8 max-w-5xl mx-auto">
+
+                <!-- Day 1 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-6">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">01</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">생성형 AI 입문 & 리서치 혁신</h3>
+                                    <p class="opacity-80">AI의 본질을 이해하고 검색을 혁신하다</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">AI 기초</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Perplexity</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">NotebookLM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 space-y-6">
+                        <!-- Part 1: AI Fundamentals -->
+                        <div
+                            class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border-l-4 border-indigo-500">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full font-medium">PART
+                                    1</span>
+                                <span class="text-indigo-700 font-semibold">생성형 AI 기초</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-brain text-indigo-600 mt-1"></i><span><b>생성형 AI 개념과
+                                                작동원리</b><br><span class="text-sm text-gray-500">LLM, Transformer, 프롬프트
+                                                처리 방식</span></span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-building text-indigo-600 mt-1"></i><span><b>최근 기업 AI
+                                                동향</b><br><span class="text-sm text-gray-500">국내외 기업의 AI 도입 사례와
+                                                성과</span></span></li>
+                                </ul>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-exclamation-triangle text-amber-600 mt-1"></i><span><b>업무 AI
+                                                활용 시 유의사항</b><br><span class="text-sm text-gray-500">보안, 저작권, 할루시네이션
+                                                대응</span></span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-balance-scale text-indigo-600 mt-1"></i><span><b>AI 윤리와 책임 있는
+                                                사용</b><br><span class="text-sm text-gray-500">편향성, 개인정보, 기업
+                                                정책</span></span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Part 2: Theory & Practice -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">PART
+                                        2 이론</span>
+                                    <span class="text-gray-500 text-sm">AI 리서치 도구</span>
+                                </div>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i>AI 검색 vs 전통 검색의 차이</li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i>Perplexity 핵심 기능 및 Pro 기능
+                                    </li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i>NotebookLM으로 문서 분석하기</li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i>출처 기반 리서치 방법론</li>
+                                </ul>
+                            </div>
+                            <div class="bg-emerald-50 rounded-2xl p-6">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span
+                                        class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">PART
+                                        2 실습</span>
+                                    <span class="text-gray-500 text-sm">리서치 프로젝트</span>
+                                </div>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-laptop-code text-emerald-600 mt-1"></i>산업 동향 리서치 보고서 작성</li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-laptop-code text-emerald-600 mt-1"></i>PDF 자료로 AI 챗봇 만들기</li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-laptop-code text-emerald-600 mt-1"></i>팟캐스트 스크립트 자동 생성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-8 py-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">02</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">프롬프트 엔지니어링</h3>
+                                    <p class="opacity-80">AI와 효과적으로 소통하는 법</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">ChatGPT</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Claude</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>프롬프트 엔지니어링 원리</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>ChatGPT vs Claude 비교 분석</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>역할 부여 / Chain of Thought</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>GPTs / Projects 활용법</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>업무 자동화 프롬프트 템플릿 작성</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>나만의 커스텀 GPT 만들기</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>Claude로 장문 보고서 분석하기</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-violet-600 to-purple-800 text-white px-8 py-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">03</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">AI 비주얼 콘텐츠</h3>
+                                    <p class="opacity-80">프레젠테이션과 이미지 제작</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Gamma</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Midjourney</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>AI 프레젠테이션 디자인 원칙</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Gamma 핵심 기능 마스터</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Midjourney 프롬프트 구조</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>이미지 스타일 / 파라미터 이해</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>임원 보고용 프레젠테이션 제작</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>브랜드 마케팅 이미지 생성</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>SNS 콘텐츠 비주얼 패키지</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-8 py-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">04</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">AI 영상 & 음성</h3>
+                                    <p class="opacity-80">멀티미디어 콘텐츠 제작</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Runway</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">ElevenLabs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>AI 영상 생성 기술 개요</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Runway Gen-3 핵심 기능</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>AI 음성 합성 원리</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>보이스 클로닝 & 다국어 더빙</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>제품 소개 영상 클립 제작</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>나레이션 음성 생성하기</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>이미지 → 영상 변환 실습</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white px-8 py-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">05</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">AI를 활용한 업무 자동화</h3>
+                                    <p class="opacity-80">반복 업무를 자동화하여 생산성 극대화</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Make</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Zapier</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>노코드 자동화 플랫폼 개요</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Make vs Zapier 비교 분석</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>트리거와 액션의 이해</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>업무 프로세스 자동화 설계</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>이메일 → Slack 알림 자동화</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>폼 응답 → 스프레드시트 자동 기록</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>AI + 자동화 통합 워크플로우 구축</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vibe Coding Section Divider -->
+                <div class="text-center py-8">
+                    <div
+                        class="inline-flex items-center gap-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white px-8 py-4 rounded-full shadow-lg">
+                        <i class="fas fa-code text-2xl"></i>
+                        <span class="text-xl font-bold">바이브 코딩으로 앱 개발하기</span>
+                        <i class="fas fa-rocket text-2xl"></i>
+                    </div>
+                    <p class="text-gray-600 mt-4">AI와 함께 코딩하며 나만의 앱을 완성하세요</p>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-6">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">06</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">바이브 코딩 입문</h3>
+                                    <p class="opacity-80">AI와 대화하며 코딩하는 새로운 패러다임</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Cursor</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Claude</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>바이브 코딩이란? 핵심 개념</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Cursor IDE 설치 및 환경 설정</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>AI 페어 프로그래밍 워크플로우</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>효과적인 코딩 프롬프트 작성법</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>Cursor 기본 기능 실습</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>간단한 HTML/CSS 페이지 생성</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>AI와 대화하며 코드 수정하기</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-600 to-violet-700 text-white px-8 py-6">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">07</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">웹 애플리케이션 개발</h3>
+                                    <p class="opacity-80">AI와 함께 실용적인 웹앱 만들기</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Cursor</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">React/Vue</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>웹 애플리케이션 구조 이해</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>프론트엔드 프레임워크 개요</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>API 연동 기초</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>데이터베이스 연결 개념</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>To-Do 리스트 앱 개발</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>AI API 연동 챗봇 구현</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>반응형 UI 디자인 적용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 8 -->
+                <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden">
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-8 py-6">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center gap-4">
+                                <span class="text-4xl font-black opacity-30">08</span>
+                                <div>
+                                    <h3 class="text-2xl font-bold">종합 프로젝트 & 배포</h3>
+                                    <p class="opacity-80">나만의 앱 완성하고 세상에 공개하기</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Vercel</span>
+                                <span class="px-3 py-1 bg-white/20 rounded-full text-sm">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="theory-tag text-white text-xs px-3 py-1 rounded-full font-medium">이론</span>
+                                <span class="text-gray-500 text-sm">오전 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>Git/GitHub 버전 관리 기초</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>클라우드 배포 플랫폼 이해</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>도메인 연결 및 HTTPS 설정</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-check-circle text-blue-600 mt-1"></i>앱 유지보수 및 업데이트 전략</li>
+                            </ul>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="practice-tag text-white text-xs px-3 py-1 rounded-full font-medium">실습</span>
+                                <span class="text-gray-500 text-sm">오후 세션</span>
+                            </div>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>개인 프로젝트 완성 및 코드 리뷰</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>Vercel로 앱 배포하기</li>
+                                <li class="flex items-start gap-2"><i
+                                        class="fas fa-laptop-code text-emerald-600 mt-1"></i>프로젝트 발표 & 수료식</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Summary -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-6">
+                        <div class="text-4xl font-black text-purple-600 mb-2">8</div>
+                        <div class="text-gray-600">일 과정</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-black text-purple-600 mb-2">10</div>
+                        <div class="text-gray-600">AI 도구</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-black text-purple-600 mb-2">20+</div>
+                        <div class="text-gray-600">실습 프로젝트</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl font-black text-purple-600 mb-2">1개</div>
+                        <div class="text-gray-600">앱 배포</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-hero py-12 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">AI 실무 마스터 클래스</h3>
+            <p class="opacity-80 mb-6">8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="hover:opacity-80 transition"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:opacity-80 transition"><i class="fab fa-youtube text-2xl"></i></a>
+                <a href="#" class="hover:opacity-80 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+            </div>
+            <p class="text-sm opacity-60">© 2026 AI 실무 마스터 클래스. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

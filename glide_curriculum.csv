@@ -1,0 +1,6 @@
+Day,Day_Title,Theme,Tools,Theory_Content,Practice_Content,Color
+1,AI 리서치 혁신,검색의 패러다임을 바꾸다,"Perplexity, NotebookLM","AI 검색 vs 전통 검색 / Perplexity 핵심 기능 / NotebookLM 문서 분석 / 출처 기반 리서치",산업 동향 리서치 보고서 작성 / PDF 자료로 AI 챗봇 만들기 / 팟캐스트 스크립트 생성,#2563eb
+2,프롬프트 엔지니어링,AI와 효과적으로 소통하는 법,"ChatGPT, Claude","프롬프트 엔지니어링 원리 / ChatGPT vs Claude 비교 / 역할 부여와 CoT / GPTs 활용법",업무 자동화 프롬프트 템플릿 / 커스텀 GPT 만들기 / Claude 장문 보고서 분석,#059669
+3,AI 비주얼 콘텐츠,프레젠테이션과 이미지 제작,"Gamma, Midjourney","AI 프레젠테이션 디자인 / Gamma 핵심 기능 / Midjourney 프롬프트 구조 / 스타일 파라미터",임원 보고용 프레젠테이션 / 브랜드 마케팅 이미지 / SNS 콘텐츠 비주얼 패키지,#7c3aed
+4,AI 영상 & 음성,멀티미디어 콘텐츠 제작,"Runway, ElevenLabs","AI 영상 생성 기술 / Runway Gen-3 / AI 음성 합성 원리 / 보이스 클로닝",제품 소개 영상 클립 / 나레이션 음성 생성 / 이미지→영상 변환,#ea580c
+5,AI 개발 & 자동화,코딩 없이 앱 만들고 업무 자동화,"Cursor, Make","AI 페어 프로그래밍 / Cursor IDE / 노코드 자동화 설계 / Make 시나리오",Cursor로 웹앱 만들기 / 이메일→Slack→스프레드시트 자동화 / 종합 프로젝트,#334155
