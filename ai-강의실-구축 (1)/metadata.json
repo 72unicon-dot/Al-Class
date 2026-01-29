@@ -1,0 +1,9 @@
+{
+  "name": "AI 강의실 구축",
+  "description": "A sophisticated lecture application for Instructor Kim Sun-jung, featuring PDF slide management and a split-screen practice mode with live PC screen sharing.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ]
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01. 생성형 AI 입문 & 리서치 혁신 - 마스터 클래스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-master-blue {
+            background-color: #2563eb;
+        }
+
+        .text-master-blue {
+            color: #2563eb;
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Hero Section (이미지 상단 디자인 반영) -->
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <!-- 메인 페이지로 돌아가기 버튼 -->
+        <a href="ai_course_content.html"
+            class="absolute top-4 right-4 md:top-6 md:right-8 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all z-20">
+            <i class="fas fa-arrow-left"></i>
+            <span class="hidden sm:inline">메인 페이지로</span>
+        </a>
+
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">01</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">생성형 AI 입문 & 리서치 혁신</h1>
+                <p class="text-xl opacity-90 font-light">AI의 본질을 이해하고 검색을 혁신하다</p>
+            </div>
+            <div class="mt-8 md:mt-0 flex gap-3">
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">AI
+                    기초</span>
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">Gemini</span>
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">NotebookLM</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+
+        <!-- PART 1. 생성형 AI 기초 -->
+        <section id="part1" class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-indigo-600 text-white px-5 py-2 rounded-full shadow-lg shadow-indigo-200">
+                <span class="font-bold text-xs tracking-widest">PART 1</span>
+                <h2 class="text-lg font-bold">생성형 AI 기초</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 1. 개념과 작동원리 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <a href="day01_ai_concept.html"
+                                class="text-xl font-bold mb-2 hover:text-indigo-600 transition-colors block">생성형 AI 개념과
+                                작동원리</a>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">LLM, Transformer의 구조적 이해와 프롬프트 처리 방식의
+                                메커니즘을 학습합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">LLM</span>
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Transformer</span>
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Neural
+                                    Network</span>
+                            </div>
+                            <a href="http://localhost:3000" target="_blank"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-play-circle"></i> 강의 듣기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 업무 AI 활용 유의사항 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-amber-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-amber-50 text-amber-600 p-3 rounded-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-exclamation-triangle text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">업무 AI 활용 시 유의사항</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">데이터 보안, 저작권 이슈 및 할루시네이션(환각 현상)에 대한
+                                실무적 대응 전략을 다룹니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">보안
+                                    가이드</span>
+                                <span
+                                    class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">저작권</span>
+                                <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">Fact
+                                    Check</span>
+                            </div>
+                            <a href="http://localhost:3000" target="_blank"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white text-sm font-bold rounded-lg hover:bg-amber-700 transition-colors">
+                                <i class="fas fa-play-circle"></i> 강의 듣기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 최근 기업 AI 동향 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-building text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">최근 기업 AI 동향</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">국내외 선도 기업들의 AI 도입 실제 사례와 비즈니스 성과를
+                                분석합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Case
+                                    Study</span>
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Global
+                                    Trends</span>
+                            </div>
+                            <a href="http://localhost:3000" target="_blank"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-play-circle"></i> 강의 듣기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. AI 윤리와 책임 있는 사용 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-balance-scale text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI 윤리와 책임 있는 사용</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">알고리즘 편향성 방지, 개인정보 보호 및 기업 고유의 AI 거버넌스
+                                수립 방안을 공유합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Ethics</span>
+                                <span
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-semibold">Privacy</span>
+                            </div>
+                            <a href="http://localhost:3000" target="_blank"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-play-circle"></i> 강의 듣기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 2. 이론 & 실습 (하단 섹션 반영) -->
+        <div class="grid lg:grid-cols-2 gap-8">
+
+            <!-- PART 2 이론: AI 리서치 도구 -->
+            <section id="part2-theory" class="space-y-6">
+                <div
+                    class="inline-flex items-center gap-3 bg-blue-500 text-white px-5 py-2 rounded-full shadow-lg shadow-blue-100">
+                    <span class="font-bold text-xs tracking-widest">PART 2 이론</span>
+                    <h2 class="text-lg font-bold">AI 리서치 도구</h2>
+                </div>
+                <div class="bg-blue-50/50 rounded-3xl border border-blue-100 p-8 space-y-4">
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-blue-100 card-shadow">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">
+                            1</div>
+                        <p class="font-bold text-slate-800">AI 검색 vs 전통 검색의 차이</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-blue-100 card-shadow">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">
+                            2</div>
+                        <p class="font-bold text-slate-800"><span class="text-blue-600">Gemini</span> 핵심 기능 및 활용법</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-blue-100 card-shadow">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">
+                            3</div>
+                        <p class="font-bold text-slate-800"><span class="text-blue-600">NotebookLM</span>으로 문서 분석하기</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-blue-100 card-shadow">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">
+                            4</div>
+                        <p class="font-bold text-slate-800">출처 기반 리서치 방법론</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PART 2 실습: 리서치 프로젝트 -->
+            <section id="part2-practice" class="space-y-6">
+                <div
+                    class="inline-flex items-center gap-3 bg-emerald-500 text-white px-5 py-2 rounded-full shadow-lg shadow-emerald-100">
+                    <span class="font-bold text-xs tracking-widest">PART 2 실습</span>
+                    <h2 class="text-lg font-bold">리서치 프로젝트</h2>
+                </div>
+                <div class="bg-emerald-50/50 rounded-3xl border border-emerald-100 p-8 space-y-4">
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-emerald-100 card-shadow">
+                        <i class="fas fa-file-contract text-emerald-500 text-xl w-8 text-center"></i>
+                        <p class="font-bold text-slate-800">산업 동향 리서치 보고서 작성</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-emerald-100 card-shadow">
+                        <i class="fas fa-robot text-emerald-500 text-xl w-8 text-center"></i>
+                        <p class="font-bold text-slate-800">PDF 자료로 AI 챗봇 만들기</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-emerald-100 card-shadow">
+                        <i class="fas fa-microphone-lines text-emerald-500 text-xl w-8 text-center"></i>
+                        <p class="font-bold text-slate-800">팟캐스트 스크립트 자동 생성</p>
+                    </div>
+                    <div
+                        class="mt-8 p-4 bg-emerald-600 rounded-xl text-white text-center font-bold card-shadow cursor-pointer hover:bg-emerald-700 transition-colors">
+                        프로젝트 결과물 제출하기 <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer: 제조혁신 길라잡이 김사부 브랜딩 -->
+    <footer class="bg-slate-900 text-white py-16 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="text-2xl font-black mb-2 tracking-tighter italic">MASTER KIM AI CONSULTING</h4>
+                <p class="text-slate-400 text-sm">제조혁신 전문가가 전수하는 실무 중심 AI 교육</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i
+                        class="fab fa-youtube text-2xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i
+                        class="fas fa-envelope text-2xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i
+                        class="fas fa-blog text-2xl"></i></a>
+            </div>
+        </div>
+        <div
+            class="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-xs uppercase tracking-widest">
+            &copy; 2026 제조혁신 길라잡이 김사부 채널. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
