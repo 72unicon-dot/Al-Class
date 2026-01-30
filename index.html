@@ -89,13 +89,13 @@
 
             <!-- Hero Action Buttons -->
             <div class="flex flex-wrap justify-center gap-4">
-                <button onclick="alert('현재 교육 신청 기간이 아닙니다.')"
+                <button id="applyBtn" onclick="window.openLoginModal()"
                     class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-indigo-50 transition-colors shadow-lg shadow-indigo-500/30">
                     교육 신청
                 </button>
-                <button id="heroLoginBtn" onclick="window.openLoginModal()"
-                    class="px-8 py-3 bg-indigo-500 text-white border border-indigo-400 rounded-full font-bold hover:bg-indigo-600 transition-colors shadow-lg flex items-center gap-2">
-                    <i class="fas fa-sign-in-alt"></i> 로그인
+                <button id="enterBtn" onclick="window.location.href='classroom.html'"
+                    class="hidden px-8 py-3 bg-emerald-500 text-white border border-emerald-400 rounded-full font-bold hover:bg-emerald-600 transition-colors shadow-lg flex items-center gap-2 animate-pulse">
+                    <i class="fas fa-chalkboard-teacher"></i> 강의실 입장
                 </button>
                 <button id="heroLogoutBtn" onclick="window.userLogout()"
                     class="hidden px-8 py-3 bg-slate-800/50 text-white border border-slate-600 rounded-full font-bold hover:bg-slate-800 transition-colors shadow-lg">
@@ -388,34 +388,13 @@
     <script type="module">
         import { db, auth } from './js/firebase-config.js';
         import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-        import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
         // ==========================================
         // 1. UI Injection
         // ==========================================
         const injectUI = () => {
-            // A. Inject Hero Buttons
-            const heroContainer = document.querySelector('section.gradient-hero .container');
-            if (heroContainer && !document.getElementById('heroLoginBtn')) {
-                const btnHTML = `
-                <div class="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.5s">
-                    <button onclick="alert('현재 교육 신청 기간이 아닙니다.')" 
-                        class="px-8 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-indigo-50 transition-colors shadow-lg shadow-indigo-500/30">
-                        교육 신청
-                    </button>
-                    <button id="heroLoginBtn" onclick="window.openLoginModal()" 
-                        class="px-8 py-3 bg-indigo-500 text-white border border-indigo-400 rounded-full font-bold hover:bg-indigo-600 transition-colors shadow-lg flex items-center gap-2">
-                        <i class="fas fa-sign-in-alt"></i> 로그인
-                    </button>
-                    <button id="heroLogoutBtn" onclick="window.userLogout()" 
-                        class="hidden px-8 py-3 bg-slate-800/50 text-white border border-slate-600 rounded-full font-bold hover:bg-slate-800 transition-colors shadow-lg">
-                        로그아웃
-                    </button>
-                </div>`;
-                heroContainer.insertAdjacentHTML('beforeend', btnHTML);
-            }
-
-            // B. Inject Login Modal
+            // A. Inject Login Modal (Removed Hero Button Injection to prevent duplicates)
             if (!document.getElementById('userLoginModal')) {
                 const modalHTML = `
                 <div id="userLoginModal" class="fixed inset-0 z-[100] hidden">
@@ -429,23 +408,37 @@
                             <p class="text-gray-500 text-sm mt-1">강의실 입장을 위해 로그인해주세요</p>
                         </div>
                         
-                        <form id="userLoginForm" class="space-y-4">
-                            <div>
-                                <input type="email" id="userEmail" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="이메일" required>
-                            </div>
-                            <div>
-                                <input type="password" id="userPw" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="비밀번호" required>
-                            </div>
-                            <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">
-                                로그인
+                        <div class="space-y-4">
+                            <button id="googleLoginBtn" type="button" class="w-full py-3 bg-white border border-gray-300 text-gray-700 rounded-xl font-bold hover:bg-gray-50 transition-colors shadow-sm flex items-center justify-center gap-2">
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-5 h-5">
+                                구글 계정으로 로그인
                             </button>
-                        </form>
+                            
+                            <div class="relative flex py-2 items-center">
+                                <div class="flex-grow border-t border-gray-200"></div>
+                                <span class="flex-shrink-0 mx-4 text-gray-400 text-xs">또는 이메일로 로그인</span>
+                                <div class="flex-grow border-t border-gray-200"></div>
+                            </div>
+
+                            <form id="userLoginForm" class="space-y-4">
+                                <div>
+                                    <input type="email" id="userEmail" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="이메일" required>
+                                </div>
+                                <div>
+                                    <input type="password" id="userPw" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="비밀번호" required>
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">
+                                    이메일 로그인
+                                </button>
+                            </form>
+                        </div>
                         <button onclick="window.closeLoginModal()" class="w-full mt-3 py-2 text-gray-400 hover:text-gray-600 text-sm font-medium">닫기</button>
                     </div>
                 </div>`;
                 document.body.insertAdjacentHTML('beforeend', modalHTML);
 
                 setTimeout(() => {
+                    // Email Login Logic
                     const loginForm = document.getElementById('userLoginForm');
                     if (loginForm) {
                         loginForm.addEventListener('submit', async (e) => {
@@ -463,7 +456,22 @@
                                 console.error(error);
                                 alert("로그인 실패: 이메일 또는 비밀번호를 확인해주세요.");
                                 btn.disabled = false;
-                                btn.innerHTML = '로그인';
+                                btn.innerHTML = '이메일 로그인';
+                            }
+                        });
+                    }
+
+                    // Google Login Logic
+                    const googleBtn = document.getElementById('googleLoginBtn');
+                    if (googleBtn) {
+                        googleBtn.addEventListener('click', async () => {
+                            try {
+                                const provider = new GoogleAuthProvider();
+                                await signInWithPopup(auth, provider);
+                                window.closeLoginModal();
+                            } catch (error) {
+                                console.error("Google Login Error:", error);
+                                alert("구글 로그인 실패: " + error.message);
                             }
                         });
                     }
@@ -478,23 +486,22 @@
         // 2. Auth State Logic
         // ==========================================
         onAuthStateChanged(auth, (user) => {
-            const loginBtn = document.getElementById('heroLoginBtn');
+            const applyBtn = document.getElementById('applyBtn');
+            const enterBtn = document.getElementById('enterBtn');
             const logoutBtn = document.getElementById('heroLogoutBtn');
 
-            if (user && loginBtn) {
+            if (user) {
                 // Logged In
-                loginBtn.innerHTML = '<i class="fas fa-chalkboard-teacher"></i> 강의실 입장';
-                loginBtn.title = user.email + "님 환영합니다";
-                loginBtn.onclick = () => window.location.href = 'classroom.html'; // Changed to classroom.html
-                loginBtn.className = "px-8 py-3 bg-emerald-500 text-white border border-emerald-400 rounded-full font-bold hover:bg-emerald-600 transition-colors shadow-lg flex items-center gap-2 animate-pulse";
-
+                if (applyBtn) applyBtn.classList.add('hidden');
+                if (enterBtn) {
+                    enterBtn.classList.remove('hidden');
+                    enterBtn.title = user.email + "님 환영합니다";
+                }
                 if (logoutBtn) logoutBtn.classList.remove('hidden');
-            } else if (loginBtn) {
+            } else {
                 // Logged Out
-                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> 로그인';
-                loginBtn.onclick = () => window.openLoginModal();
-                loginBtn.className = "px-8 py-3 bg-indigo-500 text-white border border-indigo-400 rounded-full font-bold hover:bg-indigo-600 transition-colors shadow-lg flex items-center gap-2";
-
+                if (applyBtn) applyBtn.classList.remove('hidden');
+                if (enterBtn) enterBtn.classList.add('hidden');
                 if (logoutBtn) logoutBtn.classList.add('hidden');
             }
         });
