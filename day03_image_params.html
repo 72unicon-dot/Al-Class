@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 스타일 및 파라미터 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day03_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">이미지 스타일 / 파라미터</h1>
+            <p class="text-xl opacity-90">디테일의 차이가 명품을 만듭니다</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-sliders-h text-violet-600 mr-2"></i>필수 파라미터 가이드</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2 text-violet-700">--ar (Aspect Ratio)</h3>
+                    <p class="text-slate-600 text-sm mb-2">이미지의 비율을 설정합니다.</p>
+                    <ul class="text-sm text-slate-500 list-disc list-inside">
+                        <li><strong>16:9</strong> - 유튜브 썸네일, PPT 배경</li>
+                        <li><strong>9:16</strong> - 인스타 스토리, 릴스</li>
+                        <li><strong>1:1</strong> - 인스타 피드 (기본값)</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2 text-violet-700">--s (Stylize)</h3>
+                    <p class="text-slate-600 text-sm mb-2">AI의 예술적 자유도를 조절합니다. (0~1000)</p>
+                    <ul class="text-sm text-slate-500 list-disc list-inside">
+                        <li><strong>--s 0</strong> - 프롬프트 그대로 정직하게</li>
+                        <li><strong>--s 250</strong> - 적당한 예술성 (추천)</li>
+                        <li><strong>--s 750</strong> - 매우 화려하고 예술적임</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2 text-violet-700">--no (Negative Prompt)</h3>
+                    <p class="text-slate-600 text-sm mb-2">원하지 않는 요소를 제거합니다.</p>
+                    <p class="text-xs font-mono bg-white p-2 rounded border border-slate-200 text-slate-500">예: --no
+                        text, logo, blurry, watermark</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2 text-violet-700">--v (Version)</h3>
+                    <p class="text-slate-600 text-sm mb-2">모델 버전을 선택합니다.</p>
+                    <p class="text-xs font-mono bg-white p-2 rounded border border-slate-200 text-slate-500">예: --v 6.0
+                        (사실적), --ji 6 (애니메이션)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-palette text-violet-600 mr-2"></i>스타일 레시피 (Style Recipe)</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="text-center p-4 border rounded-xl hover:bg-violet-50 transition-colors">
+                    <div class="font-bold text-slate-800 mb-2">Photorealistic</div>
+                    <p class="text-xs text-slate-500">Shot on Sony A7R IV, 8k, ultra detailed, hyper realistic</p>
+                </div>
+                <div class="text-center p-4 border rounded-xl hover:bg-violet-50 transition-colors">
+                    <div class="font-bold text-slate-800 mb-2">3D Character</div>
+                    <p class="text-xs text-slate-500">Pixar style, Disney style, 3d render, c4d, octane render</p>
+                </div>
+                <div class="text-center p-4 border rounded-xl hover:bg-violet-50 transition-colors">
+                    <div class="font-bold text-slate-800 mb-2">Isometric</div>
+                    <p class="text-xs text-slate-500">White background, isometric view, cute, minimalist</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

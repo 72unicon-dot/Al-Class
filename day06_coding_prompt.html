@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 프롬프트 작성법 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day06_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">코딩 프롬프트 작성법</h1>
+            <p class="text-xl opacity-90">개떡같이 말해도 찰떡같이 알아듣게 만드는 기술</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-terminal text-pink-600 mr-2"></i>명확성(Clarity)이 생명이다</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Bad -->
+                <div class="bg-red-50 p-6 rounded-xl">
+                    <div class="flex items-center gap-2 mb-4 text-red-600 font-bold">
+                        <i class="fas fa-times-circle"></i> 나쁜 예시
+                    </div>
+                    <p class="text-slate-800 font-medium mb-2">"이거 좀 예쁘게 고쳐줘"</p>
+                    <p class="text-xs text-red-500">-> '예쁘게'의 기준이 모호함. AI는 뜬금없는 색으로 바꿀 수 있음.</p>
+                </div>
+                <!-- Good -->
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <div class="flex items-center gap-2 mb-4 text-green-600 font-bold">
+                        <i class="fas fa-check-circle"></i> 좋은 예시
+                    </div>
+                    <p class="text-slate-800 font-medium mb-2">"버튼 색상을 TailwindCSS의 'bg-blue-500'으로 변경하고, 마우스를 올렸을
+                        때(hover) 그림자가 생기게 해줘."</p>
+                    <p class="text-xs text-green-600">-> 도구(Tailwind)와 구체적인 동작(hover)을 명시함.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-list-ol text-pink-600 mr-2"></i>단계별 지시 (Step-by-Step)</h2>
+            <p class="text-slate-600 mb-6">복잡한 기능은 한 번에 요청하지 말고 나눠서 요청하세요.</p>
+
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 border p-4 rounded-lg">
+                    <span
+                        class="bg-slate-200 text-slate-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">1</span>
+                    <p class="text-sm">"먼저 index.html에 헤더와 푸터 뼈대를 만들어줘."</p>
+                </div>
+                <div class="flex items-center gap-4 border p-4 rounded-lg">
+                    <span
+                        class="bg-slate-200 text-slate-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">2</span>
+                    <p class="text-sm">"헤더 로고는 왼쪽에, 메뉴는 오른쪽에 배치해줘."</p>
+                </div>
+                <div class="flex items-center gap-4 border p-4 rounded-lg">
+                    <span
+                        class="bg-slate-200 text-slate-600 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">3</span>
+                    <p class="text-sm">"이제 모바일 화면에서는 메뉴가 햄버거 버튼으로 바뀌게 해줘."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

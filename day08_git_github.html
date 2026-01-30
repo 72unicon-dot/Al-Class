@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git/GitHub 버전 관리 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day08_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">Git/GitHub 버전 관리</h1>
+            <p class="text-xl opacity-90">개발자의 타임머신, 코드를 안전하게 보관하는 법</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fab fa-git-alt text-orange-600 mr-2"></i>Git 필수 명령어</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed">복잡한 명령어는 이제 그만. AI가 다 해주지만, 이 3가지는 알아두면 좋습니다.</p>
+
+            <div class="space-y-4">
+                <div class="bg-slate-900 text-white p-4 rounded-xl font-mono text-sm">
+                    <span class="text-green-400">git add .</span>
+                </div>
+                <div class="pl-4 border-l-2 border-slate-300 text-sm text-slate-600">
+                    변경된 파일(편지)들을 봉투에 담는다. (Staging)
+                </div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-xl font-mono text-sm">
+                    <span class="text-green-400">git commit -m "메시지"</span>
+                </div>
+                <div class="pl-4 border-l-2 border-slate-300 text-sm text-slate-600">
+                    봉투를 밀봉하고 도장을 찍는다. (Save)
+                </div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-xl font-mono text-sm">
+                    <span class="text-green-400">git push</span>
+                </div>
+                <div class="pl-4 border-l-2 border-slate-300 text-sm text-slate-600">
+                    우체통(GitHub)에 넣어서 보낸다. (Upload)
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fab fa-github text-slate-800 mr-2"></i>GitHub 활용 팁</h2>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-star text-yellow-400 mt-1"></i>
+                    <div>
+                        <span class="font-bold block text-slate-800">포트폴리오 (Profile Readme)</span>
+                        <span class="text-slate-600 text-sm">GitHub 프로필을 예쁘게 꾸며서 나를 어필하세요.</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-star text-yellow-400 mt-1"></i>
+                    <div>
+                        <span class="font-bold block text-slate-800">오픈소스 기여</span>
+                        <span class="text-slate-600 text-sm">다른 사람의 코드를 보고 배우고, 수정 제안(PR)을 해보세요.</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

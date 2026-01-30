@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 영상 생성 기술 개요 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day04_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">AI 영상 생성 기술 개요</h1>
+            <p class="text-xl opacity-90">텍스트 한 줄로 할리우드급 영상을 만드는 시대</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-film text-amber-600 mr-2"></i>Text-to-Video 원리</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed">거대 언어 모델(LLM)이 텍스트를 이해하고, 확산 모델(Diffusion Model)이 이미지를 생성하며,
+                시간적 일관성(Temporal Consistency) 기술이 프레임을 연결하여 영상을 만듭니다.</p>
+
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-amber-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-2">📝</div>
+                    <h3 class="font-bold text-slate-800">Prompt</h3>
+                    <p class="text-sm text-slate-500">"해변가를 달리는 자동차"</p>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-2">🧠</div>
+                    <h3 class="font-bold text-slate-800">AI Processing</h3>
+                    <p class="text-sm text-slate-500">공간/물리법칙/움직임 계산</p>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl">
+                    <div class="text-4xl mb-2">🎬</div>
+                    <h3 class="font-bold text-slate-800">Video Output</h3>
+                    <p class="text-sm text-slate-500">고화질 영상 생성</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-chart-line text-amber-600 mr-2"></i>주요 활용 분야</h2>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-600 mt-1"></i>
+                    <div>
+                        <span class="font-bold block text-slate-800">광고/마케팅</span>
+                        <span class="text-slate-600 text-sm">촬영 없이 제품 홍보 영상, SNS 숏폼 제작</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-600 mt-1"></i>
+                    <div>
+                        <span class="font-bold block text-slate-800">교육/이러닝</span>
+                        <span class="text-slate-600 text-sm">가상 강사 영상, 시뮬레이션 자료 제작</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-amber-600 mt-1"></i>
+                    <div>
+                        <span class="font-bold block text-slate-800">엔터테인먼트</span>
+                        <span class="text-slate-600 text-sm">영화 콘티 시각화, 뮤직비디오 배경 생성</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 text-center">
+        <p class="opacity-60">© 2026 Master Kim AI Class. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

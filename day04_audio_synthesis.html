@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 음성 합성 원리 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day04_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">AI 음성 합성 원리</h1>
+            <p class="text-xl opacity-90">로봇 같은 목소리는 안녕, 감정을 담은 AI 성우</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-wave-square text-amber-600 mr-2"></i>TTS (Text-to-Speech)의 진화</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="w-24 font-bold text-slate-400">과거</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-slate-700">Concatenative TTS</h3>
+                        <p class="text-sm text-slate-500">녹음된 단어를 조각조각 이어 붙인 방식. 부자연스럽고 억양 조절 불가능.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-24 font-bold text-amber-600">현재</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-slate-800">Neural TTS (AI)</h3>
+                        <p class="text-sm text-slate-600">딥러닝 모델이 텍스트의 문맥과 감정을 이해하고, 성우의 발성 패턴을 모방하여 파형을 생성. 숨소리까지 재현.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-sliders-h text-amber-600 mr-2"></i>음성 튜닝 요소</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-amber-50 p-6 rounded-xl text-center">
+                    <div class="font-bold text-lg mb-2">Stability</div>
+                    <p class="text-xs text-slate-600">목소리의 떨림과 변동성을 조절. 높을수록 일관되고 차분하지만 단조로울 수 있음.</p>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl text-center">
+                    <div class="font-bold text-lg mb-2">Similarity</div>
+                    <p class="text-xs text-slate-600">원본 성우의 목소리와 얼마나 비슷하게 할지 결정. 높을수록 원본과 똑같지만 잡음도 따라올 수 있음.</p>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl text-center">
+                    <div class="font-bold text-lg mb-2">Style Exaggeration</div>
+                    <p class="text-xs text-slate-600">감정 표현의 과장 정도를 조절. 높을수록 드라마틱한 낭독 톤이 됨.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

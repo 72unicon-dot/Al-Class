@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>06. 바이브 코딩 입문 - 마스터 클래스</title>
+    <title>06. AI 코딩 (Cursor) - 마스터 클래스</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -19,15 +19,12 @@
         }
 
         .gradient-bg {
-            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         }
-
-        /* Pink */
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
-
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
         <a href="classroom.html"
             class="absolute top-4 right-4 md:top-6 md:right-8 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all z-20">
@@ -36,24 +33,25 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
             <div class="space-y-2">
                 <span class="text-6xl font-black opacity-20 block mb-[-10px]">06</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">바이브 코딩 입문</h1>
-                <p class="text-xl opacity-90 font-light">AI와 대화하며 코딩하는 새로운 패러다임</p>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">AI 코딩 (Cursor)</h1>
+                <p class="text-xl opacity-90 font-light">누구나 개발자가 될 수 있다</p>
             </div>
             <div class="mt-8 md:mt-0 flex gap-3">
                 <span
                     class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">Cursor</span>
                 <span
-                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">Claude</span>
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">VS
+                    Code</span>
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">Python</span>
             </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-
-        <!-- PART 1. 이론 -->
         <section id="part1" class="space-y-6">
             <div
-                class="inline-flex items-center gap-3 bg-pink-600 text-white px-5 py-2 rounded-full shadow-lg shadow-pink-200">
+                class="inline-flex items-center gap-3 bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg shadow-blue-200">
                 <span class="font-bold text-xs tracking-widest">PART 1 이론</span>
                 <h2 class="text-lg font-bold">바이브 코딩 기초</h2>
             </div>
@@ -61,22 +59,22 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- 1 -->
                 <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
                     <div class="flex items-start gap-4">
                         <div
-                            class="bg-pink-50 text-pink-600 p-3 rounded-2xl group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
                             <i class="fas fa-code text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">바이브 코딩이란?</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">자연어 대화만으로 소프트웨어를 개발하는 새로운 코딩 패러다임의 핵심
-                                개념을 이해합니다.</p>
+                            <h3 class="text-xl font-bold mb-2">바이브 코딩이란? 핵심 개념</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">자연어로 코딩하는 새로운 패러다임, 바이브 코딩(Vibe
+                                Coding)의 정의와 중요성을 배웁니다.</p>
                             <div class="flex gap-2">
-                                <a href="#"
+                                <a href="day06_vibe_coding.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-bold rounded-lg hover:bg-pink-700 transition-colors"><i
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
                                         class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
@@ -84,22 +82,22 @@
                 </div>
                 <!-- 2 -->
                 <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
                     <div class="flex items-start gap-4">
                         <div
-                            class="bg-pink-50 text-pink-600 p-3 rounded-2xl group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-download text-2xl"></i>
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-laptop-code text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">Cursor IDE 설치 및 설정</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI 네이티브 코드 에디터인 Cursor를 설치하고 최적의 개발
-                                환경을 세팅합니다.</p>
+                            <h3 class="text-xl font-bold mb-2">Cursor IDE 설치 및 환경 설정</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">최강의 AI 에디터 Cursor를 설치하고 AI 기능을 100%
+                                활용하기 위한 세팅을 합니다.</p>
                             <div class="flex gap-2">
-                                <a href="#"
+                                <a href="day06_cursor_setup.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-bold rounded-lg hover:bg-pink-700 transition-colors"><i
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
                                         class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
@@ -107,22 +105,22 @@
                 </div>
                 <!-- 3 -->
                 <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
                     <div class="flex items-start gap-4">
                         <div
-                            class="bg-pink-50 text-pink-600 p-3 rounded-2xl group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-user-friends text-2xl"></i>
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-users-cog text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">AI 페어 프로그래밍</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI를 동료 개발자처럼 대하며 함께 코드를 작성하고 문제를 해결하는
-                                협업 방식을 익힙니다.</p>
+                            <h3 class="text-xl font-bold mb-2">AI 페어 프로그래밍 워크플로우</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Tab키로 자동완성, Ctrl+K로 코드 생성, Chat으로
+                                질문하는 3단계 워크플로우를 익힙니다.</p>
                             <div class="flex gap-2">
-                                <a href="#"
+                                <a href="day06_pair_programming.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-bold rounded-lg hover:bg-pink-700 transition-colors"><i
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
                                         class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
@@ -130,22 +128,22 @@
                 </div>
                 <!-- 4 -->
                 <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
                     <div class="flex items-start gap-4">
                         <div
-                            class="bg-pink-50 text-pink-600 p-3 rounded-2xl group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-pen-fancy text-2xl"></i>
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-terminal text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">코딩 프롬프트 작성법</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">원하는 코드 결과를 정확하게 얻기 위한 기술적 프롬프트 작성
-                                노하우를 공유합니다.</p>
+                            <h3 class="text-xl font-bold mb-2">효과적인 코딩 프롬프트 작성법</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">원하는 코드를 정확하게 얻기 위해 상황을 설명하고 제약조건을 주는
+                                프롬프트 기법을 배웁니다.</p>
                             <div class="flex gap-2">
-                                <a href="#"
+                                <a href="day06_coding_prompt.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-pink-600 text-white text-sm font-bold rounded-lg hover:bg-pink-700 transition-colors"><i
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
                                         class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
@@ -154,69 +152,62 @@
             </div>
         </section>
 
-        <!-- PART 2. 실습 -->
-        <div class="space-y-12">
-            <section id="part2-practice" class="space-y-6">
+        <section id="part2-practice" class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-emerald-600 text-white px-5 py-2 rounded-full shadow-lg shadow-emerald-100">
+                <span class="font-bold text-xs tracking-widest">PART 2 실습</span>
+                <h2 class="text-lg font-bold">Cursor 실전</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 1 -->
                 <div
-                    class="inline-flex items-center gap-3 bg-pink-500 text-white px-5 py-2 rounded-full shadow-lg shadow-pink-100">
-                    <span class="font-bold text-xs tracking-widest">PART 2 실습</span>
-                    <h2 class="text-lg font-bold">Cursor 실전</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <!-- 1 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
-                        <div class="flex flex-col h-full">
-                            <div
-                                class="w-12 h-12 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-laptop-code text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Cursor 기본 기능 실습</h3>
-                            <p class="text-slate-500 text-sm mb-6 flex-1">Chat, Cmd+K, Composer 등 Cursor의 핵심 단축키와 기능을 직접
-                                사용해봅니다.</p>
-                            <a href="#"
-                                class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-pink-600 hover:text-white transition-colors text-center">실습
-                                시작하기</a>
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-emerald-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-keyboard text-xl"></i>
                         </div>
-                    </div>
-                    <!-- 2 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
-                        <div class="flex flex-col h-full">
-                            <div
-                                class="w-12 h-12 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-globe text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">간단한 웹 페이지 생성</h3>
-                            <p class="text-slate-500 text-sm mb-6 flex-1">HTML/CSS 지식이 없어도 AI에게 자연어로 설명하여 예쁜 자기소개 페이지를
-                                만듭니다.</p>
-                            <a href="#"
-                                class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-pink-600 hover:text-white transition-colors text-center">실습
-                                시작하기</a>
-                        </div>
-                    </div>
-                    <!-- 3 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-pink-200 transition-all group">
-                        <div class="flex flex-col h-full">
-                            <div
-                                class="w-12 h-12 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors">
-                                <i class="fas fa-tools text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">대화형 코드 수정</h3>
-                            <p class="text-slate-500 text-sm mb-6 flex-1">"버튼 색깔 바꿔줘", "모바일에서도 잘 보이게 해줘"와 같은 명령으로 코드를
-                                수정합니다.</p>
-                            <a href="#"
-                                class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-pink-600 hover:text-white transition-colors text-center">실습
-                                시작하기</a>
-                        </div>
+                        <h3 class="text-xl font-bold mb-2">Cursor 기본 기능 실습</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">단축키와 채팅 기능을 사용하여 기존 코드를 수정하고 버그를 잡는 연습을 합니다.</p>
+                        <a href="#"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-emerald-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
                     </div>
                 </div>
-            </section>
-        </div>
+                <!-- 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-emerald-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fab fa-html5 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">간단한 HTML/CSS 페이지 생성</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">한 줄의 코드도 직접 짜지 않고 AI에게 지시하여 예쁜 랜딩 페이지를 만듭니다.</p>
+                        <a href="#"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-emerald-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-emerald-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fab fa-python text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">파이썬 데이터 분석 스크립트</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">엑셀 파일을 불러와서 데이터를 분석하고 시각화하는 파이썬 코드를 작성합니다.</p>
+                        <a href="#"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-emerald-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
     <footer class="bg-slate-900 text-white py-16 px-6 mt-20">
         <div class="max-w-6xl mx-auto text-center md:text-left">
             <h4 class="text-2xl font-black mb-2 tracking-tighter italic">MASTER KIM AI CONSULTING</h4>

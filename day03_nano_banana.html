@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Banana 프롬프트 구조 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day03_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">Nano Banana 프롬프트 구조</h1>
+            <p class="text-xl opacity-90">상상하는 모든 이미지를 구현하는 절대 공식</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-layer-group text-violet-600 mr-2"></i>기본 프롬프트 4단계</h2>
+            <div class="space-y-4">
+                <div
+                    class="flex flex-col md:flex-row gap-4 items-center bg-violet-50 p-4 rounded-xl border border-violet-100">
+                    <div class="bg-violet-600 text-white font-bold py-1 px-3 rounded-md text-sm whitespace-nowrap">Step
+                        1</div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-slate-800">주제 (Subject)</h3>
+                        <p class="text-sm text-slate-600">누가, 무엇이 등장하나요? 예: A cute futuristic robot</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col md:flex-row gap-4 items-center bg-violet-50 p-4 rounded-xl border border-violet-100">
+                    <div class="bg-violet-600 text-white font-bold py-1 px-3 rounded-md text-sm whitespace-nowrap">Step
+                        2</div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-slate-800">행동/상황 (Action/Context)</h3>
+                        <p class="text-sm text-slate-600">무엇을 하고 있나요? 예: reading a book under a tree</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col md:flex-row gap-4 items-center bg-violet-50 p-4 rounded-xl border border-violet-100">
+                    <div class="bg-violet-600 text-white font-bold py-1 px-3 rounded-md text-sm whitespace-nowrap">Step
+                        3</div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-slate-800">예술적 스타일 (Art Style)</h3>
+                        <p class="text-sm text-slate-600">어떤 화풍인가요? 예: cyberpunk style, oil painting, cinematic lighting
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col md:flex-row gap-4 items-center bg-violet-50 p-4 rounded-xl border border-violet-100">
+                    <div class="bg-violet-600 text-white font-bold py-1 px-3 rounded-md text-sm whitespace-nowrap">Step
+                        4</div>
+                    <div class="w-full">
+                        <h3 class="font-bold text-slate-800">파라미터 (Parameters)</h3>
+                        <p class="text-sm text-slate-600">비율이나 품질 설정은? 예: --ar 16:9 --v 6.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
+            <h2 class="text-xl font-bold text-violet-300 mb-4"><i class="fas fa-terminal mr-2"></i>프롬프트 작성 예시</h2>
+            <div class="font-mono text-sm leading-relaxed bg-black/30 p-4 rounded-lg border border-white/10">
+                <span class="text-pink-400">/imagine prompt:</span>
+                <span class="text-cyan-300">A professional portrait of a Korean business woman</span>,
+                <span class="text-yellow-300">giving a presentation in a modern conference room</span>,
+                <span class="text-green-300">shot on 85mm lens, depth of field, 8k resolution, soft lighting</span>
+                <span class="text-gray-400">--ar 16:9 --style raw</span>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

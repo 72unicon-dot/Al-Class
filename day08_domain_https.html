@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도메인 연결 및 HTTPS - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day08_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">도메인 연결 및 HTTPS</h1>
+            <p class="text-xl opacity-90">신뢰할 수 있는 주소 만들기 (.com의 가치)</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-link text-blue-600 mr-2"></i>도메인(Domain)이란?</h2>
+            <div class="flex items-center gap-4 bg-slate-100 p-4 rounded-xl mb-4">
+                <span class="text-slate-500 line-through text-sm">192.168.0.1:3000</span>
+                <i class="fas fa-arrow-right text-slate-400"></i>
+                <span class="text-blue-600 font-bold text-lg">my-awesome-app.com</span>
+            </div>
+            <p class="text-slate-600 text-sm">복잡한 IP 주소 대신, 사람이 기억하기 쉬운 영문 주소로 연결해주는 서비스입니다. 가비아, GoDaddy 등에서 구입할 수
+                있습니다.</p>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-lock text-green-600 mr-2"></i>HTTPS 보안 접속</h2>
+            <div class="flex gap-6">
+                <div class="flex-1 border p-4 rounded-xl bg-red-50 border-red-200 opacity-60">
+                    <h3 class="font-bold text-red-800 mb-2"><i class="fas fa-lock-open"></i> HTTP</h3>
+                    <p class="text-xs text-red-700">데이터가 암호화되지 않고 전송됨. 해커가 중간에서 가로챌 수 있음. 브라우저 주소창에 "주의 요함" 표시.</p>
+                </div>
+                <div class="flex-1 border-2 border-green-500 p-4 rounded-xl bg-green-50 shadow-md">
+                    <h3 class="font-bold text-green-800 mb-2"><i class="fas fa-lock"></i> HTTPS</h3>
+                    <p class="text-xs text-green-700">SSL 인증서로 암호화. Vercel 배포 시 <strong>무료로 자동 적용</strong>됨. 자물쇠 아이콘 표시.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

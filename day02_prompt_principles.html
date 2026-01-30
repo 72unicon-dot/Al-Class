@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프롬프트 엔지니어링 원리 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day02_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">프롬프트 엔지니어링 원리</h1>
+            <p class="text-xl opacity-90">AI가 완벽하게 이해하는 지시문을 작성하는 핵심 공식</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-lightbulb text-emerald-600 mr-2"></i>프롬프트의 4대 요소</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">1. Instruction (지시)</h3>
+                    <p class="text-slate-600">AI가 수행해야 할 구체적인 작업을 명시합니다. "요약해", "번역해", "분석해" 등 동사로 끝나는 명확한 명령어를 사용하세요.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">2. Context (맥락)</h3>
+                    <p class="text-slate-600">AI가 상황을 이해할 수 있도록 배경 정보를 제공합니다. "너는 10년차 마케터야", "이 글은 CEO에게 보고할 용도야" 등.
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">3. Input Data (입력 데이터)</h3>
+                    <p class="text-slate-600">AI가 처리해야 할 실제 데이터입니다. 텍스트, 코드, 데이터 표 등을 명확하게 구분하여 입력합니다.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">4. Output Indicator (출력 형식)</h3>
+                    <p class="text-slate-600">원하는 결과물의 형식을 지정합니다. "표로 정리해줘", "불렛포인트 3개로 요약해줘", "JSON 포맷으로 줘" 등.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-laptop-code text-emerald-600 mr-2"></i>실전 프롬프트 예시</h2>
+            <div class="bg-slate-900 text-slate-200 p-6 rounded-xl font-mono text-sm leading-relaxed">
+                <p class="text-emerald-400 mb-2">// 나쁜 예시</p>
+                <p class="mb-6">이거 마케팅 문구 좀 써줘.</p>
+
+                <p class="text-emerald-400 mb-2">// 좋은 예시</p>
+                <p class="mb-2"><span class="text-blue-400">[Role]</span> 너는 전문 뷰티 카피라이터야.</p>
+                <p class="mb-2"><span class="text-blue-400">[Task]</span> 20대 여성을 타겟으로 한 새로운 수분 크림의 인스타그램 광고 카피를 작성해줘.
+                </p>
+                <p class="mb-2"><span class="text-blue-400">[Context]</span> 제품의 핵심 성분은 히알루론산이고, 끈적임 없이 산뜻한 것이 특징이야.</p>
+                <p class="mb-2"><span class="text-blue-400">[Format]</span> 이모지를 포함하여 3가지 버전으로, 각각 해시태그 5개를 포함해서 작성해줘.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 text-center">
+        <p class="opacity-60">© 2026 Master Kim AI Class. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

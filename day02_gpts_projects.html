@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPTs 및 Projects 활용 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day02_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">GPTs & Projects</h1>
+            <p class="text-xl opacity-90">나만의 AI 비서 만들기 & 장기 프로젝트 관리</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-tools text-emerald-600 mr-2"></i>Custom GPTs 만들기</h2>
+            <div class="space-y-6">
+                <p class="text-slate-600">매번 복잡한 프롬프트를 입력할 필요 없이, 특정 목적에 맞게 미리 설정된 나만의 챗봇을 만듭니다.</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">1. Instructions (지침) 설정</h3>
+                        <p class="text-sm text-slate-600">"너는 이제부터 영어 튜터야. 내가 틀린 문법만 교정해주고, 설명은 한국어로 해줘."와 같이 챗봇의 기본 행동
+                            강령을 입력합니다.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">2. Knowledge (지식) 업로드</h3>
+                        <p class="text-sm text-slate-600">우리 회사 소개서, 제품 매뉴얼, 브랜드 가이드라인 등 PDF/Word 파일을 업로드하여 해당 지식을 기반으로
+                            답변하게 합니다.</p>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold text-yellow-800 text-sm mb-1"><i class="fas fa-lightbulb mr-1"></i>활용 아이디어</h4>
+                    <p class="text-sm text-yellow-800">사내 규정 챗봇, 코딩 리뷰어, 이메일 답장 생성기, 뉴스 요약 봇 등</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-folder-open text-emerald-600 mr-2"></i>Claude Projects 활용</h2>
+            <p class="text-slate-600 mb-6">Claude의 'Projects' 기능은 하나의 프로젝트에 필요한 모든 관련된 자료(코드, 문서, 기획안)를 모아두고 그 안에서 문맥을
+                유지하며 대화하는 기능입니다.</p>
+
+            <ul class="space-y-4">
+                <li class="flex items-start gap-4">
+                    <div
+                        class="bg-emerald-100 text-emerald-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        1</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">프로젝트별 지식 관리</h3>
+                        <p class="text-sm text-slate-600">프로젝트 A와 프로젝트 B의 자료를 섞이지 않게 관리할 수 있습니다.</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <div
+                        class="bg-emerald-100 text-emerald-600 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        2</div>
+                    <div>
+                        <h3 class="font-bold text-slate-800">Artifacts 연동</h3>
+                        <p class="text-sm text-slate-600">프로젝트 내에서 생성한 코드나 문서를 Artifacts로 바로 확인하고 수정할 수 있습니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
