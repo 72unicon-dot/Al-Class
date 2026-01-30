@@ -4,79 +4,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프롬프트 엔지니어링 원리 - AI Class</title>
+    <title>프롬프트 엔지니어링 - 상세 강의</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            color: #1e293b;
         }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 섹션 타이틀 번호 바 */
+        .section-bar {
+            border-left: 4px solid #2563eb;
+            padding-left: 1rem;
+        }
+
+        /* 카드 디자인 */
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+        }
+
+        .card-badge {
+            background: #eff6ff;
+            color: #3b82f6;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border: 1px solid #dbeafe;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+        }
+
+        /* 비교 박스 스타일 */
+        .case-box {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .case-bad {
+            background-color: #fff1f2;
+            border-left: 4px solid #f43f5e;
+        }
+
+        .case-good {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+        }
+
+        /* 하단 솔루션 박스 */
+        .solution-box {
+            border-left: 4px solid #10b981;
+            background-color: #f0fdf4;
+            border-radius: 12px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-pdf {
+            background-color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pdf:hover {
+            background-color: #4a3bc2;
+            transform: scale(1.02);
+        }
+
+        .btn-back {
+            border: 2px solid #e2e8f0;
+            color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #f8fafc;
+            border-color: #5c4ae3;
+        }
+
+        .session-badge {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 4px 16px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .element-number {
+            font-size: 2rem;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
     </style>
 </head>
 
-<body class="bg-slate-50">
-    <header class="gradient-bg text-white py-12 px-8">
-        <div class="max-w-4xl mx-auto">
-            <a href="day02_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
-                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
-            </a>
-            <h1 class="text-3xl font-bold mb-4">프롬프트 엔지니어링 원리</h1>
-            <p class="text-xl opacity-90">AI가 완벽하게 이해하는 지시문을 작성하는 핵심 공식</p>
+<body class="py-20">
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto text-center mb-24 px-6">
+        <div class="inline-block session-badge mb-6 uppercase tracking-wider">Prompt Design Master Session</div>
+        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
+            프롬프트 엔지니어링 <span class="gradient-text">개념과 설계 전략</span>
+        </h1>
+        <p class="text-lg text-slate-500 mb-8 font-medium">AI를 나의 가장 유능한 신입사원으로 부리는 논리적 설계 기술</p>
+        <div class="flex items-center justify-center gap-4 text-sm font-semibold text-slate-400">
+            <span class="flex items-center gap-1"><i class="fas fa-user-circle text-blue-600"></i> 강사 김사부</span>
+            <span class="opacity-30">|</span>
+            <span class="flex items-center gap-1"><i class="fas fa-terminal text-blue-600"></i> 생성형 AI 활용 극대화 가이드</span>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-lightbulb text-emerald-600 mr-2"></i>프롬프트의 4대 요소</h2>
+    <main class="max-w-4xl mx-auto px-6 space-y-32">
+
+        <!-- 01. 프롬프트와 프롬프트 엔지니어링이란? -->
+        <section id="section1" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">01. 프롬프트와 프롬프트 엔지니어링의 이해</h2>
+                <p class="text-slate-500 mt-2">AI와의 대화는 단순한 질문이 아니라 '설계'의 과정입니다.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="feature-card p-8">
+                    <div class="icon-circle mb-6"><i class="fas fa-comment-dots text-xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">프롬프트 (Prompt)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        AI 모델에게 입력하는 <strong>지시사항이나 질문(Instruction)</strong> 그 자체를 의미합니다. AI가 어떤 방향으로 사고하고 결과를 만들어낼지
+                        결정하는 '출발점'이자 '방향키'입니다.
+                    </p>
+                </div>
+                <div class="feature-card p-8">
+                    <div class="icon-circle mb-6"><i class="fas fa-drafting-compass text-xl"></i></div>
+                    <h3 class="text-xl font-bold mb-4">프롬프트 엔지니어링</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        원하는 결과(Output)를 얻기 위해 프롬프트를 <strong>구조화하고 최적화(Optimize)하는 일련의 기술</strong>을 말합니다. AI의 잠재력을 최대한
+                        끌어내기 위한 '질문 설계학'입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 italic text-center">
+                <p class="text-slate-700 font-medium">
+                    "프롬프트는 셰프에게 전달하는 <span class="text-blue-600">주문서</span>이고,<br class="hidden md:block"> 엔지니어링은 그 주문을
+                    가장 정확하고 맛있게 나오도록 <span class="text-blue-600">상세 레시피</span>를 짜는 과정입니다."
+                </p>
+            </div>
+        </section>
+
+        <!-- 02. 프롬프트 엔지니어링이 중요한 이유 -->
+        <section id="section2" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">02. 왜 프롬프트 엔지니어링이 중요한가?</h2>
+                <p class="text-slate-500 mt-2">단순 활용을 넘어 비즈니스 성과를 결정짓는 핵심 차이</p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-slate-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2">1. Instruction (지시)</h3>
-                    <p class="text-slate-600">AI가 수행해야 할 구체적인 작업을 명시합니다. "요약해", "번역해", "분석해" 등 동사로 끝나는 명확한 명령어를 사용하세요.
-                    </p>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 flex gap-4 shadow-sm">
+                    <div class="text-blue-500 mt-1"><i class="fas fa-bullseye text-2xl"></i></div>
+                    <div>
+                        <h4 class="font-bold mb-1">정확성과 품질의 극대화</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">막연한 질문은 막연한 답변을 낳습니다. 엔지니어링을 통해 AI가
+                            환각(Hallucination)을 줄이고 정교한 결과물을 내도록 통제할 수 있습니다.</p>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2">2. Context (맥락)</h3>
-                    <p class="text-slate-600">AI가 상황을 이해할 수 있도록 배경 정보를 제공합니다. "너는 10년차 마케터야", "이 글은 CEO에게 보고할 용도야" 등.
-                    </p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2">3. Input Data (입력 데이터)</h3>
-                    <p class="text-slate-600">AI가 처리해야 할 실제 데이터입니다. 텍스트, 코드, 데이터 표 등을 명확하게 구분하여 입력합니다.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2">4. Output Indicator (출력 형식)</h3>
-                    <p class="text-slate-600">원하는 결과물의 형식을 지정합니다. "표로 정리해줘", "불렛포인트 3개로 요약해줘", "JSON 포맷으로 줘" 등.</p>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 flex gap-4 shadow-sm">
+                    <div class="text-blue-500 mt-1"><i class="fas fa-clock text-2xl"></i></div>
+                    <div>
+                        <h4 class="font-bold mb-1">업무 효율 및 시간 단축</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">잘 짜인 프롬프트 하나는 수십 번의 재수정 과정을 생략하게 만듭니다. 반복 업무를
+                            즉시 자동화할 수 있는 강력한 무기가 됩니다.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-laptop-code text-emerald-600 mr-2"></i>실전 프롬프트 예시</h2>
-            <div class="bg-slate-900 text-slate-200 p-6 rounded-xl font-mono text-sm leading-relaxed">
-                <p class="text-emerald-400 mb-2">// 나쁜 예시</p>
-                <p class="mb-6">이거 마케팅 문구 좀 써줘.</p>
+        <!-- 03. 프롬프트 엔지니어링의 핵심요소 4가지 -->
+        <section id="section3" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">03. 프롬프트 설계의 4대 핵심 요소</h2>
+                <p class="text-slate-500 mt-2">이 4가지만 갖춰도 결과물의 수준이 80% 이상 향상됩니다.</p>
+            </div>
 
-                <p class="text-emerald-400 mb-2">// 좋은 예시</p>
-                <p class="mb-2"><span class="text-blue-400">[Role]</span> 너는 전문 뷰티 카피라이터야.</p>
-                <p class="mb-2"><span class="text-blue-400">[Task]</span> 20대 여성을 타겟으로 한 새로운 수분 크림의 인스타그램 광고 카피를 작성해줘.
-                </p>
-                <p class="mb-2"><span class="text-blue-400">[Context]</span> 제품의 핵심 성분은 히알루론산이고, 끈적임 없이 산뜻한 것이 특징이야.</p>
-                <p class="mb-2"><span class="text-blue-400">[Format]</span> 이모지를 포함하여 3가지 버전으로, 각각 해시태그 5개를 포함해서 작성해줘.
-                </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Element 1 -->
+                <div class="feature-card p-8 border-l-4 border-l-blue-500 relative">
+                    <span class="element-number">01</span>
+                    <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-blue-600">
+                        <i class="fas fa-check-square"></i> 지시 (Instruction)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">모델이 수행하기를 원하는 <strong>구체적인 작업</strong>을 명시합니다.</p>
+                </div>
+                <!-- Element 2 -->
+                <div class="feature-card p-8 border-l-4 border-l-blue-500 relative">
+                    <span class="element-number">02</span>
+                    <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-blue-600">
+                        <i class="fas fa-info-circle"></i> 맥락 (Context)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">배경 지식, 페르소나(역할), 제약 조건을 포함합니다.</p>
+                </div>
+                <!-- Element 3 -->
+                <div class="feature-card p-8 border-l-4 border-l-blue-500 relative">
+                    <span class="element-number">03</span>
+                    <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-blue-600">
+                        <i class="fas fa-database"></i> 입력 데이터 (Input Data)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">답변을 위해 처리해야 할 <strong>원천 정보</strong>를 제공합니다.</p>
+                </div>
+                <!-- Element 4 -->
+                <div class="feature-card p-8 border-l-4 border-l-blue-500 relative">
+                    <span class="element-number">04</span>
+                    <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-blue-600">
+                        <i class="fas fa-file-alt"></i> 출력 형식 (Output Indicator)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">결과물의 <strong>타입이나 구조</strong>를 지정합니다.</p>
+                </div>
             </div>
         </section>
+
+        <!-- 04. 프롬프트의 좋은 사례 (신규 섹션) -->
+        <section id="section4" class="space-y-12">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">04. 실무를 바꾸는 프롬프트 성공 사례</h2>
+                <p class="text-slate-500 mt-2">막연한 질문(Bad)을 구조화된 설계(Good)로 바꾸는 예시입니다.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Case 1: 제조 공정 리서치 -->
+                <div class="case-box">
+                    <div class="p-4 bg-slate-900 text-white font-bold text-sm flex items-center gap-2">
+                        <i class="fas fa-industry"></i> 사례 1: Lean/6Sigma 기반 공정 개선 보고서
+                    </div>
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-6 case-bad">
+                            <p class="text-xs font-bold text-red-600 mb-2 uppercase">나쁜 사례 (Vague)</p>
+                            <p class="text-sm text-slate-700 italic">"공정 낭비를 줄이는 방법에 대해 보고서 하나 써줘."</p>
+                            <p class="mt-4 text-[11px] text-slate-400">→ 결과: 인터넷에 있는 뻔한 이론들만 나열됨.</p>
+                        </div>
+                        <div class="p-6 case-good">
+                            <p class="text-xs font-bold text-emerald-600 mb-2 uppercase">좋은 사례 (Structured)</p>
+                            <p class="text-[13px] text-slate-800 leading-relaxed font-medium">
+                                "[Role] 너는 20년 경력의 스마트 팩토리 컨설턴트야.<br>
+                                [Context] 현재 자동차 부품 조립 라인에서 '대기 낭비'가 심해지고 있어.<br>
+                                [Task] 첨부한 공정 시간 데이터를 분석해서, Lean 관점의 개선안 3가지를 도출해줘.<br>
+                                [Output] 분석 결과는 경영진 보고용 표 형식으로 정리하고, 마지막에 기대 효과를 정량적으로 요약해."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: 앱 크리에이터 로직 -->
+                <div class="case-box">
+                    <div class="p-4 bg-slate-900 text-white font-bold text-sm flex items-center gap-2">
+                        <i class="fas fa-mobile-alt"></i> 사례 2: 비즈니스 자동화 앱 개발 설계
+                    </div>
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-6 case-bad">
+                            <p class="text-xs font-bold text-red-600 mb-2 uppercase">나쁜 사례 (Vague)</p>
+                            <p class="text-sm text-slate-700 italic">"재고 관리하는 앱 하나 만들려고 하는데 코딩해줘."</p>
+                            <p class="mt-4 text-[11px] text-slate-400">→ 결과: 너무 방대하고 쓸모없는 코드 덩어리 출력.</p>
+                        </div>
+                        <div class="p-6 case-good">
+                            <p class="text-xs font-bold text-emerald-600 mb-2 uppercase">좋은 사례 (Structured)</p>
+                            <p class="text-[13px] text-slate-800 leading-relaxed font-medium">
+                                "[Target] 코딩 지식이 없는 현장 실무자가 쓸 Glide 앱을 기획 중이야.<br>
+                                [Task] '자재 입출고 스캔' 기능을 위한 Google Sheets 데이터베이스 구조를 짜줘.<br>
+                                [Constrain] 중복 입력 방지 로직과 실시간 재고량 계산 수식을 반드시 포함해.<br>
+                                [Output] 데이터 칼럼 리스트와 각 칼럼의 데이터 타입, 적용할 함수를 단계별로 설명해줘."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sabu's Insight (Solution Box) -->
+        <section id="sabu-advice">
+            <div class="solution-box p-8 space-y-4 shadow-sm">
+                <p class="text-emerald-800 font-bold text-xl flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i> 김사부의 프롬프트 튜닝 팁
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-emerald-900 leading-relaxed">
+                    <div class="bg-white/50 p-5 rounded-xl border border-emerald-100">
+                        <strong>"커뮤니케이션의 낭비를 제거하십시오"</strong><br>
+                        Lean 관점에서 잘못된 프롬프트는 '재작업'이라는 가장 큰 낭비를 만듭니다. 처음부터 4대 요소를 갖춘 프롬프트를 설계하는 것이 가장 빠른 생산성 혁신입니다.
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-xl border border-emerald-100">
+                        <strong>"예시(Few-shot)를 적극 활용하십시오"</strong><br>
+                        백 마디 설명보다 하나의 잘된 예시가 AI를 더 똑똑하게 만듭니다. 내가 원하는 출력의 샘플 하나를 프롬프트에 넣는 습관을 기르십시오.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture Summary & Next Steps -->
+        <section
+            class="bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100 mt-20">
+            <h3 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+            <p class="text-slate-500 text-lg md:text-xl font-medium mb-12">
+                이제 설계된 프롬프트를 통해 실제 업무 자동화 도구를 직접 만들어 볼 차례입니다.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-5">
+                <button
+                    class="btn-pdf text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100">
+                    <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+                </button>
+                <button class="btn-back bg-white px-10 py-5 rounded-2xl font-bold text-lg"
+                    onclick="location.href='day02_lecture.html'">
+                    강의실로 돌아가기
+                </button>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-slate-900 text-white py-12 text-center">
-        <p class="opacity-60">© 2026 Master Kim AI Class. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="max-w-4xl mx-auto mt-32 py-16 px-6 border-t border-slate-100 text-center text-slate-400">
+        <p class="font-bold text-slate-800 mb-2 italic tracking-tighter text-xl uppercase">Master Kim AI Consulting</p>
+        <p class="text-[10px] uppercase tracking-widest font-bold">Lean, 6Sigma, AI & Big Data Analysis &copy; 2026</p>
     </footer>
+
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
 </body>
 
 </html>
