@@ -196,3 +196,292 @@
         display: inline;
     }
 }
+
+/* ===== 진도 추적 UI ===== */
+
+/* 진도 개요 카드 */
+.progress-overview-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.progress-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-percentage {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 진도 바 */
+.progress-bar-container {
+    width: 100%;
+    height: 16px;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 9999px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 통계 항목 */
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.stat-item i {
+    font-size: 1.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Day 진도 배지 */
+.day-progress-badge {
+    display: inline-block;
+}
+
+.progress-circle {
+    position: relative;
+    display: inline-block;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* 다음 학습 카드 */
+.next-lesson-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.next-lesson-card.completed {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.next-lesson-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.next-lesson-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.next-lesson-type {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 16px;
+}
+
+.next-lesson-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: white;
+    color: #667eea;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.next-lesson-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 완료 버튼 */
+.complete-button-wrapper {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 2px solid #e5e7eb;
+    text-align: center;
+}
+
+.complete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.complete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.complete-btn.completed {
+    background: #10b981;
+    cursor: not-allowed;
+}
+
+.complete-btn:disabled {
+    opacity: 0.7;
+}
+
+/* 완료 체크 표시 */
+.lecture-completed {
+    position: relative;
+}
+
+.lecture-completed::before {
+    content: '✓';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    z-index: 10;
+}
+
+/* 진도 바 작은 버전 */
+.progress-bar-small {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-fill-small {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 9999px;
+    transition: width 0.5s ease;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .progress-overview-card {
+        padding: 16px;
+    }
+
+    .progress-percentage {
+        font-size: 1.5rem;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .next-lesson-title {
+        font-size: 1.25rem;
+    }
+
+    .complete-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
