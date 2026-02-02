@@ -83,6 +83,12 @@
                         <i class="fas fa-bullhorn w-5"></i> 공지사항 관리
                     </a>
                 </li>
+                <li>
+                    <a href="#" class="sidebar-link flex items-center gap-3 px-6 py-3 text-slate-600 transition-colors"
+                        onclick="switchTab('resources', this)">
+                        <i class="fas fa-folder-open w-5"></i> 자료실 관리
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -375,6 +381,59 @@
                 </div>
             </div>
 
+            <!-- 5. RESOURCES VIEW -->
+            <div id="resources-view" class="space-y-6 hidden animate-fade-in">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800">자료실 관리</h3>
+                        <p class="text-sm text-slate-500 mt-1">과정 소개 PDF 등 학습 자료를 관리합니다</p>
+                    </div>
+                </div>
+
+                <!-- PDF Upload Section -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-lg text-slate-800 mb-4"><i
+                            class="fas fa-file-pdf text-red-500 mr-2"></i>과정 소개 PDF</h4>
+
+                    <!-- Current PDF Display -->
+                    <div id="currentPdfDisplay" class="mb-4">
+                        <div class="text-center py-8 text-slate-400">
+                            <i class="fas fa-spinner fa-spin mb-2"></i>
+                            <p>PDF 정보를 불러오는 중...</p>
+                        </div>
+                    </div>
+
+                    <!-- Upload Form -->
+                    <div
+                        class="border-2 border-dashed border-slate-200 rounded-xl p-6 hover:border-indigo-300 transition-colors">
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-cloud-upload-alt text-2xl text-indigo-600"></i>
+                            </div>
+                            <div class="text-center">
+                                <h5 class="font-bold text-slate-800 mb-1">새 PDF 업로드</h5>
+                                <p class="text-sm text-slate-500">PDF 파일을 선택하여 업로드하세요 (최대 10MB)</p>
+                            </div>
+                            <input type="file" id="pdfFileInput" accept=".pdf" class="hidden">
+                            <button onclick="document.getElementById('pdfFileInput').click()"
+                                class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">
+                                <i class="fas fa-file-upload mr-2"></i>파일 선택
+                            </button>
+                            <div id="uploadProgress" class="hidden w-full max-w-md">
+                                <div class="flex justify-between text-sm text-slate-600 mb-2">
+                                    <span id="uploadFileName"></span>
+                                    <span id="uploadPercent">0%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <div id="uploadProgressBar" class="h-full bg-indigo-500 transition-all"
+                                        style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -383,7 +442,7 @@
         // Tab Switching
         function switchTab(tabId, element) {
             // Hide all views
-            ['dashboard', 'students', 'notices', 'grades'].forEach(id => {
+            ['dashboard', 'students', 'notices', 'grades', 'resources'].forEach(id => {
                 document.getElementById(id + '-view').classList.add('hidden');
                 document.getElementById(id + '-view').classList.remove('block');
             });
@@ -406,9 +465,15 @@
                 'dashboard': '대시보드 개요',
                 'students': '교육생 관리',
                 'notices': '공지사항 관리',
-                'grades': '성적 및 평가'
+                'grades': '성적 및 평가',
+                'resources': '자료실 관리'
             };
             document.getElementById('pageTitle').innerText = titles[tabId];
+
+            // Load resources if switching to resources tab
+            if (tabId === 'resources') {
+                if (window.loadCourseIntro) window.loadCourseIntro();
+            }
         }
 
         // Mock Data for Student List
@@ -785,6 +850,162 @@
 
         // Initial Load
         window.loadAdminNotices();
+
+        // ==========================================
+        // PDF UPLOAD/DOWNLOAD LOGIC (RESOURCES)
+        // ==========================================
+        import { storage } from './js/firebase-config.js';
+        import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+        import { setDoc, getDoc, doc as firestoreDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Load current course intro PDF
+        window.loadCourseIntro = async () => {
+            const displayContainer = document.getElementById('currentPdfDisplay');
+            if (!displayContainer) return;
+
+            displayContainer.innerHTML = '<div class="text-center py-8 text-slate-400"><i class="fas fa-spinner fa-spin mb-2"></i><p>PDF 정보를 불러오는 중...</p></div>';
+
+            try {
+                const docRef = firestoreDoc(db, "resources", "courseIntro");
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    displayContainer.innerHTML = `
+                        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-file-pdf text-2xl text-red-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-800">${data.fileName || '과정 소개.pdf'}</p>
+                                    <p class="text-xs text-slate-500">업로드: ${data.uploadDate || 'N/A'}</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="${data.url}" target="_blank" class="text-indigo-600 hover:text-indigo-700 p-2" title="미리보기">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <button onclick="deleteCourseIntro()" class="text-red-500 hover:text-red-600 p-2" title="삭제">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    displayContainer.innerHTML = '<div class="text-center py-8 text-slate-400"><i class="fas fa-folder-open text-3xl mb-2"></i><p>업로드된 PDF가 없습니다</p></div>';
+                }
+            } catch (error) {
+                console.error("Error loading course intro:", error);
+                displayContainer.innerHTML = '<div class="text-center py-8 text-red-400"><i class="fas fa-exclamation-triangle mb-2"></i><p>정보를 불러올 수 없습니다</p></div>';
+            }
+        };
+
+        // Delete course intro PDF
+        window.deleteCourseIntro = async () => {
+            if (!confirm('과정 소개 PDF를 삭제하시겠습니까?')) return;
+
+            try {
+                // Delete from Firestore
+                const docRef = firestoreDoc(db, "resources", "courseIntro");
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+
+                    // Delete from Storage
+                    if (data.storagePath) {
+                        const fileRef = ref(storage, data.storagePath);
+                        await deleteObject(fileRef);
+                    }
+
+                    // Delete Firestore document
+                    await setDoc(docRef, {});
+
+                    alert('PDF가 삭제되었습니다');
+                    window.loadCourseIntro();
+                }
+            } catch (error) {
+                console.error("Error deleting PDF:", error);
+                alert('삭제 실패: ' + error.message);
+            }
+        };
+
+        // Handle file selection and upload
+        document.getElementById('pdfFileInput')?.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            // Validate file type
+            if (file.type !== 'application/pdf') {
+                alert('PDF 파일만 업로드 가능합니다');
+                e.target.value = '';
+                return;
+            }
+
+            // Validate file size (10MB)
+            if (file.size > 10 * 1024 * 1024) {
+                alert('파일 크기는 10MB를 초과할 수 없습니다');
+                e.target.value = '';
+                return;
+            }
+
+            // Show progress
+            const progressDiv = document.getElementById('uploadProgress');
+            const fileNameSpan = document.getElementById('uploadFileName');
+            const percentSpan = document.getElementById('uploadPercent');
+            const progressBar = document.getElementById('uploadProgressBar');
+
+            progressDiv.classList.remove('hidden');
+            fileNameSpan.textContent = file.name;
+
+            // Create storage reference
+            const storagePath = `resources/course-intro.pdf`;
+            const storageRef = ref(storage, storagePath);
+
+            // Upload file
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            uploadTask.on('state_changed',
+                (snapshot) => {
+                    // Progress
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    percentSpan.textContent = Math.round(progress) + '%';
+                    progressBar.style.width = progress + '%';
+                },
+                (error) => {
+                    // Error
+                    console.error('Upload error:', error);
+                    alert('업로드 실패: ' + error.message);
+                    progressDiv.classList.add('hidden');
+                    e.target.value = '';
+                },
+                async () => {
+                    // Success
+                    try {
+                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                        const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+
+                        // Save to Firestore
+                        await setDoc(firestoreDoc(db, "resources", "courseIntro"), {
+                            fileName: file.name,
+                            url: downloadURL,
+                            storagePath: storagePath,
+                            uploadDate: today,
+                            updatedAt: new Date()
+                        });
+
+                        alert('PDF가 업로드되었습니다');
+                        progressDiv.classList.add('hidden');
+                        e.target.value = '';
+                        window.loadCourseIntro();
+                    } catch (error) {
+                        console.error('Error saving metadata:', error);
+                        alert('메타데이터 저장 실패: ' + error.message);
+                    }
+                }
+            );
+        });
     </script>
 </body>
 
