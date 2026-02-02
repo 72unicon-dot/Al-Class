@@ -7,6 +7,7 @@
     <title>나의 강의실 | AI 실무 마스터 클래스</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
@@ -48,6 +49,11 @@
                 </div>
             </div>
             <div class="flex items-center gap-4">
+                <a href="search.html"
+                    class="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
+                    <i class="fas fa-search"></i>
+                    <span class="hidden md:inline">검색</span>
+                </a>
                 <span id="userEmailDisplay" class="text-sm text-gray-600 hidden md:inline font-medium"></span>
                 <button onclick="logout()"
                     class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg text-sm font-bold transition-colors">
@@ -59,6 +65,19 @@
 
     <!-- Main Content -->
     <main class="flex-grow">
+        <!-- Progress Overview Section -->
+        <section class="py-8 bg-gradient-to-br from-indigo-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Progress Card -->
+                    <div id="progressContainer"></div>
+
+                    <!-- Next Lesson Recommendation -->
+                    <div id="nextLessonContainer" class="mt-6"></div>
+                </div>
+            </div>
+        </section>
+
         <section class="py-12 bg-gray-50" id="curriculum">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -756,14 +775,23 @@
     <script type="module">
         import { auth } from './js/firebase-config.js';
         import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { displayTotalProgress, displayNextLesson } from './js/progress-ui.js';
 
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 alert("로그인이 필요합니다.");
                 window.location.href = 'index.html';
             } else {
                 const emailDisplay = document.getElementById('userEmailDisplay');
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+
+                // 진도 추적 UI 초기화
+                try {
+                    await displayTotalProgress(user.uid, 'progressContainer');
+                    await displayNextLesson(user.uid, 'nextLessonContainer');
+                } catch (error) {
+                    console.error('진도 표시 오류:', error);
+                }
             }
         });
 
