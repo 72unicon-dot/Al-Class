@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 템플릿 사용 예시</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- 방법 1: 표준 강의 헤더 (수동 HTML) -->
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <!-- 사용자 정보 및 버튼 영역 -->
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="day01_lecture.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의로 돌아가기</span>
+            </a>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">강의 제목</h1>
+            <p class="text-xl opacity-90">강의 설명</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-4">헤더 템플릿 사용 가이드</h2>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+            <h3 class="text-lg font-bold mb-3">📋 사용 방법</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm">
+                <li>위의 헤더 HTML을 복사</li>
+                <li>강의 페이지의 기존 헤더를 교체</li>
+                <li>제목과 부제목을 수정</li>
+                <li>backLink를 해당 강의 목록 페이지로 변경</li>
+                <li>아래 JavaScript 코드 추가</li>
+            </ol>
+        </div>
+
+        <div class="bg-slate-900 text-white p-6 rounded-lg">
+            <h3 class="text-lg font-bold mb-3">💻 JavaScript 코드</h3>
+            <pre class="text-sm overflow-x-auto"><code>&lt;script type="module"&gt;
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href = 'index.html';
+        } else {
+            const emailDisplay = document.getElementById('userEmailDisplay');
+            if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+        }
+    });
+&lt;/script&gt;</code></pre>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mt-6">
+            <h3 class="text-lg font-bold mb-2 text-blue-900">✅ 체크리스트</h3>
+            <ul class="space-y-2 text-sm text-blue-800">
+                <li>☐ 헤더에 <code>relative overflow-hidden</code> 클래스 포함</li>
+                <li>☐ userEmailDisplay span 요소 포함</li>
+                <li>☐ 돌아가기 버튼 링크 올바르게 설정</li>
+                <li>☐ JavaScript 코드에서 이메일 표시 로직 포함</li>
+                <li>☐ Firebase auth 초기화 확인</li>
+            </ul>
+        </div>
+    </main>
+
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+                window.location.href = 'index.html';
+            } else {
+                const emailDisplay = document.getElementById('userEmailDisplay');
+                if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+            }
+        });
+    </script>
+</body>
+
+</html>
