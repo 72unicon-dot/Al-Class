@@ -32,48 +32,57 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+
         <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-pencil-ruler text-violet-600 mr-2"></i>핵심 디자인 3원칙</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-violet-50 p-6 rounded-xl text-center">
-                    <div
-                        class="w-12 h-12 bg-white text-violet-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
-                        1</div>
-                    <h3 class="font-bold text-lg mb-2">단순함 (Simplicity)</h3>
-                    <p class="text-slate-600 text-sm">슬라이드 당 하나의 메시지만 전달하세요. 불필요한 장식은 과감히 제거합니다.</p>
-                </div>
-                <div class="bg-violet-50 p-6 rounded-xl text-center">
-                    <div
-                        class="w-12 h-12 bg-white text-violet-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
-                        2</div>
-                    <h3 class="font-bold text-lg mb-2">대비 (Contrast)</h3>
-                    <p class="text-slate-600 text-sm">중요한 것은 크게, 진하게, 다른 색으로 강조하여 시선을 유도합니다.</p>
-                </div>
-                <div class="bg-violet-50 p-6 rounded-xl text-center">
-                    <div
-                        class="w-12 h-12 bg-white text-violet-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
-                        3</div>
-                    <h3 class="font-bold text-lg mb-2">통일성 (Consistency)</h3>
-                    <p class="text-slate-600 text-sm">폰트, 컬러, 아이콘 스타일을 처음부터 끝까지 일관되게 유지합니다.</p>
-                </div>
-            </div>
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-shapes text-indigo-600 mr-2"></i>시각적 계층 구조 (Visual Hierarchy)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+                디자인의 가장 중요한 목적은 <strong>'정보의 전달'</strong>입니다. 사용자가 무엇을 먼저 봐야 할지 모른다면 실패한 디자인입니다.
+                크기, 색상, 위치를 통해 정보의 중요도를 시각적으로 구별하세요.
+            </p>
+            <ul class="space-y-4 text-slate-700 list-disc list-inside ml-2">
+                <li><strong>크기(Scale):</strong> 제목은 본문보다 최소 2배 이상 커야 합니다.</li>
+                <li><strong>색상(Color):</strong> 강조하고 싶은 핵심 키워드에만 포인트 컬러를 사용하세요.</li>
+                <li><strong>공백(Whitespace):</strong> 여백은 비어있는 공간이 아니라 <strong>'숨 쉴 공간'</strong>입니다.</li>
+            </ul>
         </section>
 
         <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-th-large text-violet-600 mr-2"></i>그리드 시스템 활용</h2>
-            <p class="text-slate-600 mb-6 leading-relaxed">눈에 보이지 않는 격자(Grid)에 맞춰 요소를 배치하면 훨씬 전문적으로 보입니다. 3등분 법칙(Rule of
-                Thirds)을 활용하여 이미지와 텍스트의 균형을 맞추세요.</p>
-            <div
-                class="bg-slate-100 h-64 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300">
-                <p class="text-slate-500 font-medium">이미지: 3등분 법칙 예시 다이어그램</p>
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-palette text-indigo-600 mr-2"></i>실무 배색 60-30-10 법칙</h2>
+            <p class="text-slate-600 mb-4">
+                색상 조합이 어렵다면 이 황금 비율을 따르세요. 인테리어 디자인에서 유래했지만 UI/UX에서도 완벽하게 작동합니다.
+            </p>
+            <div class="flex h-24 rounded-xl overflow-hidden shadow-lg my-6">
+                <div class="w-[60%] bg-slate-100 flex items-center justify-center text-slate-500 font-bold">Base (60%)<br>배경/여백</div>
+                <div class="w-[30%] bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">Secondary (30%)<br>본문/카드</div>
+                <div class="w-[10%] bg-indigo-600 flex items-center justify-center text-white font-bold">Accent (10%)<br>버튼/강조</div>
             </div>
+            
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl my-6">
+        <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-2"></i>색상 선택 팁</h4>
+        <p class="text-slate-700 text-sm">초보자는 회색조(Grayscale)로 먼저 디자인을 완성한 후, 마지막에 브랜드 컬러 1가지만 더하는 것이 가장 안전합니다.</p>
+    </div>
+    
         </section>
-    </main>
+        
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+             <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-font text-indigo-600 mr-2"></i>타이포그래피 가독성 가이드</h2>
+             <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-bold mb-2">자간 (Letter Spacing)</h4>
+                    <p class="text-sm text-slate-600 mb-2">글자 사이의 간격입니다. 한글은 자간을 좁혀야 읽기 편합니다.</p>
+                    <div class="bg-slate-50 p-3 rounded text-lg font-bold tracking-widest text-slate-400 mb-1">프레젠테이션 (자간 0)</div>
+                    <div class="bg-slate-50 p-3 rounded text-lg font-bold tracking-tighter text-slate-800">프레젠테이션 (자간 -0.05em)</div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">행간 (Line Height)</h4>
+                    <p class="text-sm text-slate-600 mb-2">글줄 사이의 간격입니다. 본문은 글자 크기의 1.5~1.6배가 적당합니다.</p>
+                    <p class="bg-slate-50 p-3 rounded text-sm leading-tight text-slate-400 mb-1">행간이 너무 좁으면<br>읽기가 답답하고<br>눈이 피로합니다.</p>
+                    <p class="bg-slate-50 p-3 rounded text-sm leading-relaxed text-slate-800">행간이 적당하면<br>눈이 자연스럽게<br>다음 줄로 이동합니다.</p>
+                </div>
+             </div>
+        </section>
+    
 
-    
-    
     <!-- 강의 요약 및 다음 단계 섹션 -->
     <div class="max-w-4xl mx-auto px-6 mb-8 mt-12">
         <div class="bg-indigo-50/50 rounded-2xl p-8 text-center border border-indigo-100">

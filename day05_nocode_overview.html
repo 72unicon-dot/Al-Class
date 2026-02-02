@@ -32,69 +32,64 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-code-branch text-indigo-600 mr-2"></i>API와 노코드의 원리</h2>
-            <p class="text-slate-600 mb-6 leading-relaxed">과거에는 앱과 앱을 연결하려면 개발자가 복잡한 API 코드를 작성해야 했습니다. 노코드 도구는 이 복잡한
-                과정을 "블록 조립"처럼 쉽게 만들어줍니다.</p>
 
-            <div
-                class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 flex flex-col md:flex-row items-center gap-6 justify-center text-center md:text-left">
-                <div class="p-4 bg-white rounded-lg shadow-sm w-32">
-                    <div class="text-3xl">📧</div>
-                    <div class="font-bold mt-2">Gmail</div>
-                </div>
-                <div class="text-indigo-400 text-2xl"><i class="fas fa-arrow-right"></i></div>
-                <div class="p-4 bg-indigo-600 text-white rounded-lg shadow-lg w-32 relative">
-                    <div class="text-3xl">🧩</div>
-                    <div class="font-bold mt-2">Zapier</div>
-                    <span
-                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 border border-yellow-500 text-xs px-2 py-0.5 rounded-full font-bold">Connector</span>
-                </div>
-                <div class="text-indigo-400 text-2xl"><i class="fas fa-arrow-right"></i></div>
-                <div class="p-4 bg-white rounded-lg shadow-sm w-32">
-                    <div class="text-3xl">💬</div>
-                    <div class="font-bold mt-2">Slack</div>
-                </div>
-            </div>
-            <p class="text-center text-sm text-slate-500 mt-4">"Gmail에 메일이 오면(When) -> Zapier가 받아서 -> Slack으로 보낸다(Do)"
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-code-branch text-indigo-600 mr-2"></i>No-Code vs Low-Code</h2>
+            <p class="text-slate-600 mb-6">
+                코딩을 몰라도 앱을 만들 수 있는 시대입니다. 하지만 두 용어는 약간의 차이가 있습니다.
             </p>
+            <table class="w-full text-sm text-left text-slate-600">
+                <thead class="text-xs text-slate-700 uppercase bg-slate-100">
+                    <tr>
+                        <th class="px-6 py-3 rounded-tl-lg">구분</th>
+                        <th class="px-6 py-3">No-Code (노코드)</th>
+                        <th class="px-6 py-3 rounded-tr-lg">Low-Code (로우코드)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b hover:bg-slate-50">
+                        <td class="px-6 py-4 font-bold">주 사용자</td>
+                        <td class="px-6 py-4">기획자, 마케터, 일반인</td>
+                        <td class="px-6 py-4">개발자, 데이터 과학자</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-slate-50">
+                        <td class="px-6 py-4 font-bold">자유도</td>
+                        <td class="px-6 py-4">정해진 템플릿 내에서</td>
+                        <td class="px-6 py-4">높음 (코드 개입 가능)</td>
+                    </tr>
+                    <tr class="bg-white border-b hover:bg-slate-50">
+                        <td class="px-6 py-4 font-bold">학습 곡선</td>
+                        <td class="px-6 py-4">매우 낮음 (하루 만에 가능)</td>
+                        <td class="px-6 py-4">중간 (기초 로직 이해 필요)</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
-                    class="fas fa-rocket text-indigo-600 mr-2"></i>왜 지금 배워야 할까요?</h2>
-            <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                    <div
-                        class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                        1</div>
-                    <div>
-                        <span class="font-bold block text-slate-800">생산성 10배 향상</span>
-                        <span class="text-slate-600 text-sm">반복적인 복사/붙여넣기 업무에서 완전히 해방됩니다.</span>
-                    </div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div
-                        class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                        2</div>
-                    <div>
-                        <span class="font-bold block text-slate-800">인적 오류(Human Error) 제거</span>
-                        <span class="text-slate-600 text-sm">사람은 실수하지만, 시스템은 설정된 대로 정확하게 데이터를 옮깁니다.</span>
-                    </div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <div
-                        class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                        3</div>
-                    <div>
-                        <span class="font-bold block text-slate-800">비용 절감</span>
-                        <span class="text-slate-600 text-sm">개발 외주 비용 없이 현업 담당자가 직접 필요한 도구를 만들 수 있습니다.</span>
-                    </div>
-                </li>
-            </ul>
+             <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-project-diagram text-indigo-600 mr-2"></i>자동화의 핵심: Trigger와 Action</h2>
+             <p class="text-slate-600 mb-6">모든 자동화 툴(Zapier, Make 등)은 <strong>"이 일이 생기면(If this), 저 일을 해라(Then that)"</strong>라는 논리로 작동합니다.</p>
+             
+             <div class="flex items-center justify-center gap-4 my-8">
+                <div class="text-center p-6 bg-blue-50 rounded-xl border-2 border-dashed border-blue-200 w-1/3">
+                    <div class="text-blue-600 font-bold mb-2">Trigger (방아쇠)</div>
+                    <div class="text-xs text-slate-500">새로운 이메일 도착,<br>설문지 제출 완료</div>
+                </div>
+                <div class="text-2xl text-slate-300"><i class="fas fa-arrow-right"></i></div>
+                <div class="text-center p-6 bg-emerald-50 rounded-xl border-2 border-dashed border-emerald-200 w-1/3">
+                    <div class="text-emerald-600 font-bold mb-2">Action (행동)</div>
+                    <div class="text-xs text-slate-500">슬랙으로 알림 발송,<br>스프레드시트에 행 추가</div>
+                </div>
+             </div>
+             
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl my-6">
+        <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-2"></i>자동화 설계 팁</h4>
+        <p class="text-slate-700 text-sm">처음부터 복잡한 워크플로우를 짜지 마세요. '매일 아침 뉴스 크롤링해서 메일로 받기' 같은 아주 작은 반복 업무부터 시작하는 것이 성공의 지름길입니다.</p>
+    </div>
+    
         </section>
     
+
     <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
     <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
         <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
