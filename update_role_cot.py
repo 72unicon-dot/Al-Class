@@ -1,41 +1,23 @@
-<!DOCTYPE html>
-<html lang="ko">
+import os
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>역할 부여와 CoT 기법 - AI Class</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Pretendard', sans-serif;
-        }
+BASE_DIR = r"c:\Users\Win\Desktop\Antigravity 실습\AI Class"
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
-        }
-    </style>
-    <link rel="stylesheet" href="css/common.css">
-</head>
+# 공통 스타일 컴포넌트
+def get_card_style():
+    return 'bg-white p-8 rounded-2xl shadow-sm border border-slate-200'
 
-<body class="bg-slate-50">
-    <header class="gradient-bg text-white py-12 px-8">
-        <div class="max-w-4xl mx-auto">
-            <a href="day02_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
-                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
-            </a>
-            <h1 class="text-3xl font-bold mb-4">역할 부여 & CoT</h1>
-            <p class="text-xl opacity-90">AI의 추론 능력을 200% 끌어올리는 심화 프롬프트 기법</p>
-        </div>
-    </header>
+def get_section_header(icon, title):
+    return f'<h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="{icon} text-indigo-600 mr-2"></i>{title}</h2>'
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+def get_equation(text):
+    return f'<span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">{text}</span>'
 
+# New Role & CoT Content
+role_cot_content = f'''
     <!-- 1. 역할 부여 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-user-tie text-indigo-600 mr-2"></i>1. 역할 부여 (Persona Prompting)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-user-tie", "1. 역할 부여 (Persona Prompting)")}
         
         <div class="mb-8">
             <h3 class="font-bold text-lg mb-2">개념</h3>
@@ -75,8 +57,8 @@
     </section>
 
     <!-- 2. CoT -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-streams text-indigo-600 mr-2"></i>2. 사고의 연쇄 (Chain of Thought, CoT)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-streams", "2. 사고의 연쇄 (Chain of Thought, CoT)")}
         
         <div class="mb-8">
             <h3 class="font-bold text-lg mb-2">개념</h3>
@@ -106,19 +88,19 @@
             <div class="relative pl-6 border-l-2 border-purple-200 space-y-4">
                 <div>
                     <span class="text-xs font-bold text-slate-400">Step 1</span>
-                    <p class="text-sm font-medium text-slate-800">먼저 작년의 월간 불량 개수를 계산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">10,000 × 0.05 = 500개</span></p>
+                    <p class="text-sm font-medium text-slate-800">먼저 작년의 월간 불량 개수를 계산합니다:<br>{get_equation("10,000 × 0.05 = 500개")}</p>
                 </div>
                 <div>
                     <span class="text-xs font-bold text-slate-400">Step 2</span>
-                    <p class="text-sm font-medium text-slate-800">올해 목표인 월간 불량 개수를 계산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">10,000 × 0.03 = 300개</span></p>
+                    <p class="text-sm font-medium text-slate-800">올해 목표인 월간 불량 개수를 계산합니다:<br>{get_equation("10,000 × 0.03 = 300개")}</p>
                 </div>
                 <div>
                     <span class="text-xs font-bold text-slate-400">Step 3</span>
-                    <p class="text-sm font-medium text-slate-800">월간 절감되는 불량 개수를 구합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">500 - 300 = 200개</span></p>
+                    <p class="text-sm font-medium text-slate-800">월간 절감되는 불량 개수를 구합니다:<br>{get_equation("500 - 300 = 200개")}</p>
                 </div>
                 <div>
                     <span class="text-xs font-bold text-slate-400">Step 4</span>
-                    <p class="text-sm font-medium text-slate-800">이를 연간으로 환산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">200 × 12 = 2,400개</span></p>
+                    <p class="text-sm font-medium text-slate-800">이를 연간으로 환산합니다:<br>{get_equation("200 × 12 = 2,400개")}</p>
                 </div>
                 <div class="bg-purple-100 p-3 rounded-lg inline-block">
                     <span class="text-xs font-bold text-purple-600 block">결론</span>
@@ -158,43 +140,51 @@
             </p>
         </div>
     </section>
+'''
 
-
-    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
-    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
-        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
-        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">AI에게 역할을 부여하고 논리적 사고를 유도하여 답변의 품질을 높여보세요.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-5">
-            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
-                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
-            </button>
-            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
-                강의실로 돌아가기
-            </button>
-        </div>
-    </div>
-
-<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
-
-</main>
-</body>
-
-</html>
+def update_file():
+    filename = "day02_role_cot.html"
+    filepath = os.path.join(BASE_DIR, filename)
     
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { addCompleteButton } from './js/progress-ui.js';
-        import { initAuth } from './js/auth-common.js';
+    if not os.path.exists(filepath):
+        print(f"File not found: {filename}")
+        return
 
-        // 공통 인증 초기화
-        initAuth();
+    try:
+        content = ""
+        encoding = 'utf-8'
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            encoding = 'cp949'
+            with open(filepath, 'r', encoding='cp949') as f:
+                content = f.read()
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
-                addCompleteButton(user.uid, 'day02', 'role_cot', 'completeButtonContainer');
-            }
-        });
-    </script>
+        # 삽입 위치 전략
+        summary_marker = '<!-- 강의 요약 및 다음 단계 섹션'
+        summary_start = content.find(summary_marker)
+        
+        main_start_pattern = r'<main[^>]*>'
+        main_match = re.search(main_start_pattern, content)
+        
+        if main_match and summary_start != -1:
+            main_end_idx = main_match.end()
+            
+            header_part = content[:main_end_idx]
+            footer_part = content[summary_start:]
+            
+            new_full_content = header_part + "\n" + role_cot_content + "\n\n    " + footer_part
+            
+            with open(filepath, 'w', encoding=encoding) as f:
+                f.write(new_full_content)
+            print(f"Successfully updated {filename}")
+            
+        else:
+            print(f"Could not parse structure for {filename}")
 
+    except Exception as e:
+        print(f"Error processing {filename}: {e}")
+
+if __name__ == "__main__":
+    update_file()
