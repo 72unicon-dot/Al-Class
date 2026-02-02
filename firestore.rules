@@ -1,0 +1,103 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 사용자 인증 확인 함수
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // 본인 데이터인지 확인
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    // 관리자 확인 (이메일 기반)
+    function isAdmin() {
+      return request.auth != null && 
+             request.auth.token.email in [
+               'admin@aiclass.com',
+               // 관리자 이메일 추가
+             ];
+    }
+    
+    // ===== 학습 진도 데이터 =====
+    match /progress/{userId} {
+      // 본인 데이터만 읽기 가능
+      allow read: if isAuthenticated() && isOwner(userId);
+      
+      // 본인 데이터만 생성/수정 가능
+      allow create, update: if isAuthenticated() && isOwner(userId);
+      
+      // 삭제는 본인 또는 관리자만 가능
+      allow delete: if isAuthenticated() && (isOwner(userId) || isAdmin());
+    }
+    
+    // ===== 사용자 프로필 (선택사항) =====
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+    
+    // ===== 공지사항 =====
+    match /notices/{noticeId} {
+      // 모든 인증된 사용자가 읽기 가능
+      allow read: if isAuthenticated();
+      
+      // 관리자만 작성/수정/삭제 가능
+      allow write: if isAdmin();
+    }
+    
+    // ===== 지원서 =====
+    match /applications/{applicationId} {
+      // 본인 지원서만 읽기 가능
+      allow read: if isAuthenticated() && 
+                     (resource.data.email == request.auth.token.email || isAdmin());
+      
+      // 인증된 사용자는 지원서 생성 가능
+      allow create: if isAuthenticated();
+      
+      // 본인 지원서만 수정 가능
+      allow update: if isAuthenticated() && 
+                       resource.data.email == request.auth.token.email;
+      
+      // 관리자만 삭제 가능
+      allow delete: if isAdmin();
+    }
+    
+    // ===== 기타 컬렉션 차단 =====
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+// ===== Storage Rules =====
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // 사용자 프로필 이미지
+    match /profiles/{userId}/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // 지원서 첨부 파일
+    match /applications/{applicationId}/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    
+    // 강의 자료 (읽기 전용)
+    match /lectures/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if false; // 관리자만 업로드 (별도 관리)
+    }
+    
+    // 기타 파일 차단
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
