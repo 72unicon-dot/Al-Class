@@ -25,6 +25,7 @@
             border-left: 4px solid #7c3aed;
         }
     </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -99,7 +100,9 @@
         </section>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12">
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-white border-t border-slate-200 py-12">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <p class="text-slate-500 text-sm">AI 실무 마스터 클래스 | 제조혁신 길라잡이 김사부</p>
         </div>
@@ -120,6 +123,24 @@
             setTimeout(() => { btn.innerHTML = originalText; }, 2000);
         }
     </script>
+
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from './js/progress-ui.js';
+        import { initAuth } from './js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day02', 'practice_claude', 'completeButtonContainer');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

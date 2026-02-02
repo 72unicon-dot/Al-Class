@@ -25,6 +25,7 @@
             border-left: 4px solid #ef4444;
         }
     </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -188,7 +189,9 @@
         </section>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12 mt-20">
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-white border-t border-slate-200 py-12 mt-20">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <p class="text-slate-500 mb-2 text-sm font-semibold tracking-tighter">제조혁신 길라잡이 김사부 X 한국AI교육진흥원</p>
             <p class="text-slate-400 text-xs italic">&copy; 2025 AI Practical Training Course. All rights reserved.</p>
@@ -213,6 +216,24 @@
             }, 2000);
         }
     </script>
+
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from './js/progress-ui.js';
+        import { initAuth } from './js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day01', 'practice_notebooklm', 'completeButtonContainer');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

@@ -97,6 +97,7 @@
             border-top: 4px solid #4f46e5;
         }
     </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="bg-white text-slate-900">
@@ -494,7 +495,9 @@
 
     </main>
 
-    <footer class="bg-slate-900 text-white py-12 px-6">
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-slate-900 text-white py-12 px-6">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <h5 class="text-xl font-black italic tracking-tighter">MASTER KIM AI CLASS</h5>
@@ -509,14 +512,21 @@
 </body>
 
 </html>
+    
     <script type="module">
         import { auth } from './js/firebase-config.js';
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from './js/progress-ui.js';
+        import { initAuth } from './js/auth-common.js';
+
+        // ê³µí†µ ì¸ì¦ ì´ˆê¸°í™”
+        initAuth();
 
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("È¸¿ø Àü¿ë °­ÀÇÀÔ´Ï´Ù. ·Î±×ÀÎ ÈÄ ÀÌ¿ëÇØÁÖ¼¼¿ä.");
-                window.location.href = 'index.html';
+            if (user) {
+                // ì™„ë£Œ ë²„íŠ¼ ì¶”ê°€ (ìë™ìœ¼ë¡œ dayì™€ lectureId ë§¤í•‘)
+                addCompleteButton(user.uid, 'day01', 'ai_concept', 'completeButtonContainer');
             }
         });
     </script>
+

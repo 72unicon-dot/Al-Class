@@ -17,6 +17,7 @@
             background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
         }
     </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="bg-slate-50">
@@ -85,20 +86,29 @@
         </section>
     </main>
 
-    <footer class="bg-slate-900 text-white py-12 text-center">
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-slate-900 text-white py-12 text-center">
         <p class="opacity-60">Â© 2026 Master Kim AI Class. All rights reserved.</p>
     </footer>
 </body>
 
 </html>
+    
     <script type="module">
         import { auth } from './js/firebase-config.js';
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from './js/progress-ui.js';
+        import { initAuth } from './js/auth-common.js';
+
+        // ê³µí†µ ì¸ì¦ ì´ˆê¸°í™”
+        initAuth();
 
         onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("È¸¿ø Àü¿ë °­ÀÇÀÔ´Ï´Ù. ·Î±×ÀÎ ÈÄ ÀÌ¿ëÇØÁÖ¼¼¿ä.");
-                window.location.href = 'index.html';
+            if (user) {
+                // ì™„ë£Œ ë²„íŠ¼ ì¶”ê°€ (ìë™ìœ¼ë¡œ dayì™€ lectureId ë§¤í•‘)
+                addCompleteButton(user.uid, 'day04', 'video_ai', 'completeButtonContainer');
             }
         });
     </script>
+

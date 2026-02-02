@@ -19,6 +19,7 @@
             border-left: 4px solid #16a34a;
         }
     </style>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900 leading-relaxed">
@@ -66,6 +67,24 @@
             </div>
         </div>
     </main>
+
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from './js/progress-ui.js';
+        import { initAuth } from './js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day03', 'practice_cardnews', 'completeButtonContainer');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

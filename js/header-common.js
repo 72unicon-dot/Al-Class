@@ -3,14 +3,11 @@
  * 모든 강의 및 실습 페이지에서 사용
  */
 
+import { auth } from './firebase-config.js';
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
 // Firebase 인증 상태 확인 및 사용자 이메일 표시
 export function initializeHeader() {
-    // Firebase가 로드되었는지 확인
-    if (typeof auth === 'undefined') {
-        console.error('Firebase auth is not initialized');
-        return;
-    }
-
     // 사용자 인증 상태 확인
     onAuthStateChanged(auth, (user) => {
         if (!user) {
@@ -37,11 +34,12 @@ export function createStandardHeader(options = {}) {
         title = '강의 제목',
         subtitle = '강의 설명',
         backLink = 'day01_lecture.html',
-        backText = '강의로 돌아가기'
+        backText = '강의로 돌아가기',
+        gradientClass = 'gradient-bg' // 기본값 (보라색/파란색)
     } = options;
 
     return `
-    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+    <header class="${gradientClass} text-white py-12 px-8 relative overflow-hidden">
         <!-- 사용자 정보 및 버튼 영역 -->
         <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
             <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
@@ -83,12 +81,4 @@ export function createPracticeHeader(options = {}) {
         </div>
     </header>
     `;
-}
-
-// DOM이 로드된 후 자동 초기화
-if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-        // 헤더 초기화는 각 페이지에서 명시적으로 호출
-        // initializeHeader();
-    });
 }
