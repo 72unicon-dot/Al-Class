@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로고 & 브랜딩 디자인 실습 - AI Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .prompt-box {
+            background-color: #fdf4ff;
+            border-left: 4px solid #db2777;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-pink-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-icons text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">로고 & 브랜딩 디자인 실습</h1>
+            </div>
+            <a href="day03_lecture.html" class="text-sm font-bold text-slate-500 hover:text-pink-600">
+                <i class="fas fa-arrow-left mr-1"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">브랜드의 정체성을 시각화하다</h2>
+            <p class="text-slate-600">생성형 AI를 활용하여 단 몇 초 만에 수십 가지의 로고 시안을 도출하고, 브랜드 컬러와 폰트를 정립합니다.</p>
+        </section>
+
+        <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-xl font-bold mb-4 text-slate-900">핵심 가이드</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="bg-pink-100 text-pink-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-1">1</span>
+                        <span><b>로고 프롬프트 작성:</b> 미니멀리즘, 플랫 디자인 등 원하는 스타일을 정의합니다.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="bg-pink-100 text-pink-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-1">2</span>
+                        <span><b>컬러 팔레트 생성:</b> 브랜드가 주고자 하는 감정(신뢰, 혁신 등)에 맞는 색상을 도출합니다.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="prompt-box p-6 rounded-lg">
+                <h4 class="font-bold mb-2 text-pink-700"><i class="fas fa-terminal mr-2"></i>로고 생성 프롬프트 사례</h4>
+                <pre class="whitespace-pre-wrap text-sm text-slate-700 font-mono">
+Minimalist logo for a high-tech coffee brand, 
+clean lines, vector style, white background, 
+sophisticated blue and gold colors --v 6.0</pre>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

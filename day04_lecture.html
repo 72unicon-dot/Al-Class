@@ -167,7 +167,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2">제품 소개 영상</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">시나리오부터 영상 생성, 편집까지 AI만으로 30초 제품 광고 영상을 완성합니다.</p>
-                        <a href="#"
+                        <a href="day04_practice_video.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-orange-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -182,7 +182,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2">내레이션 음성 생성</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">감정과 스타일을 조절하여 영상에 삽입할 전문 성우급 내레이션을 만듭니다.</p>
-                        <a href="#"
+                        <a href="day04_practice_voice.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-orange-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -197,7 +197,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2">이미지 투 영상 변환</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">정적인 제품 이미지나 로고를 움직이는 영상으로 생동감 있게 변환합니다.</p>
-                        <a href="#"
+                        <a href="day04_practice_convert.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-orange-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -218,14 +218,14 @@
 </body>
 
 </html>
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href = 'index.html';
+        }
+    });
+</script>

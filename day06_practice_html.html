@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS 페이지 생성 실습 - AI Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .prompt-template {
+            background-color: #ecfdf5;
+            border: 1px dashed #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-emerald-600 text-white p-2 rounded-lg">
+                    <i class="fab fa-html5 text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">HTML/CSS 페이지 생성 실습</h1>
+            </div>
+            <a href="day06_lecture.html" class="text-sm font-bold text-slate-500 hover:text-emerald-600">
+                <i class="fas fa-arrow-left mr-1"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">코드 한 줄 없이 만드는 나만의 웹사이트</h2>
+            <p class="text-slate-600">AI에게 원하는 디자인과 기능을 설명하고, 즉석에서 응답하는 코드를 확인하며 나만의 페이지를 빌드합니다.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold mb-4">1단계: 전체 구조 지시</h3>
+                <p class="text-sm text-slate-600">"세련된 다크모드 포트폴리오 사이트를 만들어줘. 헤더, 소개 섹션, 푸터가 포함되어야 해."</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="font-bold mb-4">2단계: 스타일 디테일 수정</h3>
+                <p class="text-sm text-slate-600">"메인 버튼에 호버 효과를 넣고, 모바일에서도 예쁘게 보이도록 반응형 디자인을 적용해줘."</p>
+            </div>
+        </div>
+
+        <div class="prompt-template p-6 rounded-xl">
+            <h4 class="font-bold mb-2 text-emerald-700 text-sm">추천 프롬프트</h4>
+            <p class="font-mono text-xs leading-relaxed">
+                "Tailwind CSS를 사용하여 애플(Apple) 스타일의 깔끔한 랜딩 페이지를 만들어줘.
+                중앙에는 'AI와 함께하는 새로운 도약'이라는 큰 제목이 있고, 그 아래에는 파란색 '시작하기' 버튼이 있어.
+                배경은 아주 연한 회색으로 해줘."
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>

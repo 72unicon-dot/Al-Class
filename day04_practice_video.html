@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 소개 영상 실습 - AI Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .prompt-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #ea580c;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-orange-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-video text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">제품 소개 영상 실습</h1>
+            </div>
+            <a href="day04_lecture.html" class="text-sm font-bold text-slate-500 hover:text-orange-600">
+                <i class="fas fa-arrow-left mr-1"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">AI로 완성하는 30초 광고 영상</h2>
+            <p class="text-slate-600">아이디어만으로 고퀄리티 제품 영상을 제작하는 워크플로우를 경험합니다.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold mb-3 flex items-center gap-2 text-orange-600"><i class="fas fa-magic"></i> Runway
+                    Gen-3 활용</h3>
+                <p class="text-sm text-slate-600">텍스트 프롬프트를 입력하여 실사 수준의 제품 구동 영상을 생성합니다.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold mb-3 flex items-center gap-2 text-orange-600"><i class="fas fa-cut"></i> AI 편집 도구
+                </h3>
+                <p class="text-sm text-slate-600">CapCut AI 또는 Premiere Pro의 AI 기능을 활용하여 컷 편집과 자막을 자동화합니다.</p>
+            </div>
+        </div>
+
+        <div class="prompt-box p-6 rounded-lg">
+            <h4 class="font-bold mb-2 text-orange-700"><i class="fas fa-terminal mr-2"></i>영상 생성 프롬프트 예시</h4>
+            <pre class="whitespace-pre-wrap text-sm text-slate-700 font-mono">
+Cinematic close-up of a premium smartwatch, 
+sleek design, water droplets on the screen, 
+slow motion, professional studio lighting, 
+4k resolution --ar 16:9</pre>
+        </div>
+    </main>
+</body>
+
+</html>

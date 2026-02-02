@@ -168,7 +168,7 @@
                         <h3 class="text-xl font-bold mb-2">To-Do 리스트 앱</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">CRUD(생성, 읽기, 수정, 삭제) 기능을 완벽하게 구현한 할 일 관리 앱을 만듭니다.
                         </p>
-                        <a href="#"
+                        <a href="day07_practice_todo.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -184,7 +184,7 @@
                         <h3 class="text-xl font-bold mb-2">AI 챗봇 구현</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">OpenAI API를 연동하여 실제 대화가 가능한 나만의 AI 챗봇 웹 서비스를
                             구축합니다.</p>
-                        <a href="#"
+                        <a href="day07_practice_chatbot_app.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -200,7 +200,7 @@
                         <h3 class="text-xl font-bold mb-2">반응형 UI 디자인</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">PC, 태블릿, 모바일 등 모든 기기에서 완벽하게 보이는 반응형 웹사이트를 디자인합니다.
                         </p>
-                        <a href="#"
+                        <a href="day07_practice_ui.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -221,14 +221,14 @@
 </body>
 
 </html>
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href = 'index.html';
+        }
+    });
+</script>

@@ -170,7 +170,7 @@
                         <h3 class="text-xl font-bold mb-2">이메일 자동 분류</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">Gmail로 들어오는 메일을 AI가 분석하여 라벨링하고, 중요 메일은 Slack으로 알림을
                             보냅니다.</p>
-                        <a href="#"
+                        <a href="day05_practice_email.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -186,7 +186,7 @@
                         <h3 class="text-xl font-bold mb-2">뉴스 클리핑 자동화</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">매일 아침 특정 키워드의 뉴스를 검색하여 요약하고 Notion 페이지에 자동으로
                             정리합니다.</p>
-                        <a href="#"
+                        <a href="day05_practice_news.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -202,7 +202,7 @@
                         <h3 class="text-xl font-bold mb-2">고객 문의 자동 응답</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">구글 폼으로 접수된 문의 내용을 분석하여 자주 묻는 질문에 대해 AI가 초안 메일을
                             작성합니다.</p>
-                        <a href="#"
+                        <a href="day05_practice_customer.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -223,14 +223,14 @@
 </body>
 
 </html>
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href = 'index.html';
+        }
+    });
+</script>

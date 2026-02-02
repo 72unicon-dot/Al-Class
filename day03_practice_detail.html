@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지 기획안 실습 - AI Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .prompt-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #7c3aed;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-violet-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-desktop text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">상세페이지 기획안 실습</h1>
+            </div>
+            <a href="day03_lecture.html" class="text-sm font-bold text-slate-500 hover:text-violet-600">
+                <i class="fas fa-arrow-left mr-1"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">AI로 만드는 고효율 상세페이지</h2>
+            <p class="text-slate-600">제품의 핵심 셀링 포인트를 분석하고, AI 프롬프트를 통해 시선을 사로잡는 카피와 디자인 구조를 기획합니다.</p>
+        </section>
+
+        <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 italic text-slate-600">
+                <h3 class="text-xl font-bold mb-4 text-slate-900 not-italic">실습 순서</h3>
+                <ol class="list-decimal list-inside space-y-2">
+                    <li>제품의 USP(Unique Selling Point)를 정의합니다.</li>
+                    <li>AI를 활용하여 상세페이지 섹션별 스토리보드를 작성합니다.</li>
+                    <li>고객의 결핍(Pain Point)을 건드리는 헤드라인 카피를 생성합니다.</li>
+                    <li>Canva 또는 Midjourney로 메인 히어로 이미지를 제작합니다.</li>
+                </ol>
+            </div>
+
+            <div class="prompt-box p-6 rounded-lg">
+                <h4 class="font-bold mb-2 text-violet-700"><i class="fas fa-terminal mr-2"></i>상세페이지 기획 프롬프트</h4>
+                <pre class="whitespace-pre-wrap text-sm text-slate-700 font-mono">
+[제품 정보] 노트북 거치대 (거북목 방지, 알루미늄 소재)
+[대상] 하루 8시간 이상 모니터를 보는 직장인
+[요청] 이 제품을 구매해야 하는 이유 3가지를 도출하고, 
+각 이유에 맞는 상세페이지 상단 헤드라인 카피를 섹시하게 써줘.</pre>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

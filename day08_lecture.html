@@ -169,7 +169,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2">개인 프로젝트 완성</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">그동안 배운 모든 내용을 종합하여 나만의 웹 애플리케이션을 완성하고 다듬습니다.</p>
-                        <a href="#"
+                        <a href="day08_practice_project.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-rose-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -185,7 +185,7 @@
                         <h3 class="text-xl font-bold mb-2">Vercel로 배포하기</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">완성된 프로젝트를 Vercel을 통해 전 세계 누구나 접속 가능한 URL로 배포합니다.
                         </p>
-                        <a href="#"
+                        <a href="day08_practice_deploy.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-rose-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -200,7 +200,7 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2">수료식 및 발표</h3>
                         <p class="text-slate-500 text-sm mb-6 flex-1">프로젝트 결과물을 동료들과 공유하고 피드백을 주고받으며 과정을 마무합니다.</p>
-                        <a href="#"
+                        <a href="day08_practice_final.html"
                             class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-rose-600 hover:text-white transition-colors text-center">실습
                             시작하기</a>
                     </div>
@@ -221,14 +221,14 @@
 </body>
 
 </html>
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href = 'index.html';
-            }
-        });
-    </script>
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href = 'index.html';
+        }
+    });
+</script>

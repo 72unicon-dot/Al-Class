@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS 카드뉴스 제작 실습 - AI Master Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .prompt-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-green-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-hashtag text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">SNS 카드뉴스 제작 실습</h1>
+            </div>
+            <a href="day03_lecture.html" class="text-sm font-bold text-slate-500 hover:text-green-600">
+                <i class="fas fa-arrow-left mr-1"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">터지는 SNS 콘텐츠를 만드는 AI 워크플로우</h2>
+            <p class="text-slate-600">ChatGPT로 주제를 선정하고, Canva AI로 단 몇 번의 클릭만으로 세련된 카드뉴스를 완성합니다.</p>
+        </section>
+
+        <div class="space-y-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-xl font-bold mb-4">실습 포인트</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div class="p-4 bg-slate-50 rounded-xl">
+                        <h4 class="font-bold mb-2">1. 후킹 헤드라인</h4>
+                        <p>스크롤을 멈추게 만드는 강렬한 문구 작성법</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl">
+                        <h4 class="font-bold mb-2">2. 비주얼 밸런스</h4>
+                        <p>가독성을 높이는 텍스트와 이미지의 배치</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prompt-box p-6 rounded-lg">
+                <h4 class="font-bold mb-2 text-green-700"><i class="fas fa-terminal mr-2"></i>카드뉴스 기획 프롬프트</h4>
+                <pre class="whitespace-pre-wrap text-sm text-slate-700 font-mono">
+"직장인을 위한 시간 관리 꿀팁 5가지"라는 주제로 
+인스타그램 카드뉴스 6페이지 구성을 기획해줘. 
+각 페이지에 들어갈 제목과 이미지 컨셉을 알려줘.</pre>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
