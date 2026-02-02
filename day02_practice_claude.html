@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 보고서 분석 실습 - 마스터 클래스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .prompt-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #7c3aed;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-violet-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-file-invoice text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight">Claude로 방대한 보고서 분석</h1>
+            </div>
+            <a href="day02_lecture.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-200 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <section class="mb-16 text-center">
+            <span
+                class="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest text-violet-600 uppercase bg-violet-100 rounded-full">Day
+                2 실습 3</span>
+            <h2 class="text-4xl font-extrabold mb-6">수백 페이지를 단 몇 초 만에 요약하기</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Claude의 거대한 컨텍스트 창을 활용하여 긴 보고서를 분석하고
+                숨겨진 리스크와 기회 요인을 찾아내는 인텔리전스 워크플로우를 실습합니다.
+            </p>
+        </section>
+
+        <section class="space-y-12 mb-16">
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fas fa-magnifying-glass-chart text-violet-500"></i> Step 1. 핵심 요지 파악
+                </h4>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt1')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-violet-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt1" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+이 보고서의 핵심적인 주장을 5가지 불렛포인트로 요약해줘. 
+각 요약 뒤에는 원문의 페이지 번호를 명시해줘. 
+전문적인 비즈니스 용어를 사용하여 경영진 보고용으로 작성해.</pre>
+                </div>
+            </div>
+
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <i class="fas fa-triangle-exclamation text-violet-500"></i> Step 2. 리스크 및 시사점 분석
+                </h4>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt2')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-violet-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt2" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+이 보고서가 다루고 있는 주제가 향후 [우리 산업군]에 미칠 수 있는 
+잠재적 리스크 3가지와 기회 요인 3가지를 도출해줘. 
+각 포인트별로 구체적인 대응 전략을 포함해줘.</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 text-white p-10 rounded-3xl text-center">
+            <h3 class="text-2xl font-bold mb-4 text-violet-400">Claude 활용 팁</h3>
+            <p class="text-slate-300">
+                Claude는 긴 텍스트를 읽는 데 특화되어 있습니다.<br>
+                여러 개의 파일을 한꺼번에 업로드하고 <strong>"각 문건의 상충되는 주장을 찾아줘"</strong>라고 요청해 보세요.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">AI 실무 마스터 클래스 | 제조혁신 길라잡이 김사부</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(id) {
+            const text = document.getElementById(id).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check text-green-500"></i> 복사 완료!';
+            setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        }
+    </script>
+</body>
+
+</html>
