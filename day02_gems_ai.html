@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02. Gems를 통해 개인별 맞춤 AI - 마스터 클래스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <a href="day02_lecture.html"
+            class="absolute top-4 right-4 md:top-6 md:right-8 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all z-20">
+            <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의 목록으로</span>
+        </a>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Gems를 통해 개인별 맞춤 AI</h1>
+            <p class="text-xl opacity-90 font-light">나만의 전문가 AI 조수 구축하기</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-3xl card-shadow border border-slate-100">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-gem text-emerald-600"></i> Gemini Gems란?
+            </h2>
+            <div class="space-y-4 text-slate-600 leading-relaxed">
+                <p>Gemini Gems는 특정 역할이나 작업을 위해 <strong>Gemini를 맞춤 설정</strong>하는 기능입니다. 반복되는 프롬프트를 매번 입력할 필요 없이, 지침과 지식을
+                    미리 주입하여 나만의 전문가를 만들 수 있습니다.</p>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+                    <p class="text-sm text-emerald-800">"Gems를 사용하면 복잡한 페르소나와 지침을 한 번만 설정하고, 언제든 즉시 불러와 대화할 수 있습니다."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-emerald-700">
+                    <i class="fas fa-magic"></i> 주요 특징
+                </h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>고정
+                            페르소나:</strong> 특정 도메인 전문가 역할 부여</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>지식
+                            공유:</strong> PDF, 텍스트 문서 등 외부 지식 학습</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>커스텀
+                            지침:</strong> 답변의 형식, 톤, 매너 사전 설정</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-emerald-700">
+                    <i class="fas fa-briefcase"></i> 활용 사례
+                </h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>코드
+                            리뷰어:</strong> 특정 언어 및 컨벤션 기반 코드 분석</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>인사/법무
+                            도움:</strong> 사내 규정 기반 답변 제공</li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-500 mt-1"></i> <strong>콘텐츠
+                            플래너:</strong> 브랜드 보이스를 반영한 초안 작성</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 text-white p-10 rounded-3xl text-center">
+            <h2 class="text-2xl font-bold mb-4">지금 바로 첫 번째 Gem을 만들어보세요!</h2>
+            <p class="text-slate-400 mb-8">나만의 업무 치트키를 만들어 생산성을 극대화하세요.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-white/10 px-4 py-2 rounded-full text-xs">#개인별맞춤AI</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-xs">#GeminiGems</span>
+                <span class="bg-white/10 px-4 py-2 rounded-full text-xs">#업무자동화</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center text-slate-400 text-sm">
+            &copy; 2026 AI 실무 마스터 클래스. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
