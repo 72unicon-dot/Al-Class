@@ -26,10 +26,14 @@
 
 <body class="bg-slate-50 text-slate-900">
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
-        <a href="classroom.html"
-            class="absolute top-4 right-4 md:top-6 md:right-8 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all z-20">
-            <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span>
-        </a>
+        <!-- 사용자 정보 및 버튼 영역 -->
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
             <div class="space-y-2">
                 <span class="text-6xl font-black opacity-20 block mb-[-10px]">02</span>
@@ -233,6 +237,9 @@
         if (!user) {
             alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
             window.location.href = 'index.html';
+        } else {
+            const emailDisplay = document.getElementById('userEmailDisplay');
+            if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
         }
     });
 </script>
