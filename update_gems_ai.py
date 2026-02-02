@@ -1,47 +1,20 @@
-<!DOCTYPE html>
-<html lang="ko">
+import os
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02. Gems를 통해 개인별 맞춤 AI - 마스터 클래스</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Pretendard', sans-serif;
-            scroll-behavior: smooth;
-        }
+BASE_DIR = r"c:\Users\Win\Desktop\Antigravity 실습\AI Class"
 
-        .card-shadow {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-        }
+# 공통 스타일 컴포넌트
+def get_card_style():
+    return 'bg-white p-8 rounded-2xl shadow-sm border border-slate-200'
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
-        }
-    </style>
-    <link rel="stylesheet" href="css/common.css">
-</head>
+def get_section_header(icon, title):
+    return f'<h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="{icon} text-emerald-600 mr-2"></i>{title}</h2>'
 
-<body class="bg-slate-50 text-slate-900">
-    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
-        <a href="day02_lecture.html"
-            class="absolute top-4 right-4 md:top-6 md:right-8 inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all z-20">
-            <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의 목록으로</span>
-        </a>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Gems를 통해 개인별 맞춤 AI</h1>
-            <p class="text-xl opacity-90 font-light">나만의 전문가 AI 조수 구축하기</p>
-        </div>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-
+# New Gems Content
+gems_content = f'''
     <!-- 1. Gems 핵심 개념 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-gem text-emerald-600 mr-2"></i>1. Gems의 핵심 개념</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-gem", "1. Gems의 핵심 개념")}
         <div class="flex flex-col md:flex-row gap-8 items-center">
             <div class="flex-1">
                 <p class="text-slate-600 mb-4 leading-relaxed">
@@ -71,8 +44,8 @@
     </section>
 
     <!-- 2. 주요 특징 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-star text-emerald-600 mr-2"></i>2. 주요 특징</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-star", "2. 주요 특징")}
         <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
                 <h3 class="font-bold text-slate-800 mb-2 flex items-center"><i class="fas fa-pen-fancy text-emerald-500 mr-2"></i>맞춤형 지시 (Custom Instructions)</h3>
@@ -95,8 +68,8 @@
     </section>
 
     <!-- 3. 활용 방법 및 실무 사례 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-tools text-emerald-600 mr-2"></i>3. 활용 방법 및 실무 사례</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-tools", "3. 활용 방법 및 실무 사례")}
         
         <!-- 만드는 법 -->
         <div class="mb-8">
@@ -163,8 +136,8 @@
     </section>
 
     <!-- 4. Gems 활용 팁 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-lightbulb text-emerald-600 mr-2"></i>4. Gems 활용 팁 (Pro Tips)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-lightbulb", "4. Gems 활용 팁 (Pro Tips)")}
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
                 <h4 class="font-bold text-amber-800 mb-3 text-sm flex items-center"><i class="fas fa-magic mr-2"></i>Gem 안에서 Gem 만들기</h4>
@@ -186,51 +159,51 @@
             </div>
         </div>
     </section>
+'''
 
+def update_file():
+    filename = "day02_gems_ai.html"
+    filepath = os.path.join(BASE_DIR, filename)
+    
+    if not os.path.exists(filepath):
+        print(f"File not found: {filename}")
+        return
 
-    <!-- 강의 요약 및 다음 단계 섹션 -->
-    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12">
-        <div class="bg-indigo-50/50 rounded-2xl p-8 text-center border border-indigo-100">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">강의 요약 및 다음 단계</h3>
-            <p class="text-lg text-gray-700 mb-8 word-keep-all">프롬프트의 원리를 이해하는 것이 AI 활용의 핵심입니다.</p>
+    try:
+        content = ""
+        encoding = 'utf-8'
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            encoding = 'cp949'
+            with open(filepath, 'r', encoding='cp949') as f:
+                content = f.read()
+
+        # 삽입 위치 전략
+        summary_marker = '<!-- 강의 요약 및 다음 단계 섹션'
+        summary_start = content.find(summary_marker)
+        
+        main_start_pattern = r'<main[^>]*>'
+        main_match = re.search(main_start_pattern, content)
+        
+        if main_match and summary_start != -1:
+            main_end_idx = main_match.end()
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onclick="alert('교재 파일이 준비되지 않았습니다.')" 
-                    class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2">
-                    <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
-                </button>
-                <a href="classroom.html" 
-                    class="px-6 py-3 bg-white text-indigo-600 border-2 border-indigo-100 rounded-xl font-bold hover:border-indigo-200 hover:bg-indigo-50 transition-all flex items-center justify-center gap-2">
-                    <i class="fas fa-th-large"></i> 강의실로 돌아가기
-                </a>
-            </div>
-        </div>
-    </div>
+            header_part = content[:main_end_idx]
+            footer_part = content[summary_start:]
+            
+            new_full_content = header_part + "\n" + gems_content + "\n\n    " + footer_part
+            
+            with open(filepath, 'w', encoding=encoding) as f:
+                f.write(new_full_content)
+            print(f"Successfully updated {filename}")
+            
+        else:
+            print(f"Could not parse structure for {filename}")
 
-<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
-<footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-4xl mx-auto px-6 text-center text-slate-400 text-sm">
-            &copy; 2026 AI 실무 마스터 클래스. All Rights Reserved.
-        </div>
-    </footer>
+    except Exception as e:
+        print(f"Error processing {filename}: {e}")
 
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { addCompleteButton } from './js/progress-ui.js';
-        import { initAuth } from './js/auth-common.js';
-
-        // 공통 인증 초기화
-        initAuth();
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
-                addCompleteButton(user.uid, 'day02', 'gems_ai', 'completeButtonContainer');
-            }
-        });
-    </script>
-
-</body>
-
-</html>
+if __name__ == "__main__":
+    update_file()
