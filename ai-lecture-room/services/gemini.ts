@@ -2,9 +2,9 @@
 import { GoogleGenAI } from "@google/genai";
 
 // Initialize the Google GenAI SDK using the API key strictly from the environment variable.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
-export const getAIResponse = async (prompt: string, history: {role: string, parts: {text: string}[]}[]) => {
+export const getAIResponse = async (prompt: string, history: { role: string, parts: { text: string }[] }[]) => {
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
