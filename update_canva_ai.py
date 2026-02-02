@@ -1,41 +1,23 @@
-<!DOCTYPE html>
-<html lang="ko">
+import os
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canva AI 기능 마스터 - AI Class</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Pretendard', sans-serif;
-        }
+BASE_DIR = r"c:\Users\Win\Desktop\Antigravity 실습\AI Class"
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
-        }
-    </style>
-    <link rel="stylesheet" href="css/common.css">
-</head>
+# 공통 스타일 컴포넌트
+def get_card_style():
+    return 'bg-white p-8 rounded-2xl shadow-sm border border-slate-200'
 
-<body class="bg-slate-50">
-    <header class="gradient-bg text-white py-12 px-8">
-        <div class="max-w-4xl mx-auto">
-            <a href="day03_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
-                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
-            </a>
-            <h1 class="text-3xl font-bold mb-4">Canva AI 기능 마스터</h1>
-            <p class="text-xl opacity-90">디자이너 없이 고퀄리티 콘텐츠를 1분 만에 제작하기</p>
-        </div>
-    </header>
+def get_section_header(icon, title):
+    return f'<h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="{icon} text-indigo-600 mr-2"></i>{title}</h2>'
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+def get_gradient_badge(text):
+    return f'<span class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">{text}</span>'
 
+# New Canva AI Content
+canva_content = f'''
     <!-- 1. 핵심 개념 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-magic text-indigo-600 mr-2"></i>1. Canva AI 매직 스튜디오의 핵심 개념</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-magic", "1. Canva AI 매직 스튜디오의 핵심 개념")}
         <div class="flex flex-col md:flex-row gap-8 items-center">
             <div class="flex-1">
                 <p class="text-slate-600 mb-4 leading-relaxed">
@@ -59,8 +41,8 @@
     </section>
 
     <!-- 2. 주요 기능 소개 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-th-large text-indigo-600 mr-2"></i>2. 주요 기능 소개</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-th-large", "2. 주요 기능 소개")}
         
         <div class="grid md:grid-cols-3 gap-6">
             <!-- Creation -->
@@ -119,8 +101,8 @@
     </section>
 
     <!-- 3. 실전 활용법 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-list-ol text-indigo-600 mr-2"></i>3. 실전 활용법 (Step-by-Step)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-list-ol", "3. 실전 활용법 (Step-by-Step)")}
         
         <div class="space-y-8">
             <!-- Case 1 -->
@@ -176,8 +158,8 @@
     </section>
 
     <!-- 4. 활용 팁 -->
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-lightbulb text-indigo-600 mr-2"></i>4. 프로의 활용 팁 (Power Tips)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-lightbulb", "4. 프로의 활용 팁 (Power Tips)")}
         <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
                 <h4 class="font-bold text-amber-800 mb-3 flex items-center"><i class="fas fa-comment-dots mr-2"></i>구체적인 프롬프트</h4>
@@ -197,43 +179,54 @@
             </div>
         </div>
     </section>
+'''
 
-
-    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
-    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
-        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
-        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">Canva의 AI 도구를 활용하여 비전문가도 수준 높은 디자인을 쉽고 빠르게 제작할 수 있습니다.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-5">
-            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
-                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
-            </button>
-            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
-                강의실로 돌아가기
-            </button>
-        </div>
-    </div>
-
-<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
-
-</main>
-</body>
-
-</html>
+def update_file():
+    filename = "day03_canva_ai.html"
+    filepath = os.path.join(BASE_DIR, filename)
     
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { addCompleteButton } from './js/progress-ui.js';
-        import { initAuth } from './js/auth-common.js';
+    if not os.path.exists(filepath):
+        print(f"File not found: {filename}")
+        return
 
-        // 공통 인증 초기화
-        initAuth();
+    try:
+        content = ""
+        encoding = 'utf-8'
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            encoding = 'cp949'
+            with open(filepath, 'r', encoding='cp949') as f:
+                content = f.read()
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
-                addCompleteButton(user.uid, 'day03', 'canva_ai', 'completeButtonContainer');
-            }
-        });
-    </script>
+        # 삽입 위치 전략: 
+        # <main> 태그 시작 후 ~ '강의 요약' 섹션 전까지의 내용을 교체
+        
+        summary_marker = '<!-- 강의 요약 및 다음 단계 섹션'
+        summary_start = content.find(summary_marker)
+        
+        main_start_pattern = r'<main[^>]*>'
+        main_match = re.search(main_start_pattern, content)
+        
+        if main_match and summary_start != -1:
+            main_end_idx = main_match.end()
+            
+            # 기존 main 내부 컨텐츠
+            header_part = content[:main_end_idx]
+            footer_part = content[summary_start:]
+            
+            new_full_content = header_part + "\n" + canva_content + "\n\n    " + footer_part
+            
+            with open(filepath, 'w', encoding=encoding) as f:
+                f.write(new_full_content)
+            print(f"Successfully updated {filename}")
+            
+        else:
+            print(f"Could not parse structure for {filename}. Main or Summary marker missing.")
 
+    except Exception as e:
+        print(f"Error processing {filename}: {e}")
+
+if __name__ == "__main__":
+    update_file()
