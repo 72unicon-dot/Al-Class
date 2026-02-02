@@ -1,40 +1,35 @@
-<!DOCTYPE html>
-<html lang="ko">
+import os
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nano Banana 프롬프트 구조 - AI Class</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Pretendard', sans-serif;
-        }
+BASE_DIR = r"c:\Users\Win\Desktop\Antigravity 실습\AI Class"
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
-        }
-    </style>
-    <link rel="stylesheet" href="css/common.css">
-</head>
+# 공통 스타일 컴포넌트 (Reused)
+def get_card_style():
+    return 'bg-white p-8 rounded-2xl shadow-sm border border-slate-200'
 
-<body class="bg-slate-50">
-    <header class="gradient-bg text-white py-12 px-8">
-        <div class="max-w-4xl mx-auto">
-            <a href="day03_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
-                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
-            </a>
-            <h1 class="text-3xl font-bold mb-4">Nano Banana 프롬프트 구조</h1>
-            <p class="text-xl opacity-90">상상하는 모든 이미지를 구현하는 절대 공식</p>
-        </div>
-    </header>
+def get_section_header(icon, title):
+    return f'<h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="{icon} text-violet-600 mr-2"></i>{title}</h2>'
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+def get_tip_box(title, content):
+    return f'''
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl my-6">
+        <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-2"></i>{title}</h4>
+        <p class="text-slate-700 text-sm">{content}</p>
+    </div>
+    '''
 
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-layer-group text-violet-600 mr-2"></i>1. 나노 바나나 프롬프트의 4단계 핵심 구조</h2>
+def get_example_box(title, prompt):
+    return f'''
+    <div class="bg-slate-900 text-white p-6 rounded-xl shadow-lg my-6">
+        <h4 class="text-xs font-bold text-violet-300 uppercase mb-3"><i class="fas fa-terminal mr-2"></i>{title}</h4>
+        <p class="font-mono text-sm leading-relaxed text-slate-300">{prompt}</p>
+    </div>
+    '''
+
+# Nano Banana Content
+nano_banana_content = f'''
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-layer-group", "1. 나노 바나나 프롬프트의 4단계 핵심 구조")}
         <p class="text-slate-600 mb-8">단순히 "멋진 사진"이라고 입력하기보다, 아래와 같은 구조로 상세하게 묘사할 때 모델의 성능이 극대화됩니다.</p>
         
         <div class="grid gap-4">
@@ -80,8 +75,8 @@
         </div>
     </section>
 
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-font text-violet-600 mr-2"></i>2. 텍스트 렌더링 특화 기법</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-font", "2. 텍스트 렌더링 특화 기법")}
         <p class="text-slate-600 mb-6 font-medium">나노 바나나의 가장 큰 강점은 이미지 내에 <span class="text-violet-600 font-bold">정확한 텍스트</span>를 포함시킬 수 있다는 점입니다.</p>
         
         <div class="space-y-6">
@@ -102,16 +97,11 @@
             </div>
         </div>
         
-        
-    <div class="bg-slate-900 text-white p-6 rounded-xl shadow-lg my-6">
-        <h4 class="text-xs font-bold text-violet-300 uppercase mb-3"><i class="fas fa-terminal mr-2"></i>예시 프롬프트</h4>
-        <p class="font-mono text-sm leading-relaxed text-slate-300">A futuristic manufacturing line with a large digital sign hanging from the ceiling that says "INNOVATION" in bold white neon letters, cinematic lighting, photorealistic.</p>
-    </div>
-    
+        {get_example_box("예시 프롬프트", 'A futuristic manufacturing line with a large digital sign hanging from the ceiling that says "INNOVATION" in bold white neon letters, cinematic lighting, photorealistic.')}
     </section>
 
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-laptop-code text-violet-600 mr-2"></i>3. 실습 가이드: 단계별 따라하기</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-laptop-code", "3. 실습 가이드: 단계별 따라하기")}
         <p class="text-slate-600 mb-8">유튜브 콘텐츠 제작이나 기업 컨설팅 자료에 활용할 수 있는 고품질 이미지를 만드는 실습 과정입니다.</p>
         
         <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
@@ -160,8 +150,8 @@
         </div>
     </section>
 
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-bolt text-violet-600 mr-2"></i>4. 활용 팁 (Power User Tips)</h2>
+    <section class="{get_card_style()}">
+        {get_section_header("fas fa-bolt", "4. 활용 팁 (Power User Tips)")}
         <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-indigo-50 p-6 rounded-xl">
                 <h4 class="font-bold text-indigo-900 mb-3 flex items-center"><i class="fas fa-expand-alt mr-2"></i>화면 비율 지정</h4>
@@ -187,43 +177,58 @@
             </div>
         </div>
     </section>
+'''
 
-
-    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
-    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
-        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
-        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">시각적 표현력을 높여 콘텐츠의 가치를 더해보세요.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-5">
-            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
-                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
-            </button>
-            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
-                강의실로 돌아가기
-            </button>
-        </div>
-    </div>
-
-<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
-
-</main>
-</body>
-
-</html>
+def update_file():
+    filename = "day03_nano_banana.html"
+    filepath = os.path.join(BASE_DIR, filename)
     
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { addCompleteButton } from './js/progress-ui.js';
-        import { initAuth } from './js/auth-common.js';
+    if not os.path.exists(filepath):
+        print(f"File not found: {filename}")
+        return
 
-        // 공통 인증 초기화
-        initAuth();
+    try:
+        content = ""
+        encoding = 'utf-8'
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            encoding = 'cp949'
+            with open(filepath, 'r', encoding='cp949') as f:
+                content = f.read()
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
-                addCompleteButton(user.uid, 'day03', 'nano_banana', 'completeButtonContainer');
-            }
-        });
-    </script>
+        # 삽입 위치 전략: 
+        # <main> 태그 시작 후 ~ '강의 요약' 섹션 전까지의 내용을 교체
+        
+        summary_marker = '<!-- 강의 요약 및 다음 단계 섹션'
+        summary_start = content.find(summary_marker)
+        
+        main_start_pattern = r'<main[^>]*>'
+        main_match = re.search(main_start_pattern, content)
+        
+        if main_match and summary_start != -1:
+            main_end_idx = main_match.end()
+            
+            # 기존 main 내부 컨텐츠
+            header_part = content[:main_end_idx]
+            footer_part = content[summary_start:]
+            
+            # 새 컨텐츠 조합
+            # nano_banana_content는 이미 <section> 태그들로 구성됨
+            # main 안에 감싸줄 필요 없음 (이미 main_end_idx 이후니까)
+            
+            new_full_content = header_part + "\n" + nano_banana_content + "\n\n    " + footer_part
+            
+            with open(filepath, 'w', encoding=encoding) as f:
+                f.write(new_full_content)
+            print(f"Successfully updated {filename}")
+            
+        else:
+            print(f"Could not parse structure for {filename}. Main or Summary marker missing.")
 
+    except Exception as e:
+        print(f"Error processing {filename}: {e}")
+
+if __name__ == "__main__":
+    update_file()
