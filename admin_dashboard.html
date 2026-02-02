@@ -932,80 +932,94 @@
         };
 
         // Handle file selection and upload
-        document.getElementById('pdfFileInput')?.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            // Validate file type
-            if (file.type !== 'application/pdf') {
-                alert('PDF 파일만 업로드 가능합니다');
-                e.target.value = '';
+        setTimeout(() => {
+            const fileInput = document.getElementById('pdfFileInput');
+            if (!fileInput) {
+                console.error('PDF file input not found');
                 return;
             }
 
-            // Validate file size (10MB)
-            if (file.size > 10 * 1024 * 1024) {
-                alert('파일 크기는 10MB를 초과할 수 없습니다');
-                e.target.value = '';
-                return;
-            }
+            fileInput.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
 
-            // Show progress
-            const progressDiv = document.getElementById('uploadProgress');
-            const fileNameSpan = document.getElementById('uploadFileName');
-            const percentSpan = document.getElementById('uploadPercent');
-            const progressBar = document.getElementById('uploadProgressBar');
-
-            progressDiv.classList.remove('hidden');
-            fileNameSpan.textContent = file.name;
-
-            // Create storage reference
-            const storagePath = `resources/course-intro.pdf`;
-            const storageRef = ref(storage, storagePath);
-
-            // Upload file
-            const uploadTask = uploadBytesResumable(storageRef, file);
-
-            uploadTask.on('state_changed',
-                (snapshot) => {
-                    // Progress
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    percentSpan.textContent = Math.round(progress) + '%';
-                    progressBar.style.width = progress + '%';
-                },
-                (error) => {
-                    // Error
-                    console.error('Upload error:', error);
-                    alert('업로드 실패: ' + error.message);
-                    progressDiv.classList.add('hidden');
+                // Validate file type
+                if (file.type !== 'application/pdf') {
+                    alert('PDF 파일만 업로드 가능합니다');
                     e.target.value = '';
-                },
-                async () => {
-                    // Success
-                    try {
-                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                        const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+                    return;
+                }
 
-                        // Save to Firestore
-                        await setDoc(firestoreDoc(db, "resources", "courseIntro"), {
-                            fileName: file.name,
-                            url: downloadURL,
-                            storagePath: storagePath,
-                            uploadDate: today,
-                            updatedAt: new Date()
-                        });
+                // Validate file size (10MB)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('파일 크기는 10MB를 초과할 수 없습니다');
+                    e.target.value = '';
+                    return;
+                }
 
-                        alert('PDF가 업로드되었습니다');
+                // Show progress
+                const progressDiv = document.getElementById('uploadProgress');
+                const fileNameSpan = document.getElementById('uploadFileName');
+                const percentSpan = document.getElementById('uploadPercent');
+                const progressBar = document.getElementById('uploadProgressBar');
+
+                if (!progressDiv || !fileNameSpan || !percentSpan || !progressBar) {
+                    console.error('Progress elements not found');
+                    alert('업로드 UI 요소를 찾을 수 없습니다');
+                    return;
+                }
+
+                progressDiv.classList.remove('hidden');
+                fileNameSpan.textContent = file.name;
+
+                // Create storage reference
+                const storagePath = `resources/course-intro.pdf`;
+                const storageRef = ref(storage, storagePath);
+
+                // Upload file
+                const uploadTask = uploadBytesResumable(storageRef, file);
+
+                uploadTask.on('state_changed',
+                    (snapshot) => {
+                        // Progress
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        percentSpan.textContent = Math.round(progress) + '%';
+                        progressBar.style.width = progress + '%';
+                    },
+                    (error) => {
+                        // Error
+                        console.error('Upload error:', error);
+                        alert('업로드 실패: ' + error.message);
                         progressDiv.classList.add('hidden');
                         e.target.value = '';
-                        window.loadCourseIntro();
-                    } catch (error) {
-                        console.error('Error saving metadata:', error);
-                        alert('메타데이터 저장 실패: ' + error.message);
+                    },
+                    async () => {
+                        // Success
+                        try {
+                            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                            const today = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+
+                            // Save to Firestore
+                            await setDoc(firestoreDoc(db, "resources", "courseIntro"), {
+                                fileName: file.name,
+                                url: downloadURL,
+                                storagePath: storagePath,
+                                uploadDate: today,
+                                updatedAt: new Date()
+                            });
+
+                            alert('PDF가 업로드되었습니다');
+                            progressDiv.classList.add('hidden');
+                            e.target.value = '';
+                            window.loadCourseIntro();
+                        } catch (error) {
+                            console.error('Error saving metadata:', error);
+                            alert('메타데이터 저장 실패: ' + error.message);
+                        }
                     }
-                }
-            );
-        });
+                );
+            });
+        }, 500);
     </script>
 </body>
 
