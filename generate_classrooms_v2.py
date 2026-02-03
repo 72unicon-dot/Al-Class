@@ -1,9 +1,9 @@
 import os
+import re
 
-# ==========================================
-# 1. Full Course Data (Synced with injection script)
-# ==========================================
-courses_data = {
+# Configuration for 11 Courses
+# Format: Filename -> { OutputFilename, Title, CurriculumData }
+course_configs = {
     "intro_ethics.html": {
         "output": "classroom_ethics.html",
         "title": "AI 윤리 및 규제",
@@ -14,102 +14,188 @@ courses_data = {
     },
     "intro_basics.html": {
         "output": "classroom_basics.html",
-        "title": "AI 기초 입문",
+        "title": "AI 기초 및 활용",
         "curriculum": [
-            {"title": "Day 1: 생성형 AI와 친해지기", "desc": "LLM의 원리 이해와 3대 AI(ChatGPT, Gemini, Claude) 비교", "details": ["할루시네이션(환각)의 원리와 대처법", "나에게 맞는 최적의 AI 모델 찾기", "모바일 앱 설치 및 기본 세팅"]},
-            {"title": "Day 2: 프롬프트 엔지니어링 기초", "desc": "원하는 결과를 한 번에 얻는 질문의 기술", "details": ["명확한 지시어(Persona, Context) 작성법", "자료 요약 및 이메일 초안 작성 실습", "엑셀 수식 및 번역 업무 자동화"]}
+            {"title": "Day 1: 생성형 AI 원리 이해", "desc": "LLM의 작동 방식과 프롬프트 엔지니어링 기초", "details": ["LLM과 Transformer 구조", "Token과 Context Window 이해", "Zero-shot vs Few-shot Prompting"]},
+            {"title": "Day 2: 업무 생산성 도구", "desc": "ChatGPT, Gemini, Claude 등 주요 툴 활용법", "details": ["이메일 및 보고서 자동 작성", "데이터 분석 및 시각화 실습", "회의록 요약 및 할 일 추출"]}
         ]
     },
     "intro_business.html": {
         "output": "classroom_business.html",
-        "title": "AI 비즈니스 활용",
+        "title": "AI 비즈니스 전략",
         "curriculum": [
-            {"title": "Day 1: 문서 자동화의 기적", "desc": "회의록, 보고서, 제안서 작성 시간 90% 단축하기", "details": ["음성 녹음(Clova Note) 회의록 자동 변환", "Notion AI로 프로젝트 일정 관리하기", "ChatGPT로 시장 조사 보고서 초안 쓰기"]},
-            {"title": "Day 2: 비즈니스 시각화 & 발표", "desc": "설득력 있는 프레젠테이션 자료 자동 생성", "details": ["Gamma로 텍스트를 PPT로 1분 만에 변환", "Midjourney로 저작권 걱정 없는 이미지 생성", "DeepL로 해외 바이어 이메일 및 제안서 번역"]}
+            {"title": "Day 1: AI 트렌드와 비즈니스 기회", "desc": "산업별 AI 도입 사례와 성공 전략", "details": ["금융, 제조, 유통 분야 AI 혁신", "생성형 AI 생태계 분석", "신규 비즈니스 모델 발굴"]},
+            {"title": "Day 2: AI 도입 로드맵 수립", "desc": "우리 조직에 맞는 AI 도입 전략 짜기", "details": ["AI 성숙도 진단 및 목표 설정", "PoC(개념 증명) 기획 실습", "ROI 분석 및 투자 전략"]}
         ]
     },
     "expert_advanced.html": {
         "output": "classroom_advanced.html",
-        "title": "AI 전문가 심화",
+        "title": "AI 심화 개발",
         "curriculum": [
-            {"title": "Phase 1: LLM 심층 이해 (Day 1-3)", "desc": "Transformer 아키텍처와 오픈소스 LLM 활용", "details": ["Transformer 구조와 Attention 메커니즘", "Llama 3, Mistral 등 로컬 LLM 구동", "Prompt Tuning vs Fine-tuning 비교"]},
-            {"title": "Phase 2: RAG 시스템 구축 (Day 4-6)", "desc": "사내 지식 기반의 정확한 답변 시스템 구현", "details": ["텍스트 임베딩과 벡터 데이터베이스 이해", "LangChain을 이용한 문서 검색 파이프라인", "PDF/Web 데이터 연동 챗봇 실습"]},
-            {"title": "Phase 3: Fine-tuning & Agent (Day 7-10)", "desc": "도메인 특화 모델 학습과 자율 에이전트 개발", "details": ["LoRA를 활용한 효율적인 파인튜닝 실습", "자율 에이전트(Agent) 설계 및 툴 사용 권한 부여", "기업용 AI 솔루션 아키텍처 설계"]}
+            {"title": "Day 1: RAG 파이프라인 구축", "desc": "LangChain을 활용한 문서 기반 질의응답 시스템", "details": ["Vector DB와 임베딩 이해", "RAG 아키텍처 설계", "Hallucination 제어 기법"]},
+            {"title": "Day 2: LLM 파인튜닝 실습", "desc": "오픈소스 모델(Llama 3 등) 미세 조정하기", "details": ["데이터셋 준비 및 전처리", "LoRA/QLoRA 효율적 튜닝", "모델 평가 및 배포"]}
         ]
     },
     "special_marketing.html": {
         "output": "classroom_marketing.html",
-        "title": "AI 마케팅 전문가",
+        "title": "AI 마케팅 특화",
         "curriculum": [
-            {"title": "Day 1: 마케팅 페르소나 & 전략", "desc": "ChatGPT로 고객 페르소나 정의 및 타겟 분석", "details": ["경쟁사 분석 및 SWOT 분석 자동화", "고객 페르소나 시뮬레이션 대화", "마케팅 캠페인 슬로건 및 메시지 도출"]},
-            {"title": "Day 2-3: 콘텐츠 자동화 파이프라인", "desc": "블로그, SNS, 상세페이지 콘텐츠 대량 생산", "details": ["SEO 최적화된 블로그 포스팅 10개 1분 생성", "SNS 채널별(인스타, 링크드인) 맞춤 톤앤매너 변환", "상세페이지 세일즈 카피라이팅 자동화"]},
-            {"title": "Day 4-5: 퍼포먼스 마케팅 & 광고 소재", "desc": "고효율 광고 소재 생성 및 데이터 분석", "details": ["클릭을 부르는 광고 배너 대량 제작(Midjourney)", "숏폼 광고 스크립트 및 영상 기획", "광고 성과 데이터 분석 및 리포팅 자동화"]}
+            {"title": "Day 1: AI 카피라이팅 & 콘텐츠", "desc": "고객 페르소나 맞춤형 광고 문구 및 블로그 생성", "details": ["브랜드 톤앤매너 학습시키기", "SEO 최적화 콘텐츠 제작", "소셜 미디어 자동화"]},
+            {"title": "Day 2: 마케팅 데이터 분석", "desc": "고객 반응 데이터 분석 및 예측", "details": ["캠페인 성과 예측 모델링", "고객 세그먼트 자동화", "개인화 마케팅 전략"]}
         ]
     },
     "special_manufacturing.html": {
         "output": "classroom_manufacturing.html",
-        "title": "AI 제조 전문가",
+        "title": "AI 제조/생산 특화",
         "curriculum": [
-            {"title": "Day 1: 제조 데이터와 AI", "desc": "스마트 팩토리 데이터 수집 및 전처리", "details": ["MES/ERP 데이터의 이해와 AI 적용 분야", "시계열 데이터(센서, 진동) 전처리 실습", "Python Pandas를 활용한 기초 데이터 분석"]},
-            {"title": "Day 2-3: 예지 보전 모델링", "desc": "설비 고장 예측을 위한 이상 탐지 모델 구현", "details": ["정상 vs 비정상 데이터 분류 (Classification)", "오토인코더(Autoencoder)기반 이상 탐지", "설비 잔여 수명(RUL) 예측 기초"]},
-            {"title": "Day 4-5: 비전 검사 & 공정 최적화", "desc": "이미지 기반 불량 검출 및 공정 파라미터 최적화", "details": ["YOLO 모델을 활용한 제품 결함 탐지 실습", "공정 변수 최적화를 위한 강화학습 개요", "현장 적용을 위한 AI 모델 배포 전략"]}
+            {"title": "Day 1: 스마트 팩토리와 AI", "desc": "예지 보전 및 품질 검사 자동화", "details": ["IoT 센서 데이터 수집 및 분석", "Computer Vision 품질 관리", "설비 고장 예측 시뮬레이션"]},
+            {"title": "Day 2: 공급망 최적화", "desc": "수요 예측 및 재고 관리 자동화", "details": ["시계열 데이터 기반 수요 예측", "물류 경로 최적화 알고리즘", "재고 비용 절감 전략"]}
         ]
     },
     "special_data.html": {
         "output": "classroom_data.html",
-        "title": "AI 데이터 분석가",
+        "title": "AI 데이터 분석 특화",
         "curriculum": [
-            {"title": "Day 1: 데이터 리터러시 & 탐색", "desc": "코딩 없이 대화로 하는 탐색적 데이터 분석(EDA)", "details": ["ChatGPT Advanced Data Analysis 모드 활용", "데이터 구조 파악 및 결측치 처리 자동화", "기초 통계량 확인 및 데이터 요약"]},
-            {"title": "Day 2-3: 인사이트 도출 & 시각화", "desc": "복잡한 데이터를 직관적인 차트로 변환", "details": ["상관관계 분석 및 핵심 지표 시각화", "고급 차트(히트맵, 산점도) 자동 생성 프롬프트", "경영진 보고용 대시보드 기획"]},
-            {"title": "Day 4-5: 머신러닝 예측 모델링", "desc": "클릭 몇 번으로 만드는 수요 예측 및 분류 모델", "details": ["매출/재고 시계열 예측 모델링", "고객 이탈 예측 분류 모델 실습", "분석 결과 보고서 자동 생성 및 스토리텔링"]}
+            {"title": "Day 1: Pandas AI & Code Interpreter", "desc": "대화형 데이터 분석의 세계", "details": ["자연어로 SQL 쿼리 생성", "자동 데이터 시각화 및 리포팅", "데이터 전처리 자동화"]},
+            {"title": "Day 2: 머신러닝 워크플로우 자동화", "desc": "AutoML을 활용한 모델 개발", "details": ["특성 공학(Feature Engineering) 자동화", "최적 모델 탐색 및 하이퍼파라미터 튜닝", "모델 설명력(XAI) 확보"]}
         ]
     },
     "special_video.html": {
         "output": "classroom_video.html",
-        "title": "AI 영상 크리에이터",
+        "title": "AI 영상 제작 특화",
         "curriculum": [
-            {"title": "Day 1: 영상 기획 & 스크립트", "desc": "조회수를 부르는 킬러 콘텐츠 기획", "details": ["유튜브 트렌드 분석 및 벤치마킹 자동화", "ChatGPT로 숏폼/롱폼 대본 10초 만에 작성", "스토리보드 및 장면 묘사 프롬프트 작성"]},
-            {"title": "Day 2-3: AI 영상 소스 생성", "desc": "촬영 없이 고퀄리티 영상 및 이미지 제작", "details": ["Midjourney로 일관된 캐릭터/배경 생성", "Runway Gen-2/3로 정지 이미지를 영상화", "Camera Motion 컨트롤 및 스타일 변환"]},
-            {"title": "Day 4-5: 편집 & 사운드 & 발행", "desc": "AI 성우 더빙과 자동 자막, 컷 편집 완성", "details": ["ElevenLabs로 감정을 담은 AI 내레이션 생성", "CapCut/Vrew를 활용한 자동 컷 편집 및 자막", "썸네일 제작 및 유튜브 SEO 업로드 전략"]}
+            {"title": "Day 1: AI 영상 생성 도구 활용", "desc": "Sora, Runway, Pika 등 최신 툴 마스터", "details": ["Text-to-Video 프롬프트 기법", "이미지로 영상 애니메이션 만들기", "일관성 있는 캐릭터 영상 제작"]},
+            {"title": "Day 2: 영상 편집 및 후가공", "desc": "AI 기반 컷 편집 및 특수 효과", "details": ["음성 합성 및 립싱크(Lip-sync)", "자동 자막 및 번역", "AI 배경 음악 및 효과음 생성"]}
         ]
     },
     "management_leadership.html": {
         "output": "classroom_leadership.html",
-        "title": "AI시대의 리더십",
+        "title": "AI 리더십",
         "curriculum": [
-            {"title": "Day 1 (오전): AI 패러다임 시프트", "desc": "경영진이 반드시 알아야 할 AI 기술의 본질과 미래", "details": ["Gen AI가 바꿀 산업 지형도와 비즈니스 모델", "Global 기업들의 성공/실패 사례 분석", "우리 기업의 AI 성숙도 진단"]},
-            {"title": "Day 1 (오후): AI 도입 전략 & 의사결정", "desc": "실질적인 성과를 내는 도입 로드맵 수립", "details": ["Top-down vs Bottom-up 도입 전략", "AI 도입 시 고려해야 할 비용(Capex/Opex)과 ROI", "조직 변화 관리(Change Management)와 리더십"]}
+            {"title": "Day 1: AI 시대의 조직 관리", "desc": "AI와 협업하는 조직 문화 만들기", "details": ["AI 리터러시 교육 전략", "변화 관리 및 저항 극복", "AI 윤리 및 거버넌스 수립"]},
+            {"title": "Day 2: 의사결정 지원 시스템", "desc": "데이터 기반의 합리적 경영 의사결정", "details": ["경영 대시보드 및 지표 관리", "시나리오 플래닝 시뮬레이션", "리스크 관리 및 예측"]}
         ]
     },
     "strategy_consultant.html": {
         "output": "classroom_consultant.html",
-        "title": "AI 비즈니스 컨설턴트",
+        "title": "AI 컨설턴트 양성",
         "curriculum": [
-            {"title": "Week 1: AI 기술 및 생태계 이해", "desc": "컨설턴트를 위한 심층 기술 지식", "details": ["LLM, sLLM, RAG, Agent 등 핵심 기술 심화", "AI Value Chain 및 주요 플레이어 분석", "산업별(금융, 제조, 유통) AI 유스케이스 스터디"]},
-            {"title": "Week 2: 기업 진단 방법론", "desc": "AS-IS 분석 및 Pain Point 발굴", "details": ["AI 준비도 진단 툴킷 활용 실습", "데이터 인프라 및 거버넌스 진단", "임직원 인터뷰 및 프로세스 마이닝 기법"]},
-            {"title": "Week 3: AI 전략 수립 & 로드맵", "desc": "TO-BE 모델 설계 및 실행 계획", "details": ["고객 여정 지도(CJM) 기반 AI 서비스 기획", "PoC 대상 과제 우선순위 도출 매트릭스", "단계별 도입 로드맵 및 예산 산정"]},
-            {"title": "Week 4: 제안 및 프로젝트 관리", "desc": "설득력 있는 제안서 작성 및 PM 역량", "details": ["AI 도입 ROI 시뮬레이션 및 정량적 기대효과 산출", "발주처를 설득하는 컨설팅 제안서 작성 실습", "AI 프로젝트 리스크 관리 및 품질 보증 방안"]}
+            {"title": "Day 1: AI 컨설팅 방법론", "desc": "기업의 AI 도입 니즈 발굴 및 솔루션 제안", "details": ["DT(Digital Transformation) 진단 프레임워크", "As-Is vs To-Be 분석", "RFP 작성 및 제안서 작성법"]},
+            {"title": "Day 2: 프로젝트 관리 및 커뮤니케이션", "desc": "성공적인 AI 프로젝트 리딩", "details": ["Agile 방법론 적용", "이해관계자 소통 전략", "프로젝트 리스크 관리"]}
         ]
     },
     "master_app_creator.html": {
         "output": "classroom_app_creator.html",
-        "title": "비즈니스 앱 크리에이터",
+        "title": "나만의 앱 만들기",
         "curriculum": [
-            {"title": "Month 1: 풀스택 AI 개발 기초", "desc": "Python, JS, DB 및 기본기 다지기", "details": ["Python & JavaScript 핵심 문법 심화", "FastAPI 백엔드 & React 프론트엔드 기초", "SQL vs NoSQL 데이터베이스 설계 및 구축"]},
-            {"title": "Month 2: LLM 애플리케이션 심화", "desc": "LangChain, RAG, Agent 개발", "details": ["LangChain LCEL 문법 및 Chain 설계", "Pinecone/ChromaDB 활용 RAG 파이프라인 구축", "멀티 모달 기능(이미지/음성) 연동 및 메모리 구현"]},
-            {"title": "Month 3: 엔터프라이즈 배포 & 운영", "desc": "실서비스 수준의 아키텍처 및 DevOps", "details": ["Docker 컨테이너화 및 CI/CD 파이프라인", "AWS/GCP 클라우드 인프라 구축 및 오토스케일링", "시스템 모니터링, 로깅, 보안 가이드라인"]},
-            {"title": "Final: 캡스톤 프로젝트", "desc": "나만의 상용화 가능한 SaaS 런칭", "details": ["아이디어 기획부터 MVP 개발, 배포까지 전 과정 수행", "실제 사용자 피드백 반영 및 기능 고도화", "투자 유치를 위한 IR 피칭 덱 작성 및 발표"]}
+            {"title": "Day 1: 노코드/로우코드 툴 활용", "desc": "코딩 없이 앱 프로토타입 만들기", "details": ["Bubble, FlutterFlow 기초", "UI/UX 디자인 원칙", "데이터베이스 연동 실습"]},
+            {"title": "Day 2: 앱 배포 및 수익화", "desc": "실제 스토어 출시 및 운영", "details": ["API 연동 및 외부 서비스 활용", "앱스토어 등록 절차", "사용자 분석 및 업데이트 전략"]}
         ]
     }
 }
 
-# ==========================================
-# 2. Template Logic
-# ==========================================
+# Template HTML used for generation
+template = """<!DOCTYPE html>
+<html lang="ko">
 
-def generate_card(index, module):
-    # Colors for rotation
-    colors = ["indigo", "emerald", "blue", "purple", "rose", "amber", "teal", "cyan"]
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{COURSE_TITLE} - 나의 강의실</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {{
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8fafc;
+        }}
+
+        .gradient-text {{
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }}
+    </style>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="studio_main.html" class="text-slate-400 hover:text-indigo-600 transition-colors mr-2" title="메인으로 나가기">
+                    <i class="fas fa-home text-xl"></i>
+                </a>
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+                    <i class="fas fa-graduation-cap text-white text-lg"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-slate-800">Al Master Class <span
+                        class="text-slate-400 font-normal text-sm ml-1">나의 강의실</span></span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200 focus-within:ring-2 focus-within:ring-indigo-100 transition-all">
+                    <i class="fas fa-search text-slate-400 text-sm"></i>
+                    <input type="text" placeholder="검색"
+                        class="bg-transparent border-none focus:outline-none text-sm ml-2 w-48 text-slate-600 placeholder:text-slate-400">
+                </div>
+                <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+                <div class="flex items-center gap-3">
+                    <span id="userEmailDisplay" class="text-sm font-medium text-slate-600"></span>
+                    <button id="logoutBtn"
+                        class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors">
+                        <i class="fas fa-sign-out-alt"></i> 로그아웃
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold mb-4 tracking-wide border border-indigo-100">MY CURRICULUM</span>
+            <h1 class="text-3xl md:text-4xl font-black mb-3 text-slate-900">{COURSE_TITLE}</h1>
+            <p class="text-slate-500 font-medium">진도율에 맞춰 학습을 진행해 주세요</p>
+        </div>
+
+        <div class="space-y-6">
+            {CURRICULUM_CARDS}
+        </div>
+    </main>
+
+    <script type="module">
+        import {{ auth }} from './js/firebase-config.js';
+        import {{ onAuthStateChanged, signOut }} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {{
+            if (user) {{
+                const emailDisplay = document.getElementById('userEmailDisplay');
+                if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+            }} else {{
+                // Force redirect if not logged in
+                window.location.href = 'index.html';
+            }}
+        }});
+
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {{
+            logoutBtn.addEventListener('click', () => {{
+                signOut(auth).then(() => {{
+                    window.location.href = 'index.html';
+                }}).catch((error) => {{
+                    console.error("Logout error:", error);
+                }});
+            }});
+        }}
+    </script>
+</body>
+</html>
+"""
+
+def get_curriculum_card(index, module, course_output_filename):
+    colors = ["indigo", "emerald", "blue", "purple"]
     color = colors[index % len(colors)]
     
     details_html = ""
@@ -118,136 +204,65 @@ def generate_card(index, module):
                                     <li class="flex items-start gap-2"><i
                                             class="fas fa-check-circle text-{color}-600 mt-1"></i><span>{detail}</span></li>"""
 
-    # Always link to basic day01 for others, but for ethics we want specific mapping (handled by post-processing or smart logic)
-    # For now, let's make the template generic.
-    # We will patch classroom_ethics.html separately to point to lecture_ethics_class*.html
-    link = "day01_lecture.html"
+    # Link Logic
+    # Default: day01_lecture.html
+    # Ethics Special: lecture_ethics_class1.html / lecture_ethics_class2.html
+    link = "day01_lecture.html" # fallback
 
-    # Use a number formatted like 01, 02
-    # If title contains 'Class', use that number
-    if "Class" in module['title']:
-        try:
-             # Extract number from title "Class 1: ..."
-             day_num = module['title'].split(':')[0].replace("Class ", "").strip().zfill(2)
-        except:
-             day_num = str(index + 1).zfill(2)
+    if "classroom_ethics.html" in course_output_filename:
+        # Ethics Special Logic
+        if index == 0:
+            link = "lecture_ethics_class1.html"
+        elif index == 1:
+            link = "lecture_ethics_class2.html"
     else:
+        # Generic Logic for others
         day_num = str(index + 1).zfill(2)
+        # Future: If we have specific files for other courses, map them here.
+        # For now, all point to day01_lecture.html as placeholder
+        link = "day01_lecture.html"
     
     return f"""
-                    <!-- Module {index+1} -->
-                    <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-{color}-50 transition-all">
-                        <div class="bg-gradient-to-r from-{color}-600 to-{color}-800 text-white px-8 py-6">
-                            <div class="flex items-center justify-between flex-wrap gap-4">
-                                <div class="flex items-center gap-4">
-                                    <span class="text-4xl font-black opacity-30">{day_num}</span>
-                                    <div>
-                                        <h3 class="text-2xl font-bold">{module['title']}</h3>
-                                        <p class="opacity-80">{module['desc']}</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4 flex-wrap">
-                                    <a href="{link}"
-                                        class="px-6 py-2.5 bg-white text-{color}-700 rounded-full text-sm font-bold hover:bg-{color}-50 transition-all shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
-                                        <i class="fas fa-play"></i> 학습하기
-                                    </a>
-                                </div>
-                            </div>
+            <!-- Module {index+1} -->
+            <div class="bg-white rounded-3xl p-1 shadow-xl shadow-slate-200/50 border border-white hover:border-{color}-100 transition-all duration-300 group">
+                <div class="bg-gradient-to-r from-{color}-600 to-{color}-800 rounded-[20px] p-6 md:p-8 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+                        <div>
+                            <span class="text-{color}-200 font-bold text-5xl md:text-6xl opacity-20 absolute -left-4 -top-4 select-none">{str(index+1).zfill(2)}</span>
+                            <h2 class="text-xl md:text-2xl font-bold mb-2 pl-2 md:pl-0 relative">{module['title']}</h2>
+                            <p class="text-{color}-100 text-sm md:text-base pl-2 md:pl-0 opacity-90">{module['desc']}</p>
                         </div>
-                        <div class="p-8">
-                            <div class="bg-{color}-50 rounded-2xl p-6">
-                                <ul class="space-y-3 text-gray-700">
-                                    {details_html}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>"""
-
-# Load Template
-with open("classroom.html", "r", encoding="utf-8") as f:
-    template_content = f.read()
-
-# Find Injection Points
-start_marker = '<div class="space-y-8 max-w-5xl mx-auto">'
-# Identify end of the container
-section_curriculum = template_content.find('id="curriculum"')
-section_end = template_content.find('</section>', section_curriculum)
-container_end = template_content.rfind('</div>', 0, section_end) # Closing of container
-grid_end = template_content.rfind('</div>', 0, container_end) # Closing of grid (max-w-5xl) - wait
-
-# Let's split strictly by the start marker
-parts = template_content.split(start_marker)
-header_part = parts[0] + start_marker
-
-# The footer part needs to be extracted carefully.
-# We skip everything after start_marker until the "My Curriculum" section ends.
-# The structure is: <section> ... <div space-y-8 ...> [CARDS] </div> ... </section>
-# So we need to look for the matching </div> for space-y-8.
-# Since it is hard to parse HTML with regex, let's assume the template is standard.
-# We will use the footer part from:
-footer_start_idx = template_content.find('            </div>\n        </div>\n    </section>', section_curriculum)
-# Just hardcode the footer part if needed or use previous method
-footer_part = """
+                        <a href="{link}" class="bg-white text-{color}-700 px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 whitespace-nowrap self-start md:self-auto">
+                            <i class="fas fa-play"></i> 학습하기
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="p-6 md:p-8 bg-indigo-50/30 rounded-b-[20px]">
+                    <ul class="space-y-3 text-sm text-slate-600 font-medium">
+                        {details_html}
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-    </main>
+    """
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-8 mt-12">
-        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
-            &copy; 2026 AI Class Management System. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- Firebase Scripts -->
-    <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { displayTotalProgress, displayNextLesson } from './js/progress-ui.js';
-
-        onAuthStateChanged(auth, async (user) => {
-            if (!user) {
-                alert("로그인이 필요합니다.");
-                window.location.href = 'index.html';
-            } else {
-                const emailDisplay = document.getElementById('userEmailDisplay');
-                if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
-
-                // 진도 추적 UI 초기화
-                // Course ID mapping logic could be added here later
-            }
-        });
-
-        window.logout = () => {
-            if (confirm('로그아웃 하시겠습니까?')) {
-                signOut(auth).then(() => window.location.href = 'index.html');
-            }
-        }
-    </script>
-
-</body>
-
-</html>
-"""
-
-# Generate
-for key, data in courses_data.items():
-    print(f"Refining {data['output']}...")
-    
+def generate_classroom_html(config):
     cards_html = ""
-    for idx, item in enumerate(data['curriculum']):
-        cards_html += generate_card(idx, item)
+    for i, module in enumerate(config['curriculum']):
+        cards_html += get_curriculum_card(i, module, config['output'])
     
-    # Replace Header Title
-    current_header = header_part.replace("AI 실무 마스터 클래스", data['title'])
+    html = template.replace("{COURSE_TITLE}", config['title']) \
+                   .replace("{CURRICULUM_CARDS}", cards_html)
     
-    # Also update "My Curriculum" subtitle if needed
-    # (It says "나의 AI 강의실" in template, which is generic enough)
-    
-    full_html = current_header + cards_html + footer_part
-    
-    with open(data['output'], "w", encoding="utf-8") as f:
-        f.write(full_html)
+    with open(config['output'], 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"Regenerated {config['output']} with Home button & Smart Links.")
 
-print("All classrooms regenerated with full curriculum details.")
+
+# Execution
+print("Starting regeneration of classroom files...")
+for key, config in course_configs.items():
+    generate_classroom_html(config)
+print("All classrooms regenerated.")
