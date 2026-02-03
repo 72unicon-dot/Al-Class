@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 강의실 | AI 전문가 심화</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .day-card {
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: scale(1.01);
+        }
+
+        .theory-tag {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .practice-tag {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- Classroom Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-xl shadow-lg shadow-indigo-200">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI 전문가 심화</h1>
+                    <p class="text-xs text-gray-500 font-medium">나의 강의실</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-bold flex items-center gap-2">
+                    <i class="fas fa-search"></i>
+                    <span class="hidden md:inline">검색</span>
+                </span>
+                <span id="userEmailDisplay" class="text-sm text-gray-600 hidden md:inline font-medium"></span>
+                <button onclick="logout()"
+                    class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-lg text-sm font-bold transition-colors">
+                    <i class="fas fa-sign-out-alt mr-2"></i>로그아웃
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Progress Overview Section -->
+        <section class="py-8 bg-gradient-to-br from-indigo-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Progress Card -->
+                    <div id="progressContainer"></div>
+
+                    <!-- Next Lesson Recommendation -->
+                    <div id="nextLessonContainer" class="mt-6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-50" id="curriculum">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <span class="text-indigo-600 font-bold text-sm uppercase tracking-wider bg-indigo-50 px-3 py-1 rounded-full">My
+                        Curriculum</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 text-gray-800">
+                        나의 AI 강의실
+                    </h2>
+                    <p class="text-gray-600 mt-3">진도율에 맞춰 학습을 진행해 주세요</p>
+                </div>
+
+                <div class="space-y-8 max-w-5xl mx-auto">
+                    <!-- Module 1 -->
+                    <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-indigo-50 transition-all">
+                        <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white px-8 py-6">
+                            <div class="flex items-center justify-between flex-wrap gap-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-4xl font-black opacity-30">01</span>
+                                    <div>
+                                        <h3 class="text-2xl font-bold">Phase 1: LLM 심층 이해 (Day 1-3)</h3>
+                                        <p class="opacity-80">Transformer 아키텍처와 오픈소스 LLM 활용</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 flex-wrap">
+                                    <a href="day01_lecture.html"
+                                        class="px-6 py-2.5 bg-white text-indigo-700 rounded-full text-sm font-bold hover:bg-indigo-50 transition-all shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                                        <i class="fas fa-play"></i> 학습하기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="bg-gray-50 rounded-2xl p-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Transformer 구조와 Attention 메커니즘</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Llama 3, Mistral 등 로컬 LLM 구동</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Prompt Tuning vs Fine-tuning 비교</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-emerald-50 transition-all">
+                        <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-6">
+                            <div class="flex items-center justify-between flex-wrap gap-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-4xl font-black opacity-30">02</span>
+                                    <div>
+                                        <h3 class="text-2xl font-bold">Phase 2: RAG 시스템 구축 (Day 4-6)</h3>
+                                        <p class="opacity-80">사내 지식 기반의 정확한 답변 시스템 구현</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 flex-wrap">
+                                    <a href="day01_lecture.html"
+                                        class="px-6 py-2.5 bg-white text-emerald-700 rounded-full text-sm font-bold hover:bg-emerald-50 transition-all shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                                        <i class="fas fa-play"></i> 학습하기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="bg-gray-50 rounded-2xl p-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>텍스트 임베딩과 벡터 데이터베이스 이해</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>LangChain을 이용한 문서 검색 파이프라인</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>PDF/Web 데이터 연동 챗봇 실습</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-blue-50 transition-all">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-6">
+                            <div class="flex items-center justify-between flex-wrap gap-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-4xl font-black opacity-30">03</span>
+                                    <div>
+                                        <h3 class="text-2xl font-bold">Phase 3: Fine-tuning & Agent (Day 7-10)</h3>
+                                        <p class="opacity-80">도메인 특화 모델 학습과 자율 에이전트 개발</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 flex-wrap">
+                                    <a href="day01_lecture.html"
+                                        class="px-6 py-2.5 bg-white text-blue-700 rounded-full text-sm font-bold hover:bg-blue-50 transition-all shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                                        <i class="fas fa-play"></i> 학습하기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="bg-gray-50 rounded-2xl p-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>LoRA를 활용한 효율적인 파인튜닝 실습</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>자율 에이전트(Agent) 설계 및 툴 사용 권한 부여</span></li>
+                                    <li class="flex items-start gap-2"><i
+                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>기업용 AI 솔루션 아키텍처 설계</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            &copy; 2026 AI Class Management System. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Firebase Scripts -->
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { displayTotalProgress, displayNextLesson } from './js/progress-ui.js';
+
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                alert("로그인이 필요합니다.");
+                window.location.href = 'index.html';
+            } else {
+                const emailDisplay = document.getElementById('userEmailDisplay');
+                if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+
+                // 진도 추적 UI 초기화
+                try {
+                    await displayTotalProgress(user.uid, 'progressContainer');
+                    await displayNextLesson(user.uid, 'nextLessonContainer');
+                } catch (error) {
+                    console.error('진도 표시 오류:', error);
+                }
+            }
+        });
+
+        window.logout = () => {
+            if (confirm('로그아웃 하시겠습니까?')) {
+                signOut(auth).then(() => window.location.href = 'index.html');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
