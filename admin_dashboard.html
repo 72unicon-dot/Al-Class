@@ -130,15 +130,36 @@
                             <p class="text-xs text-red-400 mt-1">* 강의 페이지의 카드 제목과 정확히 일치해야 버튼이 활성화됩니다.</p>
                         </div>
                     </div>
+
+                    <!-- Input Type Toggle -->
+                    <div class="flex gap-4 mb-2">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="uploadType" value="file" checked onchange="toggleUploadType()"
+                                class="text-indigo-600">
+                            <span class="text-sm text-gray-700">파일 직접 업로드</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="uploadType" value="url" onchange="toggleUploadType()"
+                                class="text-indigo-600">
+                            <span class="text-sm text-gray-700">외부 링크 입력 (권장)</span>
+                        </label>
+                    </div>
+
                     <div class="flex flex-col md:flex-row gap-4 items-end">
-                        <div class="flex-1 w-full">
+                        <div class="flex-1 w-full" id="fileInputGroup">
                             <label class="block text-xs font-medium text-gray-500 mb-1">파일 선택 (PDF)</label>
                             <input type="file" id="resourceFile" accept="application/pdf"
                                 class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50">
                         </div>
+                        <div class="flex-1 w-full hidden" id="urlInputGroup">
+                            <label class="block text-xs font-medium text-gray-500 mb-1">파일 URL (Firebase Console 등에서
+                                복사)</label>
+                            <input type="text" id="resourceUrl" placeholder="https://..."
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                        </div>
                         <button onclick="uploadResource()" id="uploadBtn"
                             class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap">
-                            <i class="fas fa-cloud-upload-alt mr-2"></i> 업로드
+                            <i class="fas fa-cloud-upload-alt mr-2"></i> 등록
                         </button>
                     </div>
                 </div>
@@ -324,54 +345,90 @@
             }
         }
 
+        // ==========================================
+        // UI Helpers
+        // ==========================================
+        window.toggleUploadType = () => {
+            const type = document.querySelector('input[name="uploadType"]:checked').value;
+            if (type === 'file') {
+                document.getElementById('fileInputGroup').classList.remove('hidden');
+                document.getElementById('urlInputGroup').classList.add('hidden');
+            } else {
+                document.getElementById('fileInputGroup').classList.add('hidden');
+                document.getElementById('urlInputGroup').classList.remove('hidden');
+            }
+        }
+
         window.uploadResource = async () => {
             const courseSelect = document.getElementById('resourceCourse');
             const classSelect = document.getElementById('resourceClass');
             const titleInput = document.getElementById('resourceTitle');
             const fileInput = document.getElementById('resourceFile');
+            const urlInput = document.getElementById('resourceUrl');
             const btn = document.getElementById('uploadBtn');
+            const uploadType = document.querySelector('input[name="uploadType"]:checked').value;
 
-            if (!titleInput.value || !fileInput.files[0]) {
-                alert("필수 정보를 모두 입력해주세요.");
+            if (!titleInput.value) {
+                alert("제목을 입력해주세요.");
                 return;
             }
 
-            const file = fileInput.files[0];
-            const storagePath = 'resources/' + Date.now() + '_' + file.name;
-            const storageRef = ref(storage, storagePath);
+            let downloadURL = '';
+            let filename = '';
+            let storagePath = '';
 
             try {
                 btn.disabled = true;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 업로드 중...';
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
 
-                // 1. Upload to Storage
-                const snapshot = await uploadBytes(storageRef, file);
-                const downloadURL = await getDownloadURL(snapshot.ref);
+                if (uploadType === 'file') {
+                    // File Upload Mode
+                    if (!fileInput.files[0]) {
+                        throw new Error("파일을 선택해주세요.");
+                    }
+                    const file = fileInput.files[0];
+                    storagePath = 'resources/' + Date.now() + '_' + file.name;
+                    const storageRef = ref(storage, storagePath);
+
+                    filename = file.name;
+                    const snapshot = await uploadBytes(storageRef, file);
+                    downloadURL = await getDownloadURL(snapshot.ref);
+                } else {
+                    // URL Input Mode
+                    if (!urlInput.value) {
+                        throw new Error("URL을 입력해주세요.");
+                    }
+                    downloadURL = urlInput.value;
+                    filename = 'External Link';
+                    storagePath = ''; // No storage path needed
+                }
 
                 // 2. Save Metadata to Firestore
                 await addDoc(collection(db, "resources"), {
                     course: courseSelect.value,
                     classNum: classSelect.value,
                     title: titleInput.value.trim(),
-                    filename: file.name,
+                    filename: filename,
                     storagePath: storagePath,
                     url: downloadURL,
                     uploadedAt: serverTimestamp()
                 });
 
-                alert("업로드 성공!");
+                alert("등록 성공!");
+                // Reset Form
                 titleInput.value = '';
                 fileInput.value = '';
+                urlInput.value = '';
                 loadResources();
 
             } catch (error) {
                 console.error("Upload failed:", error);
                 const user = auth.currentUser;
                 const userInfo = user ? `(User: ${user.email})` : '(Not Logged In)';
-                alert(`업로드 실패!\n\n에러 코드: ${error.code}\n메시지: ${error.message}\n${userInfo}`);
+                alert(`등록 실패!\n\n에러 코드: ${error.code || 'N/A'}\n메시지: ${error.message}\n${userInfo}`);
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-cloud-upload-alt mr-2"></i> 업로드';
+                btn.innerHTML = '<i class="fas fa-cloud-upload-alt mr-2"></i> 등록';
             }
         }
 
