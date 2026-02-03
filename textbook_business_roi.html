@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - AI 비즈니스 전략</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul, .textbook-content ol { list-style-position: inside; margin-bottom: 1.5rem; color: #475569; }
+        .textbook-content table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .textbook-content th, .textbook-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+        .textbook-content th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="classroom_business.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의실로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-print"></i></button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-amber-600 to-amber-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">ROI 분석 및 투자 전략</h1>
+                <p class="text-white/80 text-lg font-light">Return on Investment Analysis</p>
+            </div>
+            <div class="p-10 md:p-14 textbook-content">
+                
+            <h3>1. AI 도입 비용 (TCO) 계산</h3>
+            <p>단순 솔루션 구독료 외에 숨겨진 비용을 파악해야 합니다.</p>
+            <ul>
+                <li><strong>API 사용료:</strong> 토큰당 과금 (사용량 증가 시 급증)</li>
+                <li><strong>인프라 비용:</strong> 클라우드 GPU 서버 비용, 벡터 DB 비용</li>
+                <li><strong>인건비:</strong> 프롬프트 엔지니어링, 데이터 전처리 인력</li>
+            </ul>
+
+            <h3>2. 정량적 vs 정성적 효과</h3>
+            <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="bg-amber-50 p-4 border border-amber-200 rounded">
+                    <strong>💰 정량적 (Hard ROI)</strong>
+                    <ul class="text-sm pl-4 list-disc mt-2">
+                        <li>인건비 절감액</li>
+                        <li>매출 증가액</li>
+                        <li>오류 예방 비용</li>
+                    </ul>
+                </div>
+                 <div class="bg-orange-50 p-4 border border-orange-200 rounded">
+                    <strong>✨ 정성적 (Soft ROI)</strong>
+                     <ul class="text-sm pl-4 list-disc mt-2">
+                        <li>직원 만족도(단순 반복 업무 제거)</li>
+                        <li>브랜드 혁신 이미지</li>
+                        <li>의사결정 속도 향상</li>
+                    </ul>
+                </div>
+            </div>
+        
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <button onclick="history.back()" class="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition">
+                    목록으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

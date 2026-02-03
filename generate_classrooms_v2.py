@@ -24,8 +24,8 @@ course_configs = {
         "output": "classroom_business.html",
         "title": "AI 비즈니스 전략",
         "curriculum": [
-            {"title": "Day 1: AI 트렌드와 비즈니스 기회", "desc": "산업별 AI 도입 사례와 성공 전략", "details": ["금융, 제조, 유통 분야 AI 혁신", "생성형 AI 생태계 분석", "신규 비즈니스 모델 발굴"]},
-            {"title": "Day 2: AI 도입 로드맵 수립", "desc": "우리 조직에 맞는 AI 도입 전략 짜기", "details": ["AI 성숙도 진단 및 목표 설정", "PoC(개념 증명) 기획 실습", "ROI 분석 및 투자 전략"]}
+            {"title": "Day 1: AI 트렌드와 비즈니스 기회 (8시간)", "desc": "오전: 산업별 혁신 사례 / 오후: 신규 사업 모델 발굴", "details": ["(오전) 금융/제조/유통 분야 AI 도입 성공 사례 분석", "(오전) 생성형 AI 생태계와 기술 트렌드", "(오후) AI 기반 신규 비즈니스 모델 캔버스 작성", "(오후) 경쟁사 AI 전략 분석 및 차별화"]},
+            {"title": "Day 2: AI 도입 로드맵 수립 (8시간)", "desc": "오전: 도입 전략 및 기획 / 오후: 구축 및 평가", "details": ["(오전) 우리 기업 AI 성숙도 진단 및 목표 설정", "(오전) PoC(개념 증명) 기획서 작성 실습", "(오후) ROI 분석 및 예산/인력 계획 수립", "(오후) AI 프로젝트 리스크 관리 및 거버넌스"]}
         ]
     },
     "expert_advanced.html": {
@@ -221,6 +221,12 @@ def get_curriculum_card(index, module, course_output_filename):
             link = "lecture_basics_class1.html"
         elif index == 1:
             link = "lecture_basics_class2.html"
+    elif "classroom_business.html" in course_output_filename:
+        # Business Special Logic
+        if index == 0:
+            link = "lecture_business_day1.html"
+        elif index == 1:
+            link = "lecture_business_day2.html"
     else:
         # Generic Logic for others
         day_num = str(index + 1).zfill(2)

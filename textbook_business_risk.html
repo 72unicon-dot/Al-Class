@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - AI 비즈니스 전략</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul, .textbook-content ol { list-style-position: inside; margin-bottom: 1.5rem; color: #475569; }
+        .textbook-content table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .textbook-content th, .textbook-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+        .textbook-content th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="classroom_business.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의실로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-print"></i></button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-red-600 to-red-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">AI 프로젝트 리스크 관리</h1>
+                <p class="text-white/80 text-lg font-light">Risk Management & Governance</p>
+            </div>
+            <div class="p-10 md:p-14 textbook-content">
+                
+            <h3>1. 주요 리스크 요인</h3>
+            <ul>
+                <li><strong>환각(Hallucination):</strong> AI가 잘못된 정보를 생성하여 의사결정을 그르칠 위험.</li>
+                <li><strong>편향(Bias):</strong> 학습 데이터의 편향으로 인해 차별적 결과가 나올 위험 (채용, 대출 심사 등).</li>
+                <li><strong>의존성(Dependency):</strong> 특정 AI 모델(OpenAI 등)에 지나치게 의존하여 가격 인상/정책 변경에 취약해짐.</li>
+            </ul>
+
+            <h3>2. AI 거버넌스 구축</h3>
+            <p>전사적인 AI 관리 체계를 만들어야 합니다. 'AI 윤리 위원회'를 설치하거나, AI 산출물에 대한 '인간 검수 프로세스'를 의무화하는 것이 그 시작입니다.</p>
+        
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <button onclick="history.back()" class="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition">
+                    목록으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
