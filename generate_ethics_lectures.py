@@ -23,13 +23,27 @@ def get_header(title, subtitle, class_num="01"):
     """
 
 # Updated get_card to accept specific links
-def get_card(icon, color, title, desc, tags, view_link):
+def get_card(icon, color, title, desc, tags, view_link, pdf_url=""):
     tag_html = ""
     for tag in tags:
         tag_html += f'<span class="bg-{color}-50 text-{color}-700 px-3 py-1 rounded-md text-xs font-semibold">{tag}</span>'
     
     listen_link = "https://al-class.vercel.app/ai-lecture-room/dist/index.html"
     
+    # PDF Button Logic
+    if pdf_url:
+        pdf_btn = f"""
+        <button onclick="window.open('{pdf_url}', '_blank')" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors cursor-pointer">
+            <i class="fas fa-file-download"></i> PDF
+        </button>
+        """
+    else:
+        pdf_btn = f"""
+        <button data-title="{title}" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+            <i class="fas fa-file-download"></i> PDF
+        </button>
+        """
+
     return f"""
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-{color}-200 transition-all group">
                     <div class="flex items-start gap-4">
@@ -49,9 +63,7 @@ def get_card(icon, color, title, desc, tags, view_link):
                                 <a href="{listen_link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="{title}" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
-                                    <i class="fas fa-file-download"></i> PDF
-                                </button>
+                                {pdf_btn}
                             </div>
                         </div>
                     </div>
