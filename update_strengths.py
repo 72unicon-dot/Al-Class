@@ -2,9 +2,6 @@ import re
 import os
 
 # Data: Unique 3 Strengths for each course
-# Format: filename: [ {title, text, benefit_title, benefit_text, icon, color} * 3 ]
-# Colors: blue, violet, amber (default gradient themes) - can vary if needed but keeping structure simple for now.
-
 courses_data = {
     "intro_ethics.html": [
         {
@@ -75,7 +72,7 @@ courses_data = {
             "benefit_text": "내일 당장 출근해서 써먹을 수 있는 <b class='text-emerald-300'>실무 밀착형 스킬</b>을 내 것으로 만듭니다."
         }
     ],
-    "master_index.html": [ # AI 실무 마스터 (Original)
+    "master_index.html": [
         {
             "icon": "fa-chart-line",
             "title": "데이터 기반 의사결정",
@@ -284,13 +281,8 @@ courses_data = {
     ]
 }
 
-# Template pattern to match the strengths section cards
-# We look for the 3 columns in the grid.
-# The template has: <!-- Strength 1 --> ... <!-- Strength 2 --> ... <!-- Strength 3 -->
-# We will regenerate the HTML for the 3 cards.
-
 def generate_strength_card(data, index):
-    # Colors for the 3 cards (based on template design)
+    # Gradients and colors consistent with original design
     gradients = [
         "from-blue-600 to-cyan-600",
         "from-violet-600 to-purple-600",
@@ -307,14 +299,14 @@ def generate_strength_card(data, index):
     ib = icon_bgs[index]
     t = texts[index]
     
-    # Using data from dictionary
     title = data['title']
     desc = data['desc']
     benefit_title = data['benefit_title']
     benefit_text = data['benefit_text']
     icon = data['icon']
     
-    return f"""                <!-- Strength {index+1} -->
+    # Keeping the original comment style with new title
+    return f"""                <!-- Strength {index+1}: {title} -->
                 <div class="relative group">
                     <div
                         class="absolute inset-0 bg-gradient-to-r {g} rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition">
@@ -341,142 +333,59 @@ def generate_strength_card(data, index):
                     </div>
                 </div>"""
 
-# Main Update Loop
+# Robust regex to match from "<!-- Strength 1:" until the end of the 3rd card
+# It matches:
+# 1. Start: <!-- Strength 1:
+# 2. Content: .*? (non-greedy)
+# 3. End: The closing div of the grid.
+# Because the closing div is hard to match with precision without lookahead for the next Section title,
+# we use the "Why This Course" section structure.
+# ...
+#             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+#                 [TARGET CONTENT]
+#             </div>
+#         </div>
+#     </section>
+# ....
+#     <!-- Top 10 AI Tools Section --> or some other section
+
 for filename, strengths in courses_data.items():
     if not os.path.exists(filename):
         print(f"Skipping {filename} - not found")
         continue
-        
+
     print(f"Updating {filename}...")
     with open(filename, 'r', encoding='utf-8') as f:
         content = f.read()
-    
-    # Construct new HTML for the grid content
-    new_cards_html = ""
-    for i in range(3):
-        new_cards_html += generate_strength_card(strengths[i], i)
-        if i < 2:
-            new_cards_html += "\n\n"
-            
-    # Regex to find the content between <!-- Strength 1 --> and the end of Strength 3 div
-    # Pattern: Look for the grid container, then replace its valid children.
-    # To be safer, we can try to locate the container: <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    
-    start_marker = '<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">'
-    end_marker = '</div>\n        </div>\n    </section>' # Assuming standard indentation
-    
-    # A robust way: Find start marker, then find the closing div of that container.
-    # Since regex on HTML structure is risky, we will use the exact previous content structure if possible
-    # Or just replace everything between the start marker and the "Top 10 AI Tools" section start if strictly structured.
-    
-    # Let's try finding the start marker
-    start_idx = content.find(start_marker)
-    if start_idx == -1:
-        print(f"  Error: Could not find grid container in {filename}")
-        continue
-        
-    # Move pointer to after the marker
-    content_start = start_idx + len(start_marker)
-    
-    # Find the end of this section (container closing div)
-    # Since we have nested divs, we need to be careful.
-    # However, in our template, the closing `</div>` for this grid is followed by `</div>` (container) and `</section>`.
-    # Let's look for `<!-- Strength 1 -->`
-    
-    strength1_idx = content.find('<!-- Strength 1 -->', start_idx)
-    if strength1_idx == -1:
-        print("  Error: Could not find Strength 1 marker")
-        continue
 
-    # We need to find where Strength 3 ends.
-    # Strength 3 starts...
-    strength3_idx = content.find('<!-- Strength 3 -->', strength1_idx)
+    # Generate new inner HTML
+    new_inner_html = ""
+    for i in range(3):
+        new_inner_html += generate_strength_card(strengths[i], i)
+        if i < 2:
+            new_inner_html += "\n\n"
+
+    # Regex Strategy:
+    # Match <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    # Then match everything until the closing div that precedes </div> (container) and </section>.
+    # We'll use the Lookahead to find the closing tags sequence "</div>\s*</div>\s*</section>"
     
-    # After Strength 3 div, there are 3 closing divs: 
-    # 1. Strength 3 card closing
-    # 2. Strength 3 wrapper closing
-    # 3. Strength 3 transition wrapper closing
-    # Actually, let's look at the template structure again.
-    
-    # Template:
-    # <div class="grid ...">
-    #    <!-- S1 --> ... </div>
-    #    <!-- S2 --> ... </div>
-    #    <!-- S3 --> ... </div>
-    # </div>
-    
-    # So we replace from <!-- Strength 1 --> until the closing </div> of the grid.
-    # We can find the grid closing div by looking for the next occurrence of `</div>` that is followed by `</div>` and `<section`.
-    # Or we can just build the regex for <!-- Strength 1 -->.*<!-- Strength 3 -->.*?(match the closing div of strength 3)
-    
-    # Let's construct a RegEx that captures from Strength 1 to the end of Strength 3 card.
-    
-    pattern = re.compile(r'<!-- Strength 1 -->.*?<!-- Strength 3 -->.*?</div>\s*</div>\s*</div>', re.DOTALL)
-    # The ending of Strength 3 in template:
-    #                 <div class="relative group"> ... </div>
-    # Needs to match properly.
-    
-    # Simplified approach: We know the template structure exactly because we just wrote it.
-    # We can use the start of Strength 1 and strictly look for the closing of the section container
-    # "            </div>\n        </div>\n    </section>\n\n\n    <!-- Top 10 AI Tools"
-    
-    section_end_idx = content.find('<!-- Top 10 AI Tools Section -->')
-    if section_end_idx == -1:
-        # Fallback for files that might differ (e.g. Master which might have different next section?)
-        # Master template has Top 10 too.
-        print("  Warning: Top 10 tools section not found, looking for alternative end")
-        section_end_idx = content.find('</section>', start_idx)
-    
-    # Now work backwards from section_end to find the grid closing div
-    # ... </div> (grid) </div> (container) </section>
-    
-    # Let's replace the innerHTML of the grid directly
-    # We will replace everything between `start_marker` + newline and the detected end of the grid.
-    
-    # Let's just create the full content to replace
-    replacement = f"""
-{new_cards_html}
-            """
-    
-    # Find the range to replace
-    # From: start_marker (end of it)
-    # To: The matching closing div.
-    # Since counting divs is hard, let's assume valid indentation from the template creation.
-    # The grid closing div usually aligns with <div class="grid...
-    # In template: 
-    #             </div>
-    #         </div>
-    #     </section>
-    
-    # We will assume everything between start_marker and the last `</div>` before `</div>` before `</section>` IS the content.
-    
-    # Regex for standard template replacement
-    # Matches: start_marker + any content + closing div of grid
+    # Note: Regex dot matches newline ONLY with DOTALL flag.
     regex = r'(<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">)(.*?)(</div>\s*</div>\s*</section>)'
     
-    new_content = re.sub(regex, f'\\1\\n{new_cards_html}\\n            \\3', content, flags=re.DOTALL)
+    match = re.search(regex, content, re.DOTALL)
     
-    if len(new_content) == len(content):
-        # Replacement didn't happen - probably regex mismatch due to whitespace
-        print("  Regex mismatch - trying fallback search")
-        # Direct string find
-        s_idx = content.find(start_marker) + len(start_marker)
-        
-        # Look for the section end
-        sect_end = content.find('</section>', s_idx)
-        # Find the last </div> before sect_end
-        grid_end = content.rfind('</div>', 0, sect_end) # Container div
-        grid_inner_end = content.rfind('</div>', 0, grid_end) # Grid div
-        
-        if s_idx > 0 and grid_inner_end > 0:
-            new_content = content[:s_idx] + "\n" + new_cards_html + "\n            " + content[grid_inner_end:]
-            print("  Fallback replacement applied")
+    if match:
+        # Check if it actually contains Strength 1 comment to be sure
+        if "Strength 1" in match.group(2) or "STRENGTH 01" in match.group(2):
+            new_content = content[:match.start(2)] + "\n" + new_inner_html + "\n            " + content[match.end(2):]
+            
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            print("  Success (Regex Match).")
         else:
-            print("  FAILED to update strengths.")
-            continue
-
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(new_content)
-    print("  Success.")
+            print("  Warning: Matched grid but it doesn't look like the strengths grid.")
+    else:
+        print("  Error: Regex did not match the grid structure.")
 
 print("\\nAll files updated.")
