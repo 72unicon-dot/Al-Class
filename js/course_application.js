@@ -66,8 +66,8 @@ async function saveApplication(user, courseId, courseName) {
         const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty) {
-            alert("이미 신청한 과정입니다. 강의실로 이동합니다.");
-            window.location.href = "classroom.html"; // Should go to dashboard later
+            alert("이미 신청한 과정입니다. 내 강의실로 이동합니다.");
+            window.location.href = "dashboard.html";
             return;
         }
 
