@@ -366,7 +366,9 @@
 
             } catch (error) {
                 console.error("Upload failed:", error);
-                alert("업로드 실패: " + error.message);
+                const user = auth.currentUser;
+                const userInfo = user ? `(User: ${user.email})` : '(Not Logged In)';
+                alert(`업로드 실패!\n\n에러 코드: ${error.code}\n메시지: ${error.message}\n${userInfo}`);
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-cloud-upload-alt mr-2"></i> 업로드';
