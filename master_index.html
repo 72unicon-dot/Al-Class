@@ -591,38 +591,36 @@
         // Initialize Application Logic
         initCourseApplication('master_full', 'AI 실무 마스터');
 
+        
         onAuthStateChanged(auth, async (user) => {
             const applyBtn = document.getElementById('applyBtn');
             const enterBtn = document.getElementById('enterBtn');
             const logoutBtn = document.getElementById('heroLogoutBtn');
 
             if (user) {
-                // 1. Logged In -> Force Show Enter Button for Master Class
+                // 1. Logged In -> Force Show Enter Button (Bypass Application Check)
                 if (logoutBtn) logoutBtn.classList.remove('hidden');
-
-                // FORCE: Always show enter button for logged in users (Bypass check)
+                
                 if (applyBtn) applyBtn.classList.add('hidden');
                 if (enterBtn) {
                     enterBtn.classList.remove('hidden');
                     enterBtn.title = user.email + "님 환영합니다";
-                    // Explicitly set link to classroom.html
+                    // Direct Link to Classroom
                     enterBtn.onclick = () => window.location.href = 'classroom.html';
-                    console.log("Enter button activated for " + user.email);
                 }
             } else {
                 // 2. Logged Out
                 if (applyBtn) {
                     applyBtn.classList.remove('hidden');
                     applyBtn.textContent = "교육 신청";
+                    // Restore login modal trigger
                     applyBtn.onclick = () => window.openLoginModal();
                 }
                 if (enterBtn) enterBtn.classList.add('hidden');
                 if (logoutBtn) logoutBtn.classList.add('hidden');
             }
         });
-
-
-        // Global Functions
+    // Global Functions
         window.openLoginModal = () => document.getElementById('userLoginModal').classList.remove('hidden');
         window.closeLoginModal = () => document.getElementById('userLoginModal').classList.add('hidden');
         window.userLogout = () => {

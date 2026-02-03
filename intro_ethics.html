@@ -542,50 +542,36 @@
         // Initialize Application Logic
         initCourseApplication('ethics_101', 'AI소개 및 윤리');
 
+        
         onAuthStateChanged(auth, async (user) => {
             const applyBtn = document.getElementById('applyBtn');
             const enterBtn = document.getElementById('enterBtn');
             const logoutBtn = document.getElementById('heroLogoutBtn');
 
             if (user) {
-                // 1. Logged In
+                // 1. Logged In -> Force Show Enter Button (Bypass Application Check)
                 if (logoutBtn) logoutBtn.classList.remove('hidden');
                 
-                // Check if already applied
-                const isApplied = await checkApplicationStatus(user, 'ethics_101');
-                
-                if (isApplied) {
-                    // Applied -> Show Enter Classroom
-                    if (applyBtn) applyBtn.classList.add('hidden');
-                    if (enterBtn) {
-                        enterBtn.classList.remove('hidden');
-                        enterBtn.title = user.email + "님 환영합니다";
-                    }
-                } else {
-                    // Not Applied -> Show Apply Button (Logged In Mode)
-                    // We modify the button to act as "Confirm Apply" instead of Login Modal
-                    if (enterBtn) enterBtn.classList.add('hidden');
-                    if (applyBtn) {
-                         applyBtn.classList.remove('hidden');
-                         applyBtn.textContent = "수강 신청하기 (무료)";
-                         // Remove onclick attribute to let JS handle it, or just rely on addEventListener in init
-                         applyBtn.removeAttribute('onclick'); 
-                    }
+                if (applyBtn) applyBtn.classList.add('hidden');
+                if (enterBtn) {
+                    enterBtn.classList.remove('hidden');
+                    enterBtn.title = user.email + "님 환영합니다";
+                    // Direct Link to Classroom
+                    enterBtn.onclick = () => window.location.href = 'classroom_ethics.html';
                 }
             } else {
                 // 2. Logged Out
                 if (applyBtn) {
                     applyBtn.classList.remove('hidden');
                     applyBtn.textContent = "교육 신청";
-                    applyBtn.setAttribute('onclick', 'window.openLoginModal()'); // Restore default for guest
+                    // Restore login modal trigger
+                    applyBtn.onclick = () => window.openLoginModal();
                 }
                 if (enterBtn) enterBtn.classList.add('hidden');
                 if (logoutBtn) logoutBtn.classList.add('hidden');
             }
         });
-    
-
-        // Global Functions
+    // Global Functions
         window.openLoginModal = () => document.getElementById('userLoginModal').classList.remove('hidden');
         window.closeLoginModal = () => document.getElementById('userLoginModal').classList.add('hidden');
         window.userLogout = () => {
