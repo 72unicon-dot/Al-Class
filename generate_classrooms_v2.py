@@ -16,8 +16,8 @@ course_configs = {
         "output": "classroom_basics.html",
         "title": "AI 기초 및 활용",
         "curriculum": [
-            {"title": "Day 1: 생성형 AI 원리 이해", "desc": "LLM의 작동 방식과 프롬프트 엔지니어링 기초", "details": ["LLM과 Transformer 구조", "Token과 Context Window 이해", "Zero-shot vs Few-shot Prompting"]},
-            {"title": "Day 2: 업무 생산성 도구", "desc": "ChatGPT, Gemini, Claude 등 주요 툴 활용법", "details": ["이메일 및 보고서 자동 작성", "데이터 분석 및 시각화 실습", "회의록 요약 및 할 일 추출"]}
+            {"title": "Class 1: 생성형 AI 원리 이해 (오전)", "desc": "LLM의 작동 방식과 프롬프트 엔지니어링 기초 (4시간)", "details": ["LLM과 Transformer 구조", "Token과 Context Window 이해", "Zero-shot vs Few-shot Prompting"]},
+            {"title": "Class 2: 업무 생산성 도구 (오후)", "desc": "ChatGPT, Gemini, Claude 등 주요 툴 활용법 (4시간)", "details": ["이메일 및 보고서 자동 작성", "데이터 분석 및 시각화 실습", "회의록 요약 및 할 일 추출"]}
         ]
     },
     "intro_business.html": {
@@ -215,6 +215,12 @@ def get_curriculum_card(index, module, course_output_filename):
             link = "lecture_ethics_class1.html"
         elif index == 1:
             link = "lecture_ethics_class2.html"
+    elif "classroom_basics.html" in course_output_filename:
+        # Basics Special Logic
+        if index == 0:
+            link = "lecture_basics_class1.html"
+        elif index == 1:
+            link = "lecture_basics_class2.html"
     else:
         # Generic Logic for others
         day_num = str(index + 1).zfill(2)

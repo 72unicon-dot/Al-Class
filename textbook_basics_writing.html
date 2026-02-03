@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - AI 기초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+        .textbook-content table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .textbook-content th, .textbook-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+        .textbook-content th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="classroom_basics.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의실로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-print"></i></button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+
+            <div class="bg-gradient-to-r from-teal-600 to-teal-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">이메일 및 보고서 자동 작성 실습</h1>
+                <p class="text-white/80 text-lg font-light">Writing Automation</p>
+            </div>
+            <div class="p-10 md:p-14 textbook-content">
+                
+            <h3>1. 이메일 작성 프롬프트 템플릿</h3>
+            <p>상황, 수신자, 톤앤매너(정중하게/간결하게)를 지정하면 완벽한 비즈니스 이메일을 써줍니다.</p>
+            <div class="bg-teal-50 p-4 rounded-xl border border-teal-100 my-4 text-sm font-mono">
+                "다음 내용을 포함해서 거래처 김 팀장님께 보낼 정중한 거절 이메일을 써줘.<br>
+                - 제안 주신 프로젝트는 흥미로움<br>
+                - 하지만 현재 우리 팀 리소스가 부족하여 참여 어려움<br>
+                - 다음 하반기에는 검토 가능함<br>
+                - 따뜻한 안부 인사 포함"
+            </div>
+
+            <h3>2. 보고서 초안 잡기</h3>
+            <p>빈 화면 증후군(Blank Page Syndrome)을 극복하세요. AI에게 목차(Index)를 먼저 짜달라고 한 뒤, 살을 붙여나가는 방식이 효율적입니다.</p>
+        
+            </div>
+    
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <button onclick="history.back()" class="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition">
+                    목록으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

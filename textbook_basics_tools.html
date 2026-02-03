@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - AI 기초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+        .textbook-content table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .textbook-content th, .textbook-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+        .textbook-content th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="classroom_basics.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의실로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-print"></i></button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+
+            <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">주요 생산성 도구 비교: ChatGPT, Gemini, Claude</h1>
+                <p class="text-white/80 text-lg font-light">Choosing the Right Tool for the Job</p>
+            </div>
+            <div class="p-10 md:p-14 textbook-content">
+                
+            <h3>1. ChatGPT (OpenAI)</h3>
+            <p>가장 범용적이고 밸런스가 좋은 모델입니다. Advanced Data Analysis 기능을 통해 엑셀 데이터 분석에 강점이 있으며, GPTs를 통해 나만의 챗봇을 만들기 쉽습니다.</p>
+
+            <h3>2. Gemini (Google)</h3>
+            <p>구글 워크스페이스(Docs, Gmail, Drive)와의 연동이 가장 큰  강점입니다. 유튜브 요약, 구글 지도 검색 등 구글 생태계 활용에 최적화되어 있습니다. 또한 멀티모달(이미지, 영상 이해) 능력이 뛰어납니다.</p>
+
+            <h3>3. Claude (Anthropic)</h3>
+            <p>한국어 작문 능력이 매우 자연스럽고, 코딩 능력이 탁월합니다. 'Artifacts' 기능을 통해 생성된 코드나 문서를 별도 창에서 미리보기 할 수 있어 개발자와 작가들에게 인기가 많습니다.</p>
+
+            <h3>4. 요약 비교</h3>
+            <table class="w-full text-sm text-left border-collapse mt-4">
+                <tr class="bg-slate-100 border-b">
+                    <th class="p-2">모델</th>
+                    <th class="p-2">강점</th>
+                    <th class="p-2">추천 용도</th>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-2 font-bold">ChatGPT</td>
+                    <td class="p-2">데이터 분석, 커스텀 챗봇</td>
+                    <td class="p-2">엑셀 분석, 범용 업무</td>
+                </tr>
+                <tr class="border-b">
+                    <td class="p-2 font-bold">Gemini</td>
+                    <td class="p-2">구글 연동, 긴 문맥 처리</td>
+                    <td class="p-2">이메일 작성, 긴 문서 요약</td>
+                </tr>
+                 <tr class="border-b">
+                    <td class="p-2 font-bold">Claude</td>
+                    <td class="p-2">자연스러운 문장, 코딩</td>
+                    <td class="p-2">보고서 초안, 프로그래밍</td>
+                </tr>
+            </table>
+        
+            </div>
+    
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <button onclick="history.back()" class="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition">
+                    목록으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

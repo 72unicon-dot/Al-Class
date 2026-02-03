@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - AI 기초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+        .textbook-content table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .textbook-content th, .textbook-content td { padding: 0.75rem; border: 1px solid #e2e8f0; }
+        .textbook-content th { background-color: #f8fafc; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="classroom_basics.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의실로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-print"></i></button>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+
+            <div class="bg-gradient-to-r from-violet-600 to-violet-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">Zero-shot vs Few-shot Prompting</h1>
+                <p class="text-white/80 text-lg font-light">Core Prompt Engineering Techniques</p>
+            </div>
+            <div class="p-10 md:p-14 textbook-content">
+                
+            <h3>1. 프롬프트 엔지니어링이란?</h3>
+            <p>AI로부터 원하는 최적의 결과를 얻어내기 위해 질문(지시문)을 설계하는 기술입니다.</p>
+
+            <h3>2. Zero-shot Prompting</h3>
+            <p>예시를 주지 않고 바로 지시하는 방법입니다.</p>
+            <div class="bg-gray-100 p-3 rounded mb-4 font-mono text-sm">
+                User: "이 문장을 영어로 번역해: 안녕하세요."<br>
+                AI: "Hello."
+            </div>
+
+            <h3>3. Few-shot Prompting (강력 추천 ⭐)</h3>
+            <p>몇 가지 예시(Sample)를 제공하여 AI가 패턴을 학습하게 하는 방법입니다. 정확도가 훨씬 높아집니다.</p>
+            <div class="bg-gray-100 p-3 rounded mb-4 font-mono text-sm">
+                User:<br>
+                "과일이면 🔴, 야채면 🟢를 붙여줘."<br>
+                사과: 🔴<br>
+                시금치: 🟢<br>
+                토마토: "<br>
+                AI: "🔴" (또는 상황에 따라 🟢)
+            </div>
+        
+            </div>
+    
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <button onclick="history.back()" class="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-bold hover:bg-slate-200 transition">
+                    목록으로
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
