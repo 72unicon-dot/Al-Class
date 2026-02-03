@@ -118,7 +118,9 @@ class1_content = base_html_start + get_header("AI 윤리와 규제 트렌드", "
             </div>
             <div class="grid md:grid-cols-2 gap-6">
 """
-class1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"], "textbook_ethics_copyright.html")
+# Link the specific PDF here
+target_pdf = "https://firebasestorage.googleapis.com/v0/b/lms01-bc677.firebasestorage.app/o/resources%2F1770156348748_cleaned_AI_Copyright_The_Dojo_Of_Wisdom.pdf?alt=media&token=078a3e99-cd83-48bd-b6b3-fd0ce532e1a9"
+class1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"], "textbook_ethics_copyright.html", target_pdf)
 class1_content += get_card("globe", "blue", "글로벌 AI 규제: EU AI Act", "세계 최초의 포괄적 AI 규제법인 EU AI Act의 등급별 규제와 기업 영향을 알아봅니다.", ["EU AI Act", "Risk-based"], "textbook_ethics_eu_act.html")
 class1_content += get_card("user-secret", "red", "개인정보보호와 AI", "데이터 학습 및 활용 과정에서 발생할 수 있는 개인정보 침해 이슈와 비식별화 기술을 다룹니다.", ["Privacy", "GDPR"], "textbook_ethics_privacy.html")
 class1_content += get_card("building", "slate", "기업 데이터 유출 사고 사례", "삼성전자 등 주요 기업의 생성형 AI 도입 초기 데이터 유출 사고와 시사점을 분석합니다.", ["Security", "Data Leak"], "textbook_ethics_leak.html")
