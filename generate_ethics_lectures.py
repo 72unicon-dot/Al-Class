@@ -22,10 +22,13 @@ def get_header(title, subtitle, class_num="01"):
     </header>
     """
 
-def get_card(icon, color, title, desc, tags):
+# Updated get_card to accept specific links
+def get_card(icon, color, title, desc, tags, view_link):
     tag_html = ""
     for tag in tags:
         tag_html += f'<span class="bg-{color}-50 text-{color}-700 px-3 py-1 rounded-md text-xs font-semibold">{tag}</span>'
+    
+    listen_link = "https://al-class.vercel.app/ai-lecture-room/dist/index.html"
     
     return f"""
                 <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-{color}-200 transition-all group">
@@ -40,19 +43,18 @@ def get_card(icon, color, title, desc, tags):
                                 {tag_html}
                             </div>
                             <div class="flex gap-2">
-                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="{view_link}" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
-                                </button>
-                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
+                                </a>
+                                <a href="{listen_link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
     """
 
-# Template Base
 base_html_start = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -64,7 +66,7 @@ base_html_start = """<!DOCTYPE html>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
-        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); } /* Indigo-Purple for Ethics */
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
     </style>
 </head>
@@ -96,10 +98,10 @@ class1_content = base_html_start + get_header("AI 윤리와 규제 트렌드", "
             </div>
             <div class="grid md:grid-cols-2 gap-6">
 """
-class1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"])
-class1_content += get_card("globe", "blue", "글로벌 AI 규제: EU AI Act", "세계 최초의 포괄적 AI 규제법인 EU AI Act의 등급별 규제와 기업 영향을 알아봅니다.", ["EU AI Act", "Risk-based"])
-class1_content += get_card("user-secret", "red", "개인정보보호와 AI", "데이터 학습 및 활용 과정에서 발생할 수 있는 개인정보 침해 이슈와 비식별화 기술을 다룹니다.", ["Privacy", "GDPR"])
-class1_content += get_card("building", "slate", "기업 데이터 유출 사고 사례", "삼성전자 등 주요 기업의 생성형 AI 도입 초기 데이터 유출 사고와 시사점을 분석합니다.", ["Security", "Data Leak"])
+class1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"], "textbook_ethics_copyright.html")
+class1_content += get_card("globe", "blue", "글로벌 AI 규제: EU AI Act", "세계 최초의 포괄적 AI 규제법인 EU AI Act의 등급별 규제와 기업 영향을 알아봅니다.", ["EU AI Act", "Risk-based"], "textbook_ethics_eu_act.html")
+class1_content += get_card("user-secret", "red", "개인정보보호와 AI", "데이터 학습 및 활용 과정에서 발생할 수 있는 개인정보 침해 이슈와 비식별화 기술을 다룹니다.", ["Privacy", "GDPR"], "textbook_ethics_privacy.html")
+class1_content += get_card("building", "slate", "기업 데이터 유출 사고 사례", "삼성전자 등 주요 기업의 생성형 AI 도입 초기 데이터 유출 사고와 시사점을 분석합니다.", ["Security", "Data Leak"], "textbook_ethics_leak.html")
 class1_content += """
             </div>
         </section>
@@ -121,9 +123,9 @@ class2_content = base_html_start + get_header("실무 가이드라인 수립", "
             </div>
             <div class="grid md:grid-cols-2 gap-6">
 """
-class2_content += get_card("shield-alt", "emerald", "프롬프트 입력 보안 수칙", "기밀 정보, 개인정보 입력을 방지하기 위한 프롬프트 필터링 및 보안 가이드를 수립합니다.", ["Security", "Prompt"])
-class2_content += get_card("file-signature", "teal", "AI 산출물 책임과 권한", "AI가 작성한 코드나 문서의 오류에 대한 책임 소재와 검수 프로세스를 정립합니다.", ["Accountability", "Review"])
-class2_content += get_card("exclamation-triangle", "amber", "할루시네이션 대응 전략", "AI의 거짓 답변(환각)을 식별하고 크로스체크(Fact Check)하는 실무 프로세스를 배웁니다.", ["Hallucination", "Fact Check"])
+class2_content += get_card("shield-alt", "emerald", "프롬프트 입력 보안 수칙", "기밀 정보, 개인정보 입력을 방지하기 위한 프롬프트 필터링 및 보안 가이드를 수립합니다.", ["Security", "Prompt"], "textbook_ethics_prompt.html")
+class2_content += get_card("file-signature", "teal", "AI 산출물 책임과 권한", "AI가 작성한 코드나 문서의 오류에 대한 책임 소재와 검수 프로세스를 정립합니다.", ["Accountability", "Review"], "textbook_ethics_accountability.html")
+class2_content += get_card("exclamation-triangle", "amber", "할루시네이션 대응 전략", "AI의 거짓 답변(환각)을 식별하고 크로스체크(Fact Check)하는 실무 프로세스를 배웁니다.", ["Hallucination", "Fact Check"], "textbook_ethics_hallucination.html")
 class2_content += """
             </div>
         </section>
@@ -156,4 +158,4 @@ class2_content += """
 with open("lecture_ethics_class2.html", "w", encoding="utf-8") as f:
     f.write(class2_content)
 
-print("Generated lecture_ethics_class1.html and lecture_ethics_class2.html")
+print("Regenerated lecture_ethics_class1.html and lecture_ethics_class2.html with links")
