@@ -392,9 +392,11 @@ for item in textbooks:
 # ==========================================
 # 3. GENERATE LECTURE PAGES (Class 1~4)
 # ==========================================
-def get_lecture_header(title, subtitle, day_label):
+def get_lecture_header(title, subtitle, class_num):
     return f"""
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <meta name="course-id" content="business">
+        <meta name="class-id" content="{class_num}">
         <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
             <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
             <a href="classroom_business.html"
@@ -437,7 +439,7 @@ def get_card(icon, color, title, desc, tags, view_link):
                                 <a href="{listen_link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button onclick="alert('자료실에서 PDF를 확인하세요.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="{title}" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
@@ -473,6 +475,7 @@ base_html_end = """
             else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
         });
     </script>
+    <script type="module" src="./js/resource-loader.js"></script>
 </body>
 </html>
 """

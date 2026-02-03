@@ -49,7 +49,7 @@ def get_card(icon, color, title, desc, tags, view_link):
                                 <a href="{listen_link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button onclick="alert('자료실에서 PDF를 확인하세요.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="{title}" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
@@ -66,7 +66,11 @@ base_html_start = """<!DOCTYPE html>
     <title>AI소개 및 윤리 - 강의 시청</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="course-id" content="ethics">
+    <meta name="class-id" content="{class_num}">
     <style>
         body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
@@ -85,6 +89,7 @@ base_html_end = """
             else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
         });
     </script>
+    <script type="module" src="./js/resource-loader.js"></script>
 </body>
 </html>
 """
