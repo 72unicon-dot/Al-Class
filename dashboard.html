@@ -117,20 +117,37 @@
                 }
 
                 let html = '';
+
+                // ==========================================
+                // Link Mapping Definition
+                // ==========================================
+                const courseMap = {
+                    "AI 실무 마스터": "classroom.html",
+                    "AI소개 및 윤리": "classroom_ethics.html", "AI 윤리": "classroom_ethics.html",
+                    "AI 기초 입문": "classroom_basics.html",
+                    "AI 비즈니스 활용": "classroom_business.html",
+                    "AI 전문가 심화": "classroom_advanced.html",
+                    "AI 마케팅 전문가": "classroom_marketing.html",
+                    "AI 제조 전문가": "classroom_manufacturing.html",
+                    "AI 데이터 분석가": "classroom_data.html",
+                    "AI 영상 크리에이터": "classroom_video.html",
+                    "AI시대의 리더십": "classroom_leadership.html",
+                    "AI 비즈니스 컨설턴트": "classroom_consultant.html",
+                    "비즈니스 앱 크리에이터": "classroom_app_creator.html"
+                };
+
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    // Course Card HTML
-                    // We link to classroom.html?courseId=XYZ to differentiate later
-                    // For now, just link to classroom.html
-
                     const statusBadge = data.status === 'approved'
                         ? '<span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">수강중</span>'
                         : '<span class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded">승인 대기중</span>';
 
+                    // Resolve Link based on Course Name
+                    const targetPage = courseMap[data.courseName] || "classroom.html";
+
                     html += `
                     <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all group">
                         <div class="h-32 bg-gray-100 relative overflow-hidden">
-                            <!-- Background Pattern/Image placeholder -->
                             <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 opacity-90"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <i class="fas fa-chalkboard-teacher text-4xl text-white/20 transform group-hover:scale-110 transition-transform"></i>
@@ -145,8 +162,8 @@
                             
                             <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
                                 <span class="text-xs text-gray-400">신청일: ${data.appliedAt ? new Date(data.appliedAt.seconds * 1000).toLocaleDateString() : '-'}</span>
-                                <a href="classroom.html" class="text-indigo-600 font-bold text-sm hover:underline">
-                                    학습하기 <i class="fas fa-arrow-right ml-1"></i>
+                                <a href="${targetPage}" class="text-indigo-600 font-bold text-sm hover:underline">
+                                    강의실 입장 <i class="fas fa-arrow-right ml-1"></i>
                                 </a>
                             </div>
                         </div>

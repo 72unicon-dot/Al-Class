@@ -44,7 +44,7 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI시대의 리더십</h1>
+                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI Master Class</h1>
                     <p class="text-xs text-gray-500 font-medium">나의 강의실</p>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                                 <div class="flex items-center gap-4">
                                     <span class="text-4xl font-black opacity-30">01</span>
                                     <div>
-                                        <h3 class="text-2xl font-bold">오전: AI 패러다임 시프트</h3>
+                                        <h3 class="text-2xl font-bold">Day 1 (오전): AI 패러다임 시프트</h3>
                                         <p class="opacity-80">경영진이 반드시 알아야 할 AI 기술의 본질과 미래</p>
                                     </div>
                                 </div>
@@ -109,20 +109,19 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-indigo-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Gen AI가 바꿀 산업 지형도와 비즈니스 모델</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Gen AI가 바꿀 산업 지형도와 비즈니스 모델</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Global 기업들의 성공/실패 사례 분석</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Global 기업들의 성공/실패 사례 분석</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>우리 기업의 AI 성숙도 진단</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>우리 기업의 AI 성숙도 진단</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                     <!-- Module 2 -->
                     <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-emerald-50 transition-all">
                         <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-6">
@@ -130,7 +129,7 @@
                                 <div class="flex items-center gap-4">
                                     <span class="text-4xl font-black opacity-30">02</span>
                                     <div>
-                                        <h3 class="text-2xl font-bold">오후: AI 도입 전략 & 의사결정</h3>
+                                        <h3 class="text-2xl font-bold">Day 1 (오후): AI 도입 전략 & 의사결정</h3>
                                         <p class="opacity-80">실질적인 성과를 내는 도입 로드맵 수립</p>
                                     </div>
                                 </div>
@@ -143,15 +142,15 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-emerald-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Top-down vs Bottom-up 도입 전략</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>Top-down vs Bottom-up 도입 전략</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>AI 도입 시 고려해야 할 비용(Capex/Opex)과 ROI</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>AI 도입 시 고려해야 할 비용(Capex/Opex)과 ROI</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>조직 변화 관리(Change Management)와 리더십</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>조직 변화 관리(Change Management)와 리더십</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -183,12 +182,7 @@
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
 
                 // 진도 추적 UI 초기화
-                try {
-                    await displayTotalProgress(user.uid, 'progressContainer');
-                    await displayNextLesson(user.uid, 'nextLessonContainer');
-                } catch (error) {
-                    console.error('진도 표시 오류:', error);
-                }
+                // Course ID mapping logic could be added here later
             }
         });
 

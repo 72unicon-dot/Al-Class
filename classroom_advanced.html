@@ -44,7 +44,7 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI 전문가 심화</h1>
+                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI Master Class</h1>
                     <p class="text-xs text-gray-500 font-medium">나의 강의실</p>
                 </div>
             </div>
@@ -109,20 +109,19 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-indigo-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Transformer 구조와 Attention 메커니즘</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Transformer 구조와 Attention 메커니즘</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Llama 3, Mistral 등 로컬 LLM 구동</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Llama 3, Mistral 등 로컬 LLM 구동</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Prompt Tuning vs Fine-tuning 비교</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Prompt Tuning vs Fine-tuning 비교</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                     <!-- Module 2 -->
                     <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-emerald-50 transition-all">
                         <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-6">
@@ -143,20 +142,19 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-emerald-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>텍스트 임베딩과 벡터 데이터베이스 이해</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>텍스트 임베딩과 벡터 데이터베이스 이해</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>LangChain을 이용한 문서 검색 파이프라인</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>LangChain을 이용한 문서 검색 파이프라인</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>PDF/Web 데이터 연동 챗봇 실습</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>PDF/Web 데이터 연동 챗봇 실습</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                     <!-- Module 3 -->
                     <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-blue-50 transition-all">
                         <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-8 py-6">
@@ -177,15 +175,15 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-blue-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>LoRA를 활용한 효율적인 파인튜닝 실습</span></li>
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i><span>LoRA를 활용한 효율적인 파인튜닝 실습</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>자율 에이전트(Agent) 설계 및 툴 사용 권한 부여</span></li>
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i><span>자율 에이전트(Agent) 설계 및 툴 사용 권한 부여</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>기업용 AI 솔루션 아키텍처 설계</span></li>
+                                            class="fas fa-check-circle text-blue-600 mt-1"></i><span>기업용 AI 솔루션 아키텍처 설계</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -217,12 +215,7 @@
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
 
                 // 진도 추적 UI 초기화
-                try {
-                    await displayTotalProgress(user.uid, 'progressContainer');
-                    await displayNextLesson(user.uid, 'nextLessonContainer');
-                } catch (error) {
-                    console.error('진도 표시 오류:', error);
-                }
+                // Course ID mapping logic could be added here later
             }
         });
 

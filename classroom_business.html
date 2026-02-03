@@ -44,7 +44,7 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI 비즈니스 활용</h1>
+                    <h1 class="font-bold text-gray-800 text-lg leading-tight">AI Master Class</h1>
                     <p class="text-xs text-gray-500 font-medium">나의 강의실</p>
                 </div>
             </div>
@@ -109,20 +109,19 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-indigo-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>음성 녹음(Clova Note) 회의록 자동 변환</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>음성 녹음(Clova Note) 회의록 자동 변환</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Notion AI로 프로젝트 일정 관리하기</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>Notion AI로 프로젝트 일정 관리하기</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>ChatGPT로 시장 조사 보고서 초안 쓰기</span></li>
+                                            class="fas fa-check-circle text-indigo-600 mt-1"></i><span>ChatGPT로 시장 조사 보고서 초안 쓰기</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                     <!-- Module 2 -->
                     <div class="day-card bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 ring-4 ring-transparent hover:ring-emerald-50 transition-all">
                         <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white px-8 py-6">
@@ -143,15 +142,15 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <div class="bg-gray-50 rounded-2xl p-6">
+                            <div class="bg-emerald-50 rounded-2xl p-6">
                                 <ul class="space-y-3 text-gray-700">
                                     
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Gamma로 텍스트를 PPT로 1분 만에 변환</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>Gamma로 텍스트를 PPT로 1분 만에 변환</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>Midjourney로 저작권 걱정 없는 이미지 생성</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>Midjourney로 저작권 걱정 없는 이미지 생성</span></li>
                                     <li class="flex items-start gap-2"><i
-                                            class="fas fa-check-circle text-indigo-500 mt-1"></i><span>DeepL로 해외 바이어 이메일 및 제안서 번역</span></li>
+                                            class="fas fa-check-circle text-emerald-600 mt-1"></i><span>DeepL로 해외 바이어 이메일 및 제안서 번역</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -183,12 +182,7 @@
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
 
                 // 진도 추적 UI 초기화
-                try {
-                    await displayTotalProgress(user.uid, 'progressContainer');
-                    await displayNextLesson(user.uid, 'nextLessonContainer');
-                } catch (error) {
-                    console.error('진도 표시 오류:', error);
-                }
+                // Course ID mapping logic could be added here later
             }
         });
 
