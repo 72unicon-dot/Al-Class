@@ -35,6 +35,10 @@
                     class="w-full flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
                     <i class="fas fa-folder-open"></i> 자료실 관리
                 </button>
+                <button onclick="switchTab('notices')" id="nav-notices"
+                    class="w-full flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
+                    <i class="fas fa-bullhorn"></i> 공지사항 관리
+                </button>
                 <a href="#"
                     class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
                     <i class="fas fa-chart-bar"></i> 매출 통계 (준비중)
@@ -95,100 +99,200 @@
                         </table>
                     </div>
                 </div>
-            </main>
+        </div>
+        </main>
 
-            <!-- Main Section 2: Resources -->
-            <main id="section-resources" class="hidden flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
-
-                <!-- Upload Card -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
-                    <h3 class="font-bold text-gray-800 mb-4">새 자료 업로드</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-500 mb-1">과정 (Course)</label>
-                            <select id="resourceCourse"
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
-                                <option value="basics">AI 기초 (Basics)</option>
-                                <option value="ethics">AI 윤리 (Ethics)</option>
-                                <option value="business">AI 비즈니스 (Business)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-500 mb-1">강의 (Class)</label>
-                            <select id="resourceClass"
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
-                                <option value="01">Class 01</option>
-                                <option value="02">Class 02</option>
-                                <option value="03">Class 03</option>
-                                <option value="04">Class 04</option>
-                            </select>
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-xs font-medium text-gray-500 mb-1">자료 제목</label>
-                            <input type="text" id="resourceTitle" placeholder="예: 생성형 AI의 이해, 저작권 가이드"
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
-                        </div>
+        <!-- Main Section 3: Notices -->
+        <main id="section-notices" class="hidden flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+            <!-- Write Notice -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                <h3 class="font-bold text-gray-800 mb-4">공지사항 작성</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">제목</label>
+                        <input type="text" id="noticeTitle" placeholder="공지 제목을 입력하세요"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
                     </div>
-
-                    <!-- Input Type Toggle -->
-                    <div class="flex gap-4 mb-2">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="uploadType" value="file" checked onchange="toggleUploadType()"
-                                class="text-indigo-600">
-                            <span class="text-sm text-gray-700">파일 직접 업로드</span>
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="radio" name="uploadType" value="url" onchange="toggleUploadType()"
-                                class="text-indigo-600">
-                            <span class="text-sm text-gray-700">외부 링크 입력 (권장)</span>
-                        </label>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">내용</label>
+                        <textarea id="noticeContent" rows="4" placeholder="공지 내용을 입력하세요"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm"></textarea>
                     </div>
-
-                    <div class="flex flex-col md:flex-row gap-4 items-end">
-                        <div class="flex-1 w-full" id="fileInputGroup">
-                            <label class="block text-xs font-medium text-gray-500 mb-1">파일 선택 (PDF)</label>
-                            <input type="file" id="resourceFile" accept="application/pdf"
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50">
-                        </div>
-                        <div class="flex-1 w-full hidden" id="urlInputGroup">
-                            <label class="block text-xs font-medium text-gray-500 mb-1">파일 URL (Firebase Console 등에서
-                                복사)</label>
-                            <input type="text" id="resourceUrl" placeholder="https://..."
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
-                        </div>
-                        <button onclick="uploadResource()" id="uploadBtn"
-                            class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap">
-                            <i class="fas fa-cloud-upload-alt mr-2"></i> 등록
+                    <div class="text-right">
+                        <button onclick="addNotice()" id="noticeBtn"
+                            class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                            <i class="fas fa-pencil-alt mr-2"></i> 공지 등록
                         </button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Resource List -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="p-6 border-b border-gray-100">
-                        <h3 class="font-bold text-gray-800">자료실 목록</h3>
+            <!-- Notice List -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="font-bold text-gray-800">공지사항 목록</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
+                            <tr>
+                                <th class="px-6 py-4 w-32">등록일</th>
+                                <th class="px-6 py-4">제목</th>
+                                <th class="px-6 py-4 w-24 text-right">관리</th>
+                            </tr>
+                        </thead>
+                        <tbody id="noticeTableBody" class="divide-y divide-gray-100">
+                            <tr>
+                                <td colspan="3" class="px-6 py-8 text-center text-gray-400">불러오는 중...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Main Section 2: Resources -->
+        <main id="section-resources" class="hidden flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+
+            <!-- Upload Card -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                <h3 class="font-bold text-gray-800 mb-4">새 자료 업로드</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">과정 (Course)</label>
+                        <select id="resourceCourse"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
+                            <option value="basics">AI 기초 (Basics)</option>
+                            <option value="ethics">AI 윤리 (Ethics)</option>
+                            <option value="business">AI 비즈니스 (Business)</option>
+                        </select>
                     </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left">
-                            <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
-                                <tr>
-                                    <th class="px-6 py-4">등록일</th>
-                                    <th class="px-6 py-4">구분</th>
-                                    <th class="px-6 py-4">제목 (매칭 키)</th>
-                                    <th class="px-6 py-4">파일명</th>
-                                    <th class="px-6 py-4 text-right">관리</th>
-                                </tr>
-                            </thead>
-                            <tbody id="resourceTableBody" class="divide-y divide-gray-100">
-                                <tr>
-                                    <td colspan="5" class="px-6 py-8 text-center text-gray-400">데이터를 불러오는 중...</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">강의 (Class)</label>
+                        <select id="resourceClass"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
+                            <option value="01">Class 01</option>
+                            <option value="02">Class 02</option>
+                            <option value="03">Class 03</option>
+                            <option value="04">Class 04</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-medium text-gray-500 mb-1">자료 제목</label>
+                        <input type="text" id="resourceTitle" placeholder="예: 생성형 AI의 이해, 저작권 가이드"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
                     </div>
                 </div>
-            </main>
+
+                <!-- Input Type Toggle -->
+                <div class="flex gap-4 mb-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="uploadType" value="file" checked onchange="toggleUploadType()"
+                            class="text-indigo-600">
+                        <span class="text-sm text-gray-700">파일 직접 업로드</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="uploadType" value="url" onchange="toggleUploadType()"
+                            class="text-indigo-600">
+                        <span class="text-sm text-gray-700">외부 링크 입력 (권장)</span>
+                    </label>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 items-end">
+                    <div class="flex-1 w-full" id="fileInputGroup">
+                        <label class="block text-xs font-medium text-gray-500 mb-1">파일 선택 (PDF)</label>
+                        <input type="file" id="resourceFile" accept="application/pdf"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50">
+                    </div>
+                    <div class="flex-1 w-full hidden" id="urlInputGroup">
+                        <label class="block text-xs font-medium text-gray-500 mb-1">파일 URL (Firebase Console 등에서
+                            복사)</label>
+                        <input type="text" id="resourceUrl" placeholder="https://..."
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                    </div>
+                    <button onclick="uploadResource()" id="uploadBtn"
+                        class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap">
+                        <i class="fas fa-cloud-upload-alt mr-2"></i> 등록
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resource List -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-100">
+                    <h3 class="font-bold text-gray-800">자료실 목록</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
+                            <tr>
+                                <th class="px-6 py-4">등록일</th>
+                                <th class="px-6 py-4">구분</th>
+                                <th class="px-6 py-4">제목 (매칭 키)</th>
+                                <th class="px-6 py-4">파일명</th>
+                                <th class="px-6 py-4 text-right">관리</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resourceTableBody" class="divide-y divide-gray-100">
+                            <tr>
+                                <td colspan="5" class="px-6 py-8 text-center text-gray-400">데이터를 불러오는 중...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    </main>
+
+    <!-- Main Section 3: Notices -->
+    <main id="section-notices" class="hidden flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+        <!-- Write Notice -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+            <h3 class="font-bold text-gray-800 mb-4">공지사항 작성</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">제목</label>
+                    <input type="text" id="noticeTitle" placeholder="공지 제목을 입력하세요"
+                        class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-500 mb-1">내용</label>
+                    <textarea id="noticeContent" rows="4" placeholder="공지 내용을 입력하세요"
+                        class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm"></textarea>
+                </div>
+                <div class="text-right">
+                    <button onclick="addNotice()" id="noticeBtn"
+                        class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-pencil-alt mr-2"></i> 공지 등록
+                    </button>
+                </div>
+            </div>
         </div>
+
+        <!-- Notice List -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="font-bold text-gray-800">공지사항 목록</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
+                        <tr>
+                            <th class="px-6 py-4 w-32">등록일</th>
+                            <th class="px-6 py-4">제목</th>
+                            <th class="px-6 py-4 w-24 text-right">관리</th>
+                        </tr>
+                    </thead>
+                    <tbody id="noticeTableBody" class="divide-y divide-gray-100">
+                        <tr>
+                            <td colspan="3" class="px-6 py-8 text-center text-gray-400">불러오는 중...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    </div>
     </div>
 
     <!-- Script -->
@@ -228,17 +332,101 @@
             // Section Toggle
             document.getElementById('section-applications').classList.add('hidden');
             document.getElementById('section-resources').classList.add('hidden');
+            document.getElementById('section-notices').classList.add('hidden');
             document.getElementById(`section-${tabName}`).classList.remove('hidden');
 
             // Title Update
-            const titles = { 'applications': '수강 신청 현황', 'resources': '자료실 관리' };
+            const titles = { 'applications': '수강 신청 현황', 'resources': '자료실 관리', 'notices': '공지사항 관리' };
             document.getElementById('pageTitle').innerText = titles[tabName];
 
             // Data Load
-            // We don't assume load here right away, functions handle their own caching or re-fetch logic if needed.
-            // But relying on onAuthStateChanged is safer for initial load.
             if (tabName === 'applications') loadApplications();
             if (tabName === 'resources') loadResources();
+            if (tabName === 'notices') loadNotices();
+        }
+
+        // ... [Existing Application Logic] ...
+
+        // ==========================================
+        // Notice Logic (New)
+        // ==========================================
+        async function loadNotices() {
+            const tableBody = document.getElementById('noticeTableBody');
+            try {
+                const q = query(collection(db, "notices"), orderBy("createdAt", "desc"));
+                const querySnapshot = await getDocs(q);
+
+                if (querySnapshot.empty) {
+                    tableBody.innerHTML = '<tr><td colspan="3" class="px-6 py-8 text-center text-gray-400">등록된 공지사항이 없습니다.</td></tr>';
+                    return;
+                }
+
+                let html = '';
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '-';
+                    html += `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 text-gray-500">${date}</td>
+                            <td class="px-6 py-4 font-bold text-gray-800">
+                                ${data.title}
+                                <p class="text-xs text-gray-500 font-normal mt-1 truncate max-w-md">${data.content}</p>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <button onclick="deleteNotice('${doc.id}')" class="text-red-400 hover:text-red-600 text-xs underline">삭제</button>
+                            </td>
+                        </tr>`;
+                });
+                tableBody.innerHTML = html;
+            } catch (error) {
+                console.error(error);
+                tableBody.innerHTML = '<tr><td colspan="3" class="px-6 py-8 text-center text-red-500">로딩 실패</td></tr>';
+            }
+        }
+
+        window.addNotice = async () => {
+            const title = document.getElementById('noticeTitle').value;
+            const content = document.getElementById('noticeContent').value;
+            const btn = document.getElementById('noticeBtn');
+
+            if (!title || !content) {
+                alert("제목과 내용을 입력해주세요.");
+                return;
+            }
+
+            try {
+                btn.disabled = true;
+                btn.innerText = "등록 중...";
+
+                await addDoc(collection(db, "notices"), {
+                    title: title,
+                    content: content,
+                    createdAt: serverTimestamp()
+                });
+
+                alert("공지가 등록되었습니다.");
+                document.getElementById('noticeTitle').value = '';
+                document.getElementById('noticeContent').value = '';
+                loadNotices();
+            } catch (error) {
+                console.error(error);
+                alert("등록 실패: " + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-pencil-alt mr-2"></i> 공지 등록';
+            }
+        }
+
+        window.deleteNotice = async (id) => {
+            if (confirm("정말 이 공지사항을 삭제하시겠습니까?")) {
+                try {
+                    await deleteDoc(doc(db, "notices", id));
+                    alert("삭제되었습니다.");
+                    loadNotices();
+                } catch (e) {
+                    alert("삭제 실패: " + e.message);
+                }
+            }
         }
 
         // ==========================================
