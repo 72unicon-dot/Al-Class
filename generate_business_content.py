@@ -407,7 +407,7 @@ def get_lecture_header(title, subtitle, class_num):
         </div>
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
             <div class="space-y-2">
-                <span class="text-6xl font-black opacity-20 block mb-[-10px]">{day_label}</span>
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">{class_num}</span>
                 <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">{title}</h1>
                 <p class="text-xl opacity-90 font-light">{subtitle}</p>
             </div>
