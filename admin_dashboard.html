@@ -103,12 +103,34 @@
                 <!-- Upload Card -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
                     <h3 class="font-bold text-gray-800 mb-4">새 자료 업로드</h3>
-                    <div class="flex flex-col md:flex-row gap-4 items-end">
-                        <div class="flex-1 w-full">
-                            <label class="block text-xs font-medium text-gray-500 mb-1">자료 제목</label>
-                            <input type="text" id="resourceTitle" placeholder="예: 1주차 강의자료.pdf"
-                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-500 mb-1">과정 (Course)</label>
+                            <select id="resourceCourse"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
+                                <option value="basics">AI 기초 (Basics)</option>
+                                <option value="ethics">AI 윤리 (Ethics)</option>
+                                <option value="business">AI 비즈니스 (Business)</option>
+                            </select>
                         </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-500 mb-1">강의 (Class)</label>
+                            <select id="resourceClass"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-white">
+                                <option value="01">Class 01</option>
+                                <option value="02">Class 02</option>
+                                <option value="03">Class 03</option>
+                                <option value="04">Class 04</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-medium text-gray-500 mb-1">카드 제목 (정확히 입력)</label>
+                            <input type="text" id="resourceTitle" placeholder="예: LLM과 Transformer 구조"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                            <p class="text-xs text-red-400 mt-1">* 강의 페이지의 카드 제목과 정확히 일치해야 버튼이 활성화됩니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-end">
                         <div class="flex-1 w-full">
                             <label class="block text-xs font-medium text-gray-500 mb-1">파일 선택 (PDF)</label>
                             <input type="file" id="resourceFile" accept="application/pdf"
@@ -131,14 +153,15 @@
                             <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
                                 <tr>
                                     <th class="px-6 py-4">등록일</th>
-                                    <th class="px-6 py-4">제목</th>
+                                    <th class="px-6 py-4">구분</th>
+                                    <th class="px-6 py-4">제목 (매칭 키)</th>
                                     <th class="px-6 py-4">파일명</th>
                                     <th class="px-6 py-4 text-right">관리</th>
                                 </tr>
                             </thead>
                             <tbody id="resourceTableBody" class="divide-y divide-gray-100">
                                 <tr>
-                                    <td colspan="4" class="px-6 py-8 text-center text-gray-400">데이터를 불러오는 중...</td>
+                                    <td colspan="5" class="px-6 py-8 text-center text-gray-400">데이터를 불러오는 중...</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -260,14 +283,14 @@
         // ==========================================
         async function loadResources() {
             const tableBody = document.getElementById('resourceTableBody');
-            tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center"><i class="fas fa-spinner fa-spin"></i> 로딩 중...</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center"><i class="fas fa-spinner fa-spin"></i> 로딩 중...</td></tr>';
 
             try {
                 const q = query(collection(db, "resources"), orderBy("uploadedAt", "desc"));
                 const querySnapshot = await getDocs(q);
 
                 if (querySnapshot.empty) {
-                    tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-400">등록된 자료가 없습니다.</td></tr>';
+                    tableBody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-gray-400">등록된 자료가 없습니다.</td></tr>';
                     return;
                 }
 
@@ -275,14 +298,20 @@
                 querySnapshot.forEach((docSnap) => {
                     const data = docSnap.data();
                     const date = data.uploadedAt ? new Date(data.uploadedAt.seconds * 1000).toLocaleDateString() : '-';
+                    const courseName = data.course ? data.course.toUpperCase() : 'N/A';
+                    const className = data.classNum ? `Class ${data.classNum}` : 'N/A';
 
                     html += `
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 text-gray-500">${date}</td>
-                            <td class="px-6 py-4 font-medium text-gray-800">${data.title}</td>
+                            <td class="px-6 py-4 text-gray-800">
+                                <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold mr-1">${courseName}</span>
+                                <span class="text-slate-500 text-xs">${className}</span>
+                            </td>
+                            <td class="px-6 py-4 font-bold text-gray-900">${data.title}</td>
                             <td class="px-6 py-4 text-gray-600 text-xs">${data.filename}</td>
                             <td class="px-6 py-4 text-right flex justify-end gap-2">
-                                <button onclick="window.open('${data.url}')" class="text-indigo-500 hover:text-indigo-700 text-xs border border-indigo-200 px-2 py-1 rounded">다운로드</button>
+                                <button onclick="window.open('${data.url}')" class="text-indigo-500 hover:text-indigo-700 text-xs border border-indigo-200 px-2 py-1 rounded">확인</button>
                                 <button onclick="deleteResource('${docSnap.id}', '${data.storagePath}')" class="text-red-400 hover:text-red-600 text-xs underline px-2">삭제</button>
                             </td>
                         </tr>`;
@@ -291,17 +320,19 @@
 
             } catch (error) {
                 console.error(error);
-                tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-red-500">데이터 로드 실패</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-red-500">데이터 로드 실패</td></tr>';
             }
         }
 
         window.uploadResource = async () => {
+            const courseSelect = document.getElementById('resourceCourse');
+            const classSelect = document.getElementById('resourceClass');
             const titleInput = document.getElementById('resourceTitle');
             const fileInput = document.getElementById('resourceFile');
             const btn = document.getElementById('uploadBtn');
 
             if (!titleInput.value || !fileInput.files[0]) {
-                alert("제목과 파일을 모두 입력해주세요.");
+                alert("필수 정보를 모두 입력해주세요.");
                 return;
             }
 
@@ -319,7 +350,9 @@
 
                 // 2. Save Metadata to Firestore
                 await addDoc(collection(db, "resources"), {
-                    title: titleInput.value,
+                    course: courseSelect.value,
+                    classNum: classSelect.value,
+                    title: titleInput.value.trim(),
                     filename: file.name,
                     storagePath: storagePath,
                     url: downloadURL,
