@@ -150,9 +150,25 @@
 
     <!-- Script -->
     <script type="module">
-        import { db, auth, storage } from './js/firebase-config.js'; // Ensure storage is exported in config
+        import { db, auth, storage } from './js/firebase-config.js';
         import { collection, query, orderBy, getDocs, updateDoc, doc, addDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { ref, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // ==========================================
+        // Auth Check & Initialization
+        // ==========================================
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, load data
+                console.log("Admin logged in:", user.email);
+                loadApplications();
+            } else {
+                // No user is signed in
+                alert("관리자 로그인이 필요합니다.");
+                window.location.replace("index.html"); // Redirect to login page
+            }
+        });
 
         // ==========================================
         // Tab Handler
@@ -176,6 +192,8 @@
             document.getElementById('pageTitle').innerText = titles[tabName];
 
             // Data Load
+            // We don't assume load here right away, functions handle their own caching or re-fetch logic if needed.
+            // But relying on onAuthStateChanged is safer for initial load.
             if (tabName === 'applications') loadApplications();
             if (tabName === 'resources') loadResources();
         }
@@ -188,6 +206,7 @@
             try {
                 const q = query(collection(db, "applications"), orderBy("appliedAt", "desc"));
                 const querySnapshot = await getDocs(q);
+                // ... (rest of the function remains same, just ensuring context)
                 document.getElementById('totalCount').innerText = querySnapshot.size;
 
                 if (querySnapshot.empty) {
@@ -219,6 +238,10 @@
                 tableBody.innerHTML = html;
             } catch (error) {
                 console.error("Error loading admin data:", error);
+                // If permission denied error happens here too, it's a hint.
+                if (error.code === 'permission-denied') {
+                    tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-400">권한이 없습니다 (로그인 필요).</td></tr>`;
+                }
             }
         }
 
@@ -337,7 +360,7 @@
         }
 
         // Initialize with default tab
-        loadApplications();
+        // loadApplications(); // Handled by onAuthStateChanged
     </script>
 </body>
 
