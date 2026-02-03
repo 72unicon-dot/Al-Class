@@ -437,6 +437,9 @@ def get_card(icon, color, title, desc, tags, view_link):
                                 <a href="{listen_link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-{color}-600 text-white text-sm font-bold rounded-lg hover:bg-{color}-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
+                                <button onclick="alert('자료실에서 PDF를 확인하세요.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
                             </div>
                         </div>
                     </div>
