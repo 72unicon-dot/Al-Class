@@ -27,9 +27,14 @@
                 <p class="text-xs text-slate-400 mt-1">AI Class Studio</p>
             </div>
             <nav class="flex-1 p-4 space-y-2">
-                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-indigo-600 rounded-lg text-white font-medium">
+                <button onclick="switchTab('applications')" id="nav-applications"
+                    class="w-full flex items-center gap-3 px-4 py-3 bg-indigo-600 rounded-lg text-white font-medium transition-colors">
                     <i class="fas fa-users"></i> 수강 신청 관리
-                </a>
+                </button>
+                <button onclick="switchTab('resources')" id="nav-resources"
+                    class="w-full flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
+                    <i class="fas fa-folder-open"></i> 자료실 관리
+                </button>
                 <a href="#"
                     class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
                     <i class="fas fa-chart-bar"></i> 매출 통계 (준비중)
@@ -45,7 +50,7 @@
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Topbar -->
             <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6">
-                <h2 class="text-lg font-semibold text-gray-800">수강 신청 현황</h2>
+                <h2 class="text-lg font-semibold text-gray-800" id="pageTitle">수강 신청 현황</h2>
                 <div class="flex items-center gap-4">
                     <button onclick="window.location.reload()" class="text-gray-500 hover:text-indigo-600">
                         <i class="fas fa-sync-alt"></i>
@@ -56,8 +61,8 @@
                 </div>
             </header>
 
-            <!-- Table Section -->
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+            <!-- Main Section 1: Applications -->
+            <main id="section-applications" class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <div
                         class="p-6 border-b border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -89,10 +94,54 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </main>
 
-                    <!-- Pagination (Static for now) -->
-                    <div class="p-4 border-t border-gray-100 flex justify-end">
-                        <span class="text-xs text-gray-400">Total Records: <span id="totalCount">0</span></span>
+            <!-- Main Section 2: Resources -->
+            <main id="section-resources" class="hidden flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+
+                <!-- Upload Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+                    <h3 class="font-bold text-gray-800 mb-4">새 자료 업로드</h3>
+                    <div class="flex flex-col md:flex-row gap-4 items-end">
+                        <div class="flex-1 w-full">
+                            <label class="block text-xs font-medium text-gray-500 mb-1">자료 제목</label>
+                            <input type="text" id="resourceTitle" placeholder="예: 1주차 강의자료.pdf"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                        </div>
+                        <div class="flex-1 w-full">
+                            <label class="block text-xs font-medium text-gray-500 mb-1">파일 선택 (PDF)</label>
+                            <input type="file" id="resourceFile" accept="application/pdf"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50">
+                        </div>
+                        <button onclick="uploadResource()" id="uploadBtn"
+                            class="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap">
+                            <i class="fas fa-cloud-upload-alt mr-2"></i> 업로드
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Resource List -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="font-bold text-gray-800">자료실 목록</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-gray-50 text-gray-500 font-medium border-b border-gray-100">
+                                <tr>
+                                    <th class="px-6 py-4">등록일</th>
+                                    <th class="px-6 py-4">제목</th>
+                                    <th class="px-6 py-4">파일명</th>
+                                    <th class="px-6 py-4 text-right">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resourceTableBody" class="divide-y divide-gray-100">
+                                <tr>
+                                    <td colspan="4" class="px-6 py-8 text-center text-gray-400">데이터를 불러오는 중...</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </main>
@@ -101,16 +150,44 @@
 
     <!-- Script -->
     <script type="module">
-        import { db, auth } from './js/firebase-config.js';
-        import { collection, query, orderBy, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { db, auth, storage } from './js/firebase-config.js'; // Ensure storage is exported in config
+        import { collection, query, orderBy, getDocs, updateDoc, doc, addDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { ref, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
+        // ==========================================
+        // Tab Handler
+        // ==========================================
+        window.switchTab = (tabName) => {
+            // UI Toggle
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('text-slate-300', 'hover:bg-slate-800');
+            });
+            document.getElementById(`nav-${tabName}`).classList.add('bg-indigo-600', 'text-white');
+            document.getElementById(`nav-${tabName}`).classList.remove('text-slate-300', 'hover:bg-slate-800');
+
+            // Section Toggle
+            document.getElementById('section-applications').classList.add('hidden');
+            document.getElementById('section-resources').classList.add('hidden');
+            document.getElementById(`section-${tabName}`).classList.remove('hidden');
+
+            // Title Update
+            const titles = { 'applications': '수강 신청 현황', 'resources': '자료실 관리' };
+            document.getElementById('pageTitle').innerText = titles[tabName];
+
+            // Data Load
+            if (tabName === 'applications') loadApplications();
+            if (tabName === 'resources') loadResources();
+        }
+
+        // ==========================================
+        // Application Logic
+        // ==========================================
         async function loadApplications() {
             const tableBody = document.getElementById('applicationTableBody');
-
             try {
                 const q = query(collection(db, "applications"), orderBy("appliedAt", "desc"));
                 const querySnapshot = await getDocs(q);
-
                 document.getElementById('totalCount').innerText = querySnapshot.size;
 
                 if (querySnapshot.empty) {
@@ -123,14 +200,9 @@
                     const data = docSnap.data();
                     const date = data.appliedAt ? new Date(data.appliedAt.seconds * 1000).toLocaleString() : '-';
                     const docId = docSnap.id;
-
-                    // Status Badge
-                    let statusBadge = '';
-                    if (data.status === 'approved') {
-                        statusBadge = '<span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">승인됨</span>';
-                    } else {
-                        statusBadge = '<span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-bold">대기중</span>';
-                    }
+                    let statusBadge = data.status === 'approved'
+                        ? '<span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">승인됨</span>'
+                        : '<span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-bold">대기중</span>';
 
                     html += `
                         <tr class="hover:bg-gray-50 transition-colors">
@@ -142,28 +214,130 @@
                             <td class="px-6 py-4 text-right">
                                 <button onclick="deleteApp('${docId}')" class="text-red-400 hover:text-red-600 text-xs underline">삭제</button>
                             </td>
-                        </tr>
-                    `;
-                    // Admin functionality like 'Approve' could be added here
+                        </tr>`;
                 });
+                tableBody.innerHTML = html;
+            } catch (error) {
+                console.error("Error loading admin data:", error);
+            }
+        }
 
+        window.deleteApp = async (id) => {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                try {
+                    await deleteDoc(doc(db, "applications", id));
+                    alert("삭제되었습니다.");
+                    loadApplications();
+                } catch (e) { alert("삭제 실패: " + e.message); }
+            }
+        }
+
+        // ==========================================
+        // Resource Logic (New)
+        // ==========================================
+        async function loadResources() {
+            const tableBody = document.getElementById('resourceTableBody');
+            tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center"><i class="fas fa-spinner fa-spin"></i> 로딩 중...</td></tr>';
+
+            try {
+                const q = query(collection(db, "resources"), orderBy("uploadedAt", "desc"));
+                const querySnapshot = await getDocs(q);
+
+                if (querySnapshot.empty) {
+                    tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-400">등록된 자료가 없습니다.</td></tr>';
+                    return;
+                }
+
+                let html = '';
+                querySnapshot.forEach((docSnap) => {
+                    const data = docSnap.data();
+                    const date = data.uploadedAt ? new Date(data.uploadedAt.seconds * 1000).toLocaleDateString() : '-';
+
+                    html += `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 text-gray-500">${date}</td>
+                            <td class="px-6 py-4 font-medium text-gray-800">${data.title}</td>
+                            <td class="px-6 py-4 text-gray-600 text-xs">${data.filename}</td>
+                            <td class="px-6 py-4 text-right flex justify-end gap-2">
+                                <button onclick="window.open('${data.url}')" class="text-indigo-500 hover:text-indigo-700 text-xs border border-indigo-200 px-2 py-1 rounded">다운로드</button>
+                                <button onclick="deleteResource('${docSnap.id}', '${data.storagePath}')" class="text-red-400 hover:text-red-600 text-xs underline px-2">삭제</button>
+                            </td>
+                        </tr>`;
+                });
                 tableBody.innerHTML = html;
 
             } catch (error) {
-                console.error("Error loading admin data:", error);
-                tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-400">오류 발생: ${error.message}</td></tr>`;
+                console.error(error);
+                tableBody.innerHTML = '<tr><td colspan="4" class="px-6 py-8 text-center text-red-500">데이터 로드 실패</td></tr>';
             }
         }
 
-        // Initial Load
+        window.uploadResource = async () => {
+            const titleInput = document.getElementById('resourceTitle');
+            const fileInput = document.getElementById('resourceFile');
+            const btn = document.getElementById('uploadBtn');
+
+            if (!titleInput.value || !fileInput.files[0]) {
+                alert("제목과 파일을 모두 입력해주세요.");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const storagePath = 'resources/' + Date.now() + '_' + file.name;
+            const storageRef = ref(storage, storagePath);
+
+            try {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 업로드 중...';
+
+                // 1. Upload to Storage
+                const snapshot = await uploadBytes(storageRef, file);
+                const downloadURL = await getDownloadURL(snapshot.ref);
+
+                // 2. Save Metadata to Firestore
+                await addDoc(collection(db, "resources"), {
+                    title: titleInput.value,
+                    filename: file.name,
+                    storagePath: storagePath,
+                    url: downloadURL,
+                    uploadedAt: serverTimestamp()
+                });
+
+                alert("업로드 성공!");
+                titleInput.value = '';
+                fileInput.value = '';
+                loadResources();
+
+            } catch (error) {
+                console.error("Upload failed:", error);
+                alert("업로드 실패: " + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-cloud-upload-alt mr-2"></i> 업로드';
+            }
+        }
+
+        window.deleteResource = async (docId, storagePath) => {
+            if (confirm("정말 이 자료를 삭제하시겠습니까? (복구 불가)")) {
+                try {
+                    // 1. Delete from Storage
+                    if (storagePath) {
+                        const fileRef = ref(storage, storagePath);
+                        await deleteObject(fileRef).catch(e => console.warn("Storage delete error (might be already missing):", e));
+                    }
+
+                    // 2. Delete from Firestore
+                    await deleteDoc(doc(db, "resources", docId));
+                    alert("삭제되었습니다.");
+                    loadResources();
+                } catch (e) {
+                    alert("삭제 실패: " + e.message);
+                }
+            }
+        }
+
+        // Initialize with default tab
         loadApplications();
-
-        // Simple Delete Stub (Optional)
-        window.deleteApp = (id) => {
-            if (confirm("정말 이 내역을 삭제하시겠습니까? (DB에서 영구 삭제됩니다)")) {
-                alert("삭제 기능은 데모 버전에서 비활성화되어 있습니다.");
-            }
-        }
     </script>
 </body>
 
