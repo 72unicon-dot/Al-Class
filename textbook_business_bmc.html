@@ -32,52 +32,42 @@
             </div>
         </div>
         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 print:shadow-none print:border-none">
-            <div class="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-10 md:p-16 relative overflow-hidden">
+            <div class="bg-gradient-to-r from-violet-700 to-violet-900 text-white p-10 md:p-16 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                 <span class="inline-block px-4 py-1.5 bg-white/10 rounded-full text-sm font-bold mb-6 backdrop-blur-md tracking-widest border border-white/20">LECTURE NOTE</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">산업별 AI 혁신 사례 심층 분석</h1>
-                <p class="text-white/80 text-xl font-light">Deep Dive into Global AI Transformation Stories</p>
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">AI 기반 비즈니스 모델 캔버스 (BMC)</h1>
+                <p class="text-white/80 text-xl font-light">Business Model Innovation with AI</p>
             </div>
             <div class="p-10 md:p-16 textbook-content">
                 
-            <h3>1. 금융 산업의 AI 혁신 (Finance)</h3>
-            <p>금융 산업은 방대한 데이터를 보유하고 있어 AI 도입 효과가 가장 즉각적으로 나타나는 분야입니다. 단순 챗봇 상담을 넘어 자산 관리, 리스크 분석, 사기 탐지 등 핵심 업무로 확산되고 있습니다.</p>
+            <h3>1. AI 도입으로 변화하는 9 Block</h3>
+            <p>기존 비즈니스 모델 캔버스(BMC)의 각 요소가 AI로 인해 어떻게 바뀌는지 분석합니다.</p>
 
-            <h4 class="text-lg font-bold text-slate-800 mt-4">Case 1: JP Morgan의 'IndexGPT' & 'LLM Suite'</h4>
-            <ul class="list-disc pl-6 space-y-2 mb-4">
-                <li><strong>배경:</strong> 고객들은 개인화된 투자 조언을 원하지만, 프라이빗 뱅커(PB)의 수는 한정적입니다.</li>
-                <li><strong>솔루션:</strong> 금융 데이터에 특화된 LLM인 IndexGPT를 개발하여 고객의 투자 성향에 맞는 ETF 및 금융 상품을 분석하고 추천합니다.</li>
-                <li><strong>성과:</strong> 자산 관리 서비스의 대중화를 이끌었으며, 직원들의 리서치 업무 시간을 40% 이상 단축했습니다.</li>
-            </ul>
-
-            <h4 class="text-lg font-bold text-slate-800 mt-4">Case 2: BloombergGPT</h4>
-            <ul class="list-disc pl-6 space-y-2 mb-4">
-                <li><strong>특징:</strong> 40년 이상의 금융 데이터(3630억 토큰)와 일반 데이터(3450억 토큰)를 결합하여 자체 구축한 모델입니다.</li>
-                <li><strong>차별점:</strong> 일반적인 GPT-4보다 금융 용어 이해도와 복잡한 금융 수식 처리 능력이 월등히 뛰어납니다.</li>
-            </ul>
-
-            <hr class="my-8 border-slate-200">
-
-            <h3>2. 제조 산업의 스마트 팩토리 (Manufacturing)</h3>
-            <p>제조업에서는 '효율성 극대화'와 '다운타임(가동 중단) 최소화'가 핵심입니다. 생성형 AI는 설계부터 유지보수까지 전 과정을 혁신하고 있습니다.</p>
-
-            <h4 class="text-lg font-bold text-slate-800 mt-4">Case: Mitsubishi Electric & Siemens</h4>
-            <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 my-4">
-                <strong>🔧 기존 방식:</strong> 엔지니어가 PLC(Programmable Logic Controller) 장비를 제어하기 위해 복잡한 특수 코드를 직접 작성해야 함.<br>
-                <strong>🚀 AI 도입 후:</strong> 엔지니어가 "컨베이어 벨트 속도를 10% 늦춰줘"라고 자연어로 입력하면, AI가 자동으로 PLC 코드를 생성하여 장비에 입력.
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="border p-4 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-violet-700 mb-2">💰 Cost Structure (비용 구조)</h4>
+                    <p class="text-sm text-slate-600">인건비 비중은 줄어들지만, <strong>API 사용료, 클라우드 서버 비용, 데이터 관리 비용</strong>이라는 새로운 비용 항목이 생깁니다. 변동비(Token usage) 관리가 핵심입니다.</p>
+                </div>
+                <div class="border p-4 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-violet-700 mb-2">🎁 Value Proposition (가치 제안)</h4>
+                    <p class="text-sm text-slate-600">'빠른 속도', '저렴한 가격'을 넘어 <strong>'개인 맞춤형 결과물', '창의적 보조'</strong>가 새로운 가치가 됩니다.</p>
+                </div>
+                <div class="border p-4 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-violet-700 mb-2">🔑 Key Resources (핵심 자원)</h4>
+                    <p class="text-sm text-slate-600">공장, 설비보다 <strong>'독자적인 데이터셋(Proprietary Data)'</strong>과 <strong>'프롬프트 엔지니어링 노하우'</strong>가 핵심 자산이 됩니다.</p>
+                </div>
+                <div class="border p-4 rounded-lg shadow-sm">
+                    <h4 class="font-bold text-violet-700 mb-2">🤝 Customer Relationship (고객 관계)</h4>
+                    <p class="text-sm text-slate-600">일방적 정보 전달에서 <strong>'24/365 실시간 대화형 상호작용'</strong>으로 관계의 질이 바뀝니다.</p>
+                </div>
             </div>
-            <p>이로 인해 신입 엔지니어도 숙련자처럼 장비를 제어할 수 있게 되었으며, 프로그래밍 오류로 인한 사고가 획기적으로 감소했습니다.</p>
 
-            <hr class="my-8 border-slate-200">
-
-            <h3>3. 유통 및 소비재 (Retail & CPG)</h3>
-            <p>유통업의 핵심은 '초개인화(Hyper-personalization)'입니다. 고객 한 명 한 명에게 딱 맞는 경험을 제공하는 데 AI가 활용됩니다.</p>
-            
-            <h4 class="text-lg font-bold text-slate-800 mt-4">Case: Coca-Cola 'Create Real Magic'</h4>
-            <p>코카콜라는 OpenAI의 DALL-E와 협업하여 소비자가 직접 코카콜라의 에셋(로고, 병 이미지 등)을 활용해 예술 작품을 만들 수 있는 캠페인을 진행했습니다.</p>
-            <ul class="list-disc pl-6 space-y-2 mt-2">
-                <li>소비자가 브랜드 경험의 주체가 되는 '참여형 마케팅'의 정점.</li>
-                <li>생성된 수만 장의 이미지는 코카콜라의 전광판 광고로 활용되어 마케팅 비용 절감 및 바이럴 효과 극대화.</li>
+            <h3>2. 실습: AI 서비스 기획하기</h3>
+            <p>가상의 'AI 여행 가이드' 서비스를 기획한다고 가정해봅시다.</p>
+            <ul class="list-disc pl-6 space-y-2 mt-2 bg-slate-50 p-4 rounded">
+                <li><strong>Target:</strong> 계획 짜기 귀찮아하는 P형 여행자</li>
+                <li><strong>Value:</strong> 취향만 말하면 1분 만에 동선, 맛집, 예약까지 끝내줌</li>
+                <li><strong>Revenue:</strong> 식당/호텔 예약 수수료 + 프리미엄 구독 (광고 제거)</li>
             </ul>
         
                 

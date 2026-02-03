@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 비즈니스 전략 - 강의 시청</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom_business.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i>
+                <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">Class 03</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">도입 로드맵 및 기획</h1>
+                <p class="text-xl opacity-90 font-light">Day 2 (오전): 성숙도 진단 및 PoC 프로젝트 기획 실습 (4시간)</p>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+             <h2 class="text-2xl font-bold border-l-4 border-green-600 pl-4">PART 3: 기획 및 로드맵</h2>
+            <div class="grid gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-green-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-green-50 text-green-600 p-3 rounded-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-clipboard-check text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI Maturity Assessment</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Gartner 모델을 기반으로 우리 조직의 AI 도입 준비 상태(성숙도)를 진단하고 단계별 성장 목표를 설정합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Diagnosis</span><span class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Roadmap</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_maturity.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-teal-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-50 text-teal-600 p-3 rounded-2xl group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-flask text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">PoC Planning & Matrix</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">실현 가능성과 비즈니스 임팩트를 고려한 우선순위 선정 매트릭스를 활용하여 성공적인 PoC 프로젝트를 기획합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">PoC</span><span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">Planning</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_poc_matrix.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white text-sm font-bold rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div></section></main>
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        onAuthStateChanged(auth, (user) => {
+            if (!user) { alert("로그인이 필요합니다."); window.location.href='index.html'; }
+            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        });
+    </script>
+</body>
+</html>

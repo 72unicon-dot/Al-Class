@@ -24,8 +24,10 @@ course_configs = {
         "output": "classroom_business.html",
         "title": "AI 비즈니스 전략",
         "curriculum": [
-            {"title": "Day 1: AI 트렌드와 비즈니스 기회 (8시간)", "desc": "오전: 산업별 혁신 사례 / 오후: 신규 사업 모델 발굴", "details": ["(오전) 금융/제조/유통 분야 AI 도입 성공 사례 분석", "(오전) 생성형 AI 생태계와 기술 트렌드", "(오후) AI 기반 신규 비즈니스 모델 캔버스 작성", "(오후) 경쟁사 AI 전략 분석 및 차별화"]},
-            {"title": "Day 2: AI 도입 로드맵 수립 (8시간)", "desc": "오전: 도입 전략 및 기획 / 오후: 구축 및 평가", "details": ["(오전) 우리 기업 AI 성숙도 진단 및 목표 설정", "(오전) PoC(개념 증명) 기획서 작성 실습", "(오후) ROI 분석 및 예산/인력 계획 수립", "(오후) AI 프로젝트 리스크 관리 및 거버넌스"]}
+            {"title": "Class 1: 산업별 AI 혁신 사례 (Day 1 오전)", "desc": "금융, 제조, 유통 분야의 Global Top-tier AI 도입 성공 사례 심층 분석", "details": ["JPMorgan, Bloomberg 등 금융권 AI 도입 전략", "Siemens, 현대차의 스마트 팩토리 혁신", "Nike, Coca-Cola의 초개인화 마케팅 사례"]},
+            {"title": "Class 2: 신규 사업 모델 발굴 (Day 1 오후)", "desc": "생성형 AI 기술을 접목한 비즈니스 모델 캔버스(BMC) 작성 실습", "details": ["AI Native 비즈니스 모델 유형 3가지", "경쟁사 AI 전략 분석 및 격차(Gap) 분석", "Value Provision 재정의 및 수익 모델 설계"]},
+            {"title": "Class 3: 도입 로드맵 및 기획 (Day 2 오전)", "desc": "우리 기업의 AI 성숙도 진단과 PoC(개념 증명) 프로젝트 기획", "details": ["AI 성숙도 진단 모델(Maturity Model) 적용", "성공 확률을 높이는 PoC 과제 선정 매트릭스", "구체적인 PoC 수행 계획서 작성"]},
+            {"title": "Class 4: 실행 전략 및 거버넌스 (Day 2 오후)", "desc": "ROI 분석, 예산 수립, 그리고 리스크 관리를 위한 거버넌스 체계", "details": ["TCO(총 소유 비용) 기반의 ROI 시뮬레이션", "AI 프로젝트 인력 구성 및 외부 파트너십", "AI 윤리 가이드라인 및 데이터 보안 정책"]}
         ]
     },
     "expert_advanced.html": {
@@ -224,9 +226,13 @@ def get_curriculum_card(index, module, course_output_filename):
     elif "classroom_business.html" in course_output_filename:
         # Business Special Logic
         if index == 0:
-            link = "lecture_business_day1.html"
+            link = "lecture_business_class1.html"
         elif index == 1:
-            link = "lecture_business_day2.html"
+            link = "lecture_business_class2.html"
+        elif index == 2:
+            link = "lecture_business_class3.html"
+        elif index == 3:
+            link = "lecture_business_class4.html"
     else:
         # Generic Logic for others
         day_num = str(index + 1).zfill(2)

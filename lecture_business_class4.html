@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 비즈니스 전략 - 강의 시청</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom_business.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i>
+                <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">Class 04</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">실행 전략 및 거버넌스</h1>
+                <p class="text-xl opacity-90 font-light">Day 2 (오후): ROI 분석 및 리스크 관리 전략 (4시간)</p>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+             <h2 class="text-2xl font-bold border-l-4 border-amber-600 pl-4">PART 4: 실행 및 관리</h2>
+            <div class="grid gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-amber-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-amber-50 text-amber-600 p-3 rounded-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-calculator text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">TCO & ROI Analysis</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">단순 구독료 외에 숨겨진 데이터 관리, 인력 비용 등을 포함한 총 소유 비용(TCO)과 투자 대비 수익(ROI)을 시뮬레이션합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">Financial</span><span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">ROI</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_tco.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white text-sm font-bold rounded-lg hover:bg-amber-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-red-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 text-red-600 p-3 rounded-2xl group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI Governance & Ethics</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI 프로젝트를 위한 조직 구성(R&R)과 데이터 보안, 윤리적 리스크를 관리하는 거버넌스 체계를 수립합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-red-50 text-red-700 px-3 py-1 rounded-md text-xs font-semibold">Risk</span><span class="bg-red-50 text-red-700 px-3 py-1 rounded-md text-xs font-semibold">Team</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_governance.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-bold rounded-lg hover:bg-red-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div></section></main>
+    <script type="module">
+        import { auth } from './js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        onAuthStateChanged(auth, (user) => {
+            if (!user) { alert("로그인이 필요합니다."); window.location.href='index.html'; }
+            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        });
+    </script>
+</body>
+</html>
