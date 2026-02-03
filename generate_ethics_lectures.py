@@ -1,5 +1,7 @@
 
-def get_header(title, subtitle, day_num="01"):
+# Refactored generator for Ethics Course (Class 1 / Class 2 Structure)
+
+def get_header(title, subtitle, class_num="01"):
     return f"""
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
         <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
@@ -12,7 +14,7 @@ def get_header(title, subtitle, day_num="01"):
         </div>
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
             <div class="space-y-2">
-                <span class="text-6xl font-black opacity-20 block mb-[-10px]">{day_num}</span>
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">Class {class_num}</span>
                 <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">{title}</h1>
                 <p class="text-xl opacity-90 font-light">{subtitle}</p>
             </div>
@@ -83,9 +85,9 @@ base_html_end = """
 """
 
 # ==========================================
-# Generate Day 1
+# Generate Class 1
 # ==========================================
-day1_content = base_html_start + get_header("AI 윤리와 규제 트렌드", "국내외 규제 현황과 리스크 분석", "01") + """
+class1_content = base_html_start + get_header("AI 윤리와 규제 트렌드", "국내외 규제 현황과 리스크 분석", "01") + """
     <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
         <section class="space-y-6">
             <div class="inline-flex items-center gap-3 bg-indigo-600 text-white px-5 py-2 rounded-full shadow-lg">
@@ -94,23 +96,23 @@ day1_content = base_html_start + get_header("AI 윤리와 규제 트렌드", "�
             </div>
             <div class="grid md:grid-cols-2 gap-6">
 """
-day1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"])
-day1_content += get_card("globe", "blue", "글로벌 AI 규제: EU AI Act", "세계 최초의 포괄적 AI 규제법인 EU AI Act의 등급별 규제와 기업 영향을 알아봅니다.", ["EU AI Act", "Risk-based"])
-day1_content += get_card("user-secret", "red", "개인정보보호와 AI", "데이터 학습 및 활용 과정에서 발생할 수 있는 개인정보 침해 이슈와 비식별화 기술을 다룹니다.", ["Privacy", "GDPR"])
-day1_content += get_card("building", "slate", "기업 데이터 유출 사고 사례", "삼성전자 등 주요 기업의 생성형 AI 도입 초기 데이터 유출 사고와 시사점을 분석합니다.", ["Security", "Data Leak"])
-day1_content += """
+class1_content += get_card("balance-scale", "indigo", "생성형 AI와 저작권 분쟁", "AI 학습 데이터 및 산출물의 저작권 인정 여부에 대한 최근 판례와 이슈를 분석합니다.", ["Copyright", "Legal Case"])
+class1_content += get_card("globe", "blue", "글로벌 AI 규제: EU AI Act", "세계 최초의 포괄적 AI 규제법인 EU AI Act의 등급별 규제와 기업 영향을 알아봅니다.", ["EU AI Act", "Risk-based"])
+class1_content += get_card("user-secret", "red", "개인정보보호와 AI", "데이터 학습 및 활용 과정에서 발생할 수 있는 개인정보 침해 이슈와 비식별화 기술을 다룹니다.", ["Privacy", "GDPR"])
+class1_content += get_card("building", "slate", "기업 데이터 유출 사고 사례", "삼성전자 등 주요 기업의 생성형 AI 도입 초기 데이터 유출 사고와 시사점을 분석합니다.", ["Security", "Data Leak"])
+class1_content += """
             </div>
         </section>
     </main>
 """ + base_html_end
 
-with open("lecture_ethics_day01.html", "w", encoding="utf-8") as f:
-    f.write(day1_content)
+with open("lecture_ethics_class1.html", "w", encoding="utf-8") as f:
+    f.write(class1_content)
 
 # ==========================================
-# Generate Day 2
+# Generate Class 2
 # ==========================================
-day2_content = base_html_start + get_header("실무 가이드라인 수립", "안전하고 윤리적인 AI 활용 가이드", "02") + """
+class2_content = base_html_start + get_header("실무 가이드라인 수립", "안전하고 윤리적인 AI 활용 가이드", "02") + """
     <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
         <section class="space-y-6">
             <div class="inline-flex items-center gap-3 bg-emerald-600 text-white px-5 py-2 rounded-full shadow-lg">
@@ -119,10 +121,10 @@ day2_content = base_html_start + get_header("실무 가이드라인 수립", "�
             </div>
             <div class="grid md:grid-cols-2 gap-6">
 """
-day2_content += get_card("shield-alt", "emerald", "프롬프트 입력 보안 수칙", "기밀 정보, 개인정보 입력을 방지하기 위한 프롬프트 필터링 및 보안 가이드를 수립합니다.", ["Security", "Prompt"])
-day2_content += get_card("file-signature", "teal", "AI 산출물 책임과 권한", "AI가 작성한 코드나 문서의 오류에 대한 책임 소재와 검수 프로세스를 정립합니다.", ["Accountability", "Review"])
-day2_content += get_card("exclamation-triangle", "amber", "할루시네이션 대응 전략", "AI의 거짓 답변(환각)을 식별하고 크로스체크(Fact Check)하는 실무 프로세스를 배웁니다.", ["Hallucination", "Fact Check"])
-day2_content += """
+class2_content += get_card("shield-alt", "emerald", "프롬프트 입력 보안 수칙", "기밀 정보, 개인정보 입력을 방지하기 위한 프롬프트 필터링 및 보안 가이드를 수립합니다.", ["Security", "Prompt"])
+class2_content += get_card("file-signature", "teal", "AI 산출물 책임과 권한", "AI가 작성한 코드나 문서의 오류에 대한 책임 소재와 검수 프로세스를 정립합니다.", ["Accountability", "Review"])
+class2_content += get_card("exclamation-triangle", "amber", "할루시네이션 대응 전략", "AI의 거짓 답변(환각)을 식별하고 크로스체크(Fact Check)하는 실무 프로세스를 배웁니다.", ["Hallucination", "Fact Check"])
+class2_content += """
             </div>
         </section>
         
@@ -151,7 +153,7 @@ day2_content += """
     </main>
 """ + base_html_end
 
-with open("lecture_ethics_day02.html", "w", encoding="utf-8") as f:
-    f.write(day2_content)
+with open("lecture_ethics_class2.html", "w", encoding="utf-8") as f:
+    f.write(class2_content)
 
-print("Generated lecture_ethics_day01.html and lecture_ethics_day02.html")
+print("Generated lecture_ethics_class1.html and lecture_ethics_class2.html")

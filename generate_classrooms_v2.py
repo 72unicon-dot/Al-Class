@@ -8,8 +8,8 @@ courses_data = {
         "output": "classroom_ethics.html",
         "title": "AI 윤리 및 규제",
         "curriculum": [
-            {"title": "Day 1: AI 윤리와 규제 트렌드", "desc": "국내외(EU AI Act) 법적 규제와 기업 리스크 분석", "details": ["생성형 AI의 저작권 이슈 사례", "기업 데이터 유출 사고 유형", "개인정보보호법과 AI 컴플라이언스"]},
-            {"title": "Day 2: 실무 가이드라인 수립", "desc": "우리 회사에 맞는 AI 사용 정책 및 보안 수칙 제정", "details": ["프롬프트 입력 시 보안 주의사항", "AI 산출물의 사용 권한 및 책임", "사내 AI 윤리 강령 작성 실습"]}
+            {"title": "Class 1: AI 윤리와 규제 트렌드", "desc": "국내외(EU AI Act) 법적 규제와 기업 리스크 분석", "details": ["생성형 AI의 저작권 이슈 사례", "기업 데이터 유출 사고 유형", "개인정보보호법과 AI 컴플라이언스"]},
+            {"title": "Class 2: 실무 가이드라인 수립", "desc": "우리 회사에 맞는 AI 사용 정책 및 보안 수칙 제정", "details": ["프롬프트 입력 시 보안 주의사항", "AI 산출물의 사용 권한 및 책임", "사내 AI 윤리 강령 작성 실습"]}
         ]
     },
     "intro_basics.html": {
@@ -118,11 +118,21 @@ def generate_card(index, module):
                                     <li class="flex items-start gap-2"><i
                                             class="fas fa-check-circle text-{color}-600 mt-1"></i><span>{detail}</span></li>"""
 
-    # Always link to day01_lecture.html
+    # Always link to basic day01 for others, but for ethics we want specific mapping (handled by post-processing or smart logic)
+    # For now, let's make the template generic.
+    # We will patch classroom_ethics.html separately to point to lecture_ethics_class*.html
     link = "day01_lecture.html"
 
     # Use a number formatted like 01, 02
-    day_num = str(index + 1).zfill(2)
+    # If title contains 'Class', use that number
+    if "Class" in module['title']:
+        try:
+             # Extract number from title "Class 1: ..."
+             day_num = module['title'].split(':')[0].replace("Class ", "").strip().zfill(2)
+        except:
+             day_num = str(index + 1).zfill(2)
+    else:
+        day_num = str(index + 1).zfill(2)
     
     return f"""
                     <!-- Module {index+1} -->
