@@ -488,6 +488,9 @@
     <!-- Script: Authentication & Dynamic UI -->
     <script type="module">
         import { db, auth } from './js/firebase-config.js';
+
+        import { initCourseApplication, checkApplicationStatus } from './js/course_application.js';
+
         import { collection, getDocs, query, orderBy, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
@@ -586,26 +589,55 @@
         // ==========================================
         // 2. Auth State Logic
         // ==========================================
-        onAuthStateChanged(auth, (user) => {
+        
+        // ==========================================
+        // 2. Auth & Application State Logic
+        // ==========================================
+        // Initialize Application Logic
+        initCourseApplication('biz_consult', 'AI 비즈니스 컨설턴트');
+
+        onAuthStateChanged(auth, async (user) => {
             const applyBtn = document.getElementById('applyBtn');
             const enterBtn = document.getElementById('enterBtn');
             const logoutBtn = document.getElementById('heroLogoutBtn');
 
             if (user) {
-                // Logged In
-                if (applyBtn) applyBtn.classList.add('hidden');
-                if (enterBtn) {
-                    enterBtn.classList.remove('hidden');
-                    enterBtn.title = user.email + "님 환영합니다";
-                }
+                // 1. Logged In
                 if (logoutBtn) logoutBtn.classList.remove('hidden');
+                
+                // Check if already applied
+                const isApplied = await checkApplicationStatus(user, 'biz_consult');
+                
+                if (isApplied) {
+                    // Applied -> Show Enter Classroom
+                    if (applyBtn) applyBtn.classList.add('hidden');
+                    if (enterBtn) {
+                        enterBtn.classList.remove('hidden');
+                        enterBtn.title = user.email + "님 환영합니다";
+                    }
+                } else {
+                    // Not Applied -> Show Apply Button (Logged In Mode)
+                    // We modify the button to act as "Confirm Apply" instead of Login Modal
+                    if (enterBtn) enterBtn.classList.add('hidden');
+                    if (applyBtn) {
+                         applyBtn.classList.remove('hidden');
+                         applyBtn.textContent = "수강 신청하기 (무료)";
+                         // Remove onclick attribute to let JS handle it, or just rely on addEventListener in init
+                         applyBtn.removeAttribute('onclick'); 
+                    }
+                }
             } else {
-                // Logged Out
-                if (applyBtn) applyBtn.classList.remove('hidden');
+                // 2. Logged Out
+                if (applyBtn) {
+                    applyBtn.classList.remove('hidden');
+                    applyBtn.textContent = "교육 신청";
+                    applyBtn.setAttribute('onclick', 'window.openLoginModal()'); // Restore default for guest
+                }
                 if (enterBtn) enterBtn.classList.add('hidden');
                 if (logoutBtn) logoutBtn.classList.add('hidden');
             }
         });
+    
 
         // Global Functions
         window.openLoginModal = () => document.getElementById('userLoginModal').classList.remove('hidden');
