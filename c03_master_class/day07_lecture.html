@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07. 웹 애플리케이션 개발 - 마스터 클래스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <!-- 사용자 정보 및 버튼 영역 -->
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">07</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">웹 애플리케이션 개발</h1>
+                <p class="text-xl opacity-90 font-light">AI와 함께 실용적인 웹앱 만들기</p>
+            </div>
+            <div class="mt-8 md:mt-0 flex gap-3">
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">Cursor</span>
+                <span
+                    class="bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-semibold border border-white/30">React/Vue</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+        <section id="part1" class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-purple-600 text-white px-5 py-2 rounded-full shadow-lg shadow-purple-200">
+                <span class="font-bold text-xs tracking-widest">PART 1 이론</span>
+                <h2 class="text-lg font-bold">프론트엔드 기초</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-layer-group text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">웹 애플리케이션 구조 이해</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Client-Server 아키텍처와 웹이 동작하는 기본 원리를
+                                학습합니다.</p>
+                            <div class="flex gap-2">
+                                <a href="day07_web_app_structure.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fab fa-react text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">프론트엔드 프레임워크 개요</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">React, Vue 등 모던 웹 프레임워크의 장점과 컴포넌트 기반
+                                개발 방식을 이해합니다.</p>
+                            <div class="flex gap-2">
+                                <a href="day07_framework_overview.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-plug text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">API 연동 기초</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">외부 데이터(날씨, 주식, AI 등)를 내 앱으로 가져오는 API
+                                활용법을 배웁니다.</p>
+                            <div class="flex gap-2">
+                                <a href="day07_api_integration.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-database text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">데이터베이스 연결 개념</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Supabase, Firebase 등을 활용하여 데이터를 저장하고
+                                불러오는 기초를 다집니다.</p>
+                            <div class="flex gap-2">
+                                <a href="../c07_data/day07_database_connection.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="part2-practice" class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-fuchsia-600 text-white px-5 py-2 rounded-full shadow-lg shadow-fuchsia-100">
+                <span class="font-bold text-xs tracking-widest">PART 2 실습</span>
+                <h2 class="text-lg font-bold">웹 개발 프로젝트</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-fuchsia-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-fuchsia-50 text-fuchsia-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-fuchsia-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-check-square text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">To-Do 리스트 앱</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">CRUD(생성, 읽기, 수정, 삭제) 기능을 완벽하게 구현한 할 일 관리 앱을 만듭니다.
+                        </p>
+                        <a href="day07_practice_todo.html"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-fuchsia-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-fuchsia-50 text-fuchsia-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-fuchsia-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-comments text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">AI 챗봇 구현</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">OpenAI API를 연동하여 실제 대화가 가능한 나만의 AI 챗봇 웹 서비스를
+                            구축합니다.</p>
+                        <a href="day07_practice_chatbot_app.html"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-fuchsia-200 transition-all group">
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="w-12 h-12 bg-fuchsia-50 text-fuchsia-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-fuchsia-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">반응형 UI 디자인</h3>
+                        <p class="text-slate-500 text-sm mb-6 flex-1">PC, 태블릿, 모바일 등 모든 기기에서 완벽하게 보이는 반응형 웹사이트를 디자인합니다.
+                        </p>
+                        <a href="day07_practice_ui.html"
+                            class="w-full py-3 bg-slate-50 text-slate-700 font-bold rounded-xl hover:bg-fuchsia-600 hover:text-white transition-colors text-center">실습
+                            시작하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-white py-16 px-6 mt-20">
+        <div class="max-w-6xl mx-auto text-center md:text-left">
+            <h4 class="text-2xl font-black mb-2 tracking-tighter italic">MASTER KIM AI CONSULTING</h4>
+            <p class="text-slate-400 text-sm">제조혁신 전문가가 전수하는 실무 중심 AI 교육</p>
+        </div>
+        <div
+            class="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-xs uppercase tracking-widest">
+            &copy; 2026 제조혁신 길라잡이 김사부 채널. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
+<script type="module">
+    import { auth } from '../js/firebase-config.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
+            window.location.href='../index.html';
+        } else {
+            const emailDisplay = document.getElementById('userEmailDisplay');
+            if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+        }
+    });
+</script>
