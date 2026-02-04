@@ -88,6 +88,9 @@ def generate_classroom_html(config, template):
     # currently writing to current working directory or relative path in config['output']
     output_path = os.path.join(BASE_DIR, config['output']) if 'scripts' in BASE_DIR else config['output']
 
+    # Ensure directory exists
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f"Regenerated {output_path}")

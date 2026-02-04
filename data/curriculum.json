@@ -1,6 +1,6 @@
 {
     "intro_ethics.html": {
-        "output": "classroom_ethics.html",
+        "output": "c12_ethics/classroom_ethics.html",
         "title": "AI 윤리 및 규제",
         "curriculum": [
             {
@@ -24,7 +24,7 @@
         ]
     },
     "intro_basics.html": {
-        "output": "classroom_basics.html",
+        "output": "c01_basics/classroom_basics.html",
         "title": "AI 기초 및 활용",
         "curriculum": [
             {
@@ -48,7 +48,7 @@
         ]
     },
     "intro_business.html": {
-        "output": "classroom_business.html",
+        "output": "c02_business/classroom_business.html",
         "title": "AI 비즈니스 전략",
         "curriculum": [
             {
@@ -90,7 +90,7 @@
         ]
     },
     "expert_advanced.html": {
-        "output": "classroom_advanced.html",
+        "output": "c04_advanced/classroom_advanced.html",
         "title": "AI 심화 개발",
         "curriculum": [
             {
@@ -114,7 +114,7 @@
         ]
     },
     "special_marketing.html": {
-        "output": "classroom_marketing.html",
+        "output": "c05_marketing/classroom_marketing.html",
         "title": "AI 마케팅 특화",
         "curriculum": [
             {
@@ -138,7 +138,7 @@
         ]
     },
     "special_manufacturing.html": {
-        "output": "classroom_manufacturing.html",
+        "output": "c06_manufacturing/classroom_manufacturing.html",
         "title": "AI 제조/생산 특화",
         "curriculum": [
             {
@@ -162,7 +162,7 @@
         ]
     },
     "special_data.html": {
-        "output": "classroom_data.html",
+        "output": "c07_data/classroom_data.html",
         "title": "AI 데이터 분석 특화",
         "curriculum": [
             {
@@ -186,7 +186,7 @@
         ]
     },
     "special_video.html": {
-        "output": "classroom_video.html",
+        "output": "c08_video/classroom_video.html",
         "title": "AI 영상 제작 특화",
         "curriculum": [
             {
@@ -210,7 +210,7 @@
         ]
     },
     "management_leadership.html": {
-        "output": "classroom_leadership.html",
+        "output": "c09_leadership/classroom_leadership.html",
         "title": "AI 리더십",
         "curriculum": [
             {
@@ -234,7 +234,7 @@
         ]
     },
     "strategy_consultant.html": {
-        "output": "classroom_consultant.html",
+        "output": "c10_consultant/classroom_consultant.html",
         "title": "AI 컨설턴트 양성",
         "curriculum": [
             {
@@ -258,7 +258,7 @@
         ]
     },
     "master_app_creator.html": {
-        "output": "classroom_app_creator.html",
+        "output": "c11_app_creator/classroom_app_creator.html",
         "title": "나만의 앱 만들기",
         "curriculum": [
             {
