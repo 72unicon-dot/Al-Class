@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 프로세스 자동화 설계 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day05_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">업무 프로세스 자동화 설계</h1>
+            <p class="text-xl opacity-90">무엇을 자동화할 것인가? 설계가 반이다.</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-sitemap text-indigo-600 mr-2"></i>자동화 로드맵 그리기</h2>
+            <div class="relative border-l-2 border-indigo-200 ml-4 space-y-8 pl-8 py-2">
+                <div class="relative">
+                    <span
+                        class="absolute -left-[41px] top-0 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white shadow-sm"></span>
+                    <h3 class="font-bold text-lg text-slate-800">1. 업무 분해 (Deconstruction)</h3>
+                    <p class="text-slate-600 text-sm">현재 하고 있는 일을 가장 작은 단위(Unit Task)로 쪼갭니다. <br>예: 이메일 확인 -> 첨부파일 다운로드
+                        -> 폴더 열기 -> 저장 -> 엑셀 입력</p>
+                </div>
+                <div class="relative">
+                    <span
+                        class="absolute -left-[41px] top-0 w-6 h-6 bg-indigo-400 rounded-full border-4 border-white shadow-sm"></span>
+                    <h3 class="font-bold text-lg text-slate-800">2. 패턴 식별 (Pattern Recognition)</h3>
+                    <p class="text-slate-600 text-sm">"반복적"이고 "규칙적"인 업무를 찾습니다. 창의성이나 판단이 필요한 업무는 제외합니다.</p>
+                </div>
+                <div class="relative">
+                    <span
+                        class="absolute -left-[41px] top-0 w-6 h-6 bg-indigo-200 rounded-full border-4 border-white shadow-sm"></span>
+                    <h3 class="font-bold text-lg text-slate-800">3. 도구 매핑 (Tool Mapping)</h3>
+                    <p class="text-slate-600 text-sm">각 단계에서 데이터를 주고받을 수 있는 도구(Gmail, Slack, Sheets 등)를 확인합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-check-double text-indigo-600 mr-2"></i>자동화 적합성 체크리스트</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg text-green-800">
+                    <i class="fas fa-check-circle text-xl"></i>
+                    <span>반복 빈도가 높은가? (매일/매주)</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg text-green-800">
+                    <i class="fas fa-check-circle text-xl"></i>
+                    <span>규칙(Rule)이 명확한가?</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg text-green-800">
+                    <i class="fas fa-check-circle text-xl"></i>
+                    <span>입력 데이터가 디지털 형태인가?</span>
+                </div>
+                <div class="flex items-center gap-3 p-4 bg-green-50 rounded-lg text-green-800">
+                    <i class="fas fa-check-circle text-xl"></i>
+                    <span>오류 발생 시 리스크가 낮은가?</span>
+                </div>
+            </div>
+        </section>
+    
+    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
+    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
+        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">반복적인 업무 흐름을 자동화하여 창의적인 일에 더 집중할 수 있는 시간을 확보하세요.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-5">
+            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
+                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+            </button>
+            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
+                강의실로 돌아가기
+            </button>
+        </div>
+    </div>
+
+<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+
+</main>
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day05', 'automation_design', 'completeButtonContainer');
+            }
+        });
+    </script>
+

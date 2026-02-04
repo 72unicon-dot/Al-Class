@@ -7,6 +7,7 @@
     <title>비즈니스 AI 교육 스튜디오 | 초급부터 전문가까지</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&display=swap');
@@ -14,63 +15,47 @@
         body {
             font-family: 'Noto Sans KR', sans-serif;
         }
-
-        .gradient-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/axis_app_bg.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .gradient-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-        }
-
-        .course-card {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .course-card:hover::before {
-            left: 100%;
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
-        }
-
-        .feature-card {
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: scale(1.05);
-        }
-
-        .level-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-        }
     </style>
 </head>
 
 <body class="bg-slate-50">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <span class="font-bold text-xl text-slate-800" style="font-family: 'Outfit', sans-serif;">AXIS
+                    STUDIO</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#courses"
+                    class="text-sm font-semibold text-slate-600 hover:text-purple-600 transition-colors">과정 소개</a>
+                <a href="c03_master_class/curriculum.html"
+                    class="text-sm font-semibold text-slate-600 hover:text-purple-600 transition-colors">커리큘럼</a>
+                <a href="#contact"
+                    class="text-sm font-semibold text-slate-600 hover:text-purple-600 transition-colors">문의하기</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="mainLoginBtn" onclick="window.openLoginModal()"
+                    class="px-5 py-2.5 bg-purple-600 text-white rounded-full font-bold text-sm hover:bg-purple-700 transition-all shadow-lg shadow-purple-200">
+                    <i class="fas fa-sign-in-alt mr-2"></i> 로그인
+                </button>
+                <button id="mainEnterBtn" onclick="window.location.href='c03_master_class/classroom.html'"
+                    class="hidden px-5 py-2.5 bg-emerald-500 text-white rounded-full font-bold text-sm hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-200">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i> 강의실 입장
+                </button>
+                <button id="mainLogoutBtn" onclick="window.userLogout()"
+                    class="hidden px-5 py-2.5 bg-slate-200 text-slate-600 rounded-full font-bold text-sm hover:bg-slate-300 transition-all">
+                    로그아웃
+                </button>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="gradient-hero min-h-screen flex items-center justify-center text-white relative overflow-hidden">
@@ -184,7 +169,7 @@
                         </div>
                     </div>
 
-                    <a href="intro_ethics.html"
+                    <a href="c12_ethics/intro_ethics.html"
                         class="block text-center w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">자세히
                         보기</a>
                 </div>
@@ -229,7 +214,7 @@
                         </div>
                     </div>
 
-                    <a href="intro_basics.html"
+                    <a href="c01_basics/intro_basics.html"
                         class="block text-center w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">자세히
                         보기</a>
                 </div>
@@ -274,7 +259,7 @@
                         </div>
                     </div>
 
-                    <a href="intro_business.html"
+                    <a href="c02_business/intro_business.html"
                         class="block text-center w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">자세히
                         보기</a>
                 </div>
@@ -326,7 +311,7 @@
                         </div>
                     </div>
 
-                    <a href="master_index.html"
+                    <a href="c03_master_class/master_index.html"
                         class="block w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-300 text-center">
                         자세히 보기
                     </a>
@@ -373,7 +358,7 @@
                         </div>
                     </div>
 
-                    <a href="expert_advanced.html"
+                    <a href="c04_advanced/expert_advanced.html"
                         class="block text-center w-full py-4 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-700 transition-colors shadow-lg shadow-orange-200">자세히
                         보기</a>
                 </div>
@@ -418,7 +403,7 @@
                         </div>
                     </div>
 
-                    <a href="special_marketing.html"
+                    <a href="c05_marketing/special_marketing.html"
                         class="block text-center w-full py-4 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition-colors shadow-lg shadow-pink-200">자세히
                         보기</a>
                 </div>
@@ -463,7 +448,7 @@
                         </div>
                     </div>
 
-                    <a href="special_manufacturing.html"
+                    <a href="c06_manufacturing/special_manufacturing.html"
                         class="block text-center w-full py-4 bg-gray-600 text-white rounded-xl font-bold hover:bg-gray-700 transition-colors shadow-lg shadow-gray-200">자세히
                         보기</a>
                 </div>
@@ -508,7 +493,7 @@
                         </div>
                     </div>
 
-                    <a href="special_data.html"
+                    <a href="c07_data/special_data.html"
                         class="block text-center w-full py-4 bg-cyan-600 text-white rounded-xl font-bold hover:bg-cyan-700 transition-colors shadow-lg shadow-cyan-200">자세히
                         보기</a>
                 </div>
@@ -553,7 +538,7 @@
                         </div>
                     </div>
 
-                    <a href="special_video.html"
+                    <a href="c08_video/special_video.html"
                         class="block text-center w-full py-4 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-200">자세히
                         보기</a>
                 </div>
@@ -599,7 +584,7 @@
                         </div>
                     </div>
 
-                    <a href="management_leadership.html"
+                    <a href="c09_leadership/management_leadership.html"
                         class="block text-center w-full py-4 bg-yellow-600 text-white rounded-xl font-bold hover:bg-yellow-700 transition-colors shadow-lg shadow-yellow-200">자세히
                         보기</a>
                 </div>
@@ -645,7 +630,7 @@
                         </div>
                     </div>
 
-                    <a href="strategy_consultant.html"
+                    <a href="c10_consultant/strategy_consultant.html"
                         class="block text-center w-full py-4 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-200">자세히
                         보기</a>
                 </div>
@@ -691,7 +676,7 @@
                         </div>
                     </div>
 
-                    <a href="master_app_creator.html"
+                    <a href="c11_app_creator/master_app_creator.html"
                         class="block text-center w-full py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">자세히
                         보기</a>
                 </div>
@@ -899,7 +884,8 @@
                     <h4 class="font-bold mb-4">과정 안내</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#" class="hover:text-white transition-colors">초급 과정</a></li>
-                        <li><a href="master_index.html" class="hover:text-white transition-colors">중급 과정</a></li>
+                        <li><a href="c03_master_class/master_index.html" class="hover:text-white transition-colors">중급
+                                과정</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">상급 과정</a></li>
                     </ul>
                 </div>
@@ -935,6 +921,50 @@
         </div>
     </footer>
 
+
+    <!-- Script: Authentication & Dynamic UI -->
+    <script type="module">
+        import { db, auth } from './js/firebase-config.js';
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { injectLoginModal, checkAutoOpenLogin } from './js/login-ui.js';
+
+        // ==========================================
+        // 1. UI Injection
+        // ==========================================
+        injectLoginModal();
+
+        // ==========================================
+        // 2. Auth State Logic
+        // ==========================================
+        onAuthStateChanged(auth, async (user) => {
+            const loginBtn = document.getElementById('mainLoginBtn');
+            const enterBtn = document.getElementById('mainEnterBtn');
+            const logoutBtn = document.getElementById('mainLogoutBtn');
+
+            if (user) {
+                // Logged In
+                if (loginBtn) loginBtn.classList.add('hidden');
+                if (enterBtn) {
+                    enterBtn.classList.remove('hidden');
+                    enterBtn.title = user.email + "님 환영합니다";
+                }
+                if (logoutBtn) logoutBtn.classList.remove('hidden');
+            } else {
+                // Logged Out
+                if (loginBtn) loginBtn.classList.remove('hidden');
+                if (enterBtn) enterBtn.classList.add('hidden');
+                if (logoutBtn) logoutBtn.classList.add('hidden');
+            }
+        });
+
+        // Global Functions
+        window.userLogout = () => {
+            if (confirm("로그아웃 하시겠습니까?")) signOut(auth).then(() => window.location.reload());
+        };
+
+        // Auto-open logic
+        window.addEventListener('load', checkAutoOpenLogin);
+    </script>
 </body>
 
 </html>

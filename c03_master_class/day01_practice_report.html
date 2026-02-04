@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 인텔리전스 보고서 실습 - 마스터 클래스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .prompt-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-file-contract text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight">AI 인텔리전스 보고서</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#intro" class="hover:text-blue-600">개요</a>
+                <a href="#steps" class="hover:text-blue-600">실습 단계</a>
+                <a href="#tips" class="hover:text-blue-600">꿀팁</a>
+                <a href="day01_lecture.html"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-full hover:bg-slate-200 transition-colors">
+                    <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Introduction -->
+        <section id="intro" class="mb-16 text-center">
+            <span
+                class="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest text-blue-600 uppercase bg-blue-100 rounded-full">Day
+                1: AI 리서치 혁신</span>
+            <h2 class="text-4xl font-extrabold mb-6">최신 트렌드 조사 및 경영진 보고서 작성</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                AI를 전략 컨설턴트처럼 활용하여 산업 동향을 분석하고,
+                경영진의 의사결정을 돕는 고품질 인텔리전스 보고서를 작성합니다.
+            </p>
+        </section>
+
+        <!-- Goals & Cautions -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-lg font-bold mb-4 flex items-center text-blue-600">
+                    <i class="fas fa-bullseye mr-3"></i>실습 목표
+                </h3>
+                <ul class="space-y-3 text-slate-600 text-sm">
+                    <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i> 관심 산업의 파괴적 기술 트렌드
+                        식별</li>
+                    <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i> AI를 활용한 고효율 정보 수집
+                        및 검증</li>
+                    <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i> 데이터 기반의 전략적 시사점
+                        도출</li>
+                    <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i> 경영진 맞춤형 보고 체계 적용
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100">
+                <h3 class="text-lg font-bold mb-4 flex items-center text-amber-700">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>주의 사항
+                </h3>
+                <p class="text-sm text-amber-800 leading-relaxed">
+                    본 실습에서는 공개된 정보를 중심으로 분석합니다. <strong>기업 내부 기밀이나 보안 데이터</strong>를 생성형 AI 프롬프트에 입력하지 않도록 각별히 유의해 주세요.
+                </p>
+            </div>
+        </div>
+
+        <!-- Steps -->
+        <section id="steps" class="space-y-12 mb-16">
+            <h3 class="text-2xl font-bold mb-8 border-b pb-2">실습 4단계 프로세스</h3>
+
+            <!-- Step 1 -->
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl font-black text-slate-200 mr-4">01</span>
+                    <h4 class="text-xl font-bold">기획 및 목차 설계</h4>
+                </div>
+                <p class="text-slate-600 mb-6">AI를 전문 컨설턴트로 빙의시켜 보고서의 뼈대를 잡습니다.</p>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt1')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt1" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+너는 글로벌 전략 컨설팅 펌의 20년 경력 파트너야. [에너지/모빌리티/제조] 분야의 최신 트렌드를 조사하여 CEO에게 보고할 '인텔리전스 보고서'를 작성하려고 해. 
+
+이 보고서의 예상 독자는 경영진이야. 인사이트 중심의 최적의 보고서 목차를 제안해줘.
+1. Executive Summary
+2. 글로벌 매크로 트렌드 분석
+3. 주요 기술 및 경쟁 지형 변화
+4. SWOT 기반 영향 분석
+5. 전략적 제언</pre>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl font-black text-slate-200 mr-4">02</span>
+                    <h4 class="text-xl font-bold">실시간 트렌드 스캐닝</h4>
+                </div>
+                <p class="text-slate-600 mb-6">검색 기능을 지원하는 AI를 활용하여 최신 뉴스 및 수치 데이터를 수집합니다.</p>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt2')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt2" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+최근 6개월간 [관심 산업] 분야에서 발생한 가장 중요한 뉴스 5가지를 찾아서 정리해줘. 
+각 뉴스별로 다음 항목을 포함해:
+- 이슈 요약 (한 문장)
+- 상세 내용 및 수치 데이터
+- 해당 이슈의 원인 및 업계 반응
+- 정보의 출처(URL) 명시</pre>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl font-black text-slate-200 mr-4">03</span>
+                    <h4 class="text-xl font-bold">인텔리전스 및 인사이트 도출</h4>
+                </div>
+                <p class="text-slate-600 mb-6">수집된 정보를 바탕으로 현상을 해석하고 시사점을 도출합니다.</p>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt3')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt3" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+위에서 조사한 정보들을 종합하여 우리 회사의 전략적 방향성을 제안해줘.
+1. PEST 분석 결과
+2. 우리가 즉시 확보해야 할 핵심 역량
+3. 이 트렌드를 무시했을 때의 리스크 3가지
+4. 경영진을 위한 향후 1년 내 우선순위 과제</pre>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl font-black text-slate-200 mr-4">04</span>
+                    <h4 class="text-xl font-bold">경영진 보고용 개조식 정제</h4>
+                </div>
+                <p class="text-slate-600 mb-6">비즈니스 용어와 개조식 문체(~함, ~임)로 내용을 다듬습니다.</p>
+                <div class="prompt-box p-6 rounded-lg relative group">
+                    <button onclick="copyPrompt('prompt4')"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="far fa-copy"></i> 복사하기
+                    </button>
+                    <pre id="prompt4" class="whitespace-pre-wrap text-sm text-slate-700 leading-relaxed font-mono">
+위 분석 내용을 경영진 보고를 위한 '개조식(Bullet points)' 형태로 변환해줘. 
+- 모든 문장은 명사형 종결어미 사용
+- 팩트 중심으로 작성하고 불필요한 수식어 제거
+- 핵심 키워드/수치는 볼드 처리
+- 최상단에 1페이지 핵심 요약(Executive Summary) 포함</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips" class="mb-16">
+            <h3 class="text-2xl font-bold mb-8 italic">Expert's Secrets</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-indigo-50 border border-indigo-100 p-6 rounded-xl">
+                    <h5 class="font-bold text-indigo-800 mb-2 flex items-center">
+                        <i class="fas fa-search-plus mr-2"></i> 팩트체크 필수
+                    </h5>
+                    <p class="text-sm text-indigo-700 leading-relaxed">
+                        AI가 제시한 수치 데이터는 반드시 원문 출처와 대조하세요. Gemini의 '답변 확인' 기능을 활용하면 훨씬 정확합니다.
+                    </p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-100 p-6 rounded-xl">
+                    <h5 class="font-bold text-emerald-800 mb-2 flex items-center">
+                        <i class="fas fa-magic mr-2"></i> 페르소나의 힘
+                    </h5>
+                    <p class="text-sm text-emerald-700 leading-relaxed">
+                        단순히 "조사해줘"보다는 <strong>"맥킨지 출신 전략 컨설턴트처럼 분석해줘"</strong>가 훨씬 깊이 있는 결과물을 만들어냅니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    
+    <!-- 강의 요약 및 다음 단계 섹션 -->
+    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12">
+        <div class="bg-indigo-50/50 rounded-2xl p-8 text-center border border-indigo-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">강의 요약 및 다음 단계</h3>
+            <p class="text-lg text-gray-700 mb-8 word-keep-all">AI의 기초를 다졌습니다. 이제 실무 적용을 시작해보세요.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="alert('교재 파일이 준비되지 않았습니다.')" 
+                    class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2">
+                    <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+                </button>
+                <a href="classroom.html" 
+                    class="px-6 py-3 bg-white text-indigo-600 border-2 border-indigo-100 rounded-xl font-bold hover:border-indigo-200 hover:bg-indigo-50 transition-all flex items-center justify-center gap-2">
+                    <i class="fas fa-th-large"></i> 강의실로 돌아가기
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-slate-500 mb-2 text-sm font-semibold tracking-tighter">제조혁신 길라잡이 김사부 X AI 실무 마스터 클래스</p>
+            <p class="text-slate-400 text-xs mt-4">
+                <button onclick="window.print()" class="text-blue-600 hover:underline"><i class="fas fa-print mr-1"></i>
+                    가이드 PDF로 저장하기</button>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(id) {
+            const text = document.getElementById(id).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check text-green-500"></i> 복사 완료!';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 2000);
+        }
+    </script>
+
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day01', 'practice_report', 'completeButtonContainer');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보이스 클로닝 & 더빙 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day04_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">보이스 클로닝 & 더빙</h1>
+            <p class="text-xl opacity-90">1분 녹음으로 만드는 나만의 디지털 AI 성우</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-fingerprint text-amber-600 mr-2"></i>Instant Voice Cloning (IVC)</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed">ElevenLabs 등 최신 툴을 사용하면, 단 1~5분의 깨끗한 음성 샘플만 있어도 즉시 해당 화자의
+                목소리를 복제하여 텍스트를 읽게 할 수 있습니다.</p>
+
+            <div class="bg-amber-50 p-6 rounded-xl border border-amber-100 mb-6">
+                <h3 class="font-bold text-amber-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>주의사항</h3>
+                <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                    <li>반드시 본인의 목소리나 사용 권한이 있는 목소리만 사용해야 합니다.</li>
+                    <li>딥페이크 악용 방지를 위해 동의 절차가 필요할 수 있습니다.</li>
+                    <li>배경 소음이 없는 깨끗한 환경에서 녹음해야 품질이 좋습니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i
+                    class="fas fa-globe text-amber-600 mr-2"></i>AI Dubbing (자동 번역 더빙)</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed">한국어로 촬영한 영상을 영어, 일본어, 중국어 등 전 세계 언어로 더빙할 수 있습니다. 놀라운 점은 **원래
+                화자의 목소리 톤을 유지**하면서 언어만 바뀐다는 것입니다.</p>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="border rounded-lg p-4 text-center">
+                    <div class="text-2xl mb-2">🇰🇷</div>
+                    <p class="text-sm font-bold">Original: 한국어</p>
+                    <p class="text-xs text-slate-500">"안녕하세요, 반갑습니다."</p>
+                </div>
+                <div class="border rounded-lg p-4 text-center bg-amber-50 border-amber-200">
+                    <div class="text-2xl mb-2">🇺🇸</div>
+                    <p class="text-sm font-bold text-amber-900">Dubbed: 영어</p>
+                    <p class="text-xs text-amber-800">"Hello, nice to meet you." (내 목소리 그대로)</p>
+                </div>
+            </div>
+        </section>
+    
+    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
+    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
+        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">멀티미디어 콘텐츠 제작의 새로운 가능성을 열었습니다.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-5">
+            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
+                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+            </button>
+            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
+                강의실로 돌아가기
+            </button>
+        </div>
+    </div>
+
+<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+
+</main>
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day04', 'voice_cloning', 'completeButtonContainer');
+            }
+        });
+    </script>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI소개 및 윤리 - 강의 시청</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); } /* Indigo-Purple for Ethics */
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom_ethics.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i>
+                <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">02</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">실무 가이드라인 수립</h1>
+                <p class="text-xl opacity-90 font-light">안전하고 윤리적인 AI 활용 가이드</p>
+            </div>
+        </div>
+    </header>
+    
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+            <div class="inline-flex items-center gap-3 bg-emerald-600 text-white px-5 py-2 rounded-full shadow-lg">
+                <span class="font-bold text-xs tracking-widest">PART 1</span>
+                <h2 class="text-lg font-bold">사내 보안 및 윤리 가이드</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-emerald-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-emerald-50 text-emerald-600 p-3 rounded-2xl group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">프롬프트 입력 보안 수칙</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">기밀 정보, 개인정보 입력을 방지하기 위한 프롬프트 필터링 및 보안 가이드를 수립합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-md text-xs font-semibold">Security</span><span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-md text-xs font-semibold">Prompt</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </button>
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white text-sm font-bold rounded-lg hover:bg-emerald-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-teal-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-50 text-teal-600 p-3 rounded-2xl group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-file-signature text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI 산출물 책임과 권한</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI가 작성한 코드나 문서의 오류에 대한 책임 소재와 검수 프로세스를 정립합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">Accountability</span><span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">Review</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </button>
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white text-sm font-bold rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-amber-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-amber-50 text-amber-600 p-3 rounded-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-exclamation-triangle text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">할루시네이션 대응 전략</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI의 거짓 답변(환각)을 식별하고 크로스체크(Fact Check)하는 실무 프로세스를 배웁니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">Hallucination</span><span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-md text-xs font-semibold">Fact Check</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </button>
+                                <button class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white text-sm font-bold rounded-lg hover:bg-amber-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+        
+        <section class="space-y-6">
+             <div class="inline-flex items-center gap-3 bg-purple-600 text-white px-5 py-2 rounded-full shadow-lg">
+                <span class="font-bold text-xs tracking-widest">PART 2 실습</span>
+                <h2 class="text-lg font-bold">윤리 헌장 만들기 프로젝트</h2>
+            </div>
+            <div class="grid md:grid-cols-1 gap-6">
+                 <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                         <div class="w-20 h-20 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-scroll text-3xl"></i>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-xl font-bold mb-2">우리 회사 AI 윤리 강령 작성하기</h3>
+                            <p class="text-slate-500 text-sm mb-4">제공된 템플릿을 활용하여 조직의 핵심 가치를 반영한 'AI 사용 윤리 헌장' 초안을 작성해보는 실습입니다.</p>
+                             <button class="w-full md:w-auto px-8 py-3 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 transition-colors">
+                                실습 시작하기 <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        onAuthStateChanged(auth, (user) => {
+            if (!user) { alert("로그인이 필요합니다."); window.location.href='../index.html'; }
+            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출처 기반 리서치 방법론 - 상세 강의</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 섹션 타이틀 번호 바 */
+        .section-bar {
+            border-left: 4px solid #059669;
+            padding-left: 1rem;
+        }
+
+        /* 카드 디자인 */
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08);
+        }
+
+        .card-badge {
+            background: #ecfdf5;
+            color: #059669;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border: 1px solid #d1fae5;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background: #ecfdf5;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+        }
+
+        /* 하단 솔루션 박스 */
+        .solution-box {
+            border-left: 4px solid #3b82f6;
+            background-color: #eff6ff;
+            border-radius: 12px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-pdf {
+            background-color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pdf:hover {
+            background-color: #4a3bc2;
+            transform: scale(1.02);
+        }
+
+        .btn-back {
+            border: 2px solid #e2e8f0;
+            color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #f8fafc;
+            border-color: #5c4ae3;
+        }
+
+        .session-badge {
+            background-color: #ecfdf5;
+            color: #059669;
+            padding: 4px 16px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="py-20">
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto text-center mb-24 px-6">
+        <div class="inline-block session-badge mb-6 uppercase tracking-wider">TRUSTWORTHY AI SESSION</div>
+        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
+            출처 기반 <span class="gradient-text">리서치 방법론</span>
+        </h1>
+        <p class="text-lg text-slate-500 mb-8 font-medium">AI의 환각(Hallucination)을 넘어 팩트를 확보하는 기술</p>
+        <div class="flex items-center justify-center gap-4 text-sm font-semibold text-slate-400">
+            <span class="flex items-center gap-1"><i class="fas fa-user-circle text-emerald-500"></i> 강사 김사부</span>
+            <span class="opacity-30">|</span>
+            <span class="flex items-center gap-1"><i class="fas fa-check-double text-emerald-500"></i> Fact-Check
+                마스터</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-32">
+
+        <!-- 01. AI 리서치의 위험성 -->
+        <section id="risk" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">01. AI 리서치의 위험성</h2>
+                <p class="text-slate-500 mt-2">빠르지만 틀릴 수 있습니다. 할루시네이션의 함정.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-red-100 p-8 shadow-sm">
+                <div class="flex items-start gap-6">
+                    <div class="text-4xl text-red-500"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div>
+                        <h3 class="font-bold text-xl text-slate-800 mb-3">할루시네이션 (Hallucination)</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            생성형 AI는 사실을 검색하는 것이 아니라, <strong>'그럴듯한 문장'</strong>을 확률적으로 생성합니다. 없는 논문을 있다고 하거나, 실제 벌어지지 않은
+                            사건을 역사적 사실처럼 서술할 수 있습니다.
+                        </p>
+                        <div class="bg-red-50 p-4 rounded-xl text-sm text-red-800 font-medium">
+                            <span class="font-bold">사례:</span> 미국의 변호사가 ChatGPT가 지어낸 가짜 판례를 법정에 제출했다가 자격 정지 위기에 처한 사건이
+                            대표적입니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. 신뢰 확보 3단계 전략 -->
+        <section id="strategy" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">02. 신뢰 확보 3단계 전략</h2>
+                <p class="text-slate-500 mt-2">Source-First 접근법으로 팩트를 검증하십시오</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Step 1 -->
+                <div class="flex gap-6 items-start bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div
+                        class="bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        1</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Search with Perplexity (검색)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-2">일반 챗봇 대신, 실시간 웹 검색 엔진이 탑재된
+                            <strong>Perplexity</strong>를 사용하십시오. 모든 문장에 [1], [2]와 같은 출처 번호가 달려있는지 확인해야 합니다.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex gap-6 items-start bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div
+                        class="bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        2</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Click & Verify (검증)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-2">AI가 요약한 내용을 100% 믿지 마십시오. 반드시 <strong>원본
+                                링크를 클릭</strong>하여 AI가 해석한 내용이 원문의 의도와 일치하는지 교차 검증해야 합니다.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex gap-6 items-start bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div
+                        class="bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        3</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Synthesize with Context (종합)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-2">검증된 팩트 조각들을 모아, <strong>Claude</strong>나
+                            <strong>ChatGPT</strong>에게 전달하여 문맥에 맞는 최종 보고서 형태로 다시 작성하게 하십시오.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. 성공적인 프롬프트 패턴 -->
+        <section id="prompt" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">03. 검증된 리서치 프롬프트</h2>
+                <p class="text-slate-500 mt-2">거짓 정보를 차단하는 질문의 기술</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="feature-card p-6 bg-slate-50 border-slate-200">
+                    <h4
+                        class="font-bold text-slate-800 mb-4 bg-white inline-block px-3 py-1 rounded shadow-sm border border-slate-100">
+                        📌 출처 요구형</h4>
+                    <p
+                        class="bg-white p-4 rounded-xl border border-slate-200 text-sm text-slate-600 italic leading-relaxed">
+                        "2025년 생성형 AI 시장 규모에 대한 전망 데이터를 찾아줘. <br><strong class="text-indigo-600 not-italic">반드시 신뢰할 수 있는
+                            기관(Gartner, IDC 등)의 보고서 출처 링크를 포함해서 답변해줘.</strong>"
+                    </p>
+                </div>
+                <div class="feature-card p-6 bg-slate-50 border-slate-200">
+                    <h4
+                        class="font-bold text-slate-800 mb-4 bg-white inline-block px-3 py-1 rounded shadow-sm border border-slate-100">
+                        📌 사실 확인형</h4>
+                    <p
+                        class="bg-white p-4 rounded-xl border border-slate-200 text-sm text-slate-600 italic leading-relaxed">
+                        "아래 기사 내용이 사실인지 팩트 체크를 해줘. <br><strong class="text-indigo-600 not-italic">해당 주장을 뒷받침하거나 반박하는 다른
+                            뉴스 3건을 찾아서 비교 분석해줘.</strong>"
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sabu's Tips -->
+        <section id="sabu-advice">
+            <div class="solution-box p-8 space-y-4">
+                <p class="text-blue-800 font-bold text-xl flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i> 김사부의 인사이트
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-blue-900">
+                    <div class="bg-white/50 p-5 rounded-xl border border-blue-100">
+                        <strong>"AI는 똑똑한 인턴입니다"</strong><br>
+                        인턴이 가져온 보고서를 사수가 검토 없이 사장님께 올리지 않듯이, AI의 결과물도 여러분의 <strong>'검수'</strong>를 거쳐야 비로소 가치가 생깁니다.
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-xl border border-blue-100">
+                        <strong>"출처가 없으면 쓰지 마십시오"</strong><br>
+                        출처가 불분명한 정보는 비즈니스 의사결정에 치명적인 위험이 됩니다. <strong>No Source, No Use 원칙</strong>을 반드시 지키십시오.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture Summary & Next Steps -->
+        <section
+            class="bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100 mt-20">
+            <h3 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+            <p class="text-slate-500 text-lg md:text-xl font-medium mb-12">AI의 기초를 다졌습니다. 이제 실무 적용을 시작해보세요.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-5">
+                <button
+                    class="btn-pdf text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100">
+                    <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+                </button>
+                <button onclick="location.href='day01_lecture.html'"
+                    class="btn-back bg-white px-10 py-5 rounded-2xl font-bold text-lg">
+                    강의실로 돌아가기
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="max-w-4xl mx-auto mt-32 py-16 px-6 border-t border-slate-100 text-center text-slate-400">
+        <p class="font-bold text-slate-800 mb-2 italic tracking-tighter text-xl">MASTER KIM AI CLASS</p>
+        <p class="text-xs uppercase tracking-widest font-bold">제조혁신 전문가 김사부 DX 가이드라인 &copy; 2026</p>
+    </footer>
+
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day01', 'research_method', 'completeButtonContainer');
+            }
+        });
+    </script>
+

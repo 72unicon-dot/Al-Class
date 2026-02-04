@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 비즈니스 전략 - 강의 시청</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <meta name="course-id" content="business">
+        <meta name="class-id" content="Class 01">
+        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
+            <a href="classroom_business.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
+                <i class="fas fa-arrow-left"></i>
+                <span class="hidden sm:inline">강의실 홈으로</span>
+            </a>
+        </div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">Class 01</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">산업별 AI 혁신 사례</h1>
+                <p class="text-xl opacity-90 font-light">Day 1 (오전): 금융, 제조, 유통 분야 성공 사례 분석 (4시간)</p>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+            <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4">PART 1: 산업별 혁신 트렌드</h2>
+            <div class="grid gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Global AI Innovation Cases</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">금융(JP Morgan), 제조(Siemens), 유통(Nike) 등 산업별 Top-tier 기업들의 AI 도입 배경과 성과를 상세히 분석합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Case Study</span><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Industry</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_cases.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                                <button data-title="Global AI Innovation Cases" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-microchip text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI Ecosystem & Tech Trends</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">생성형 AI 기술 스택(앱-모델-인프라)을 이해하고, 멀티모달 및 온디바이스 AI 등 최신 기술 트렌드를 학습합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Tech Trend</span><span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">GenAI</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_trends.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                                <button data-title="AI Ecosystem & Tech Trends" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div></section></main>
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        onAuthStateChanged(auth, (user) => {
+            if (!user) { alert("로그인이 필요합니다."); window.location.href='../index.html'; }
+            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        });
+    </script>
+    <script type="module" src="../js/resource-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI: 개념, 원리 및 학습 방법 - 상세 강의</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .concept-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.1);
+        }
+
+        .step-line {
+            position: relative;
+        }
+
+        .step-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .step-line::before {
+                display: none;
+            }
+        }
+
+        /* 예제 박스 스타일 */
+        .example-box {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 12px;
+            font-size: 0.875rem;
+        }
+
+        .token {
+            display: inline-block;
+            padding: 2px 8px;
+            margin: 2px;
+            background: #dbeafe;
+            border: 1px solid #bfdbfe;
+            border-radius: 4px;
+            color: #1e40af;
+            font-family: monospace;
+        }
+
+        .vector-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 4px;
+        }
+
+        .attention-weight {
+            height: 4px;
+            border-radius: 2px;
+            background: #3b82f6;
+            display: inline-block;
+            transition: width 0.5s ease;
+        }
+
+        .ai-table th {
+            background-color: #f1f5f9;
+        }
+
+        .tech-pillar {
+            border-top: 4px solid #4f46e5;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="bg-white text-slate-900">
+
+    <!-- Header Section -->
+    <header class="bg-slate-50 border-b border-slate-200 py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-bold mb-4">DEEP
+                DIVE SESSION</div>
+            <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
+                생성형 AI의 <span class="gradient-text">본질과 메커니즘</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-8">단순한 검색을 넘어 창조의 영역으로: AI는 어떻게 생각하고 배우는가?</p>
+            <div class="flex items-center justify-center gap-4 text-sm font-semibold text-slate-500">
+                <span class="flex items-center gap-1"><i class="fas fa-user-tie text-indigo-500"></i> 강사 김사부</span>
+                <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                <span class="flex items-center gap-1"><i class="fas fa-clock text-indigo-500"></i> 120분 집중 강의</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16 space-y-24">
+
+        <!-- Section 1: 개념 (Concept) -->
+        <section id="concept" class="space-y-12">
+            <div class="border-l-4 border-indigo-600 pl-4">
+                <h2 class="text-3xl font-bold">01. 생성형 AI의 개념</h2>
+                <p class="text-slate-500 mt-2">인간의 창의성을 모방하는 인공지능의 정의</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm leading-relaxed">
+                <p class="text-lg text-slate-700">
+                    <span class="font-bold text-indigo-600">생성형 AI(Generative AI)</span>는 학습한 데이터를 바탕으로 새로운 콘텐츠를 스스로
+                    만들어내는 인공지능을 말합니다. 단순히 정해진 규칙에 따라 답을 찾는 것이 아니라, 사람처럼 <span
+                        class="font-bold underline decoration-indigo-300 underline-offset-4">'창작'에 가까운 결과물을 생성할 수 있다는
+                        점</span>이 특징입니다.
+                </p>
+            </div>
+
+            <!-- 핵심 개념 1: 기존 AI와의 차이 -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold flex items-center gap-2"><i
+                        class="fas fa-exchange-alt text-indigo-500"></i> 1️⃣ 기존 AI와의 차이</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <div class="font-bold text-slate-500 mb-2 uppercase text-xs">전통적 AI (Discriminative)</div>
+                        <h4 class="text-xl font-bold mb-3">분류, 예측, 판별 중심</h4>
+                        <p class="text-sm text-slate-600 mb-4">입력된 데이터를 분석하여 정해진 레이블로 구분하거나 미래 값을 예측합니다.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-slate-200">불량
+                                판정</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-slate-200">수요
+                                예측</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-slate-200">얼굴
+                                인식</span>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200">
+                        <div class="font-bold text-indigo-500 mb-2 uppercase text-xs">생성형 AI (Generative)</div>
+                        <h4 class="text-xl font-bold mb-3">새로운 콘텐츠 생성</h4>
+                        <p class="text-sm text-slate-700 mb-4">학습한 데이터의 패턴을 활용하여 이전에 존재하지 않던 결과물을 창조합니다.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-indigo-200 font-bold text-indigo-600">글쓰기</span>
+                            <span
+                                class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-indigo-200 font-bold text-indigo-600">이미지
+                                생성</span>
+                            <span
+                                class="bg-white px-3 py-1 rounded-full text-xs shadow-sm border border-indigo-200 font-bold text-indigo-600">코드
+                                작성</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 핵심 개념 2: 무엇을 생성할 수 있나? -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-cubes text-indigo-500"></i> 2️⃣
+                    무엇을 생성할 수 있나?</h3>
+                <div class="overflow-hidden rounded-2xl border border-slate-200">
+                    <table class="w-full text-sm ai-table">
+                        <thead>
+                            <tr class="text-slate-700 border-b border-slate-200">
+                                <th class="py-3 px-6 text-left font-bold">분야</th>
+                                <th class="py-3 px-6 text-left font-bold">예시</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50 w-32">텍스트</td>
+                                <td class="py-4 px-6 text-slate-600">보고서, 이메일, 시나리오, 요약</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50">이미지</td>
+                                <td class="py-4 px-6 text-slate-600">그림, 제품 디자인, 콘셉트 아트</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50">음성</td>
+                                <td class="py-4 px-6 text-slate-600">음성 합성, 성우 목소리</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50">영상</td>
+                                <td class="py-4 px-6 text-slate-600">영상 생성, 편집</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50">코드</td>
+                                <td class="py-4 px-6 text-slate-600">프로그램 자동 작성</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold text-indigo-600 bg-slate-50/50">데이터</td>
+                                <td class="py-4 px-6 text-slate-600">가상(Synthetic) 데이터 생성</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 핵심 개념 3: 대표적인 모델 -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold flex items-center gap-2"><i class="fas fa-star text-indigo-500"></i> 3️⃣
+                    대표적인 생성형 AI 모델</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                        <div class="font-bold text-slate-800">GPT 계열</div>
+                        <div class="text-[10px] text-indigo-500 font-bold mb-1">TEXT</div>
+                        <p class="text-[11px] text-slate-500">ChatGPT 등 텍스트 생성의 표준</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                        <div class="font-bold text-slate-800">DALL·E / Midjourney</div>
+                        <div class="text-[10px] text-orange-500 font-bold mb-1">IMAGE</div>
+                        <p class="text-[11px] text-slate-500">고퀄리티 시각 자료 생성</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                        <div class="font-bold text-slate-800">Stable Diffusion</div>
+                        <div class="text-[10px] text-green-500 font-bold mb-1">OPEN SOURCE</div>
+                        <p class="text-[11px] text-slate-500">자유로운 커스텀 이미지 생성</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                        <div class="font-bold text-slate-800">Claude / Gemini</div>
+                        <div class="text-[10px] text-blue-500 font-bold mb-1">ANALYSIS</div>
+                        <p class="text-[11px] text-slate-500">긴 문서 분석 및 실무 특화</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                        <div class="font-bold text-slate-800">Sora</div>
+                        <div class="text-[10px] text-red-500 font-bold mb-1">VIDEO</div>
+                        <p class="text-[11px] text-slate-500">혁신적인 고해상도 영상 생성</p>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-xl text-white text-center flex flex-col justify-center">
+                        <div class="text-xs opacity-60">NEXT STEP</div>
+                        <div class="font-bold text-sm">프롬프트 엔지니어링</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1.5: 기술적 근간 (Technical Pillars) -->
+        <section id="tech-pillars" class="space-y-12 bg-slate-50 p-10 rounded-3xl border border-slate-200">
+            <div class="border-l-4 border-indigo-600 pl-4">
+                <h2 class="text-3xl font-bold">02. 현대 AI의 3대 핵심 기술</h2>
+                <p class="text-slate-500 mt-2">인공지능을 구성하는 뇌, 엔진, 그리고 그 결과물</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Neural Network -->
+                <div class="bg-white p-6 rounded-2xl tech-pillar shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">신경망 (Neural Network)</h3>
+                    <p class="text-xs text-slate-500 mb-4 font-bold uppercase tracking-wider">The "Brain" / 기초 구조</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        인간의 뇌 구조를 수학적으로 모사한 알고리즘입니다. 여러 층(Layer)으로 쌓인 노드들이 데이터를 주고받으며 패턴을 학습하는 딥러닝의 가장 기본적인 구성 단위입니다.
+                    </p>
+                </div>
+
+                <!-- Transformer -->
+                <div class="bg-white p-6 rounded-2xl tech-pillar shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">트랜스포머 (Transformer)</h3>
+                    <p class="text-xs text-purple-500 mb-4 font-bold uppercase tracking-wider">The "Engine" / 혁신 기술</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        2017년 구글이 발표한 혁신적인 아키텍처입니다. 문장 내의 모든 단어를 동시에 분석하는 'Self-Attention' 기술을 통해 데이터 처리 속도와 맥락 이해 능력을
+                        비약적으로 향상시켰습니다.
+                    </p>
+                </div>
+
+                <!-- LLM -->
+                <div class="bg-white p-6 rounded-2xl tech-pillar shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">거대 언어 모델 (LLM)</h3>
+                    <p class="text-xs text-blue-500 mb-4 font-bold uppercase tracking-wider">The "Result" / 거대 지능</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        수천억 개의 파라미터를 가진 거대 신경망입니다. 트랜스포머 엔진을 극단적으로 키워, 언어 이해는 물론 추론, 번역, 요약 등 범용적인 지능을 갖게 된 결과물을 말합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-indigo-100 text-sm text-slate-600">
+                <p class="flex items-center gap-2">
+                    <i class="fas fa-info-circle text-indigo-500"></i>
+                    <strong>쉽게 이해하기:</strong> 신경망이라는 <strong>'세포'</strong>가 모여 트랜스포머라는 <strong>'엔진'</strong>이 되었고, 그 엔진을
+                    엄청나게 키워 LLM이라는 <strong>'거대 지능'</strong>이 탄생했습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: 작동 원리 (Mechanism) -->
+        <section id="mechanism" class="space-y-10">
+            <div class="border-l-4 border-indigo-600 pl-4">
+                <h2 class="text-3xl font-bold">03. 작동 원리: 확률의 마법</h2>
+                <p class="text-slate-500 mt-2">AI가 문장을 이어가는 수학적 방식</p>
+            </div>
+
+            <!-- 핵심 개념 상세 설명 -->
+            <div class="space-y-16">
+                <!-- 1. 토큰화 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-shadow">
+                    <div class="flex items-center gap-3 mb-4 text-indigo-600">
+                        <i class="fas fa-scissors text-xl"></i>
+                        <h3 class="text-xl font-bold">1. 토큰화 (Tokenization)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 text-sm">텍스트를 AI가 처리하기 쉬운 숫자(Token ID)로 변환하기 전, 의미 있는 최소 단위로 쪼개는
+                        과정입니다.</p>
+
+                    <div class="example-box">
+                        <p class="font-bold text-xs text-slate-400 mb-2 uppercase">실제 예제: 한국어 문장 쪼개기</p>
+                        <div class="bg-white p-4 rounded-lg border border-slate-100">
+                            <p class="text-slate-500 text-xs mb-2">원문: "제조 현장의 혁신은 중요하다."</p>
+                            <div class="flex flex-wrap">
+                                <span class="token">제조</span>
+                                <span class="token">현장</span>
+                                <span class="token">의</span>
+                                <span class="token">혁신</span>
+                                <span class="token">은</span>
+                                <span class="token">중요</span>
+                                <span class="token">하다</span>
+                                <span class="token">.</span>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-xs text-slate-500">* AI는 각 토큰을 '1203', '4592' 같은 고유한 번호로 인식합니다.</p>
+                    </div>
+                </div>
+
+                <!-- 2. 임베딩 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-shadow">
+                    <div class="flex items-center gap-3 mb-4 text-indigo-600">
+                        <i class="fas fa-map-marked-alt text-xl"></i>
+                        <h3 class="text-xl font-bold">2. 임베딩 (Embedding)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 text-sm">단어의 '의미'를 수천 개의 숫자로 이루어진 좌표(공간)로 변환합니다. 비슷한 의미를 가진 단어는 공간상에서
+                        가깝게 위치합니다.</p>
+
+                    <div class="example-box">
+                        <p class="font-bold text-xs text-slate-400 mb-2 uppercase">실제 예제: 단어의 좌표값 (다차원 공간)</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg border border-slate-100">
+                                <p class="font-bold text-xs mb-2 text-blue-600">혁신 (Innovation)</p>
+                                <p class="font-mono text-[10px] text-slate-400">[0.12, -0.45, 0.88, ... 0.32]</p>
+                                <div class="mt-2 flex items-center gap-1">
+                                    <span class="vector-dot bg-blue-500"></span>
+                                    <span class="vector-dot bg-blue-400"></span>
+                                    <span class="vector-dot bg-blue-300"></span>
+                                    <span class="text-[10px] text-slate-400">유사도 92%</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-100">
+                                <p class="font-bold text-xs mb-2 text-indigo-600">개선 (Improvement)</p>
+                                <p class="font-mono text-[10px] text-slate-400">[0.14, -0.42, 0.85, ... 0.35]</p>
+                                <div class="mt-2 flex items-center gap-1">
+                                    <span class="vector-dot bg-indigo-500"></span>
+                                    <span class="vector-dot bg-indigo-400"></span>
+                                    <span class="vector-dot bg-indigo-300"></span>
+                                    <span class="text-[10px] text-slate-400">혁신과 가까운 좌표</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-xs text-slate-500">* "혁신"과 "수박"은 좌표상에서 매우 멀리 떨어져 있게 됩니다.</p>
+                    </div>
+                </div>
+
+                <!-- 3. 어텐션 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-shadow">
+                    <div class="flex items-center gap-3 mb-4 text-indigo-600">
+                        <i class="fas fa-eye text-xl"></i>
+                        <h3 class="text-xl font-bold">3. 어텐션 (Attention)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 text-sm">문장 내에서 단어들끼리 서로 얼마나 밀접하게 관련이 있는지 '집중도'를 계산하는 메커니즘입니다.</p>
+
+                    <div class="example-box">
+                        <p class="font-bold text-xs text-slate-400 mb-2 uppercase">실제 예제: "그것"이 가리키는 대상 찾기</p>
+                        <div class="bg-slate-900 text-white p-6 rounded-xl font-medium">
+                            <p class="mb-4 text-sm italic">"사과를 테이블 위에 두었더니 <span
+                                    class="text-yellow-400 underline underline-offset-4">그것</span>이 굴러 떨어졌다."</p>
+
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="w-16 opacity-50 text-right">사과</span>
+                                    <span class="attention-weight" style="width: 80%;"></span>
+                                    <span class="text-yellow-400 font-bold">80% 집중</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="w-16 opacity-50 text-right">테이블</span>
+                                    <span class="attention-weight" style="width: 15%;"></span>
+                                    <span>15%</span>
+                                </div>
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="w-16 opacity-50 text-right">두었더니</span>
+                                    <span class="attention-weight" style="width: 5%;"></span>
+                                    <span>5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-xs text-slate-500 font-bold">* AI는 '굴러 떨어진 것'은 테이블이 아니라 '사과'임을 어텐션 수치로
+                            이해합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 학습 방법 (Training) -->
+        <section id="training" class="space-y-10">
+            <div class="border-l-4 border-indigo-600 pl-4">
+                <h2 class="text-3xl font-bold">04. 학습 방법: 데이터에서 비서가 되기까지</h2>
+                <p class="text-slate-500 mt-2">똑똑한 AI가 탄생하는 3단계 교육 과정</p>
+            </div>
+
+            <div class="step-line space-y-12">
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col md:flex-row gap-8">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-indigo-200">
+                        1</div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow flex-1">
+                        <h4 class="text-xl font-bold mb-2">사전 학습 (Pre-training)</h4>
+                        <p class="text-sm text-slate-500 mb-4">"세상의 모든 책과 지식을 읽히는 단계"</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            수조 개의 웹 페이지, 책, 코드 데이터를 스스로 읽으며 언어의 구조와 지식을 배웁니다. 이 단계의 AI는 방대한 지식을 갖춘 '백과사전'과 같지만, 아직 인간의
+                            명령에 응답하는 법은 모릅니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col md:flex-row gap-8">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-blue-200">
+                        2</div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow flex-1">
+                        <h4 class="text-xl font-bold mb-2">미세 조정 (Fine-tuning)</h4>
+                        <p class="text-sm text-slate-500 mb-4">"명령어와 답변 형식을 배우는 단계"</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            "질문: ~해줘", "답변: 예, 알겠습니다"와 같은 Q&A 쌍 데이터를 집중 학습합니다. 이제 AI는 사용자의 요청에 알맞은 형식으로 대답할 수 있는 '채팅
+                            비서'의 외형을 갖추게 됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col md:flex-row gap-8">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-emerald-200">
+                        3</div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow flex-1">
+                        <h4 class="text-xl font-bold mb-2">인간 피드백 강화학습 (RLHF)</h4>
+                        <p class="text-sm text-slate-500 mb-4">"인간의 선호도와 윤리를 맞추는 단계"</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            두 개의 답변 중 어떤 것이 더 도움이 되고 안전한지 인간이 직접 점수를 매깁니다. 이 과정을 통해 AI는 더욱 '도움이 되고(Helpful)',
+                            '정직하며(Honest)', '무해한(Harmless)' 성격으로 교정됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary & Action -->
+        <section class="bg-slate-50 rounded-3xl p-10 text-center border border-slate-200">
+            <h3 class="text-2xl font-bold mb-4">강의 요약 및 다음 단계</h3>
+            <p class="text-slate-600 mb-8">생성형 AI의 기본 원리와 작동 방식을 이해하는 것이 혁신의 첫걸음입니다.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="alert('교재 PDF 준비 중입니다.')"
+                    class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-colors flex items-center gap-2">
+                    <i class="fas fa-file-download"></i> 교재 PDF 다운로드
+                </button>
+                <a href="day01_lecture.html"
+                    class="px-6 py-3 bg-white text-indigo-600 border border-indigo-200 rounded-xl font-bold hover:bg-indigo-50 transition-colors">강의실로
+                    돌아가기</a>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="bg-slate-900 text-white py-12 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h5 class="text-xl font-black italic tracking-tighter">MASTER KIM AI CLASS</h5>
+                <p class="text-slate-500 text-xs mt-1">제조혁신 전문가 김사부의 DX 가이드라인</p>
+            </div>
+            <div class="text-slate-400 text-sm">
+                &copy; 2026 제조혁신 길라잡이 김사부 채널. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day01', 'ai_concept', 'completeButtonContainer');
+            }
+        });
+    </script>
+

@@ -72,6 +72,31 @@ https://vercel.com/dashboard
 - 환경 변수 추가 후 **반드시 재배포** 필요
 - 기존 배포는 새 환경 변수를 인식하지 못함
 
+### 구글 로그인 실패 (auth/unauthorized-domain)
+
+이 에러는 Vercel 배포 주소가 Firebase 인증 도메인 목록 보완되지 않아서 발생합니다.
+
+1. [Firebase Console](https://console.firebase.google.com/) 접속
+2. **Authentication** > **Settings** 탭 > **Authorized domains** (승인된 도메인) 메뉴 이동
+3. **도메인 추가** 버튼 클릭
+4. 현재 배포된 주소(예: `al-class.vercel.app`) 입력 및 추가
+
+
+### "The requested action is invalid" 에러
+
+이 에러는 구글 클라우드 콘솔의 **API 키 제한** 설정 때문에 발생합니다. API 키가 특정 도메인(예: localhost)에서만 작동하도록 잠겨있기 때문입니다.
+
+1. [Google Cloud Console > 사용자 인증 정보](https://console.cloud.google.com/apis/credentials) 접속
+2. 프로젝트 선택 (`lms01-bc677`)
+3. **API 키** 목록에서 사용 중인 키 클릭 (편집 아이콘)
+4. **애플리케이션 제한사항** 항목 확인:
+   - "없음"으로 되어 있다면 이 문제는 아님
+   - **"웹사이트 제한"**이 걸려 있다면, 다음 항목을 목록에 **모두** 추가해야 합니다:
+     - `http://localhost:3000/*` (로컬 테스트용)
+     - `https://lms01-bc677.firebaseapp.com/*` (필수: 인증 핸들러용)
+     - `https://al-class.vercel.app/*` (배포된 앱용)
+5. **저장** 클릭 후 5분 정도 대기 (적용 시간 소요)
+
 ---
 
 **참고**: 이 가이드는 보안상 민감한 정보를 포함하고 있으므로 외부에 공유하지 마세요.

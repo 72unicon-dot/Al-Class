@@ -1,0 +1,284 @@
+{
+    "intro_ethics.html": {
+        "output": "classroom_ethics.html",
+        "title": "AI 윤리 및 규제",
+        "curriculum": [
+            {
+                "title": "Class 1: AI 윤리와 규제 트렌드",
+                "desc": "국내외(EU AI Act) 법적 규제와 기업 리스크 분석",
+                "details": [
+                    "생성형 AI의 저작권 이슈 사례",
+                    "기업 데이터 유출 사고 유형",
+                    "개인정보보호법과 AI 컴플라이언스"
+                ]
+            },
+            {
+                "title": "Class 2: 실무 가이드라인 수립",
+                "desc": "우리 회사에 맞는 AI 사용 정책 및 보안 수칙 제정",
+                "details": [
+                    "프롬프트 입력 시 보안 주의사항",
+                    "AI 산출물의 사용 권한 및 책임",
+                    "사내 AI 윤리 강령 작성 실습"
+                ]
+            }
+        ]
+    },
+    "intro_basics.html": {
+        "output": "classroom_basics.html",
+        "title": "AI 기초 및 활용",
+        "curriculum": [
+            {
+                "title": "Class 1: 생성형 AI 원리 이해 (오전)",
+                "desc": "LLM의 작동 방식과 프롬프트 엔지니어링 기초 (4시간)",
+                "details": [
+                    "LLM과 Transformer 구조",
+                    "Token과 Context Window 이해",
+                    "Zero-shot vs Few-shot Prompting"
+                ]
+            },
+            {
+                "title": "Class 2: 업무 생산성 도구 (오후)",
+                "desc": "ChatGPT, Gemini, Claude 등 주요 툴 활용법 (4시간)",
+                "details": [
+                    "이메일 및 보고서 자동 작성",
+                    "데이터 분석 및 시각화 실습",
+                    "회의록 요약 및 할 일 추출"
+                ]
+            }
+        ]
+    },
+    "intro_business.html": {
+        "output": "classroom_business.html",
+        "title": "AI 비즈니스 전략",
+        "curriculum": [
+            {
+                "title": "Class 1: 산업별 AI 혁신 사례 (Day 1 오전)",
+                "desc": "금융, 제조, 유통 분야의 Global Top-tier AI 도입 성공 사례 심층 분석",
+                "details": [
+                    "JPMorgan, Bloomberg 등 금융권 AI 도입 전략",
+                    "Siemens, 현대차의 스마트 팩토리 혁신",
+                    "Nike, Coca-Cola의 초개인화 마케팅 사례"
+                ]
+            },
+            {
+                "title": "Class 2: 신규 사업 모델 발굴 (Day 1 오후)",
+                "desc": "생성형 AI 기술을 접목한 비즈니스 모델 캔버스(BMC) 작성 실습",
+                "details": [
+                    "AI Native 비즈니스 모델 유형 3가지",
+                    "경쟁사 AI 전략 분석 및 격차(Gap) 분석",
+                    "Value Provision 재정의 및 수익 모델 설계"
+                ]
+            },
+            {
+                "title": "Class 3: 도입 로드맵 및 기획 (Day 2 오전)",
+                "desc": "우리 기업의 AI 성숙도 진단과 PoC(개념 증명) 프로젝트 기획",
+                "details": [
+                    "AI 성숙도 진단 모델(Maturity Model) 적용",
+                    "성공 확률을 높이는 PoC 과제 선정 매트릭스",
+                    "구체적인 PoC 수행 계획서 작성"
+                ]
+            },
+            {
+                "title": "Class 4: 실행 전략 및 거버넌스 (Day 2 오후)",
+                "desc": "ROI 분석, 예산 수립, 그리고 리스크 관리를 위한 거버넌스 체계",
+                "details": [
+                    "TCO(총 소유 비용) 기반의 ROI 시뮬레이션",
+                    "AI 프로젝트 인력 구성 및 외부 파트너십",
+                    "AI 윤리 가이드라인 및 데이터 보안 정책"
+                ]
+            }
+        ]
+    },
+    "expert_advanced.html": {
+        "output": "classroom_advanced.html",
+        "title": "AI 심화 개발",
+        "curriculum": [
+            {
+                "title": "Day 1: RAG 파이프라인 구축",
+                "desc": "LangChain을 활용한 문서 기반 질의응답 시스템",
+                "details": [
+                    "Vector DB와 임베딩 이해",
+                    "RAG 아키텍처 설계",
+                    "Hallucination 제어 기법"
+                ]
+            },
+            {
+                "title": "Day 2: LLM 파인튜닝 실습",
+                "desc": "오픈소스 모델(Llama 3 등) 미세 조정하기",
+                "details": [
+                    "데이터셋 준비 및 전처리",
+                    "LoRA/QLoRA 효율적 튜닝",
+                    "모델 평가 및 배포"
+                ]
+            }
+        ]
+    },
+    "special_marketing.html": {
+        "output": "classroom_marketing.html",
+        "title": "AI 마케팅 특화",
+        "curriculum": [
+            {
+                "title": "Day 1: AI 카피라이팅 & 콘텐츠",
+                "desc": "고객 페르소나 맞춤형 광고 문구 및 블로그 생성",
+                "details": [
+                    "브랜드 톤앤매너 학습시키기",
+                    "SEO 최적화 콘텐츠 제작",
+                    "소셜 미디어 자동화"
+                ]
+            },
+            {
+                "title": "Day 2: 마케팅 데이터 분석",
+                "desc": "고객 반응 데이터 분석 및 예측",
+                "details": [
+                    "캠페인 성과 예측 모델링",
+                    "고객 세그먼트 자동화",
+                    "개인화 마케팅 전략"
+                ]
+            }
+        ]
+    },
+    "special_manufacturing.html": {
+        "output": "classroom_manufacturing.html",
+        "title": "AI 제조/생산 특화",
+        "curriculum": [
+            {
+                "title": "Day 1: 스마트 팩토리와 AI",
+                "desc": "예지 보전 및 품질 검사 자동화",
+                "details": [
+                    "IoT 센서 데이터 수집 및 분석",
+                    "Computer Vision 품질 관리",
+                    "설비 고장 예측 시뮬레이션"
+                ]
+            },
+            {
+                "title": "Day 2: 공급망 최적화",
+                "desc": "수요 예측 및 재고 관리 자동화",
+                "details": [
+                    "시계열 데이터 기반 수요 예측",
+                    "물류 경로 최적화 알고리즘",
+                    "재고 비용 절감 전략"
+                ]
+            }
+        ]
+    },
+    "special_data.html": {
+        "output": "classroom_data.html",
+        "title": "AI 데이터 분석 특화",
+        "curriculum": [
+            {
+                "title": "Day 1: Pandas AI & Code Interpreter",
+                "desc": "대화형 데이터 분석의 세계",
+                "details": [
+                    "자연어로 SQL 쿼리 생성",
+                    "자동 데이터 시각화 및 리포팅",
+                    "데이터 전처리 자동화"
+                ]
+            },
+            {
+                "title": "Day 2: 머신러닝 워크플로우 자동화",
+                "desc": "AutoML을 활용한 모델 개발",
+                "details": [
+                    "특성 공학(Feature Engineering) 자동화",
+                    "최적 모델 탐색 및 하이퍼파라미터 튜닝",
+                    "모델 설명력(XAI) 확보"
+                ]
+            }
+        ]
+    },
+    "special_video.html": {
+        "output": "classroom_video.html",
+        "title": "AI 영상 제작 특화",
+        "curriculum": [
+            {
+                "title": "Day 1: AI 영상 생성 도구 활용",
+                "desc": "Sora, Runway, Pika 등 최신 툴 마스터",
+                "details": [
+                    "Text-to-Video 프롬프트 기법",
+                    "이미지로 영상 애니메이션 만들기",
+                    "일관성 있는 캐릭터 영상 제작"
+                ]
+            },
+            {
+                "title": "Day 2: 영상 편집 및 후가공",
+                "desc": "AI 기반 컷 편집 및 특수 효과",
+                "details": [
+                    "음성 합성 및 립싱크(Lip-sync)",
+                    "자동 자막 및 번역",
+                    "AI 배경 음악 및 효과음 생성"
+                ]
+            }
+        ]
+    },
+    "management_leadership.html": {
+        "output": "classroom_leadership.html",
+        "title": "AI 리더십",
+        "curriculum": [
+            {
+                "title": "Day 1: AI 시대의 조직 관리",
+                "desc": "AI와 협업하는 조직 문화 만들기",
+                "details": [
+                    "AI 리터러시 교육 전략",
+                    "변화 관리 및 저항 극복",
+                    "AI 윤리 및 거버넌스 수립"
+                ]
+            },
+            {
+                "title": "Day 2: 의사결정 지원 시스템",
+                "desc": "데이터 기반의 합리적 경영 의사결정",
+                "details": [
+                    "경영 대시보드 및 지표 관리",
+                    "시나리오 플래닝 시뮬레이션",
+                    "리스크 관리 및 예측"
+                ]
+            }
+        ]
+    },
+    "strategy_consultant.html": {
+        "output": "classroom_consultant.html",
+        "title": "AI 컨설턴트 양성",
+        "curriculum": [
+            {
+                "title": "Day 1: AI 컨설팅 방법론",
+                "desc": "기업의 AI 도입 니즈 발굴 및 솔루션 제안",
+                "details": [
+                    "DT(Digital Transformation) 진단 프레임워크",
+                    "As-Is vs To-Be 분석",
+                    "RFP 작성 및 제안서 작성법"
+                ]
+            },
+            {
+                "title": "Day 2: 프로젝트 관리 및 커뮤니케이션",
+                "desc": "성공적인 AI 프로젝트 리딩",
+                "details": [
+                    "Agile 방법론 적용",
+                    "이해관계자 소통 전략",
+                    "프로젝트 리스크 관리"
+                ]
+            }
+        ]
+    },
+    "master_app_creator.html": {
+        "output": "classroom_app_creator.html",
+        "title": "나만의 앱 만들기",
+        "curriculum": [
+            {
+                "title": "Day 1: 노코드/로우코드 툴 활용",
+                "desc": "코딩 없이 앱 프로토타입 만들기",
+                "details": [
+                    "Bubble, FlutterFlow 기초",
+                    "UI/UX 디자인 원칙",
+                    "데이터베이스 연동 실습"
+                ]
+            },
+            {
+                "title": "Day 2: 앱 배포 및 수익화",
+                "desc": "실제 스토어 출시 및 운영",
+                "details": [
+                    "API 연동 및 외부 서비스 활용",
+                    "앱스토어 등록 절차",
+                    "사용자 분석 및 업데이트 전략"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>역할 부여와 CoT 기법 - AI Class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #059669 0%, #0f766e 100%);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="bg-slate-50">
+    <header class="gradient-bg text-white py-12 px-8">
+        <div class="max-w-4xl mx-auto">
+            <a href="day02_lecture.html" class="inline-flex items-center text-white/80 hover:text-white mb-6">
+                <i class="fas fa-arrow-left mr-2"></i> 강의 목록으로 돌아가기
+            </a>
+            <h1 class="text-3xl font-bold mb-4">역할 부여 & CoT</h1>
+            <p class="text-xl opacity-90">AI의 추론 능력을 200% 끌어올리는 심화 프롬프트 기법</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- 1. 역할 부여 -->
+    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-user-tie text-indigo-600 mr-2"></i>1. 역할 부여 (Persona Prompting)</h2>
+        
+        <div class="mb-8">
+            <h3 class="font-bold text-lg mb-2">개념</h3>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+                AI에게 특정 인물, 직업, 또는 성격을 부여하는 기법입니다. 
+                AI는 수조 개의 데이터를 학습했기 때문에, <em>"당신은 10년 차 마케팅 전문가입니다"</em>라고 역할을 정의해주면 그 역할에 어울리는 어조, 단어 선택, 지식 범위를 우선적으로 활성화합니다.
+            </p>
+            <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                <h4 class="font-bold text-indigo-900 mb-2 text-sm">기대 효과</h4>
+                <ul class="list-disc list-inside text-sm text-indigo-800 space-y-1">
+                    <li><strong>답변의 전문성 향상:</strong> 일반적인 답변 대신 해당 분야의 실무적인 통찰이 담긴 답변을 얻을 수 있습니다.</li>
+                    <li><strong>톤앤매너 조절:</strong> 청중(학생, 임원, 고객 등)에 맞는 적절한 말투를 구사합니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-lg mb-4 flex items-center"><i class="fas fa-search mr-2 text-slate-400"></i>사례 비교</h3>
+            <div class="space-y-4">
+                <div class="bg-slate-800 text-white p-4 rounded-xl shadow-md">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-2">Prompt</span>
+                    <p class="font-mono text-sm break-keep">"당신은 제조 혁신 분야의 Lean 6Sigma 마스터 블랙벨트입니다. 중소기업 사장님들을 대상으로 '공장 내 7대 낭비 제거'의 중요성을 설득력 있게 설명하는 강연 개요를 작성해 주세요."</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-100 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-slate-500 uppercase block mb-2">General AI</span>
+                        <p class="text-sm text-slate-600">"7대 낭비는 과잉생산, 대기, 운반 등이 있으며 이를 줄이면 효율이 좋아집니다."</p>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg">Role Playing AI</div>
+                        <p class="text-sm text-indigo-900 font-medium">"현장 경영에서 가장 무서운 것은 <strong>'보이지 않는 비용'</strong>입니다. 사장님, 재고가 쌓이는 것을 자산으로 착각하고 계시진 않습니까? 불필요한 운반 동선만 줄여도 영업이익률이 X% 개선됩니다..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CoT -->
+    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4"><i class="fas fa-streams text-indigo-600 mr-2"></i>2. 사고의 연쇄 (Chain of Thought, CoT)</h2>
+        
+        <div class="mb-8">
+            <h3 class="font-bold text-lg mb-2">개념</h3>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+                AI에게 <strong>"단계별로 생각하라"</strong>고 지시하거나, 문제 풀이의 과정을 예시로 보여주어 논리적 추론 과정을 거치게 하는 기법입니다. 
+                AI가 성급하게 결론(답)을 내기 전에 중간 단계의 사고 과정을 거치도록 유도하는 것이 핵심입니다.
+            </p>
+            <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                <h4 class="font-bold text-purple-900 mb-2 text-sm">기대 효과</h4>
+                <ul class="list-disc list-inside text-sm text-purple-800 space-y-1">
+                    <li><strong>추론 능력 극대화:</strong> 수학 문제, 논리 퍼즐, 복잡한 전략 수립에서 오답률을 획기적으로 낮춥니다.</li>
+                    <li><strong>결과 도출 과정의 투명성:</strong> AI가 왜 이런 결론을 내렸는지 사용자가 검증할 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+            <h3 class="font-bold text-lg mb-4">CoT 적용 사례: 불량률 계산</h3>
+            
+            <div class="mb-4">
+                 <div class="bg-white p-4 rounded-lg border border-slate-200 mb-4">
+                    <span class="text-xs font-bold text-purple-600 uppercase mb-1 block">Prompt</span>
+                    <p class="text-sm text-slate-700">"우리 공장의 작년 불량률은 5%였고, 올해 3%로 낮추는 것이 목표입니다. 현재 월 생산량은 10,000개입니다. 목표를 달성했을 때 연간 줄일 수 있는 불량품의 총개수는 얼마인가요? <strong>단계별로 계산 과정을 보여주며 답해줘.</strong>"</p>
+                 </div>
+            </div>
+
+            <div class="relative pl-6 border-l-2 border-purple-200 space-y-4">
+                <div>
+                    <span class="text-xs font-bold text-slate-400">Step 1</span>
+                    <p class="text-sm font-medium text-slate-800">먼저 작년의 월간 불량 개수를 계산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">10,000 × 0.05 = 500개</span></p>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-slate-400">Step 2</span>
+                    <p class="text-sm font-medium text-slate-800">올해 목표인 월간 불량 개수를 계산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">10,000 × 0.03 = 300개</span></p>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-slate-400">Step 3</span>
+                    <p class="text-sm font-medium text-slate-800">월간 절감되는 불량 개수를 구합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">500 - 300 = 200개</span></p>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-slate-400">Step 4</span>
+                    <p class="text-sm font-medium text-slate-800">이를 연간으로 환산합니다:<br><span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-indigo-700 font-bold">200 × 12 = 2,400개</span></p>
+                </div>
+                <div class="bg-purple-100 p-3 rounded-lg inline-block">
+                    <span class="text-xs font-bold text-purple-600 block">결론</span>
+                    <p class="font-bold text-purple-900">연간 총 2,400개의 불량품을 줄일 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Power Combo -->
+    <section class="bg-gradient-to-br from-indigo-900 to-purple-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl"><i class="fas fa-rocket"></i></div>
+        <h2 class="text-2xl font-bold mb-6 border-b border-white/20 pb-4 relative z-10"><i class="fas fa-layer-group text-yellow-400 mr-2"></i>3. 두 기법의 결합 (The Power Combo)</h2>
+        <p class="text-indigo-200 mb-8 relative z-10">가장 강력한 프롬프트는 이 두 가지를 섞는 것입니다.</p>
+        
+        <div class="flex flex-col md:flex-row gap-4 items-stretch relative z-10 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex-1 text-center border border-white/20">
+                <div class="text-yellow-400 font-bold mb-1">역할 부여</div>
+                <div class="text-xs text-indigo-200">Ex: 비즈니스 컨설턴트</div>
+            </div>
+            <div class="flex items-center justify-center text-yellow-400 font-bold text-xl">+</div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex-1 text-center border border-white/20">
+                <div class="text-yellow-400 font-bold mb-1">구체적 상황</div>
+                <div class="text-xs text-indigo-200">Ex: 신규 AI 시장 진출</div>
+            </div>
+            <div class="flex items-center justify-center text-yellow-400 font-bold text-xl">+</div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl flex-1 text-center border border-white/20">
+                <div class="text-yellow-400 font-bold mb-1">CoT 지시</div>
+                <div class="text-xs text-indigo-200">Ex: 단계별 논리적 근거</div>
+            </div>
+        </div>
+        
+        <div class="bg-black/30 p-6 rounded-xl border border-white/10 relative z-10">
+            <span class="text-xs font-bold text-yellow-400 uppercase mb-2 block">Combo Prompt Example</span>
+            <p class="font-mono text-sm leading-relaxed text-indigo-100">
+                "당신은 <span class="text-yellow-300 font-bold">비즈니스 전략 컨설턴트</span>입니다. 현재 우리 회사가 <span class="text-yellow-300 font-bold">신규 AI 앱 시장에 진출</span>하려 합니다. 경쟁사 분석부터 마케팅 전략까지 <span class="text-yellow-300 font-bold">단계별로 논리적 근거를 들어</span> 전략 보고서 초안을 작성해 주세요."
+            </p>
+        </div>
+    </section>
+
+
+    <!-- 강의 요약 및 다음 단계 섹션 (Auto-injected) -->
+    <div class="max-w-4xl mx-auto px-6 mb-8 mt-12 bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100">
+        <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+        <p class="text-slate-500 text-lg md:text-xl font-medium mb-12 word-keep-all">AI에게 역할을 부여하고 논리적 사고를 유도하여 답변의 품질을 높여보세요.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-5">
+            <button onclick="alert('교재 파일 준비 중입니다.')" class="bg-[#5c4ae3] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 hover:bg-[#4a3bc2] transition-colors">
+                <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+            </button>
+            <button onclick="location.href='classroom.html'" class="border-2 border-slate-200 text-[#5c4ae3] bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-50 hover:border-[#5c4ae3] transition-all">
+                강의실로 돌아가기
+            </button>
+        </div>
+    </div>
+
+<div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+
+</main>
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day02', 'role_cot', 'completeButtonContainer');
+            }
+        });
+    </script>
+

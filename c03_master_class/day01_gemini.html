@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 핵심 기능 및 활용법 - 상세 강의</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4285f4, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 섹션 타이틀 번호 바 */
+        .section-bar {
+            border-left: 4px solid #4285f4;
+            padding-left: 1rem;
+        }
+
+        /* 카드 디자인 */
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.08);
+        }
+
+        .card-badge {
+            background: #eff6ff;
+            color: #3b82f6;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border: 1px solid #dbeafe;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4285f4;
+        }
+
+        /* 하단 솔루션 박스 */
+        .solution-box {
+            border-left: 4px solid #10b981;
+            background-color: #f0fdf4;
+            border-radius: 12px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-pdf {
+            background-color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pdf:hover {
+            background-color: #4a3bc2;
+            transform: scale(1.02);
+        }
+
+        .btn-back {
+            border: 2px solid #e2e8f0;
+            color: #5c4ae3;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #f8fafc;
+            border-color: #5c4ae3;
+        }
+
+        .session-badge {
+            background-color: #fee2e2;
+            color: #ef4444;
+            padding: 4px 16px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .case-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 4px;
+            background: #f1f5f9;
+            color: #475569;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<body class="py-20">
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto text-center mb-24 px-6">
+        <div class="inline-block session-badge mb-6 uppercase tracking-wider">Advanced AI Ecosystem Session</div>
+        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
+            Gemini <span class="gradient-text">핵심 기능 및 활용법</span>
+        </h1>
+        <p class="text-lg text-slate-500 mb-8 font-medium">비즈니스 직무 혁신을 위한 Gemini의 압도적 성능 가이드</p>
+        <div class="flex items-center justify-center gap-4 text-sm font-semibold text-slate-400">
+            <span class="flex items-center gap-1"><i class="fas fa-user-circle text-blue-500"></i> 강사 김사부</span>
+            <span class="opacity-30">|</span>
+            <span class="flex items-center gap-1"><i class="fas fa-briefcase text-blue-500"></i> 직무 연계형 DX 가이드</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-32">
+
+        <!-- 01. 왜 Gemini를 선택했는가? -->
+        <section id="why-gemini" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">01. 왜 Gemini를 선택했는가?</h2>
+                <p class="text-slate-500 mt-2">구글 생태계와 인공지능 기술의 결합이 만드는 시너지</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="feature-card p-6">
+                    <div class="icon-circle mb-6"><i class="fas fa-cloud text-xl"></i></div>
+                    <h3 class="text-lg font-bold mb-3">강력한 구글 생태계</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Gmail, Drive, Docs 등 매일 사용하는 워크스페이스 도구들과 한 몸처럼 움직이며 업무 흐름을 끊김 없이 지원합니다.
+                    </p>
+                </div>
+                <div class="feature-card p-6">
+                    <div class="icon-circle mb-6"><i class="fas fa-infinity text-xl"></i></div>
+                    <h3 class="text-lg font-bold mb-3">압도적인 기억력</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        최대 수백만 토큰의 컨텍스트 창을 통해 수십 권의 매뉴얼이나 긴 공정 영상 전체를 한 번에 학습하고 분석합니다.
+                    </p>
+                </div>
+                <div class="feature-card p-6">
+                    <div class="icon-circle mb-6"><i class="fas fa-bolt text-xl"></i></div>
+                    <h3 class="text-lg font-bold mb-3">네이티브 멀티모달</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        처음부터 보고, 듣고, 말하도록 설계되어 이미지나 영상 속 미세 정보까지 인간 수준으로 분석해내는 유일한 AI입니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. Gemini의 다양한 성능 (비즈니스 직무 연계) -->
+        <section id="performance" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">02. Gemini의 다양한 성능과 직무 혁신</h2>
+                <p class="text-slate-500 mt-2">각 직무별 페인포인트를 해결하는 Gemini의 핵심 성능</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Performance 1: Strategy & Planning -->
+                <div class="feature-card p-8 border-t-4 border-t-blue-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="icon-circle"><i class="fas fa-lightbulb text-xl"></i></div>
+                        <span class="card-badge">기획 / 전략</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">논리적 추론 및 복합 기획 성능</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Gemini는 복잡한 비즈니스 모델을 구조화하고 **6Sigma 기반의 문제 해결 로직**을 설계하는 데 탁월합니다. 흩어진 아이디어를 실행 가능한 전략적 로드맵으로
+                        변환합니다.
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-lg text-[11px] text-blue-700 font-bold italic">
+                        [성능] 복잡한 조건부 추론 및 다단계 계획 수립 능력
+                    </div>
+                </div>
+
+                <!-- Performance 2: Research & Analysis -->
+                <div class="feature-card p-8 border-t-4 border-t-green-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="icon-circle"><i class="fas fa-microscope text-xl"></i></div>
+                        <span class="card-badge">연구 / 리서치</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">대규모 데이터 요약 및 교차 분석</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        수백 개의 시장 트렌드 보고서와 기술 백서를 동시 분석하여 **우리 기업에 맞는 핵심 기회 요인**을 추출합니다. 방대한 양의 정보를 10초 내에 핵심 인사이트로
+                        요약합니다.
+                    </p>
+                    <div class="bg-green-50 p-3 rounded-lg text-[11px] text-green-700 font-bold italic">
+                        [성능] 1.5M+ 컨텍스트 창 기반의 장문 정보 처리 성능
+                    </div>
+                </div>
+
+                <!-- Performance 3: Marketing & Contents -->
+                <div class="feature-card p-8 border-t-4 border-t-orange-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="icon-circle"><i class="fab fa-youtube text-xl"></i></div>
+                        <span class="card-badge">마케팅 / 홍보</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">크리에이티브 멀티모달 생성 성능</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        유튜브 스크립트 작성부터 썸네일 이미지, 홍보 영상 소스 생성까지 원스톱으로 지원합니다. **'제조혁신 길라잡이'** 채널처럼 전문적인 시각 자료를 단시간에 제작할 수
+                        있습니다.
+                    </p>
+                    <div class="bg-orange-50 p-3 rounded-lg text-[11px] text-orange-700 font-bold italic">
+                        [성능] 텍스트-이미지-영상 간의 일관된 맥락 유지 성능
+                    </div>
+                </div>
+
+                <!-- Performance 4: IT & Automation -->
+                <div class="feature-card p-8 border-t-4 border-t-purple-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="icon-circle"><i class="fas fa-laptop-code text-xl"></i></div>
+                        <span class="card-badge">IT / 자동화</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">코드 생성 및 업무 앱 빌드 성능</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        업무용 대시보드나 자동화 스크립트를 즉석에서 코딩합니다. **AI Studio** 연동을 통해 비전공자도 우리 부서만의 전용 업무 앱을 직접 만드는 '앱 크리에이터' 역량을
+                        부여합니다.
+                    </p>
+                    <div class="bg-purple-50 p-3 rounded-lg text-[11px] text-purple-700 font-bold italic">
+                        [성능] Python 런타임 활용 및 API 연동 유연성
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. 확장 프로그램 및 빌드 생태계 연동 -->
+        <section id="ecosystem" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">03. 확장 프로그램 및 빌드 생태계 연동</h2>
+                <p class="text-slate-500 mt-2">나만의 업무 앱과 비즈니스 인텔리전스 시스템 구축하기</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Google AI Studio -->
+                <div class="bg-white rounded-3xl border border-blue-100 p-8 shadow-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold">
+                            S</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Google AI Studio (Model Build)</h3>
+                            <p class="text-sm text-blue-600">전문가용 프롬프트 설계 및 API 연동</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        단순 챗봇을 넘어 **나만의 특화 모델**을 튜닝하는 공간입니다. 제조 현장 용어나 6Sigma 수식을 완벽히 이해하도록 시스템 지침을 설정하고, API 키를 발급받아
+                        No-code 툴(AppSheet, Glide)에 직접 연동할 수 있습니다.
+                    </p>
+                </div>
+
+                <!-- Looker Studio & Antigravity -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-green-600 flex items-center gap-2">
+                            <i class="fas fa-chart-line"></i> Looker Studio 연동
+                        </h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Gemini가 분석한 정형/비정형 데이터를 **Looker Studio** 시각화 도구로 연결하세요. 실시간 공정 지표 대시보드에 AI 인사이트를 결합할 수
+                            있습니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+                        <h4 class="font-bold text-lg mb-4 text-purple-600 flex items-center gap-2">
+                            <i class="fas fa-project-diagram"></i> Antigravity 연동
+                        </h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            복잡한 데이터 관계를 시각화하는 **Antigravity**와 연동하여, 수만 개의 변수가 얽힌 공정 내에서 AI가 낭비 요인을 탐색하게 합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04. 비즈니스 업무 활용 전략 -->
+        <section id="business" class="space-y-10">
+            <div class="section-bar">
+                <h2 class="text-3xl font-bold">04. 비즈니스 업무 활용 전략</h2>
+                <p class="text-slate-500 mt-2">김사부가 제안하는 3단계 실무 적용법</p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm space-y-8">
+                <div class="flex gap-6 items-start">
+                    <div
+                        class="bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        1</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">스마트 협업 관리 (Workspace)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Gmail에서 관련 메일들을 요약하고, 즉석에서 회의록 초안을 생성하여 구글 독스로
+                            내보내십시오.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div
+                        class="bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        2</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">지능형 리서치 자동화</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">방대한 분량의 시장 리포트를 Gemini에게 읽히고, 특정 주제에 대한 핵심
+                            요약표를 자동으로 생성하십시오.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div
+                        class="bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0">
+                        3</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">나만의 업무 도구 개발 (Build)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">AI Studio에서 발급받은 API를 활용해 우리 부서만의 전용 '공정 낭비 분석
+                            앱'을 직접 구축하십시오.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sabu's Tips -->
+        <section id="sabu-advice">
+            <div class="solution-box p-8 space-y-4">
+                <p class="text-emerald-800 font-bold text-xl flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i> 김사부의 DX 확장 가이드
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-emerald-900">
+                    <div class="bg-white/50 p-5 rounded-xl border border-emerald-100">
+                        <strong>"성능을 직무와 연결하십시오"</strong><br>
+                        단순히 AI의 성능이 좋다고 감탄하는 것에 머물지 마십시오. '나의 업무 시간을 무엇이 줄여주는가'에 집중할 때 진정한 도구로 거듭납니다.
+                    </div>
+                    <div class="bg-white/50 p-5 rounded-xl border border-emerald-100">
+                        <strong>"데이터의 시각화를 자산화하십시오"</strong><br>
+                        Gemini가 도출한 결론은 Looker Studio나 Antigravity 같은 도구와 결합되어야 조직 내에서 설득력 있는 디지털 자산이 됩니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture Summary & Next Steps (image_9e5057.png) -->
+        <section
+            class="bg-white rounded-[32px] p-12 text-center border border-slate-100 shadow-2xl shadow-slate-100 mt-20">
+            <h3 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">강의 요약 및 다음 단계</h3>
+            <p class="text-slate-500 text-lg md:text-xl font-medium mb-12">Gemini의 멀티모달 기능을 활용하여 텍스트와 이미지를 넘나드는 작업을 시도해보세요.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-5">
+                <button
+                    class="btn-pdf text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-indigo-100">
+                    <i class="fas fa-file-pdf"></i> 교재 PDF 다운로드
+                </button>
+                <button onclick="location.href='day01_lecture.html'"
+                    class="btn-back bg-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-md">
+                    강의실로 돌아가기
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    
+    <div class="max-w-4xl mx-auto px-6 mb-12"><div id="completeButtonContainer"></div></div>
+<footer class="max-w-4xl mx-auto mt-32 py-16 px-6 border-t border-slate-100 text-center text-slate-400">
+        <p class="font-bold text-slate-800 mb-2 italic tracking-tighter text-xl">MASTER KIM AI CLASS</p>
+        <p class="text-xs uppercase tracking-widest font-bold">제조혁신 전문가 김사부 DX 가이드라인 &copy; 2026</p>
+    </footer>
+
+</body>
+
+</html>
+    
+    <script type="module">
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { addCompleteButton } from '../js/progress-ui.js';
+        import { initAuth } from '../js/auth-common.js';
+
+        // 공통 인증 초기화
+        initAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 완료 버튼 추가 (자동으로 day와 lectureId 매핑)
+                addCompleteButton(user.uid, 'day01', 'gemini', 'completeButtonContainer');
+            }
+        });
+    </script>
+
