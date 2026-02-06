@@ -74,14 +74,12 @@
     </main>
 
     <script type="module">
-        import { auth } from './js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initApp } from './js/app-core.js';
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href='index.html';
-            } else {
+        initApp({
+            requireAuth: true,
+            redirectUrl: 'index.html',
+            onLogin: (user) => {
                 const emailDisplay = document.getElementById('userEmailDisplay');
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
             }

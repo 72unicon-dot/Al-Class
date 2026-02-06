@@ -74,9 +74,7 @@
                                 <a href="day07_web_app_structure.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
                     </div>
@@ -97,9 +95,7 @@
                                 <a href="day07_framework_overview.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
                     </div>
@@ -120,9 +116,7 @@
                                 <a href="day07_api_integration.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
                     </div>
@@ -143,9 +137,7 @@
                                 <a href="../c07_data/day07_database_connection.html"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
                                         class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i class="fas fa-play-circle"></i> 강의 듣기</a>
                             </div>
                         </div>
                     </div>
@@ -222,20 +214,18 @@
             &copy; 2026 제조혁신 길라잡이 김사부 채널. All Rights Reserved.
         </div>
     </footer>
+    <script type="module">
+        import { initApp } from '../js/app-core.js';
+
+        initApp({
+            requireAuth: true,
+            redirectUrl: '../index.html',
+            onLogin: (user) => {
+                const emailDisplay = document.getElementById('userEmailDisplay');
+                if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
+            }
+        });
+    </script>
 </body>
 
 </html>
-<script type="module">
-    import { auth } from '../js/firebase-config.js';
-    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-            window.location.href='../index.html';
-        } else {
-            const emailDisplay = document.getElementById('userEmailDisplay');
-            if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
-        }
-    });
-</script>

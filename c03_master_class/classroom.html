@@ -739,15 +739,13 @@
 
     <!-- Firebase Scripts -->
     <script type="module">
-        import { auth } from '../js/firebase-config.js';
-        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initApp } from '../js/app-core.js';
         import { displayTotalProgress, displayNextLesson } from '../js/progress-ui.js';
 
-        onAuthStateChanged(auth, async (user) => {
-            if (!user) {
-                alert("로그인이 필요합니다.");
-                window.location.href='../index.html';
-            } else {
+        initApp({
+            requireAuth: true,
+            redirectUrl: '../index.html',
+            onLogin: async (user) => {
                 const emailDisplay = document.getElementById('userEmailDisplay');
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
 
@@ -761,11 +759,10 @@
             }
         });
 
-        window.logout = () => {
-            if (confirm('로그아웃 하시겠습니까?')) {
-                signOut(auth).then(() => window.location.href='../index.html');
-            }
-        }
+        // Use global logout from app-core (via initApp it is globally available? No, wait.)
+        // window.userLogout is defined in app-core.js and attached to window.
+        // So we can just map it here to support the existing onclick="logout()" in HTML.
+        window.logout = window.userLogout;
     </script>
 
 </body>

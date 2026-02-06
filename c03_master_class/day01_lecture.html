@@ -102,7 +102,7 @@
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="ai-lecture-room/dist/index.html" target="_blank"
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
@@ -136,7 +136,7 @@
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="ai-lecture-room/dist/index.html" target="_blank"
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white text-sm font-bold rounded-lg hover:bg-amber-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
@@ -170,7 +170,7 @@
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="ai-lecture-room/dist/index.html" target="_blank"
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
@@ -202,7 +202,7 @@
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="ai-lecture-room/dist/index.html" target="_blank"
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                     class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
@@ -249,7 +249,7 @@
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                         <i class="fas fa-book-reader"></i> 강의 보기
                                     </a>
-                                    <a href="#"
+                                    <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
                                         <i class="fas fa-play-circle"></i> 강의 듣기
                                     </a>
@@ -282,7 +282,7 @@
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                         <i class="fas fa-book-reader"></i> 강의 보기
                                     </a>
-                                    <a href="#"
+                                    <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
                                         <i class="fas fa-play-circle"></i> 강의 듣기
                                     </a>
@@ -316,7 +316,7 @@
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                         <i class="fas fa-book-reader"></i> 강의 보기
                                     </a>
-                                    <a href="#"
+                                    <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
                                         <i class="fas fa-play-circle"></i> 강의 듣기
                                     </a>
@@ -350,7 +350,7 @@
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                         <i class="fas fa-book-reader"></i> 강의 보기
                                     </a>
-                                    <a href="#"
+                                    <a href="/ai-lecture-room/dist/index.html" target="_blank"
                                         class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
                                         <i class="fas fa-play-circle"></i> 강의 듣기
                                     </a>
@@ -457,20 +457,15 @@
     </footer>
 
     <script type="module">
-        import { auth } from '../js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initApp } from '../js/app-core.js';
         import { addCompleteButton } from '../js/progress-ui.js';
 
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                alert("회원 전용 강의입니다. 로그인 후 이용해주세요.");
-                window.location.href='../index.html';
-            } else {
+        initApp({
+            requireAuth: true,
+            onLogin: (user) => {
                 const emailDisplay = document.getElementById('userEmailDisplay');
                 if (emailDisplay) emailDisplay.innerText = user.email + "님 환영합니다";
 
-                // 완료 버튼 추가 (Day01, ai_concept)
-                // 참고: 실제로는 페이지마다 다른 lectureId를 지정해야 합니다
                 addCompleteButton(user.uid, 'day01', 'ai_concept', 'completeButtonContainer');
             }
         });
