@@ -117,7 +117,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
                 <div
                     class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group relative overflow-hidden">
@@ -199,24 +198,6 @@
                     });
                 </script>
                 <script type="module" src="../js/resource-loader.js"></script>
-=======
-            </div>
-        </section>
-    </main>
-    <script type="module">
-        import { initApp } from '../js/app-core.js';
-
-        initApp({
-            requireAuth: true,
-            redirectUrl: '../index.html',
-            onLogin: (user) => {
-                const display = document.getElementById('userEmailDisplay');
-                if (display) display.innerText = user.email + "님 환영합니다";
-            }
-        });
-    </script>
-    <script type="module" src="../js/resource-loader.js"></script>
->>>>>>> f519db21115825e42c3371d5e59561047e37241b
 </body>
 
 </html>
