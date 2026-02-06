@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 02. LangChain 핵심 컴포넌트 - AI 심화 개발</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">02</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">LangChain 핵심 컴포넌트</h1>
+                <p class="text-xl opacity-90 font-light">LCEL 및 체인 구성 마스터</p>
+            </div>
+            <a href="classroom_advanced.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all"><i
+                    class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-blue-600 text-white px-5 py-2 rounded-full shadow-lg shadow-blue-200">
+                <span class="font-bold text-xs tracking-widest">PART 1</span>
+                <h2 class="text-lg font-bold">LangChain Mastery</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Item 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-link text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">LLMChain & PromptTemplates</h3>
+                            <p class="text-slate-500 text-sm mb-4">효율적인 프롬프트 템플릿 작성법과 LLMChain을 활용한 기본 연쇄 작용을 실습합니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-code text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">LCEL (LangChain Expression Language) 기초</h3>
+                            <p class="text-slate-500 text-sm mb-4">선언적 방식의 LCEL 문법을 익히고 파이프라인을 간결하게 구성하는 방법을 배웁니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-file-code text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Output Parser 활용</h3>
+                            <p class="text-slate-500 text-sm mb-4">LLM의 출력을 JSON, CSV 등 정형 데이터로 정제하는 다양한 파서 활용법을 다룹니다.
+                            </p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-stream text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">RunnableSequence 이해</h3>
+                            <p class="text-slate-500 text-sm mb-4">Runnable 인터페이스를 통해 복잡한 실행 시퀀스를 제어하고 병렬 처리하는 기법을
+                                학습합니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="max-w-4xl mx-auto px-6 mb-12">
+        <div id="completeButtonContainer"></div>
+    </div>
+    <script
+        type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { addCompleteButton(user.uid, 'advanced', 'class02', 'completeButtonContainer'); } });</script>
+</body>
+
+</html>

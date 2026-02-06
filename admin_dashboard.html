@@ -297,20 +297,21 @@
         import { db, auth, storage } from './js/firebase-config.js';
         import { collection, query, orderBy, getDocs, updateDoc, doc, addDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { ref, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initApp } from './js/app-core.js';
 
         // ==========================================
         // Auth Check & Initialization
         // ==========================================
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in, load data
+        initApp({
+            requireAuth: true,
+            redirectUrl: 'index.html',
+            onLogin: (user) => {
                 console.log("Admin logged in:", user.email);
                 loadApplications();
-            } else {
-                // No user is signed in
-                alert("관리자 로그인이 필요합니다.");
-                window.location.replace("index.html"); // Redirect to login page
+            },
+            onLogout: () => {
+                alert("로그아웃 되었습니다.");
+                window.location.replace("index.html");
             }
         });
 

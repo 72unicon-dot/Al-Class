@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
-        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
-        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-900">
 
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
@@ -36,68 +47,158 @@
     </header>
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
         <section class="space-y-6">
-             <h2 class="text-2xl font-bold border-l-4 border-green-600 pl-4">PART 3: 기획 및 로드맵</h2>
+            <h2 class="text-2xl font-bold border-l-4 border-green-600 pl-4">PART 3: 기획 및 로드맵</h2>
             <div class="grid gap-6">
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-green-200 transition-all group relative overflow-hidden">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-green-200 transition-all group relative overflow-hidden">
                     <div class="flex items-start gap-4">
-                        <div class="bg-green-50 text-green-600 p-3 rounded-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <div
+                            class="bg-green-50 text-green-600 p-3 rounded-2xl group-hover:bg-green-600 group-hover:text-white transition-colors">
                             <i class="fas fa-clipboard-check text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold mb-2">AI Maturity Assessment</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Gartner 모델을 기반으로 우리 조직의 AI 도입 준비 상태(성숙도)를 진단하고 단계별 성장 목표를 설정합니다.</p>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">Gartner 모델을 기반으로 우리 조직의 AI 도입 준비
+                                상태(성숙도)를 진단하고 단계별 성장 목표를 설정합니다.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Diagnosis</span><span class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Roadmap</span>
+                                <span
+                                    class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Diagnosis</span><span
+                                    class="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs font-semibold">Roadmap</span>
                             </div>
                             <div class="flex gap-2">
-                                <a href="textbook_business_maturity.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="textbook_business_maturity.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700 transition-colors">
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg hover:bg-green-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="AI Maturity Assessment" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="AI Maturity Assessment" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-teal-200 transition-all group relative overflow-hidden">
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-teal-200 transition-all group relative overflow-hidden">
                     <div class="flex items-start gap-4">
-                        <div class="bg-teal-50 text-teal-600 p-3 rounded-2xl group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <div
+                            class="bg-teal-50 text-teal-600 p-3 rounded-2xl group-hover:bg-teal-600 group-hover:text-white transition-colors">
                             <i class="fas fa-flask text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold mb-2">PoC Planning & Matrix</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">실현 가능성과 비즈니스 임팩트를 고려한 우선순위 선정 매트릭스를 활용하여 성공적인 PoC 프로젝트를 기획합니다.</p>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">실현 가능성과 비즈니스 임팩트를 고려한 우선순위 선정 매트릭스를
+                                활용하여 성공적인 PoC 프로젝트를 기획합니다.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">PoC</span><span class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">Planning</span>
+                                <span
+                                    class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">PoC</span><span
+                                    class="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-xs font-semibold">Planning</span>
                             </div>
                             <div class="flex gap-2">
-                                <a href="textbook_business_poc_matrix.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="textbook_business_poc_matrix.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white text-sm font-bold rounded-lg hover:bg-teal-700 transition-colors">
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white text-sm font-bold rounded-lg hover:bg-teal-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="PoC Planning & Matrix" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="PoC Planning & Matrix" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-    </div></section></main>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-cyan-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-cyan-50 text-cyan-600 p-3 rounded-2xl group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-users-cog text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Change Management</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI 도입에 따른 조직 내 저항을 최소화하고, 변화를 주도하기 위한
+                                리더십 전략을 배웁니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-md text-xs font-semibold">Organization</span><span
+                                    class="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-md text-xs font-semibold">Leadership</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_change.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white text-sm font-bold rounded-lg hover:bg-cyan-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                                <button data-title="Change Management" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-rose-200 transition-all group relative overflow-hidden">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-rose-50 text-rose-600 p-3 rounded-2xl group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-exclamation-circle text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">AI 도입 장애요인 및 극복</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">데이터 부족, 기술적 한계, 법적 규제 등 도입 과정의 주요
+                                장애요인을 분석하고 해결 방안을 모색합니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-rose-50 text-rose-700 px-3 py-1 rounded-md text-xs font-semibold">Barriers</span><span
+                                    class="bg-rose-50 text-rose-700 px-3 py-1 rounded-md text-xs font-semibold">Solutions</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_business_barriers.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-rose-600 text-white text-sm font-bold rounded-lg hover:bg-rose-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                                <button data-title="AI 도입 장애요인 및 극복" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
     <script type="module">
-        import { auth } from '../js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        onAuthStateChanged(auth, (user) => {
-            if (!user) { alert("로그인이 필요합니다."); window.location.href='../index.html'; }
-            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        import { initApp } from '../js/app-core.js';
+
+        initApp({
+            requireAuth: true,
+            redirectUrl: '../index.html',
+            onLogin: (user) => {
+                const display = document.getElementById('userEmailDisplay');
+                if (display) display.innerText = user.email + "님 환영합니다";
+            }
         });
     </script>
     <script type="module" src="../js/resource-loader.js"></script>
 </body>
+
 </html>

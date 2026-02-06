@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; }
-        .gradient-bg { background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); } /* Blue for Basics */
-        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+
+        /* Blue for Basics */
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-900">
 
     <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
@@ -41,92 +53,158 @@
                 <h2 class="text-lg font-bold">LLM 이론 및 기초</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-blue-200 transition-all group">
                     <div class="flex items-start gap-4">
-                        <div class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <div
+                            class="bg-blue-50 text-blue-600 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
                             <i class="fas fa-brain text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold mb-2">LLM과 Transformer 구조</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">대규모 언어 모델의 학습 원리와 Transformer 아키텍처를 쉽게 이해합니다.</p>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">대규모 언어 모델의 학습 원리와 Transformer 아키텍처를
+                                쉽게 이해합니다.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Principles</span><span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Structure</span>
+                                <span
+                                    class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Principles</span><span
+                                    class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-xs font-semibold">Structure</span>
                             </div>
                             <div class="flex gap-2">
-                                <a href="textbook_basics_llm.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="textbook_basics_llm.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="LLM과 Transformer 구조" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="LLM과 Transformer 구조" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
                     <div class="flex items-start gap-4">
-                        <div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                             <i class="fas fa-memory text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold mb-2">Token과 Context Window</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI 과금 및 처리 용량의 기준이 되는 토큰의 개념과 한계를 배웁니다.</p>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI 과금 및 처리 용량의 기준이 되는 토큰의 개념과 한계를
+                                배웁니다.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Token</span><span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Memory</span>
+                                <span
+                                    class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Token</span><span
+                                    class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-xs font-semibold">Memory</span>
                             </div>
                             <div class="flex gap-2">
-                                <a href="textbook_basics_context.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="textbook_basics_context.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="Token과 Context Window" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="Token과 Context Window" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-    
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-violet-200 transition-all group">
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-violet-200 transition-all group">
                     <div class="flex items-start gap-4">
-                        <div class="bg-violet-50 text-violet-600 p-3 rounded-2xl group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                        <div
+                            class="bg-violet-50 text-violet-600 p-3 rounded-2xl group-hover:bg-violet-600 group-hover:text-white transition-colors">
                             <i class="fas fa-magic text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-xl font-bold mb-2">Zero-shot vs Few-shot</h3>
-                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">프롬프트 엔지니어링의 핵심인 예시 제공(Few-shot) 기법을 실습합니다.</p>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">프롬프트 엔지니어링의 핵심인 예시 제공(Few-shot) 기법을
+                                실습합니다.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-violet-50 text-violet-700 px-3 py-1 rounded-md text-xs font-semibold">Prompting</span><span class="bg-violet-50 text-violet-700 px-3 py-1 rounded-md text-xs font-semibold">Technique</span>
+                                <span
+                                    class="bg-violet-50 text-violet-700 px-3 py-1 rounded-md text-xs font-semibold">Prompting</span><span
+                                    class="bg-violet-50 text-violet-700 px-3 py-1 rounded-md text-xs font-semibold">Technique</span>
                             </div>
                             <div class="flex gap-2">
-                                <a href="textbook_basics_prompting.html" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                <a href="textbook_basics_prompting.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
                                     <i class="fas fa-book-reader"></i> 강의 보기
                                 </a>
-                                <a href="https://al-class.vercel.app/ai-lecture-room/dist/index.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-violet-600 text-white text-sm font-bold rounded-lg hover:bg-violet-700 transition-colors">
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-violet-600 text-white text-sm font-bold rounded-lg hover:bg-violet-700 transition-colors">
                                     <i class="fas fa-play-circle"></i> 강의 듣기
                                 </a>
-                                <button data-title="Zero-shot vs Few-shot" onclick="alert('등록된 자료가 없습니다.')" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                <button data-title="Zero-shot vs Few-shot" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
                                     <i class="fas fa-file-download"></i> PDF
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-    </div></section></main>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-orange-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-orange-50 text-orange-600 p-3 rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-exclamation-triangle text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Hallucination과 RAG</h3>
+                            <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI의 환각 현상 원인을 이해하고, 이를 보완하는 검색 증강
+                                생성(RAG) 개념을 배웁니다.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="bg-orange-50 text-orange-700 px-3 py-1 rounded-md text-xs font-semibold">Hallucination</span><span
+                                    class="bg-orange-50 text-orange-700 px-3 py-1 rounded-md text-xs font-semibold">RAG
+                                    Basics</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="textbook_basics_rag.html"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors">
+                                    <i class="fas fa-book-reader"></i> 강의 보기
+                                </a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white text-sm font-bold rounded-lg hover:bg-orange-700 transition-colors">
+                                    <i class="fas fa-play-circle"></i> 강의 듣기
+                                </a>
+                                <button data-title="Hallucination과 RAG" onclick="alert('등록된 자료가 없습니다.')"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-300 transition-colors">
+                                    <i class="fas fa-file-download"></i> PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script type="module">
-        import { auth } from '../js/firebase-config.js';
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        onAuthStateChanged(auth, (user) => {
-            if (!user) { alert("로그인이 필요합니다."); window.location.href='../index.html'; }
-            else { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; }
+        import { initApp } from '../js/app-core.js';
+
+        initApp({
+            requireAuth: true,
+            redirectUrl: '../index.html',
+            onLogin: (user) => {
+                const display = document.getElementById('userEmailDisplay');
+                if (display) display.innerText = user.email + "님 환영합니다";
+            }
         });
     </script>
     <script type="module" src="../js/resource-loader.js"></script>
 </body>
+
 </html>

@@ -659,40 +659,31 @@
 
     <!-- Login Modal & Script -->
     <script type="module">
-        import { db, auth } from './js/firebase-config.js';
-        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { injectLoginModal, checkAutoOpenLogin } from './js/login-ui.js';
+        import { initApp } from './js/app-core.js';
 
-        // 1. UI Injection
-        injectLoginModal();
+        initApp({
+            onLogin: (user) => {
+                const loginBtn = document.getElementById('mainLoginBtn');
+                const enterBtn = document.getElementById('mainEnterBtn');
+                const logoutBtn = document.getElementById('mainLogoutBtn');
 
-        // 2. Auth State Logic
-        onAuthStateChanged(auth, async (user) => {
-            const loginBtn = document.getElementById('mainLoginBtn');
-            const enterBtn = document.getElementById('mainEnterBtn');
-            const logoutBtn = document.getElementById('mainLogoutBtn');
-
-            if (user) {
-                // Logged In
                 if (loginBtn) loginBtn.classList.add('hidden');
                 if (enterBtn) {
                     enterBtn.classList.remove('hidden');
                     enterBtn.title = user.email + "님 환영합니다";
                 }
                 if (logoutBtn) logoutBtn.classList.remove('hidden');
-            } else {
-                // Logged Out
+            },
+            onLogout: () => {
+                const loginBtn = document.getElementById('mainLoginBtn');
+                const enterBtn = document.getElementById('mainEnterBtn');
+                const logoutBtn = document.getElementById('mainLogoutBtn');
+
                 if (loginBtn) loginBtn.classList.remove('hidden');
                 if (enterBtn) enterBtn.classList.add('hidden');
                 if (logoutBtn) logoutBtn.classList.add('hidden');
             }
         });
-
-        window.userLogout = () => {
-            if (confirm("로그아웃 하시겠습니까?")) signOut(auth).then(() => window.location.reload());
-        };
-
-        window.addEventListener('load', checkAutoOpenLogin);
     </script>
 
 </body>

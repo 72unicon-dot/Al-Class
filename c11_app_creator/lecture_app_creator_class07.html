@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 07. 챗봇 개발 II: Advanced - AI 비즈니스 앱 크리에이터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+            <div class="space-y-2">
+                <span class="text-6xl font-black opacity-20 block mb-[-10px]">07</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">챗봇 개발 II: Advanced</h1>
+                <p class="text-xl opacity-90 font-light">대화 메모리, Tool 사용, Agent 구현</p>
+            </div>
+            <a href="classroom_app_creator.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all"><i
+                    class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+        <section class="space-y-6">
+            <div
+                class="inline-flex items-center gap-3 bg-indigo-700 text-white px-5 py-2 rounded-full shadow-lg shadow-indigo-300">
+                <span class="font-bold text-xs tracking-widest">PART 2</span>
+                <h2 class="text-lg font-bold">Advanced Topics</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Item 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-memory text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">대화 맥락 유지 (Memory) 심화</h3>
+                            <p class="text-slate-500 text-sm mb-4">장기 기억(Long-term Memory)과 단기 기억을 조합하여 끊김 없는 대화 경험을
+                                제공하는 고급 메모리 전략을 다룹니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-700 text-white text-sm font-bold rounded-lg hover:bg-indigo-800 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-briefcase text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Tool & Function Calling</h3>
+                            <p class="text-slate-500 text-sm mb-4">LLM이 외부 계산기, 검색 엔진, API 등을 호출하여 답변의 정확성을 높이는 Function
+                                Calling 기술을 익힙니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-700 text-white text-sm font-bold rounded-lg hover:bg-indigo-800 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-user-secret text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">Autonomous Agents 구현</h3>
+                            <p class="text-slate-500 text-sm mb-4">목표를 설정하면 스스로 계획을 수립하고 실행하는 자율 에이전트(Autonomous Agent)를
+                                구현해봅니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-700 text-white text-sm font-bold rounded-lg hover:bg-indigo-800 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-comments text-2xl"></i></div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-2">멀티모달 챗봇 (이미지/음성)</h3>
+                            <p class="text-slate-500 text-sm mb-4">텍스트뿐만 아니라 이미지와 음성을 이해하고 생성하는 멀티모달(Multimodal) 챗봇 기능을
+                                확장합니다.</p>
+                            <div class="flex gap-2">
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
+                                        class="fas fa-book-reader"></i> 강의 보기</a>
+                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-700 text-white text-sm font-bold rounded-lg hover:bg-indigo-800 transition-colors"><i
+                                        class="fas fa-play-circle"></i> 강의 듣기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="max-w-4xl mx-auto px-6 mb-12">
+        <div id="completeButtonContainer"></div>
+    </div>
+    <script
+        type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { addCompleteButton(user.uid, 'app_creator', 'class07', 'completeButtonContainer'); } });</script>
+</body>
+
+</html>
