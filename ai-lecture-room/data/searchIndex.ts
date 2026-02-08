@@ -217,46 +217,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     "content": "﻿ 08. 종합 프로젝트 & 배포 - 마스터 클래스 강의실 홈으로 08 종합 프로젝트 & 배포 나만의 앱 완성하고 세상에 공개하기 Vercel GitHub Portfolio PART 1 이론 배포 및 유지보수 Git/GitHub 버전 관리 기초 내 코드를 안전하게 저장하고 이력을 관리하는 Git의 핵심 기능을 배웁니다. 강의 보기 강의 듣기 클라우드 배포 플랫폼 이해 Vercel, Netlify 등 최신 클라우드 플랫폼을 활용한 원클릭 배포를 실습합니다. 강의 보기 강의 듣기 도메인 연결 및 HTTPS 나만의 도메인(.com)을 구매하고 연결하여 프로페셔널한 서비스로 만듭니다. 강의 보기 강의 듣기 앱 유지보수 전략 배포 후 모니터링, 버그 수정, 기능 업데이트 등 지속적인 서비스 관리 방법을 배웁니다. 강의 보기 강의 듣기 PART 2 실습 파이널 프로젝트 개인 프로젝트 완성 그동안 배운 모든 내용을 종합하여 나만의 웹 애플리케이션을 완성하고 다듬습니다. 실습 시작하기 Vercel로 배포하기 완성된 프로젝트를 Vercel을 통해 전 세계 누구나 접속 가능한 URL로 배포합니다. 실습 시작하기 수료식 및 발표 프로젝트 결과물을 동료들과 공유하고 피드백을 주고받으며 과정을 마무합니다. 실습 시작하기 MASTER KIM AI CONSULTING 제조혁신 전문가가 전수하는 실무 중심 AI 교육 &copy; 2026 제조혁신 길라잡이 김사부 채널. All Rights Reserved."
   },
   {
-    "id": "c04-classroom_advanced.html",
-    "courseId": "c04",
-    "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "classroom_advanced.html",
-    "path": "c04_advanced",
-    "file": "classroom_advanced.html",
-    "content": "AI 심화 개발 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 심화 개발 진도율에 맞춰 학습을 진행해 주세요 (총 20강) 01 RAG 아키텍처 & Vector DB 고급 검색 증강 생성 시스템의 이해 학습하기 02 LangChain 핵심 컴포넌트 LCEL 및 체인 구성 마스터 학습하기 03 문서 로딩 및 분할 전략 데이터 전처리와 청킹 최적화 학습하기 04 Retriever 최적화 Hybrid Search 및 Re-ranking 학습하기 05 RAG 성능 평가 Ragas, TruLens 활용 학습하기 06 AI 에이전트 기초 ReAct 패턴과 자율 행동 이해 학습하기 07 Function Calling & Tools 외부 API 연동 및 도구 사용 학습하기 08 Multi-Agent Systems LangGraph & CrewAI 활용 학습하기 09 Memory & State 대화 맥락 유지 및 상태 관리 학습하기 10 Autonomous Agents 구축 완전 자율 에이전트 프로젝트 학습하기 11 LLM 아키텍처 이해 Transformer 및 Pre-training 학습하기 12 데이터셋 준비 및 전처리 Fine-tuning을 위한 데이터 가공 학습하기 13 PEFT & LoRA 효율적인 파인튜닝 기법 학습하기 14 Quantization & QLoRA 모델 경량화 및 최적화 학습하기 15 모델 평가 및 벤치마크 LLM 성능 측정 방법론 학습하기 16 LLM 서빙 및 최적화 vLLM, TGI 활용 배포 학습하기 17 Prompt Engineering at Scale 엔터프라이즈급 프롬프트 관리 학습하기 18 Security & Guardrails Nemo Guardrails 등 보안 적용 학습하기 19 Enterprise AI Strategy 기업 AI 도입 전략 및 거버넌스 학습하기 20 Final Capstone Project 종합 프로젝트 설계 및 구현 학습하기"
-  },
-  {
-    "id": "c04-day01_lecture.html",
-    "courseId": "c04",
-    "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c04_advanced",
-    "file": "day01_lecture.html",
-    "content": "01. RAG 파이프라인 구축 - AI 전문가 심화 강의실 홈으로 01 RAG 파이프라인 구축 LangChain을 활용한 문서 기반 질의응답 시스템 RAG Vector DB LangChain PART 1 RAG 기초 및 아키텍처 Vector DB와 임베딩 이해 텍스트 데이터를 벡터로 변환하고 효율적으로 검색하기 위한 벡터 데이터베이스의 원리를 학습합니다. 강의 보기 강의 듣기 RAG 아키텍처 설계 Retrieval-Augmented Generation의 전체 흐름과 성능 최적화를 위한 파이프라인 설계법을 다룹니다. 강의 보기 강의 듣기 PART 2 RAG 시스템 구현 실습 LangChain 기반 문서 Q&A 챗봇 PDF 파일을 업로드하고, 벡터화하여 질문에 답변하는 실전 RAG 시스템을 구축합니다. 실습 시작하기 AI Master Class - Advanced &copy; 2026 AI 전문가 심화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c04-day02_lecture.html",
-    "courseId": "c04",
-    "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c04_advanced",
-    "file": "day02_lecture.html",
-    "content": "02. LLM 파인튜닝 실습 - AI 전문가 심화 강의실 홈으로 02 LLM 파인튜닝 실습 오픈소스 모델(Llama 3 등) 미세 조정하기 Fine-tuning LoRA Llama 3 PART 1 LLM 파인튜닝 이론 데이터셋 준비 및 전처리 학습을 위한 고품질 데이터를 수집, 정제하고 특정 형식(JSONL 등)으로 변환하는 과정을 배웁니다. 강의 보기 강의 듣기 LoRA/QLoRA 효율적 튜닝 적은 자원으로도 강력한 모델을 만들 수 있는 효율적 미세 조정 기술의 원리를 이해합니다. 강의 보기 강의 듣기 PART 2 학습 및 배포 실습 Llama 3 파인튜닝 프로젝트 Google Colab 또는 로컬 환경에서 Llama 3 모델을 직접 학습시키고 성능을 평가합니다. 실습 시작하기 AI Master Class - Advanced &copy; 2026 AI 전문가 심화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c04-expert_advanced.html",
-    "courseId": "c04",
-    "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "expert_advanced.html",
-    "path": "c04_advanced",
-    "file": "expert_advanced.html",
-    "content": "김사부와 함께 AI 전문가 심화 | 10일 (80시간) 완성 전체 과정 보기 공지사항 관리자 모드 상급 과정 10일 (80시간) 완성 · 이론 + 실습 + 앱 개발 AI 전문가 심화 Fine-tuning 및 RAG 시스템 구축, AI 에이전트 개발, 기업 도입 전략 독자적인 AI 모델 튜닝과 검색 증강 생성(RAG) 시스템을 구축하고, 자율 AI 에이전트를 개발하는 고급 기술을 마스터합니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 Fine-tuning 실전 강점 범용 AI가 아닌, 우리 회사의 데이터와 톤앤매너를 학습시킨 맞춤형 LLM 모델 을 직접 튜닝해봅니다. 기대효과 업계 용어와 사내 규정을 완벽히 이해하는 우리 회사 전용 AI 를 구축할 수 있습니다. STRENGTH 02 RAG 시스템 구축 강점 AI의 환각 현상을 없애고, 정확한 사내 문서 기반 답변을 제공하는 검색 증강 생성(RAG) 기술을 마스터합니다. 기대효과 수천 페이지의 매뉴얼에서도 정확한 정답만 찾아주는 고성능 지식 봇을 설계합니다. STRENGTH 03 AI 에이전트 개발 강점 사람의 개입 없이 스스로 계획하고 도구를 사용하여 임무를 완수하는 자율 AI 에이전트 를 구현합니다. 기대효과 24시간 365일 쉬지 않고 일하는 디지털 직원 을 채용하는 효과를 얻습니다. Curriculum 상세 커리큘럼 1 Phase 1: LLM 심층 이해 (Day 1-3) Transformer 아키텍처와 오픈소스 LLM 활용 Transformer 구조와 Attention 메커니즘 Llama 3, Mistral 등 로컬 LLM 구동 Prompt Tuning vs Fine-tuning 비교 2 Phase 2: RAG 시스템 구축 (Day 4-6) 사내 지식 기반의 정확한 답변 시스템 구현 텍스트 임베딩과 벡터 데이터베이스 이해 LangChain을 이용한 문서 검색 파이프라인 PDF/Web 데이터 연동 챗봇 실습 3 Phase 3: Fine-tuning & Agent (Day 7-10) 도메인 특화 모델 학습과 자율 에이전트 개발 LoRA를 활용한 효율적인 파인튜닝 실습 자율 에이전트(Agent) 설계 및 툴 사용 권한 부여 기업용 AI 솔루션 아키텍처 설계 Essential AI Tools AI 전문가 심화 4대 AI 도구 LangChain LLM 프레임워크 HuggingFace 오픈소스 모델 Pinecone 벡터 DB AutoGPT 자율 에이전트 10 일 과정 8 핵심 도구 4 실습/프로젝트 3 앱 배포 AI 전문가 심화 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 전문가 심화. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c04-textbook_advanced_class01.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class01.html",
+    "lectureTitle": "Class 1: RAG 아키텍처 & Vector DB",
     "path": "c04_advanced",
     "file": "textbook_advanced_class01.html",
     "content": "강의 교재 - Class 01. RAG 아키텍처 & Vector DB 강의로 돌아가기 LECTURE NOTE RAG 아키텍처 & Vector DB 고급 검색 증강 생성 시스템의 이해 1. Vector Store 개념 및 종류 Pinecone, Milvus, ChromaDB 등 주요 벡터 데이터베이스의 특징과 선택 기준을 학습합니다. 2. 임베딩 모델 선택 가이드 OpenAI, HuggingFace 등 다양한 임베딩 모델의 성능과 비용을 분석하고 최적의 모델을 선정합니다. 3. 인덱싱 파이프라인 구축 문서 수집부터 임베딩 저장까지의 전체 인덱싱 자동화 파이프라인을 설계합니다. 4. 메타데이터 관리 전략 정확한 검색 필터링을 위한 효율적인 메타데이터 스키마 설계 및 관리 방법을 다룹니다. 강의 목록 보기"
@@ -265,7 +229,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class02.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class02.html",
+    "lectureTitle": "Class 2: LangChain 핵심 컴포넌트",
     "path": "c04_advanced",
     "file": "textbook_advanced_class02.html",
     "content": "강의 교재 - Class 02. LangChain 핵심 컴포넌트 강의로 돌아가기 LECTURE NOTE LangChain 핵심 컴포넌트 LCEL 및 체인 구성 마스터 1. LLMChain & PromptTemplates 효율적인 프롬프트 템플릿 작성법과 LLMChain을 활용한 기본 연쇄 작용을 실습합니다. 2. LCEL (LangChain Expression Language) 기초 선언적 방식의 LCEL 문법을 익히고 파이프라인을 간결하게 구성하는 방법을 배웁니다. 3. Output Parser 활용 LLM의 출력을 JSON, CSV 등 정형 데이터로 정제하는 다양한 파서 활용법을 다룹니다. 4. RunnableSequence 이해 Runnable 인터페이스를 통해 복잡한 실행 시퀀스를 제어하고 병렬 처리하는 기법을 학습합니다. 강의 목록 보기"
@@ -274,7 +238,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class03.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class03.html",
+    "lectureTitle": "Class 3: 문서 로딩 및 분할 전략",
     "path": "c04_advanced",
     "file": "textbook_advanced_class03.html",
     "content": "강의 교재 - Class 03. 문서 로딩 및 분할 전략 강의로 돌아가기 LECTURE NOTE 문서 로딩 및 분할 전략 데이터 전처리와 청킹 최적화 1. 다양한 Document Loaders PDF, Web, Notion 등 비정형 데이터 소스를 LangChain으로 로드하는 기법을 배웁니다. 2. Text Splitters (Character, Recursive) 문맥을 유지하며 긴 문서를 적절하게 자르는 다양한 청킹 전략을 비교 실험합니다. 3. Semantic Chunking 단순 길이 기반이 아닌 의미(Semantic) 단위로 텍스트를 분할하여 검색 정확도를 높이는 고급 기술입니다. 4. Context Window 최적화 LLM의 제한된 Context Window를 효율적으로 활용하기 위한 데이터 압축 및 관리 전략입니다. 강의 목록 보기"
@@ -283,7 +247,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class04.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class04.html",
+    "lectureTitle": "Class 4: Retriever 최적화",
     "path": "c04_advanced",
     "file": "textbook_advanced_class04.html",
     "content": "강의 교재 - Class 04. Retriever 최적화 강의로 돌아가기 LECTURE NOTE Retriever 최적화 Hybrid Search 및 Re-ranking 1. Similarity Search vs MMR 단순 유사도 검색의 한계를 극복하고 다양성을 확보하는 MMR(Maximal Marginal Relevance)을 배웁니다. 2. Hybrid Search (BM25 + Dense) 키워드 매칭(BM25)과 의미 검색(Vector)을 결합하여 검색 정확도(Recall & Precision)를 극대화합니다. 3. Contextual Compression 검색된 문서에서 질의와 관련 없는 부분을 제거하고 압축하여 LLM에 전달하는 기술입니다. 4. MultiQuery Retriever 단일 쿼리를 다양한 관점의 쿼리로 변환하여 검색 커버리지를 넓히는 고급 기법입니다. 강의 목록 보기"
@@ -292,7 +256,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class05.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class05.html",
+    "lectureTitle": "Class 5: RAG 성능 평가",
     "path": "c04_advanced",
     "file": "textbook_advanced_class05.html",
     "content": "강의 교재 - Class 05. RAG 성능 평가 강의로 돌아가기 LECTURE NOTE RAG 성능 평가 Ragas, TruLens 활용 1. Ragas 프레임워크 소개 RAG 파이프라인의 성능을 정량적으로 평가할 수 있는 오픈소스 프레임워크 Ragas를 배웁니다. 2. Faithfulness & Answer Relevance 답변이 근거 문서에 충실한지(Faithfulness), 질문에 적절한지(Answer Relevance) 평가하는 지표를 이해합니다. 3. TruLens 활용한 추적 LLM 애플리케이션의 실행 과정을 추적하고 평가하는 TruLens 도구 활용법을 실습합니다. 4. Golden Dataset 구축 신뢰할 수 있는 평가를 위해 정답 데이터셋(Golden Dataset)을 구축하고 관리하는 전략입니다. 강의 목록 보기"
@@ -301,7 +265,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class06.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class06.html",
+    "lectureTitle": "Class 6: AI 에이전트 기초",
     "path": "c04_advanced",
     "file": "textbook_advanced_class06.html",
     "content": "강의 교재 - Class 06. AI 에이전트 기초 강의로 돌아가기 LECTURE NOTE AI 에이전트 기초 ReAct 패턴과 자율 행동 이해 1. 에이전트 vs 챗봇 차이 단순 응답을 넘어서 도구를 사용하고 환경과 상호작용하는 에이전트의 개념을 정의합니다. 2. ReAct 패턴 이해 Reasoning(추론)과 Acting(행동)을 결합하여 복잡한 문제를 해결하는 ReAct 프롬프팅 기법을 학습합니다. 3. Thought-Action-Observation 루프 에이전트가 사고하고, 행동하고, 결과를 관찰하여 다음 행동을 결정하는 실행 루프를 구현해봅니다. 4. 에이전트 아키텍처 예시 초기 에이전트 모델부터 최신 자율 에이전트 구조까지 다양한 아키텍처 패턴을 분석합니다. 강의 목록 보기"
@@ -310,7 +274,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class07.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class07.html",
+    "lectureTitle": "Class 7: Function Calling & Tools",
     "path": "c04_advanced",
     "file": "textbook_advanced_class07.html",
     "content": "강의 교재 - Class 07. Function Calling & Tools 강의로 돌아가기 LECTURE NOTE Function Calling & Tools 외부 API 연동 및 도구 사용 1. OpenAI Function Calling API GPT 모델이 외부 함수를 호출할 수 있도록 JSON Schema를 정의하고 응답을 처리하는 원리를 배웁니다. 2. Tool Definition & Schema LangChain의 `@tool` 데코레이터와 Pydantic을 활용하여 강력한 타입 안정성을 가진 도구를 정의합니다. 3. 사용자 정의 Tool 만들기 내 비즈니스 로직에 맞는 Custom Tool을 개발하고 에이전트에 통합하는 실습을 진행합니다. 4. API 연동 실습 Google Search, Wikipedia, 계산기 등 실제 API를 연동하여 에이전트의 능력을 확장해봅니다. 강의 목록 보기"
@@ -319,7 +283,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class08.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class08.html",
+    "lectureTitle": "Class 8: Multi-Agent Systems",
     "path": "c04_advanced",
     "file": "textbook_advanced_class08.html",
     "content": "강의 교재 - Class 08. Multi 강의로 돌아가기 LECTURE NOTE Multi-Agent Systems LangGraph & CrewAI 활용 1. Single vs Multi-Agent 단일 에이전트의 한계를 이해하고 전문성 분업을 통한 멀티 에이전트 시스템의 장점을 학습합니다. 2. LangGraph 기초 순환 그래프 구조를 통해 복잡한 에이전트 워크플로우를 제어하는 LangGraph 라이브러리를 배웁니다. 3. CrewAI를 이용한 팀 구성 Researcher, Writer 등 역할을 부여하고 작업 순서를 조율하는 CrewAI 프레임워크를 실습합니다. 4. 에이전트 간 협업 패턴 계층형(Hierarchical), 순차형(Sequential) 등 에이전트 간 효율적인 협업 프로세스를 설계합니다. 강의 목록 보기"
@@ -328,7 +292,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class09.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class09.html",
+    "lectureTitle": "Class 9: Memory & State",
     "path": "c04_advanced",
     "file": "textbook_advanced_class09.html",
     "content": "강의 교재 - Class 09. Memory & State 강의로 돌아가기 LECTURE NOTE Memory & State 대화 맥락 유지 및 상태 관리 1. Short-term vs Long-term 대화의 단기 기억(Buffer)과 장기 기억(Summary, Vector)의 차이점과 활용 전략을 다룹니다. 2. Vector Store 활용한 메모리 과거의 대화 내용을 임베딩하여 벡터 DB에 저장하고 필요할 때 검색해오는 무한 메모리를 구현합니다. 3. LangGraph State Management LangGraph의 State 객체를 사용하여 에이전트 간 데이터 전달 및 전역 상태를 관리합니다. 4. Checkpointing & Persistence 긴 작업 흐름 중간에 상태를 저장하고, 중단된 시점부터 다시 시작할 수 있는 영속성을 구현합니다. 강의 목록 보기"
@@ -337,7 +301,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class10.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class10.html",
+    "lectureTitle": "Class 10: Autonomous Agents 구축",
     "path": "c04_advanced",
     "file": "textbook_advanced_class10.html",
     "content": "강의 교재 - Class 10. Autonomous Agents 구축 강의로 돌아가기 LECTURE NOTE Autonomous Agents 구축 완전 자율 에이전트 프로젝트 1. AutoGPT, BabyAGI 개념 초기 자율 에이전트의 구조와 작동 원리를 분석하고 개선된 최신 아키텍처를 이해합니다. 2. 목표 설정 및 자동 수행 루프 상위 목표를 하위 태스크로 분해(Decomposition)하고 스스로 수행하는 재귀적 루프를 설계합니다. 3. Human-in-the-loop 완전 자율의 위험을 방지하기 위해 중요 결정 단계에서 인간의 승인을 받는 프로세스를 통합합니다. 4. 자율 AI 비서 만들기 웹 검색, 일정 관리, 이메일 작성 등 복합적인 업무를 수행하는 나만의 AI 비서를 구축하는 최종 실습입니다. 강의 목록 보기"
@@ -346,7 +310,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class11.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class11.html",
+    "lectureTitle": "Class 11: LLM 아키텍처 이해",
     "path": "c04_advanced",
     "file": "textbook_advanced_class11.html",
     "content": "강의 교재 - Class 11. LLM 아키텍처 이해 강의로 돌아가기 LECTURE NOTE LLM 아키텍처 이해 Transformer 및 Pre-training 1. Transformer 구조 상세 Self-Attention 메커니즘과 FFN 등 현대 LLM의 근간이 되는 Transformer 아키텍처를 심층 분석합니다. 2. Pre-training vs Fine-tuning 방대한 데이터로 지식을 습득하는 사전 학습과 특정 태스크에 맞게 조정하는 미세 조정의 차이를 이해합니다. 3. Instruction Tuning 개념 모델이 사용자의 지시사항(Instruction)을 따르도록 학습시키는 정렬(Alignment) 과정을 배웁니다. 4. Decoder-only 모델 특징 GPT 계열의 Decoder-only 모델이 생성형 작업에 강점을 가지는 이유와 구조적 특징을 살펴봅니다. 강의 목록 보기"
@@ -355,7 +319,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class12.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class12.html",
+    "lectureTitle": "Class 12: 데이터셋 준비 및 전처리",
     "path": "c04_advanced",
     "file": "textbook_advanced_class12.html",
     "content": "강의 교재 - Class 12. 데이터셋 준비 및 전처리 강의로 돌아가기 LECTURE NOTE 데이터셋 준비 및 전처리 Fine-tuning을 위한 데이터 가공 1. Raw Dataset 수집과 정제 Hugging Face Datasets 활용 및 노이즈 제거, 중복 제거 등 데이터 정제 기법을 실습합니다. 2. Prompt Template 형식 맞추기 Alpaca, ShareGPT 등 모델이 요구하는 특정 프롬프트 형식(ChatML 등)으로 데이터를 변환합니다. 3. Tokenizing 및 Max Length 토크나이저의 작동 원리를 이해하고 모델의 최대 길이에 맞춰 데이터를 효율적으로 패딩/트렁케이션 합니다. 4. Train/Validation Split 전략 과적합 방지를 위해 학습 데이터와 검증 데이터를 올바르게 분할하는 전략을 배웁니다. 강의 목록 보기"
@@ -364,7 +328,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class13.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class13.html",
+    "lectureTitle": "Class 13: PEFT & LoRA",
     "path": "c04_advanced",
     "file": "textbook_advanced_class13.html",
     "content": "강의 교재 - Class 13. PEFT & LoRA 강의로 돌아가기 LECTURE NOTE PEFT & LoRA 효율적인 파인튜닝 기법 1. PEFT 필요성 전체 파라미터를 튜닝하는 Full Fine-tuning의 비용 문제를 해결하는 Parameter Efficient Fine-Tuning을 소개합니다. 2. LoRA 수학적 원리 Low-Rank Adaptation 행렬을 추가하여 학습 파라미터 수를 획기적으로 줄이는 원리를 이해합니다. 3. Rank, Alpha Hyperparameter LoRA의 성능을 결정짓는 핵심 하이퍼파라미터인 Rank와 Alpha를 튜닝하는 노하우를 배웁니다. 4. Adapter 병합 및 저장 학습된 Adapter 웨이트를 저장하고 Base 모델과 병합(Merge)하여 배포 가능한 모델로 만듭니다. 강의 목록 보기"
@@ -373,7 +337,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class14.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class14.html",
+    "lectureTitle": "Class 14: Quantization & QLoRA",
     "path": "c04_advanced",
     "file": "textbook_advanced_class14.html",
     "content": "강의 교재 - Class 14. Quantization & QLoRA 강의로 돌아가기 LECTURE NOTE Quantization & QLoRA 모델 경량화 및 최적화 1. FP16, INT8, FP4 데이터 타입 모델 웨이트 표현에 사용되는 다양한 데이터 타입의 정밀도(Precision)와 메모리 사용량을 비교합니다. 2. Quantization 원리 모델의 성능 저하를 최소화하면서 용량을 줄이는 양자화(Quantization) 기술의 핵심 원리를 배웁니다. 3. QLoRA를 이용한 4-bit Tuning 4-bit 양자화와 LoRA를 결합하여 소비자용 GPU에서도 거대 모델을 학습시키는 QLoRA를 실습합니다. 4. GPU 메모리 최적화 기법 Gradient Accumulation, Checkpointing 등 한정된 자원에서 학습 효율을 높이는 고급 기법을 다룹니다. 강의 목록 보기"
@@ -382,7 +346,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class15.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class15.html",
+    "lectureTitle": "Class 15: 모델 평가 및 벤치마크",
     "path": "c04_advanced",
     "file": "textbook_advanced_class15.html",
     "content": "강의 교재 - Class 15. 모델 평가 및 벤치마크 강의로 돌아가기 LECTURE NOTE 모델 평가 및 벤치마크 LLM 성능 측정 방법론 1. Perplexity 모델 성능 지표 언어 모델의 예측 능력을 측정하는 기본 지표인 Perplexity(PPL)의 의미와 해석 방법을 배웁니다. 2. LLM Leaderboard 이해 MMLU, ARC, HellaSwag 등 주요 LLM 벤치마크 데이터셋의 특징과 리더보드 순위를 분석합니다. 3. Human Evaluation 정성적 평가를 위해 사람이 직접 평가하는 방법론(Elo Rating, Side-by-Side 등)을 학습합니다. 4. Fine-tuning 결과 검증 학습 전후의 모델 출력을 비교하고, 의도한 대로 성능이 향상되었는지 체계적으로 검증합니다. 강의 목록 보기"
@@ -391,7 +355,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class16.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class16.html",
+    "lectureTitle": "Class 16: LLM 서빙 및 최적화",
     "path": "c04_advanced",
     "file": "textbook_advanced_class16.html",
     "content": "강의 교재 - Class 16. LLM 서빙 및 최적화 강의로 돌아가기 LECTURE NOTE LLM 서빙 및 최적화 vLLM, TGI 활용 배포 1. Model Serving Frameworks vLLM, Text Generation Inference (TGI) 등 고성능 LLM 서빙 프레임워크를 비교하고 선택합니다. 2. Continuous Batching 원리 요청이 들어오는 즉시 배치에 포함시켜 처리량을 극대화하는 Continuous Batching 기술을 이해합니다. 3. PagedAttention 이해 KV Cache 메모리 단편화 문제를 해결하여 처리 속도를 높이는 vLLM의 핵심 기술 PagedAttention을 배웁니다. 4. API 서버 구축 실습 FastAPI를 활용하여 파인튜닝된 모델을 OpenAI 호환 API 서버로 구축하고 배포합니다. 강의 목록 보기"
@@ -400,7 +364,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class17.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class17.html",
+    "lectureTitle": "Class 17: Prompt Engineering at Scale",
     "path": "c04_advanced",
     "file": "textbook_advanced_class17.html",
     "content": "강의 교재 - Class 17. Prompt Engineering at Scale 강의로 돌아가기 LECTURE NOTE Prompt Engineering at Scale 엔터프라이즈급 프롬프트 관리 1. DSPy 프레임워크 소개 프롬프트를 수동으로 작성하지 않고 프로그래밍 방식으로 최적화하는 스탠포드의 DSPy를 학습합니다. 2. 프롬프트 자동 최적화 DSPy의 Teleprompter를 사용하여 주어진 데이터셋에 가장 적합한 프롬프트를 자동으로 찾아냅니다. 3. Few-shot Selector 구현 문맥에 가장 적합한 예시(Few-shot examples)를 동적으로 선택하여 프롬프트에 주입하는 기술입니다. 4. 엔터프라이즈 프롬프트 관리 Prompt Registry를 구축하여 프롬프트의 버전 관리, 협업, 배포를 체계적으로 관리하는 방법입니다. 강의 목록 보기"
@@ -409,7 +373,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class18.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class18.html",
+    "lectureTitle": "Class 18: Security & Guardrails",
     "path": "c04_advanced",
     "file": "textbook_advanced_class18.html",
     "content": "강의 교재 - Class 18. Security & Guardrails 강의로 돌아가기 LECTURE NOTE Security & Guardrails Nemo Guardrails 등 보안 적용 1. LLM 보안 위협 Prompt Injection, Jailbreak 등 LLM 애플리케이션에 대한 주요 보안 공격 유형과 방어 원리를 이해합니다. 2. Nemo Guardrails 적용 NVIDIA의 Nemo Guardrails를 사용하여 에이전트의 대화 주제 이탈을 막고 안전한 답변을 유도합니다. 3. PII (개인정보) 마스킹 Microsoft Presidio 등을 활용하여 사용자 입력에서 민감한 개인정보를 자동으로 탐지하고 마스킹합니다. 4. 입력/출력 필터링 전략 유해한 입력과 부적절한 출력을 실시간으로 필터링하는 파이프라인 구축 전략을 다룹니다. 강의 목록 보기"
@@ -418,7 +382,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class19.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class19.html",
+    "lectureTitle": "Class 19: Enterprise AI Strategy",
     "path": "c04_advanced",
     "file": "textbook_advanced_class19.html",
     "content": "강의 교재 - Class 19. Enterprise AI Strategy 강의로 돌아가기 LECTURE NOTE Enterprise AI Strategy 기업 AI 도입 전략 및 거버넌스 1. Buy vs Build 결정 프레임워크 상용 API(GPT-4 등)를 사용할지, 오픈소스 모델을 자체 구축(Llama 3 등)할지 결정하는 기준을 학습합니다. 2. AI 거버넌스와 규제 준수 EU AI Act 등 글로벌 AI 규제 동향을 파악하고 기업이 준수해야 할 거버넌스 원칙을 수립합니다. 3. 내부 데이터 보안 정책 기업 내부 데이터를 AI 학습이나 RAG에 활용할 때 발생할 수 있는 유출 위험을 차단하는 보안 정책입니다. 4. MLOps 파이프라인 구축 지속적인 AI 통합 및 배포(CI/CD/CT)를 위한 MLOps 인프라 구축의 핵심 요소를 배웁니다. 강의 목록 보기"
@@ -427,52 +391,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c04-textbook_advanced_class20.html",
     "courseId": "c04",
     "courseTitle": "04. AI 심화 (Advanced)",
-    "lectureTitle": "textbook_advanced_class20.html",
+    "lectureTitle": "Class 20: Final Capstone Project",
     "path": "c04_advanced",
     "file": "textbook_advanced_class20.html",
     "content": "강의 교재 - Class 20. Final Capstone Project 강의로 돌아가기 LECTURE NOTE Final Capstone Project 종합 프로젝트 설계 및 구현 1. 프로젝트 주제 선정 및 기획 현업 문제를 해결하거나 새로운 가치를 창출할 수 있는 AI 프로젝트 주제를 선정하고 상세 기획안을 작성합니다. 2. End-to-End 파이프라인 구축 데이터 수집부터 모델 파인튜닝, RAG 시스템 구축, 최종 서빙까지의 전체 파이프라인을 구현합니다. 3. Demo App 구현 Streamlit 또는 Chainlit을 사용하여 실제 사용자가 체험할 수 있는 웹 기반 데모 애플리케이션을 완성합니다. 4. 최종 발표 및 피드백 완성된 프로젝트를 발표하고 멘토와 동료들의 피드백을 통해 개선점을 도출하며 과정을 마무리합니다. 강의 목록 보기"
   },
   {
-    "id": "c05-classroom_marketing.html",
-    "courseId": "c05",
-    "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "classroom_marketing.html",
-    "path": "c05_marketing",
-    "file": "classroom_marketing.html",
-    "content": "AI 마케팅 특화 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 마케팅 특화 진도율에 맞춰 학습을 진행해 주세요 01 Class 1: AI 마케팅 개요 및 트렌드 (Day 1 오전) AI 마케팅의 현재와 미래, 주요 트렌드 분석 학습하기 AI 마케팅의 정의와 중요성 최신 AI 마케팅 트렌드 및 사례 AI 도입을 위한 준비 사항 윤리적 마케팅과 AI 02 Class 2: 고객 페르소나 및 타겟팅 전략 (Day 1 오후) 데이터 기반의 정교한 고객 타겟팅 및 페르소나 설정 학습하기 고객 데이터 분석 기초 AI를 활용한 페르소나 생성 타겟 세그먼테이션 전략 고객 여정 지도(CJM) 설계 03 Class 3: AI 카피라이팅 기초 (Day 2 오전) 설득력 있는 마케팅 문구 작성을 위한 AI 활용법 학습하기 카피라이팅의 기본 원칙 ChatGPT/Jasper 활용 실습 헤드라인 및 바디카피 작성 톤앤매너 조절 테크닉 04 Class 4: 채널별 맞춤 텍스트 콘텐츠 실습 (Day 2 오후) 블로그, SNS, 이메일 등 채널 최적화 콘텐츠 제작 학습하기 SEO 최적화 블로그 포스팅 소셜 미디어(Instagram, LinkedIn) 캡션 고전환 이메일 마케팅 작성 보도자료 및 공지사항 생성 05 Class 5: AI 이미지 생성 프롬프트 (Day 3 오전) Midjourney, DALL-E 3 등을 활용한 이미지 생성 기초 학습하기 이미지 생성 AI의 원리 이해 프롬프트 엔지니어링 기초 (조명, 구도, 스타일) Midjourney 고급 파라미터 활용 일관된 캐릭터 및 스타일 유지 06 Class 6: 디자인 자동화 (Day 3 오후) 광고 배너, 상세페이지 디자인 자동화 실습 학습하기 AdCreative로 고효율 배너 생성 Canva AI 매직 스튜디오 활용 제품 사진 배경 제거 및 편집 상세 페이지 레이아웃 및 디자인 07 Class 7: 숏폼 영상 기획 및 생성 (Day 4 오전) 릴스, 틱톡, 쇼츠를 위한 숏폼 영상 자동 생성 학습하기 바이럴 영상 트렌드 분석 AI 영상 생성 툴(Runway, Pictory) 활용 가상 인간(Digital Human) 활용하기 자막 및 음성(TTS) 자동 생성 08 Class 8: 퍼포먼스 마케팅 데이터 분석 (Day 4 오후) 광고 성과 분석 및 인사이트 도출 학습하기 광고 지표(CTR, CVR, ROAS)의 이해 AI를 활용한 데이터 시각화 A/B 테스트 설계 및 결과 분석 리포트 자동 생성 실습 09 Class 9: 마케팅 자동화 파이프라인 (Day 5 오전) Zapier/Make를 활용한 업무 자동화 구축 학습하기 마케팅 자동화(Marketing Automation) 개요 Zapier/Make 기초 실습 리드 수집 및 이메일 발송 자동화 SNS 콘텐츠 자동 업로드 시스템 10 Class 10: 실전 캠페인 기획 및 발표 (Day 5 오후) 종합 프로젝트 수행 및 피드백 학습하기 조별 마케팅 캠페인 기획 AI 툴을 활용한 콘텐츠 제작 및 세팅 프로젝트 발표 및 피드백 과정 마무리 및 Q&A"
-  },
-  {
-    "id": "c05-day01_lecture.html",
-    "courseId": "c05",
-    "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c05_marketing",
-    "file": "day01_lecture.html",
-    "content": "01. AI 카피라이팅 & 콘텐츠 - 마케팅 특화 강의실 홈으로 01 AI 카피라이팅 & 콘텐츠 고객 페르소나 맞춤형 광고 문구 및 블로그 생성 PART 1 브랜드 톤앤매너 학습 맞춤형 카피라이팅 브랜드 아이덴티티를 유지하며 타겟 고객을 설득하는 광고 문구 작성법을 익힙니다. 강의 보기 강의 듣기 AI Marketing Specialist &copy; 2026 AI 마케팅 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c05-day02_lecture.html",
-    "courseId": "c05",
-    "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c05_marketing",
-    "file": "day02_lecture.html",
-    "content": "02. 마케팅 데이터 분석 - 마케팅 특화 강의실 홈으로 02 마케팅 데이터 분석 고객 반응 데이터 분석 및 예측 PART 1 데이터 기반 인사이트 성과 분석 및 예측 캠페인 성과 데이터를 분석하고 AI를 활용해 미래의 고객 반응을 예측하는 모델링을 학습합니다. 강의 보기 강의 듣기 AI Marketing Specialist &copy; 2026 AI 마케팅 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c05-special_marketing.html",
-    "courseId": "c05",
-    "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "special_marketing.html",
-    "path": "c05_marketing",
-    "file": "special_marketing.html",
-    "content": "김사부와 함께 AI 마케팅 전문가 | 5일 (40시간) 완성 전체 과정 보기 공지사항 관리자 모드 특화 과정 5일 (40시간) 완성 · 이론 + 실습 + 앱 개발 AI 마케팅 전문가 AI 콘텐츠 생성, 고객 데이터 타겟팅, 캠페인 자동화 시스템 카피라이팅부터 이미지, 영상 생성까지 마케팅 콘텐츠를 AI로 자동화하고, 데이터 기반 타겟팅 전략을 수립합니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 무한 콘텐츠 생성 강점 블로그, 인스타, 유튜브 대본 등 채널별 최적화된 마케팅 콘텐츠를 AI로 무제한 생성 하는 파이프라인을 구축합니다. 기대효과 콘텐츠 제작 대행 비용을 0원으로 절감 하고, 업로드 빈도는 5배 늘립니다. STRENGTH 02 초정밀 타겟팅 강점 고객 리뷰와 행동 데이터를 AI로 분석하여, 구매 전환율이 높은 핵심 타겟 페르소나 를 발굴합니다. 기대효과 광고 효율이 떨어지는 원인을 찾아내고, 구매 전환율(CVR) 을 획기적으로 개선합니다. STRENGTH 03 마케팅 자동화 강점 고객 유입부터 구매 유도 이메일 발송까지, 잠자고 있을 때도 돌아가는 세일즈 오토메이션 을 완성합니다. 기대효과 수동 관리에 들이던 시간을 없애고, 자동화된 수익 창출 시스템 을 소유하게 됩니다. Curriculum 상세 커리큘럼 1 Day 1: 마케팅 페르소나 & 전략 ChatGPT로 고객 페르소나 정의 및 타겟 분석 경쟁사 분석 및 SWOT 분석 자동화 고객 페르소나 시뮬레이션 대화 마케팅 캠페인 슬로건 및 메시지 도출 2 Day 2-3: 콘텐츠 자동화 파이프라인 블로그, SNS, 상세페이지 콘텐츠 대량 생산 SEO 최적화된 블로그 포스팅 10개 1분 생성 SNS 채널별(인스타, 링크드인) 맞춤 톤앤매너 변환 상세페이지 세일즈 카피라이팅 자동화 3 Day 4-5: 퍼포먼스 마케팅 & 광고 소재 고효율 광고 소재 생성 및 데이터 분석 클릭을 부르는 광고 배너 대량 제작(Midjourney) 숏폼 광고 스크립트 및 영상 기획 광고 성과 데이터 분석 및 리포팅 자동화 Essential AI Tools AI 마케팅 전문가 4대 AI 도구 Jasper 카피라이팅 Midjourney 광고 이미지 AdCreative 광고 소재 자동화 Canva 소셜 콘텐츠 5 일 과정 7 핵심 도구 15 실습/프로젝트 0 앱 배포 AI 마케팅 전문가 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 마케팅 전문가. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c05-textbook_marketing_class01.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class01.html",
+    "lectureTitle": "Class 1: AI 마케팅 개요 및 트렌드",
     "path": "c05_marketing",
     "file": "textbook_marketing_class01.html",
     "content": "강의 교재 - Class 01. AI 마케팅 개요 및 트렌드 강의로 돌아가기 LECTURE NOTE AI 마케팅 개요 및 트렌드 AI 마케팅의 현재와 미래, 주요 트렌드 분석 1. AI 마케팅의 정의와 중요성 전통적인 마케팅과 AI 마케팅의 차이점 및 비즈니스 임팩트를 이해합니다. 2. 최신 AI 마케팅 트렌드 현재 시장을 주도하는 AI 기술 트렌드와 글로벌 성공 사례를 분석합니다. 3. AI 도입을 위한 준비 조직 내 AI 도입을 위해 필요한 데이터 인프라와 역량 확보 전략을 알아봅니다. 4. 윤리적 마케팅과 AI 개인정보 보호, 딥페이크 등 AI 마케팅에서 고려해야 할 윤리적 이슈를 다룹니다. 강의 목록 보기"
@@ -481,7 +409,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class02.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class02.html",
+    "lectureTitle": "Class 2: 고객 페르소나 및 타겟팅 전략",
     "path": "c05_marketing",
     "file": "textbook_marketing_class02.html",
     "content": "강의 교재 - Class 02. 고객 페르소나 및 타겟팅 전략 강의로 돌아가기 LECTURE NOTE 고객 페르소나 및 타겟팅 데이터 기반의 정교한 고객 타겟팅 및 페르소나 설정 1. 고객 데이터 분석 기초 CRM 데이터 및 행동 데이터를 분석하여 유의미한 패턴을 발견합니다. 2. AI 페르소나 생성 ChatGPT를 활용하여 구체적이고 생생한 가상 고객 페르소나를 생성합니다. 3. 타겟 세그먼테이션 고객 특성에 따라 시장을 세분화하고, 핵심 타겟 그룹을 선정합니다. 4. 고객 여정 지도(CJM) 구매 결정 프로세스를 시각화하여 이탈 지점과 기회 요인을 파악합니다. 강의 목록 보기"
@@ -490,7 +418,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class03.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class03.html",
+    "lectureTitle": "Class 3: AI 카피라이팅 기초",
     "path": "c05_marketing",
     "file": "textbook_marketing_class03.html",
     "content": "강의 교재 - Class 03. AI 카피라이팅 기초 강의로 돌아가기 LECTURE NOTE AI 카피라이팅 기초 설득력 있는 마케팅 문구 작성을 위한 AI 활용법 1. 카피라이팅 원칙 사람의 마음을 움직이는 심리학적 카피라이팅의 기본 원칙을 배웁니다. 2. Generative AI 실습 ChatGPT, Jasper, Copy.ai 등 주요 글쓰기 AI 툴의 특징과 활용법을 익힙니다. 3. 헤드라인 & 바디카피 클릭을 유도하는 매력적인 헤드라인과 설득력 있는 본문(Body)을 작성합니다. 4. 톤앤매너 테크닉 타겟 오디언스에 맞춰 브랜드의 목소리(Tone & Manner)를 AI에게 학습시킵니다. 강의 목록 보기"
@@ -499,7 +427,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class04.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class04.html",
+    "lectureTitle": "Class 4: 채널별 맞춤 텍스트 콘텐츠 실습",
     "path": "c05_marketing",
     "file": "textbook_marketing_class04.html",
     "content": "강의 교재 - Class 04. 채널별 맞춤 텍스트 콘텐츠 실습 강의로 돌아가기 LECTURE NOTE 채널별 맞춤 콘텐츠 블로그, SNS, 이메일 등 채널 최적화 콘텐츠 제작 1. SEO 블로그 포스팅 검색 엔진에 최적화된 키워드 배치와 구조를 갖춘 블로그 글을 작성합니다. 2. SNS 캡션 생성 Instagram, LinkedIn 등 플랫폼별 특성에 맞는 매력적인 캡션과 해시태그를 생성합니다. 3. 이메일 마케팅 오픈율과 클릭률(CTR)을 높이는 콜드 메일 및 뉴스레터 초안을 작성합니다. 4. 보도자료 및 공지 신제품 출시, 프로모션 등 공식적인 커뮤니케이션을 위한 보도자료를 작성합니다. 강의 목록 보기"
@@ -508,7 +436,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class05.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class05.html",
+    "lectureTitle": "Class 5: AI 이미지 생성 프롬프트",
     "path": "c05_marketing",
     "file": "textbook_marketing_class05.html",
     "content": "강의 교재 - Class 05. AI 이미지 생성 프롬프트 강의로 돌아가기 LECTURE NOTE AI 이미지 생성 & 프롬프트 Midjourney, DALL-E 3 등을 활용한 이미지 생성 기초 1. 이미지 생성 AI 원리 Diffusion 모델의 원리와 Text-to-Image 기술의 기본 개념을 이해합니다. 2. 프롬프트 엔지니어링 원하는 이미지를 얻기 위한 조명, 구도, 스타일 등 핵심 프롬프트 작성법을 배웁니다. 3. Midjourney 심화 파라미터(--ar, --s, --v)를 활용하여 이미지의 비율과 스타일을 정교하게 제어합니다. 4. 스타일 일관성 유지 Seed 번호 활용 및 이미지 참조(Image Prompting)를 통해 일관된 스타일의 결과물을 생성합니다. 강의 목록 보기"
@@ -517,7 +445,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class06.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class06.html",
+    "lectureTitle": "Class 6: 디자인 자동화",
     "path": "c05_marketing",
     "file": "textbook_marketing_class06.html",
     "content": "강의 교재 - Class 06. 디자인 자동화 강의로 돌아가기 LECTURE NOTE 디자인 자동화 광고 배너, 상세페이지 디자인 자동화 실습 1. AdCreative 배너 생성 AI를 활용하여 수백 개의 고효율 광고 배너를 수초 만에 생성하고 테스트합니다. 2. Canva Magic Studio Canva의 AI 기능을 활용하여 텍스트를 이미지로 변환하거나 디자인 요소를 자동 편집합니다. 3. 상품 이미지 편집 제품 사진의 배경을 제거하거나, AI로 새로운 배경을 합성하여 연출 컷을 만듭니다. 4. 상세페이지 디자인 구매 전환율을 높이는 상세페이지의 논리적 구조와 디자인 템플릿을 활용합니다. 강의 목록 보기"
@@ -526,7 +454,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class07.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class07.html",
+    "lectureTitle": "Class 7: 숏폼 영상 기획 및 생성",
     "path": "c05_marketing",
     "file": "textbook_marketing_class07.html",
     "content": "강의 교재 - Class 07. 숏폼 영상 기획 및 생성 강의로 돌아가기 LECTURE NOTE 숏폼 영상 기획 & 생성 릴스, 틱톡, 쇼츠를 위한 숏폼 영상 자동 생성 1. 숏폼 트렌드 분석 현재 바이럴되고 있는 숏폼 영상의 성공 요인과 편집 스타일을 분석합니다. 2. AI 영상 생성 툴 Runway Gen-2, Pictory 등을 활용하여 텍스트만으로 고품질 영상을 생성합니다. 3. 가상 인간 활용 HeyGen, Synthesia 등을 활용하여 실제 사람 같은 가상 아바타 영상을 제작합니다. 4. 자동 자막 및 더빙 AI로 대본을 음성(TTS)으로 변환하고, 자막을 자동으로 생성하여 편집 시간을 단축합니다. 강의 목록 보기"
@@ -535,7 +463,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class08.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class08.html",
+    "lectureTitle": "Class 8: 퍼포먼스 마케팅 데이터 분석",
     "path": "c05_marketing",
     "file": "textbook_marketing_class08.html",
     "content": "강의 교재 - Class 08. 퍼포먼스 마케팅 데이터 분석 강의로 돌아가기 LECTURE NOTE 퍼포먼스 데이터 분석 광고 성과 분석 및 인사이트 도출 1. 핵심 광고 지표 CTR(클릭률), CVR(전환율), ROAS(광고수익률) 등 성과 측정의 핵심 지표를 이해합니다. 2. 데이터 시각화 AI 도구를 활용하여 복잡한 데이터를 한눈에 파악할 수 있는 차트와 대시보드를 만듭니다. 3. A/B 테스트 가설 설정부터 결과 분석까지, 과학적인 A/B 테스트를 설계하고 최적화 솔루션을 도출합니다. 4. 리포트 자동 생성 반복적인 주간/월간 리포트 작성을 AI로 자동화하여 업무 효율을 높입니다. 강의 목록 보기"
@@ -544,7 +472,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class09.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class09.html",
+    "lectureTitle": "Class 9: 마케팅 자동화 파이프라인",
     "path": "c05_marketing",
     "file": "textbook_marketing_class09.html",
     "content": "강의 교재 - Class 09. 마케팅 자동화 파이프라인 강의로 돌아가기 LECTURE NOTE 마케팅 자동화 Zapier/Make를 활용한 업무 자동화 구축 1. 마케팅 자동화 개요 반복 업무를 줄이고 효율을 극대화하는 마케팅 자동화(MA)의 개념을 이해합니다. 2. Zapier/Make 기초 대표적인 노코드 자동화 툴인 Zapier와 Make의 사용법을 실습합니다. 3. 리드 너저링 자동화 잠재 고객(Lead) 수집 시 환영 이메일 발송 및 CRM 등록을 자동화합니다. 4. SNS 업로드 자동화 Google Sheets에 콘텐츠를 입력하면 SNS 채널에 자동으로 게시되는 워크플로우를 만듭니다. 강의 목록 보기"
@@ -553,52 +481,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c05-textbook_marketing_class10.html",
     "courseId": "c05",
     "courseTitle": "05. AI 마케팅 (Marketing)",
-    "lectureTitle": "textbook_marketing_class10.html",
+    "lectureTitle": "Class 10: 실전 캠페인 기획 및 발표",
     "path": "c05_marketing",
     "file": "textbook_marketing_class10.html",
     "content": "강의 교재 - Class 10. 실전 캠페인 기획 및 발표 강의로 돌아가기 LECTURE NOTE 실전 프로젝트 종합 프로젝트 수행 및 피드백 1. 캠페인 기획 학습한 내용을 종합하여 팀 단위로 실제 마케팅 캠페인을 기획합니다. 2. AI 툴 활용 제작 기획안에 따라 AI 툴을 활용해 카피, 이미지, 영상 등 실제 마케팅 소재를 제작합니다. 3. 발표 및 피드백 완성된 캠페인을 발표하고, 강사 및 동료들의 피드백을 통해 개선점을 도출합니다. 4. 과정 마무리 전체 과정을 정리하고, AI 마케터로서의 향후 성장 로드맵을 그려봅니다. 강의 목록 보기"
   },
   {
-    "id": "c06-classroom_manufacturing.html",
-    "courseId": "c06",
-    "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "classroom_manufacturing.html",
-    "path": "c06_manufacturing",
-    "file": "classroom_manufacturing.html",
-    "content": "AI 제조/생산 특화 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 제조/생산 특화 진도율에 맞춰 학습을 진행해 주세요 01 Class 1: 제조업의 AI 혁신 (Day 1 오전) Smart Factory 개요 및 AI 적용 사례 학습하기 4차 산업혁명과 스마트 팩토리 제조업 데이터를 활용한 AI 가치 창출 글로벌 등대공장 사례 분석 AI 도입 로드맵 수립 02 Class 2: IoT 센서 데이터 수집 (Day 1 오후) 현장 데이터 수집 및 전처리 실습 학습하기 IoT 센서 종류 및 데이터 특성 데이터 수집 파이프라인 구축 결측치 처리 및 노이즈 제거 데이터 시각화 및 모니터링 03 Class 3: 컴퓨터 비전 품질 검사 (Day 2 오전) 이미지 처리를 통한 불량 검출 기초 학습하기 디지털 이미지 처리(DIP) 기초 CNN(Convolutional Neural Network) 이해 양품/불량 데이터셋 구축 OpenCV 활용 이미지 전처리 04 Class 4: 딥러닝 불량 탐지 실습 (Day 2 오후) 실제 제조 결함 데이터를 활용한 모델링 학습하기 YOLO 모델을 활용한 객체 탐지 불량 유형 분류(Classification) Anomaly Detection 기법 모델 성능 평가 및 최적화 05 Class 5: 예지 보전(PdM)의 이해 (Day 3 오전) 설비 고장을 미리 예측하는 AI 기술 학습하기 보전 방식의 진화 (BM -> PM -> PdM) 진동, 소음, 전류 데이터의 이해 주요 고장 패턴 분석 예지 보전 도입 성공 사례 06 Class 6: 고장 예측 모델링 (Day 3 오후) 시계열 데이터를 활용한 잔여 수명 예측 학습하기 LSTM/GRU기반 시계열 예측 RUL(Remaining Useful Life) 예측 Autoencoder를 활용한 이상 탐지 예측 정확도 향상 기법 07 Class 7: 수요 예측 및 재고 최적화 (Day 4 오전) SCM 효율화를 위한 AI 활용 학습하기 수요 예측 모델링 (Prophet, ARIMA) 적정 재고 산출 및 관리 계절성 및 트렌드 분석 원자재 가격 예측 08 Class 8: 공정 최적화 및 Digital Twin (Day 4 오후) 생산 효율 극대화를 위한 시뮬레이션 학습하기 공정 파라미터 최적화 (강화학습) Digital Twin 개념 및 활용 가상 공정 시뮬레이션 에너지 소비 효율화 09 Class 9: 생성형 AI와 제조업 (Day 5 오전) 제품 설계 및 지식 관리 혁신 학습하기 Generative Design (제너레이티브 디자인) RAG 기반 사내 지식 검색 시스템 매뉴얼 및 보고서 자동 생성 현장 작업자를 위한 AI 어시스턴트 10 Class 10: 제조 AI 프로젝트 (Day 5 오후) 종합 프로젝트 수행 및 로드맵 수립 학습하기 조별 제조 AI 문제 해결 프로젝트 데이터 분석 및 모델링 결과 발표 ROI 분석 및 기대 효과 산출 현업 적용 계획 수립"
-  },
-  {
-    "id": "c06-day01_lecture.html",
-    "courseId": "c06",
-    "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c06_manufacturing",
-    "file": "day01_lecture.html",
-    "content": "01. 스마트 팩토리와 AI - 제조/생산 특화 강의실 홈으로 01 스마트 팩토리와 AI 예지 보전 및 품질 검사 자동화 PART 1 제조 AI 기초 품질 검사 자동화 비전 AI를 활용한 불량 검출 시스템과 공정 데이터 기반의 품질 관리 방안을 학습합니다. 강의 보기 강의 듣기 AI Manufacturing Specialist &copy; 2026 AI 제조/생산 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c06-day02_lecture.html",
-    "courseId": "c06",
-    "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c06_manufacturing",
-    "file": "day02_lecture.html",
-    "content": "02. 공급망 최적화 - 제조/생산 특화 강의실 홈으로 02 공급망 최적화 수요 예측 및 재고 관리 자동화 PART 1 공급망 AI 물류 및 재고 최적화 재고 비용 절감과 배송 효율 향상을 위한 AI 수요 예측 모델 개발 프로세스를 학습합니다. 강의 보기 강의 듣기 AI Manufacturing Specialist &copy; 2026 AI 제조/생산 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c06-special_manufacturing.html",
-    "courseId": "c06",
-    "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "special_manufacturing.html",
-    "path": "c06_manufacturing",
-    "file": "special_manufacturing.html",
-    "content": "김사부와 함께 AI 제조 전문가 | 5일 (40시간) 완성 전체 과정 보기 공지사항 관리자 모드 특화 과정 5일 (40시간) 완성 · 이론 + 실습 + 앱 개발 AI 제조 전문가 제조 공정 이상 감지, 공정 최적화 및 스마트 팩토리 AI 사례 스마트 팩토리 데이터를 분석하여 공정 이상을 사전에 감지하고, 생산 효율성을 극대화하는 AI 솔루션을 학습합니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 설비 이상 사전 감지 강점 진동, 소음 데이터를 AI가 학습하여 고장 징후를 사전에 포착하고 경고 하는 예지 보전 기술을 배웁니다. 기대효과 돌발 고장으로 인한 라인 중단을 막아, 설비 가동 효율(OEE) 을 극대화합니다. STRENGTH 02 AI 기반 품질 검사 강점 사람의 눈으로 놓치기 쉬운 미세한 불량을 컴퓨터 비전 AI 로 0.1초 만에 판별하는 시스템을 이해합니다. 기대효과 전수 검사 체계를 구축하여 고객에게 나가는 불량 유출을 제로화(0%) 합니다. STRENGTH 03 스마트 팩토리 최적화 강점 공정 데이터 분석을 통해 병목 구간을 찾고, 생산 계획을 최적화하는 데이터 기반 공장 운영 노하우를 습득합니다. 기대효과 불필요한 대기 시간과 재고 비용을 줄여 제조 원가를 획기적으로 절감 합니다. Curriculum 상세 커리큘럼 1 Day 1: 제조 데이터와 AI 스마트 팩토리 데이터 수집 및 전처리 MES/ERP 데이터의 이해와 AI 적용 분야 시계열 데이터(센서, 진동) 전처리 실습 Python Pandas를 활용한 기초 데이터 분석 2 Day 2-3: 예지 보전 모델링 설비 고장 예측을 위한 이상 탐지 모델 구현 정상 vs 비정상 데이터 분류 (Classification) 오토인코더(Autoencoder)기반 이상 탐지 설비 잔여 수명(RUL) 예측 기초 3 Day 4-5: 비전 검사 & 공정 최적화 이미지 기반 불량 검출 및 공정 파라미터 최적화 YOLO 모델을 활용한 제품 결함 탐지 실습 공정 변수 최적화를 위한 강화학습 개요 현장 적용을 위한 AI 모델 배포 전략 Essential AI Tools AI 제조 전문가 4대 AI 도구 TensorFlow 딥러닝 프레임워크 YOLO 객체 탐지 Tableau 데이터 시각화 PowerAutomate RPA 5 일 과정 5 핵심 도구 3 실습/프로젝트 1 앱 배포 AI 제조 전문가 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 제조 전문가. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c06-textbook_manufacturing_class01.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class01.html",
+    "lectureTitle": "Class 1: 제조업의 AI 혁신",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class01.html",
     "content": "강의 교재 - Class 01. 제조업의 AI 혁신 강의로 돌아가기 LECTURE NOTE 제조업의 AI 혁신 Smart Factory 개요 및 AI 적용 사례 1. 4차 산업혁명과 스마트 팩토리 제조업의 디지털 전환(DX) 트렌드와 스마트 팩토리의 핵심 구성 요소를 이해합니다. 2. 제조 데이터 AI 가치 창출 생산, 품질, 설비 데이터를 AI로 분석하여 비용 절감 및 생산성 향상을 이룬 사례를 살펴봅니다. 3. 글로벌 등대공장 사례 WEF가 선정한 등대공장(Lighthouse Factory)들의 AI 도입 전략과 성과를 분석합니다. 4. AI 도입 로드맵 수립 자사 공장에 적합한 AI 기술을 선정하고 단계별 도입 계획을 수립하는 방법을 배웁니다. 강의 목록 보기"
@@ -607,7 +499,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class02.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class02.html",
+    "lectureTitle": "Class 2: IoT 센서 데이터 수집",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class02.html",
     "content": "강의 교재 - Class 02. IoT 센서 데이터 수집 강의로 돌아가기 LECTURE NOTE IoT 센서 데이터 수집 현장 데이터 수집 및 전처리 실습 1. IoT 센서의 종류 온도, 습도, 진동, 전류 등 산업용 센서의 종류와 데이터 출력 형식을 이해합니다. 2. 데이터 수집 파이프라인 Edge 디바이스에서 Cloud 또는 온프레미스 서버로 데이터를 전송하는 과정을 실습합니다. 3. 결측치 및 노이즈 처리 센서 오류로 인한 결측치와 현장 노이즈를 제거하여 데이터 품질을 높입니다. 4. 데이터 시각화 Grafana 또는 Tableau를 활용하여 실시간 센서 데이터를 모니터링하는 대시보드를 만듭니다. 강의 목록 보기"
@@ -616,7 +508,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class03.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class03.html",
+    "lectureTitle": "Class 3: 컴퓨터 비전 품질 검사",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class03.html",
     "content": "강의 교재 - Class 03. 컴퓨터 비전 품질 검사 강의로 돌아가기 LECTURE NOTE 컴퓨터 비전 품질 검사 이미지 처리를 통한 불량 검출 기초 1. 디지털 이미지 처리(DIP) 픽셀, 히스토그램, 필터링 등 이미지를 컴퓨터로 처리하는 기본 개념을 학습합니다. 2. CNN의 이해 Convolutional Neural Network의 구조와 원리를 이해하고 이미지를 분류하는 방식을 배웁니다. 3. 검사 데이터셋 구축 양품과 불량(NG) 이미지를 수집하고, 모델 학습을 위한 라벨링(Annotation)을 실습합니다. 4. OpenCV 이미지 전처리 OpenCV 라이브러리를 활용하여 이미지의 노이즈를 제거하고 관심 영역(ROI)을 추출합니다. 강의 목록 보기"
@@ -625,7 +517,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class04.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class04.html",
+    "lectureTitle": "Class 4: 딥러닝 불량 탐지 실습",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class04.html",
     "content": "강의 교재 - Class 04. 딥러닝 불량 탐지 실습 강의로 돌아가기 LECTURE NOTE 딥러닝 불량 탐지 실제 제조 결함 데이터를 활용한 모델링 1. YOLO 객체 탐지 You Only Look Once(YOLO) 모델을 사용하여 실시간으로 불량 위치를 탐지합니다. 2. 불량 유형 분류 찍힘, 긁힘, 이물질 등 다양한 불량 유형을 자동으로 분류하는 모델을 만듭니다. 3. Anomaly Detection 정상 데이터만으로 학습하여 처음 보는 불량 유형도 탐지할 수 있는 이상 탐지 기법을 배웁니다. 4. 성능 평가 및 최적화 Precision, Recall, F1-Score 등 평가지표를 이해하고 모델의 정확도를 높입니다. 강의 목록 보기"
@@ -634,7 +526,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class05.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class05.html",
+    "lectureTitle": "Class 5: 예지 보전(PdM)의 이해",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class05.html",
     "content": "강의 교재 - Class 05. 예지 보전(PdM)의 이해 강의로 돌아가기 LECTURE NOTE 예지 보전(PdM)의 이해 설비 고장을 미리 예측하는 AI 기술 1. 보전 방식의 진화 사후 보전(BM), 예방 보전(PM)을 넘어 예지 보전(PdM)으로 나아가는 과정을 이해합니다. 2. 설비 데이터의 이해 모터의 진동, 소음, 전류 및 온도 데이터가 가지는 의미와 고장 전조 증상을 학습합니다. 3. 주요 고장 패턴 베어링 마모, 축 정렬 불량 등 설비의 대표적인 고장 패턴과 데이터 특징을 분석합니다. 4. 예지 보전 성공 사례 선진 기업들의 예지 보전 시스템 구축 사례와 이를 통한 OEE(설비종합효율) 향상 효과를 알아봅니다. 강의 목록 보기"
@@ -643,7 +535,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class06.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class06.html",
+    "lectureTitle": "Class 6: 고장 예측 모델링",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class06.html",
     "content": "강의 교재 - Class 06. 고장 예측 모델링 강의로 돌아가기 LECTURE NOTE 고장 예측 모델링 시계열 데이터를 활용한 잔여 수명 예측 1. LSTM/GRU 시계열 예측 순환 신경망(RNN) 계열 모델을 활용하여 미래의 센서 값을 예측합니다. 2. RUL(잔여 수명) 예측 설비의 현재 상태를 기반으로 고장 발생까지 남은 시간(RUL)을 추정하는 모델을 만듭니다. 3. Autoencoder 이상 탐지 비지도 학습 모델인 Autoencoder를 활용하여 평소와 다른 이상 신호(Anomaly)를 감지합니다. 4. 예측 정확도 향상 Hyperparameter Tuning 및 Ensemble 기법을 통해 예측 모델의 성능을 고도화합니다. 강의 목록 보기"
@@ -652,7 +544,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class07.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class07.html",
+    "lectureTitle": "Class 7: 수요 예측 및 재고 최적화",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class07.html",
     "content": "강의 교재 - Class 07. 수요 예측 및 재고 최적화 강의로 돌아가기 LECTURE NOTE 수요 예측 및 재고 최적화 SCM 효율화를 위한 AI 활용 1. 수요 예측 모델링 Prophet, ARIMA 등 통계 및 AI 기법을 활용하여 향후 제품 수요를 정밀하게 예측합니다. 2. 적정 재고 산출 예측된 수요를 기반으로 안전 재고(Safety Stock)를 최적화하여 과잉 재고와 결품을 방지합니다. 3. 계절성 및 트렌드 분석 계절적 요인과 시장 트렌드를 분석하여 수요 변동성을 사전에 감지하고 대응합니다. 4. 원자재 가격 예측 외부 거시 경제 지표와 원자재 가격 추이를 분석하여 구매 시점을 최적화합니다. 강의 목록 보기"
@@ -661,7 +553,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class08.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class08.html",
+    "lectureTitle": "Class 8: 공정 최적화 및 Digital Twin",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class08.html",
     "content": "강의 교재 - Class 08. 공정 최적화 및 Digital Twin 강의로 돌아가기 LECTURE NOTE 공정 최적화 & Digital Twin 생산 효율 극대화를 위한 시뮬레이션 1. 공정 파라미터 최적화 강화학습 등을 활용하여 수율을 극대화할 수 있는 최적의 설비 세팅 값을 찾습니다. 2. Digital Twin 기초 가상 공간에 현실 공장을 똑같이 구현하는 Digital Twin의 개념과 활용 가치를 배웁니다. 3. 가상 공정 시뮬레이션 생산 라인의 변경이나 신제품 도입 시 발생할 수 있는 문제를 가상에서 시뮬레이션합니다. 4. 에너지 소비 효율화 전력 소비 패턴을 분석하고 피크 전력을 관리하여 에너지 비용을 절감하는 전략을 수립합니다. 강의 목록 보기"
@@ -670,7 +562,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class09.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class09.html",
+    "lectureTitle": "Class 9: 생성형 AI와 제조업",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class09.html",
     "content": "강의 교재 - Class 09. 생성형 AI와 제조업 강의로 돌아가기 LECTURE NOTE 생성형 AI와 제조업 제품 설계 및 지식 관리 혁신 1. Generative Design AI가 수많은 설계 옵션을 자동으로 생성하고 최적의 디자인을 제안하는 제너레이티브 디자인을 학습합니다. 2. RAG 기반 지식 검색 방대한 사내 기술 문서와 매뉴얼 내에서 필요한 정보를 즉시 찾아주는 검색 시스템을 구축합니다. 3. 보고서 자동 생성 일일 작업 일지, 품질 검사 보고서 등 반복적인 문서 작성 업무를 LLM으로 자동화합니다. 4. 현장 AI 어시스턴트 현장 작업자가 음성으로 설비 상태를 묻거나 매뉴얼을 조회할 수 있는 챗봇 서비스를 기획합니다. 강의 목록 보기"
@@ -679,61 +571,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c06-textbook_manufacturing_class10.html",
     "courseId": "c06",
     "courseTitle": "06. AI 제조혁신 (Manufacturing)",
-    "lectureTitle": "textbook_manufacturing_class10.html",
+    "lectureTitle": "Class 10: 제조 AI 프로젝트",
     "path": "c06_manufacturing",
     "file": "textbook_manufacturing_class10.html",
     "content": "강의 교재 - Class 10. 제조 AI 프로젝트 강의로 돌아가기 LECTURE NOTE 제조 AI 프로젝트 종합 프로젝트 수행 및 로드맵 수립 1. 문제 해결 프로젝트 현업에서 실제 겪고 있는 소규모 제조 문제를 선정하고 AI로 해결하는 팀 프로젝트를 수행합니다. 2. 결과 발표 데이터 수집부터 모델링, 성능 평가까지의 과정을 정리하여 발표하고 피드백을 공유합니다. 3. ROI 분석 AI 도입에 따른 비용과 예상되는 정량적(비용 절감, 생산성 증대), 정성적 효과를 산출합니다. 4. 현업 적용 계획 파일럿 프로젝트의 성과를 바탕으로 전사 확산을 위한 구체적인 실행 로드맵을 수립합니다. 강의 목록 보기"
   },
   {
-    "id": "c07-classroom_data.html",
-    "courseId": "c07",
-    "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "classroom_data.html",
-    "path": "c07_data",
-    "file": "classroom_data.html",
-    "content": "AI 데이터 분석 특화 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 데이터 분석 특화 진도율에 맞춰 학습을 진행해 주세요 01 Day 1: Pandas AI & Code Interpreter 대화형 데이터 분석 기초 학습하기 Pandas Library 기초 Code Interpreter 활용법 데이터 로딩 및 기본 탐색 02 Day 1: 데이터 전처리 및 정제 결측치 처리 및 데이터 가공 학습하기 결측치 및 이상치 처리 Feature Scaling & Encoding AI 기반 전처리 자동화 03 Day 2: 머신러닝 기초 및 분류 Scikit-learn 활용 분류 모델 학습하기 머신러닝 학습 방법론 분류(Classification) 모델 모델 성능 평가 지표 04 Day 2: 회귀 분석 및 예측 수치 예측 모델링 실습 학습하기 선형/다중 회귀 분석 과적합(Overfitting) 방지 머신러닝 파이프라인 05 Day 3: 데이터 시각화 기초 효과적인 데이터 시각화 기법 학습하기 Matplotlib & Seaborn 데이터 스토리텔링 AI 활용 시각화 코드 06 Day 3: 인터랙티브 대시보드 Streamlit 웹 대시보드 구축 학습하기 Power BI / Tableau 개요 Streamlit 실시간 대시보드 사용자 상호작용 컴포넌트 07 Day 4: 텍스트 데이터 분석 NLP 기초 및 감성 분석 학습하기 텍스트 마이닝 & 워드 클라우드 감성 분석(Sentiment Analysis) 토픽 모델링 (LDA) 08 Day 4: 시계열 데이터 분석 미래 예측 및 트렌드 파악 학습하기 시계열 특성 이해 Prophet 라이브러리 활용 수요 및 트렌드 예측 09 Day 5: 딥러닝 입문 신경망 기초 및 모델링 학습하기 인공신경망(ANN) 원리 TensorFlow/Keras 기초 비정형 데이터 분석 맛보기 10 Day 5: 종합 데이터 프로젝트 실전 분석 및 결과 발표 학습하기 Kaggle 스타일 컴피티션 개인별 분석 프로젝트 결과 보고서 및 포트폴리오"
-  },
-  {
-    "id": "c07-day01_lecture.html",
-    "courseId": "c07",
-    "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c07_data",
-    "file": "day01_lecture.html",
-    "content": "01. Pandas AI & Code Interpreter - 데이터 분석 특화 강의실 홈으로 01 Pandas AI & Code Interpreter 대화형 데이터 분석의 세계 PART 1 대화형 분석 기초 자연어로 SQL 쿼리 생성 어려운 쿼리문 대신 일상 언어로 데이터를 조회하고 결과를 시각화하는 방법을 학습합니다. 강의 보기 강의 듣기 AI Data Specialist &copy; 2026 AI 데이터 분석 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c07-day02_lecture.html",
-    "courseId": "c07",
-    "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c07_data",
-    "file": "day02_lecture.html",
-    "content": "02. 머신러닝 워크플로우 자동화 - 데이터 분석 특화 강의실 홈으로 02 머신러닝 워크플로우 자동화 AutoML을 활용한 모델 개발 PART 1 모델 개발 가속화 AutoML 실습 특성 공학부터 하이퍼파라미터 튜닝까지, 복잡한 머신러닝 과정을 자동화하는 기법을 학습합니다. 강의 보기 강의 듣기 AI Data Specialist &copy; 2026 AI 데이터 분석 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c07-day07_database_connection.html",
-    "courseId": "c07",
-    "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "day07_database_connection.html",
-    "path": "c07_data",
-    "file": "day07_database_connection.html",
-    "content": "데이터베이스 연결 - AI Class 강의 목록으로 돌아가기 데이터베이스 연결 데이터의 영원한 집을 지어주자 BaaS (Backend as a Service) 초보자가 서버를 직접 구축하고 DB를 설치하는 것은 어렵습니다. Firebase나 Supabase 같은 BaaS를 사용하면 서버 구축 없이도 데이터베이스 기능을 쉽게 사용할 수 있습니다. Firebase 구글이 만든 모바일/웹 개발 플랫폼 NoSQL 기반 (문서형 데이터 저장) 실시간(Real-time) 데이터 동기화 강점 Supabase Firebase의 오픈소스 대안 SQL (PostgreSQL) 기반 관계형 DB 엑셀처럼 테이블 형태로 데이터 관리 편함 CRUD란? 데이터를 다루는 가장 기본적인 4가지 기능입니다. Create 데이터 생성 (예: 글 쓰기) Read 데이터 읽기 (예: 글 목록 보기) Update 데이터 수정 (예: 내용 고치기) Delete 데이터 삭제 (예: 글 지우기) 강의 요약 및 다음 단계 데이터를 체계적으로 저장하고 관리하여 사용자에게 개인화된 경험을 제공할 수 있습니다. 교재 PDF 다운로드 강의실로 돌아가기"
-  },
-  {
-    "id": "c07-special_data.html",
-    "courseId": "c07",
-    "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "special_data.html",
-    "path": "c07_data",
-    "file": "special_data.html",
-    "content": "김사부와 함께 AI 데이터 분석가 | 5일 (40시간) 완성 전체 과정 보기 공지사항 관리자 모드 특화 과정 5일 (40시간) 완성 · 이론 + 실습 + 앱 개발 AI 데이터 분석가 Python & Pandas 기초, AI 예측 모델링, 비즈니스 시각화 코딩 없이도 가능한 데이터 분석부터 Python을 활용한 고급 분석까지, 데이터에서 인사이트를 도출하고 시각화합니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 No-Code 데이터 분석 강점 복잡한 코딩 없이도 자연어 대화만으로 데이터를 추출하고 분석하는 Code Interpreter 활용법을 마스터합니다. 기대효과 비전공자도 당장 오늘부터 데이터 분석가처럼 데이터를 자유자재로 다루게 됩니다. STRENGTH 02 고품질 시각화 강점 AI에게 엑셀 파일만 던져주면, 경영진 보고용 프로페셔널한 차트와 그래프 를 즉시 그려냅니다. 기대효과 데이터 뒤에 숨겨진 의미를 한눈에 보여주어, 의사결정권자를 단번에 설득 하는 보고서를 만듭니다. STRENGTH 03 AI 미래 예측 강점 과거 데이터 패턴을 학습하여 다음 달 매출, 재고 수요 등을 정교하게 예측하는 모델 을 만들어봅니다. 기대효과 감 이 아닌 데이터에 기반한 예측으로 비즈니스 불확실성 을 최소화합니다. Curriculum 상세 커리큘럼 1 Day 1: 데이터 리터러시 & 탐색 코딩 없이 대화로 하는 탐색적 데이터 분석(EDA) ChatGPT Advanced Data Analysis 모드 활용 데이터 구조 파악 및 결측치 처리 자동화 기초 통계량 확인 및 데이터 요약 2 Day 2-3: 인사이트 도출 & 시각화 복잡한 데이터를 직관적인 차트로 변환 상관관계 분석 및 핵심 지표 시각화 고급 차트(히트맵, 산점도) 자동 생성 프롬프트 경영진 보고용 대시보드 기획 3 Day 4-5: 머신러닝 예측 모델링 클릭 몇 번으로 만드는 수요 예측 및 분류 모델 매출/재고 시계열 예측 모델링 고객 이탈 예측 분류 모델 실습 분석 결과 보고서 자동 생성 및 스토리텔링 Essential AI Tools AI 데이터 분석가 4대 AI 도구 Code Interpreter 노코드 분석 PandasAI 대화형 분석 Julius AI 고급 통계 Tableau AI 자동 시각화 5 일 과정 6 핵심 도구 5 실습/프로젝트 0 앱 배포 AI 데이터 분석가 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 데이터 분석가. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c07-textbook_data_class01.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class01.html",
+    "lectureTitle": "Class 1: Day 1: Pandas AI & Code Interpreter",
     "path": "c07_data",
     "file": "textbook_data_class01.html",
     "content": "강의 교재 - Class 01. Pandas AI & Code Interpreter 강의로 돌아가기 LECTURE NOTE Pandas AI & Code Interpreter 대화형 데이터 분석의 세계 1. Pandas Library 기초 Python 데이터 분석의 핵심 라이브러리인 Pandas의 DataFrame 구조와 기본 연산을 익힙니다. 2. Code Interpreter 활용법 LLM의 Code Interpreter 기능을 활용하여 코드를 생성하고 즉시 실행하는 방법을 배웁니다. 3. 데이터 로딩 및 EDA CSV, Excel 등 다양한 형식의 데이터를 불러오고, 기술 통계량을 통해 데이터를 탐색합니다. 4. 자연어로 데이터 질의하기 복잡한 SQL이나 파이썬 코드 없이 자연어로 질문하여 원하는 데이터 결과를 얻습니다. 강의 목록 보기"
@@ -742,7 +589,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class02.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class02.html",
+    "lectureTitle": "Class 2: Day 1: 데이터 전처리 및 정제",
     "path": "c07_data",
     "file": "textbook_data_class02.html",
     "content": "강의 교재 - Class 02. 데이터 전처리 및 정제 강의로 돌아가기 LECTURE NOTE 데이터 전처리 및 정제 고품질 데이터를 위한 필수 과정 1. 결측치 및 이상치 처리 누락된 데이터(NaN)를 채우거나 제거하고, 분석을 방해하는 이상값(Outlier)을 탐지합니다. 2. Feature Scaling & Encoding 데이터의 스케일을 맞추는 정규화와 범주형 데이터를 숫자로 변환하는 인코딩 기법을 배웁니다. 3. 데이터 통합 및 변환 여러 소스의 데이터를 하나로 합치고(Merge/Concat), 분석에 적합한 형태로 변형(Pivoting)합니다. 4. AI 기반 전처리 자동화 반복적인 전처리 과정을 AI에게 맡겨 효율적으로 데이터를 준비하는 방법을 실습합니다. 강의 목록 보기"
@@ -751,7 +598,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class03.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class03.html",
+    "lectureTitle": "Class 3: Day 2: 머신러닝 기초 및 분류",
     "path": "c07_data",
     "file": "textbook_data_class03.html",
     "content": "강의 교재 - Class 03. 머신러닝 기초 및 분류 강의로 돌아가기 LECTURE NOTE 머신러닝 기초 및 분류 지도 학습의 기초와 Scikit-learn 활용 1. 머신러닝 학습 방법론 지도 학습, 비지도 학습, 강화 학습의 개념과 차이를 이해하고 적합한 문제 유형을 파악합니다. 2. Scikit-learn 라이브러리 파이썬 머신러닝 생태계의 표준인 Scikit-learn의 기본 API 사용법을 실습합니다. 3. 분류(Classification) 모델 Decision Tree, Random Forest 등 대표적인 분류 알고리즘을 학습하고 적용합니다. 4. 모델 성능 평가 지표 정확도(Accuracy), 정밀도(Precision), 재현율(Recall) 등 다양한 평가지표를 해석합니다. 강의 목록 보기"
@@ -760,7 +607,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class04.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class04.html",
+    "lectureTitle": "Class 4: Day 2: 회귀 분석 및 예측",
     "path": "c07_data",
     "file": "textbook_data_class04.html",
     "content": "강의 교재 - Class 04. 회귀 분석 및 예측 모델 강의로 돌아가기 LECTURE NOTE 회귀 분석 및 예측 모델 수치형 데이터를 예측하는 머신러닝 모델링 1. 선형 및 다중 회귀 변수 간의 관계를 모델링하여 연속적인 값을 예측하는 회귀 분석의 기초를 다집니다. 2. 수치 예측 모델링 실습 실제 주택 가격이나 매출 데이터 등을 활용하여 예측 모델을 직접 구축해봅니다. 3. 과적합(Overfitting) 방지 규제(Regularization) 기법과 교차 검증(Cross Validation)을 통해 모델의 일반화 성능을 높입니다. 4. 머신러닝 파이프라인 데이터 전처리부터 모델 학습, 예측까지의 전 과정을 하나의 파이프라인으로 구축합니다. 강의 목록 보기"
@@ -769,7 +616,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class05.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class05.html",
+    "lectureTitle": "Class 5: Day 3: 데이터 시각화 기초",
     "path": "c07_data",
     "file": "textbook_data_class05.html",
     "content": "강의 교재 - Class 05. 데이터 시각화 기초 강의로 돌아가기 LECTURE NOTE 데이터 시각화 기초 데이터 인사이트를 효과적으로 전달하는 기술 1. Matplotlib & Seaborn 파이썬의 대표적인 시각화 라이브러리를 사용하여 기본 차트부터 통계 차트까지 구현합니다. 2. 효과적인 차트 선택 데이터의 종류와 분석 목적에 가장 적합한 차트 유형을 선택하는 방법을 익힙니다. 3. 데이터 스토리텔링 단순한 그래프를 넘어, 데이터가 말하고자 하는 메시지를 명확하게 전달하는 스토리텔링 기법을 배웁니다. 4. AI 활용 시각화 생성 LLM에게 자연어로 요청하여 복잡한 시각화 코드를 자동으로 생성하고 수정하는 실습을 합니다. 강의 목록 보기"
@@ -778,7 +625,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class06.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class06.html",
+    "lectureTitle": "Class 6: Day 3: 인터랙티브 대시보드",
     "path": "c07_data",
     "file": "textbook_data_class06.html",
     "content": "강의 교재 - Class 06. 인터랙티브 대시보드 구축 강의로 돌아가기 LECTURE NOTE 인터랙티브 대시보드 Streamlit을 활용한 실시간 시각화 1. BI 도구 개요 Power BI, Tableau 등 상용 BI 도구의 특징을 이해하고 Python 기반 도구와 비교합니다. 2. Streamlit 웹 대시보드 Python만으로 빠르게 인터랙티브한 데이터 앱을 만들 수 있는 Streamlit을 학습합니다. 3. 사용자 상호작용 구현 필터, 슬라이더, 버튼 등 사용자 입력에 반응하여 차트가 동적으로 변하는 컴포넌트를 추가합니다. 4. 실시간 데이터 모니터링 실시간으로 들어오는 데이터를 갱신하며 보여주는 라이브 대시보드를 구현합니다. 강의 목록 보기"
@@ -787,7 +634,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class07.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class07.html",
+    "lectureTitle": "Class 7: Day 4: 텍스트 데이터 분석",
     "path": "c07_data",
     "file": "textbook_data_class07.html",
     "content": "강의 교재 - Class 07. 텍스트 데이터 분석 (NLP) 강의로 돌아가기 LECTURE NOTE 텍스트 데이터 분석 (NLP) 비정형 텍스트에서 가치를 찾아내는 자연어 처리 1. 텍스트 마이닝 기초 텍스트 데이터의 구조를 이해하고 정제(Cleaning), 토큰화(Tokenization) 등 기본 전처리를 다룹니다. 2. 워드 클라우드 시각화 빈도 분석을 통해 주요 키워드를 추출하고 워드 클라우드로 시각화하는 방법을 배웁니다. 3. 감성 분석 (Sentiment Analysis) 리뷰나 댓글 등의 텍스트에서 긍정, 부정 등 감성을 분류하고 점수화하는 모델을 실습합니다. 4. 토픽 모델링 (LDA) 문서 집합에서 숨겨진 주제(Topic)들을 자동으로 찾아내는 비지도 학습 기법을 배웁니다. 강의 목록 보기"
@@ -796,7 +643,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class08.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class08.html",
+    "lectureTitle": "Class 8: Day 4: 시계열 데이터 분석",
     "path": "c07_data",
     "file": "textbook_data_class08.html",
     "content": "강의 교재 - Class 08. 시계열 데이터 분석 강의로 돌아가기 LECTURE NOTE 시계열 데이터 분석 시간의 흐름에 따른 데이터 변화와 예측 1. 시계열 특성 이해 추세(Trend), 계절성(Seasonality), 주기(Cycle) 등 시계열 데이터의 주요 구성 요소를 파악합니다. 2. 기본 시계열 모델 이동 평균(Moving Average), 지수 평활법(Exponential Smoothing) 등 기초적인 예측 기법을 배웁니다. 3. Prophet 라이브러리 활용 Facebook에서 개발한 Prophet을 활용하여 복잡한 시계열 데이터를 쉽고 정확하게 예측합니다. 4. 미래 수요 예측 실습 실제 비즈니스 데이터를 활용하여 미래의 수요와 트렌드를 예측하는 프로젝트를 진행합니다. 강의 목록 보기"
@@ -805,7 +652,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class09.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class09.html",
+    "lectureTitle": "Class 9: Day 5: 딥러닝 입문",
     "path": "c07_data",
     "file": "textbook_data_class09.html",
     "content": "강의 교재 - Class 09. 딥러닝 입문 강의로 돌아가기 LECTURE NOTE 딥러닝 입문 인공신경망의 원리와 응용 1. 인공신경망(ANN) 원리 인간 뇌를 모방한 인공신경망의 구조와 학습 알고리즘(역전파)을 직관적으로 이해합니다. 2. TensorFlow / Keras 가장 대중적인 딥러닝 프레임워크를 사용하여 간단한 신경망 모델을 직접 구현해봅니다. 3. 모델 학습 및 튜닝 학습률(Learning Rate), 활성화 함수 등 하이퍼파라미터를 조정하여 모델 성능을 최적화합니다. 4. 비정형 데이터 분석 맛보기 이미지 분류 등 비정형 데이터에 딥러닝을 적용하는 사례를 간단한 실습으로 체험합니다. 강의 목록 보기"
@@ -814,70 +661,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c07-textbook_data_class10.html",
     "courseId": "c07",
     "courseTitle": "07. AI 데이터 분석 (Data)",
-    "lectureTitle": "textbook_data_class10.html",
+    "lectureTitle": "Class 10: Day 5: 종합 데이터 프로젝트",
     "path": "c07_data",
     "file": "textbook_data_class10.html",
     "content": "강의 교재 - Class 10. 종합 데이터 프로젝트 강의로 돌아가기 LECTURE NOTE 종합 데이터 프로젝트 나만의 데이터 분석 포트폴리오 완성 1. Kaggle 스타일 컴피티션 제공된 데이터셋으로 예측 모델을 만들고 동료들과 성능을 경쟁하며 실력을 겨룹니다. 2. 개인별 분석 프로젝트 관심 있는 분야의 데이터를 직접 수집하고 분석하여 나만의 인사이트를 도출합니다. 3. 결과 보고서 및 발표 비즈니스 의사결정자를 설득할 수 있는 논리적이고 시각적인 분석 보고서를 작성하고 발표합니다. 4. 커리어 로드맵 데이터 분석가, 사이언티스트, 엔지니어 등 데이터 직군의 커리어 패스와 준비 전략을 조언합니다. 강의 목록 보기"
   },
   {
-    "id": "c08-classroom_video.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "classroom_video.html",
-    "path": "c08_video",
-    "file": "classroom_video.html",
-    "content": "AI 영상 제작 특화 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 영상 제작 특화 진도율에 맞춰 학습을 진행해 주세요 01 Day 1: AI 영상 기획 & 스토리보드 콘텐츠 기획의 자동화 학습하기 AI 활용 아이데이션 ChatGPT 시나리오 작성 자동 스토리보드 생성 02 Day 1: AI 이미지 생성 심화 영상 소스용 고품질 이미지 제작 학습하기 Midjourney / Stable Diffusion 일관된 캐릭터 생성 배경 및 에셋 제작 03 Day 2: 영상 생성 AI 기초 Text-to-Video 기초 학습하기 Runway Gen-2 활용 Pika Labs 기초 이미지로 영상 만들기 (I2V) 04 Day 2: 영상 생성 AI 심화 고급 컨트롤 및 연출 기법 학습하기 카메라 무빙 컨트롤 Motion Brush 활용 Sora 등 최신 툴 트렌드 05 Day 3: AI 캐릭터 & 가상 인간 말하는 아바타 생성 학습하기 HeyGen 활용법 D-ID 실습 나만의 AI 아바타 만들기 06 Day 3: AI 음성 합성 & 더빙 TTS 및 보이스 클로닝 학습하기 ElevenLabs 음성 합성 보이스 클로닝 실습 다국어 더빙 자동화 07 Day 4: 영상 편집 & 효과 AI 기반 편집 워크플로우 학습하기 CapCut AI 기능 활용 Premiere Pro AI 기능 자동 컷 편집 (Auto Cut) 08 Day 4: 자막 및 번역 자동화 글로벌 콘텐츠 제작 학습하기 Vrew 활용 자동 자막 영상 번역 및 자막 수정 썸네일 및 메타데이터 생성 09 Day 5: 숏폼 콘텐츠 제작 유튜브 쇼츠, 릴스, 틱톡 학습하기 트렌드 분석 및 기획 AI 기반 숏폼 대량 제작 바이럴 요소 최적화 10 Day 5: 종합 영상 프로젝트 나만의 AI 영상 포트폴리오 학습하기 홍보/광고/영화 예고편 제작 프로젝트 발표 및 피드백 AI 크리에이터 수익화 전략"
-  },
-  {
-    "id": "c08-day01_lecture.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c08_video",
-    "file": "day01_lecture.html",
-    "content": "01. AI 영상 생성 도구 활용 - 영상 제작 특화 강의실 홈으로 01 AI 영상 생성 도구 활용 Sora, Runway, Pika 등 최신 툴 마스터 PART 1 영상 생성 기초 Text-to-Video 기법 프롬프트를 통해 고품질 영상을 생성하고, 카메라 워킹을 제어하는 고급 기법을 학습합니다. 강의 보기 강의 듣기 AI Video Specialist &copy; 2026 AI 영상 제작 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c08-day02_lecture.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c08_video",
-    "file": "day02_lecture.html",
-    "content": "02. 영상 편집 및 후가공 - 영상 제작 특화 강의실 홈으로 02 영상 편집 및 후가공 AI 기반 컷 편집 및 특수 효과 PART 1 영상 편집 자동화 AI 컷 편집 및 특수효과 음성 기반 자동 컷 편집과 AI 배경 제거(Rotoscoping) 등을 통한 효율적인 후가공 기법을 학습합니다. 강의 보기 강의 듣기 AI Video Specialist &copy; 2026 AI 영상 제작 특화 과정. All Rights Reserved."
-  },
-  {
-    "id": "c08-day04_practice_video.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "day04_practice_video.html",
-    "path": "c08_video",
-    "file": "day04_practice_video.html",
-    "content": "제품 소개 영상 실습 - AI Master Class 제품 소개 영상 실습 강의로 돌아가기 AI로 완성하는 30초 광고 영상 아이디어만으로 고퀄리티 제품 영상을 제작하는 워크플로우를 경험합니다. Runway Gen-3 활용 텍스트 프롬프트를 입력하여 실사 수준의 제품 구동 영상을 생성합니다. AI 편집 도구 CapCut AI 또는 Premiere Pro의 AI 기능을 활용하여 컷 편집과 자막을 자동화합니다. 영상 생성 프롬프트 예시 Cinematic close-up of a premium smartwatch, sleek design, water droplets on the screen, slow motion, professional studio lighting, 4k resolution --ar 16:9 강의 요약 및 다음 단계 멀티미디어 콘텐츠 제작의 새로운 가능성을 열었습니다. 교재 PDF 다운로드 강의실로 돌아가기"
-  },
-  {
-    "id": "c08-day04_video_ai.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "day04_video_ai.html",
-    "path": "c08_video",
-    "file": "day04_video_ai.html",
-    "content": "AI 영상 생성 기술 개요 - AI Class 강의 목록으로 돌아가기 AI 영상 생성 기술 개요 텍스트 한 줄로 할리우드급 영상을 만드는 시대 1. AI 영상 생성 기술의 핵심 원리 최근의 AI 영상 생성은 Diffusion(확산) 모델 과 Transformer(트랜스포머) 구조가 결합된 형태가 주류를 이룹니다. T2V (Text-to-Video) 텍스트 프롬프트를 입력하면 AI가 이를 해석하여 움직이는 영상을 생성합니다. I2V (Image-to-Video) 정지된 이미지에 생명력을 불어넣어 물리적 법칙(중력, 빛의 반사 등)에 맞는 움직임을 만듭니다. Video-to-Video 기존 영상의 스타일을 바꾸거나(예: 실사를 애니메이션으로), 특정 객체만 수정하는 기술입니다. 2. 2026년 기준 주요 AI 영상 도구 비교 실무에서 가장 많이 활용되는 도구들의 특징을 정리하면 다음과 같습니다. 구분 주요 도구 비즈니스 활용 강점 고품질/실사 Runway Gen-3, Kling 광고, 브랜드 필름, 영화 수준의 고화질 연출 아바타/교육 HeyGen, D-ID 전문 강사나 모델 없이 다국어 교육 영상 제작 숏폼/빠른 제작 Pika, Luma Dream Machine SNS 바이럴 콘텐츠, 빠른 프로토타이핑에 최적화 현실성 끝판왕 OpenAI Sora, Google Veo 물리 법칙의 정교한 구현, 장편 영상 생성 (출시 및 권한에 따라 차등) 3. 비즈니스 실무 프로세스 (Master Class Workflow) 마스터 클래스에서는 단순 생성이 아닌, '기획-제작-후보정' 의 전체 워크플로우를 다룹니다. STEP 1 기획 (Pre-production) ChatGPT나 Claude를 활용한 스토리보드 작성 및 미드저니(Midjourney)를 통한 컨셉 아트 생성. STEP 2 생성 (Production) 주요 AI 툴을 활용하여 씬(Scene)별 영상 소스 추출 및 카메라 워킹(Pan, Zoom, Tilt) 제어. STEP 3 편집 및 AI 업스케일링 (Post-production) 생성된 영상의 해상도를 4K로 높이고, AI 배경음악(Suno, Udio)과 효과음을 결합하여 완성도 극대화. 💡 전문가의 팁 \"AI 영상은 단번에 완벽한 결과물을 얻기보다, 3~5초 단위의 짧은 클립들을 생성한 뒤 이를 AI 편집 도구로 연결하여 하나의 스토리를 만드는 방식이 가장 효율적입니다.\" 4. 주요 비즈니스 활용 사례 마케팅/광고 촬영 비용 없이 다양한 버전의 맞춤형 광고 영상 제작. 사내 교육/HR 다국어 지원 아바타를 활용한 글로벌 가이드 영상 제작. 제조/기술 복잡한 공정이나 설비 작동 원리를 시각화하는 디지털 트윈형 홍보 영상. 강의 요약 및 다음 단계 AI로 영상을 생성하고 편집하여 시각적 스토리텔링의 영역을 확장했습니다. 교재 PDF 다운로드 강의실로 돌아가기 © 2026 Master Kim AI Class. All rights reserved."
-  },
-  {
-    "id": "c08-special_video.html",
-    "courseId": "c08",
-    "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "special_video.html",
-    "path": "c08_video",
-    "file": "special_video.html",
-    "content": "김사부와 함께 AI 영상 크리에이터 | 5일 (40시간) 완성 전체 과정 보기 공지사항 관리자 모드 특화 과정 5일 (40시간) 완성 · 이론 + 실습 + 앱 개발 AI 영상 크리에이터 영상 편집/자막 자동화, AI 보이스오버, 숏폼 대량 생산 촬영 없이 AI로 고퀄리티 영상을 제작하고, 숏폼 콘텐츠를 대량 생산하여 채널을 빠르게 성장시키는 비법을 배웁니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 촬영 없는 영상 제작 강점 카메라, 조명, 마이크 없이 오직 AI 툴(Runway, Sora 등) 만으로 고퀄리티 영상을 생성합니다. 기대효과 영상 한 편 제작에 들던 수일의 시간과 비용을 1/10 수준으로 압축 합니다. STRENGTH 02 글로벌 콘텐츠화 강점 AI 더빙과 자막 번역 기술로, 한국어 영상 하나를 순식간에 10개국어 버전 으로 확산시킵니다. 기대효과 언어 장벽 없이 전 세계 시청자를 나의 잠재 고객으로 확보 합니다. STRENGTH 03 숏폼 대량 생산 강점 긴 영상을 하이라이트 쇼츠(Shorts)로 자동 편집하고 대량 생산하는 바이럴 공장 시스템 을 구축합니다. 기대효과 압도적인 콘텐츠 물량 공세로 유튜브/인스타 채널을 가장 빠르게 급성장 시킵니다. Curriculum 상세 커리큘럼 1 Day 1: 영상 기획 & 스크립트 조회수를 부르는 킬러 콘텐츠 기획 유튜브 트렌드 분석 및 벤치마킹 자동화 ChatGPT로 숏폼/롱폼 대본 10초 만에 작성 스토리보드 및 장면 묘사 프롬프트 작성 2 Day 2-3: AI 영상 소스 생성 촬영 없이 고퀄리티 영상 및 이미지 제작 Midjourney로 일관된 캐릭터/배경 생성 Runway Gen-2/3로 정지 이미지를 영상화 Camera Motion 컨트롤 및 스타일 변환 3 Day 4-5: 편집 & 사운드 & 발행 AI 성우 더빙과 자동 자막, 컷 편집 완성 ElevenLabs로 감정을 담은 AI 내레이션 생성 CapCut/Vrew를 활용한 자동 컷 편집 및 자막 썸네일 제작 및 유튜브 SEO 업로드 전략 Essential AI Tools AI 영상 크리에이터 4대 AI 도구 Runway 영상 생성/편집 Sora/Pika 텍스트-비디오 ElevenLabs AI 성우 CapCut AI 편집 툴 5 일 과정 8 핵심 도구 3 실습/프로젝트 0 앱 배포 AI 영상 크리에이터 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 영상 크리에이터. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c08-textbook_video_class01.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class01.html",
+    "lectureTitle": "Class 1: Day 1: AI 영상 기획 & 스토리보드",
     "path": "c08_video",
     "file": "textbook_video_class01.html",
     "content": "강의 교재 - Class 01. AI 영상 기획 & 스토리보드 강의로 돌아가기 LECTURE NOTE AI 영상 기획 & 스토리보드 매력적인 콘텐츠를 위한 탄탄한 기초 설계 1. AI 활용 아이데이션 Chatgpt 등을 활용하여 창의적인 영상 주제와 콘셉트를 빠르게 도출하는 방법을 배웁니다. 2. 시나리오 및 대본 작성 LLM을 이용하여 영상의 흐름을 짜고 내레이션 대본을 작성하는 프롬프트 엔지니어링을 익힙니다. 3. 자동 스토리보드 생성 시나리오를 바탕으로 장면별 이미지를 AI로 생성하여 시각적인 스토리보드를 완성합니다. 4. 기획안 작성 실습 실제 제작할 영상의 기획안을 작성하고 AI 도구 활용 계획을 수립합니다. 강의 목록 보기"
@@ -886,7 +679,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class02.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class02.html",
+    "lectureTitle": "Class 2: Day 1: AI 이미지 생성 심화",
     "path": "c08_video",
     "file": "textbook_video_class02.html",
     "content": "강의 교재 - Class 02. AI 이미지 생성 심화 강의로 돌아가기 LECTURE NOTE AI 이미지 생성 심화 영상 소스로 활용할 고퀄리티 이미지 제작 1. Midjourney 고급 기법 파라미터 튜닝과 고급 프롬프팅을 통해 원하는 스타일의 이미지를 정교하게 생성합니다. 2. Stable Diffusion 활용 로컬 또는 웹 UI를 활용하여 ControlNet 등 정밀한 이미지 제어 기술을 배웁니다. 3. 일관된 캐릭터 생성 Seed 고정 및 레퍼런스 이미지 활용을 통해 다양한 컷에서도 동일한 캐릭터를 유지하는 노하우를 익힙니다. 4. 배경 및 에셋 제작 영상 합성에 필요한 배경 이미지와 다양한 오브젝트 에셋을 생성하고 관리합니다. 강의 목록 보기"
@@ -895,7 +688,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class03.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class03.html",
+    "lectureTitle": "Class 3: Day 2: 영상 생성 AI 기초",
     "path": "c08_video",
     "file": "textbook_video_class03.html",
     "content": "강의 교재 - Class 03. 영상 생성 AI 기초 강의로 돌아가기 LECTURE NOTE 영상 생성 AI 기초 Text-to-Video 기술의 이해와 활용 1. Runway Gen-2 시작하기 대표적인 영상 생성 AI인 Runway의 인터페이스를 익히고 기본적인 영상 생성을 실습합니다. 2. Pika Labs 활용법 디스코드 기반의 영상 생성 도구인 Pika Labs의 사용법과 특징을 배웁니다. 3. 이미지로 영상 만들기 (I2V) 정적인 이미지를 입력하여 움직이는 영상으로 변환하는 Image-to-Video 기법을 익힙니다. 4. 간단한 숏폼 만들기 실습 배운 생성형 AI 도구들을 활용하여 10초 내외의 간단한 숏폼 영상을 제작해봅니다. 강의 목록 보기"
@@ -904,7 +697,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class04.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class04.html",
+    "lectureTitle": "Class 4: Day 2: 영상 생성 AI 심화",
     "path": "c08_video",
     "file": "textbook_video_class04.html",
     "content": "강의 교재 - Class 04. 영상 생성 AI 심화 강의로 돌아가기 LECTURE NOTE 영상 생성 AI 심화 고급 컨트롤 기능을 활용한 정교한 영상 연출 1. 카메라 무빙 컨트롤 줌, 팬, 틸트 등 카메라 움직임을 AI 툴에서 세밀하게 제어하여 역동적인 영상을 만듭니다. 2. Motion Brush 활용 영상 내 특정 영역만 움직이게 하는 Motion Brush 기능을 활용하여 디테일한 연출을 시도합니다. 3. Sora 등 최신 툴 트렌드 OpenAI Sora 등 끊임없이 발전하는 최신 영상 생성 AI 기술 트렌드와 활용 전망을 살표봅니다. 4. 고퀄리티 영상 연출 팁 AI 영상 특유의 왜곡을 최소화하고 상업적 수준의 퀄리티를 확보하는 실전 팁을 공유합니다. 강의 목록 보기"
@@ -913,7 +706,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class05.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class05.html",
+    "lectureTitle": "Class 5: Day 3: AI 캐릭터 & 가상 인간",
     "path": "c08_video",
     "file": "textbook_video_class05.html",
     "content": "강의 교재 - Class 05. AI 캐릭터 & 가상 인간 강의로 돌아가기 LECTURE NOTE AI 캐릭터 & 가상 인간 말하는 아바타와 가상 인플루언서 제작 1. HeyGen 활용법 텍스트만 입력하면 자연스럽게 말하는 AI 아바타 영상을 생성하는 HeyGen 툴을 마스터합니다. 2. D-ID 실습 정지된 인물 사진을 움직이고 말하게 만드는 D-ID 기술을 활용하여 살아있는 캐릭터를 만듭니다. 3. 나만의 AI 아바타 만들기 자신의 얼굴이나 원하는 캐릭터를 커스텀 아바타로 생성하고 학습시키는 과정을 배웁니다. 4. 캐릭터 감정 표현 단순한 입모양뿐만 아니라 표정과 제스처를 통해 감정을 전달하는 고도화된 아바타 제작 기법입니다. 강의 목록 보기"
@@ -922,7 +715,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class06.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class06.html",
+    "lectureTitle": "Class 6: Day 3: AI 음성 합성 & 더빙",
     "path": "c08_video",
     "file": "textbook_video_class06.html",
     "content": "강의 교재 - Class 06. AI 음성 합성 & 더빙 강의로 돌아가기 LECTURE NOTE AI 음성 합성 & 더빙 사람보다 더 자연스러운 AI 보이스 1. ElevenLabs 음성 합성 현재 가장 자연스러운 음성 합성 툴인 ElevenLabs의 기능을 활용하여 나레이션을 생성합니다. 2. 보이스 클로닝 실습 내 목소리나 특정 인물의 목소리를 AI에 학습시켜 그대로 복제하는 Voice Cloning을 실습합니다. 3. 다국어 더빙 자동화 하나의 영상을 다양한 언어로 자동 더빙하고 입모양까지 맞추는 현지화 기술을 배웁니다. 4. 오디오 편집 및 믹싱 AI로 생성된 음성을 배경음악과 조화롭게 믹싱하고 노이즈를 제거하는 방법을 익힙니다. 강의 목록 보기"
@@ -931,7 +724,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class07.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class07.html",
+    "lectureTitle": "Class 7: Day 4: 영상 편집 & 효과",
     "path": "c08_video",
     "file": "textbook_video_class07.html",
     "content": "강의 교재 - Class 07. 영상 편집 & 효과 강의로 돌아가기 LECTURE NOTE 영상 편집 & 효과 AI로 빨라지는 컷 편집과 후처리 1. CapCut AI 기능 활용 초보자도 쉽게 쓸 수 있는 CapCut의 AI 기반 자동 편집, 배경 제거, 효과 적용 기능을 익힙니다. 2. Premiere Pro AI 기능 전문가용 툴인 Premiere Pro에 내장된 AI 기능(장면 편집 감지, 자동 리프레임 등)을 배웁니다. 3. 자동 컷 편집 (Auto Cut) 무음 구간을 자동으로 잘라내고(Jump Cut) 하이라이트만 추출하는 AI 편집 워크플로우를 실습합니다. 4. AI 색보정 및 오디오 개선 AI를 활용해 영상의 색감을 자동으로 보정하고 오디오 품질을 스튜디오 급으로 향상시킵니다. 강의 목록 보기"
@@ -940,7 +733,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class08.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class08.html",
+    "lectureTitle": "Class 8: Day 4: 자막 및 번역 자동화",
     "path": "c08_video",
     "file": "textbook_video_class08.html",
     "content": "강의 교재 - Class 08. 자막 및 번역 자동화 강의로 돌아가기 LECTURE NOTE 자막 및 번역 자동화 글로벌 콘텐츠 확장을 위한 필수 스킬 1. Vrew 활용 자동 자막 음성 인식 AI를 기반으로 빠르게 자막을 생성하고 싱크를 맞추는 Vrew 사용법을 익힙니다. 2. 영상 번역 및 자막 수정 AI 번역기를 활용하여 다국어 자막을 생성하고, 문맥에 맞게 수정하는 노하우를 배웁니다. 3. 썸네일 및 메타데이터 생성 클릭률(CTR)을 높이는 썸네일과 검색에 최적화된 제목, 설명을 AI로 생성합니다. 4. 유튜브 업로드 최적화 채널 성장에 도움이 되는 태그 추출 및 업로드 설정 전략을 AI 데이터를 기반으로 수립합니다. 강의 목록 보기"
@@ -949,7 +742,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class09.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class09.html",
+    "lectureTitle": "Class 9: Day 5: 숏폼 콘텐츠 제작",
     "path": "c08_video",
     "file": "textbook_video_class09.html",
     "content": "강의 교재 - Class 09. 숏폼 콘텐츠 제작 강의로 돌아가기 LECTURE NOTE 숏폼 콘텐츠 제작 유튜브 쇼츠, 릴스, 틱톡 완전 정복 1. 트렌드 분석 및 기획 현재 유행하는 숏폼 트렌드를 분석하고 성공적인 콘텐츠 기획 공식을 배웁니다. 2. AI 기반 숏폼 대량 제작 템플릿과 AI 자동화를 활용하여 질 높은 숏폼 영상을 단시간에 대량 생산하는 파이프라인을 구축합니다. 3. 바이럴 요소 최적화 초반 3초 후킹, 시청 지속 시간 증대 등 알고리즘 선택을 받기 위한 편집 및 연출 팁을 적용합니다. 4. 숏폼 수익화 전략 조회수 수익뿐만 아니라 제휴 마케팅, 브랜디드 콘텐츠 등 다양한 수익화 모델을 알아봅니다. 강의 목록 보기"
@@ -958,7 +751,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c08-textbook_video_class10.html",
     "courseId": "c08",
     "courseTitle": "08. AI 영상 제작 (Video)",
-    "lectureTitle": "textbook_video_class10.html",
+    "lectureTitle": "Class 10: Day 5: 종합 영상 프로젝트",
     "path": "c08_video",
     "file": "textbook_video_class10.html",
     "content": "강의 교재 - Class 10. 종합 영상 프로젝트 강의로 돌아가기 LECTURE NOTE 종합 영상 프로젝트 나만의 AI 영상 포트폴리오 완성 1. 홍보/광고/영화 예고편 제작 그동안 배운 기술을 총동원하여 상업적으로 활용 가능한 수준의 최종 영상을 제작합니다. 2. 프로젝트 발표 및 피드백 완성된 작품을 시사회 형태로 발표하고 강사와 동료들의 피드백을 통해 개선점을 찾습니다. 3. AI 크리에이터 수익화 전략 프리랜서, 유튜브 채널 운영, 스톡 푸티지 판매 등 영상 제작 기술로 수익을 창출하는 방법을 알아봅니다. 4. 저작권 및 윤리적 활용 AI 생성 콘텐츠의 저작권 이슈와 딥페이크 등 윤리적 문제를 이해하고 올바르게 활용하는 가이드를 제공합니다. 강의 목록 보기"
@@ -982,46 +775,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     "content": "강의 교재 - Class 02. 의사결정 지원 시스템 강의로 돌아가기 LECTURE NOTE 의사결정 지원 시스템 데이터 기반의 합리적 경영 의사결정 1. 경영 대시보드 및 지표 관리 실시간 데이터를 시각화하여 경영 현황을 한눈에 파악하고 핵심 성과 지표(KPI)를 관리합니다. 2. 시나리오 플래닝 시뮬레이션 AI를 활용하여 다양한 변수를 고려한 시나리오를 예측하고 최적의 전략을 도출합니다. 3. 리스크 관리 및 예측 잠재적인 위험 요소를 사전에 탐지하고 AI 예측 모델을 통해 비즈니스 리스크를 최소화합니다. 4. 데이터 기반 인사이트 도출 방대한 데이터를 분석하여 비즈니스 성장에 필요한 혁신적인 인사이트를 발견하는 훈련입니다. 강의 목록 보기"
   },
   {
-    "id": "c10-classroom_consultant.html",
-    "courseId": "c10",
-    "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "classroom_consultant.html",
-    "path": "c10_consultant",
-    "file": "classroom_consultant.html",
-    "content": "AI 컨설턴트 양성 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM AI 컨설턴트 양성 진도율에 맞춰 학습을 진행해 주세요 01 AI 컨설팅 기초 컨설턴트의 역할과 DT 진단 프레임워크 학습하기 02 As-Is vs To-Be 분석 현황 분석 및 목표 설정 기법 학습하기 03 AI 도입 타당성 분석 ROI 분석 및 기술적 실현 가능성 검토 학습하기 04 RFP 및 제안서 작성 제안요청서 분석 및 수주 전략 학습하기 05 프로젝트 관리 (PM) 일정, 범위, 품질 관리 및 애자일 방법론 학습하기 06 커뮤니케이션 & 협상 이해관계자 관리 및 갈등 해결 학습하기 07 프로세스 혁신 (PI) 업무 프로세스 최적화 및 자동화(RPA) 연계 학습하기 08 AI 전략 로드맵 수립 중장기 AI 전환 계획 및 단계별 실행 전략 학습하기 09 AI 윤리 및 리스크 관리 AI 도입 시 법적/윤리적 고려사항 및 규제 대응 학습하기 10 캡스톤 프로젝트: 전략 컨설팅 가상 기업 대상 AI 도입 전략 제안서 작성 실습 학습하기"
-  },
-  {
-    "id": "c10-day01_lecture.html",
-    "courseId": "c10",
-    "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c10_consultant",
-    "file": "day01_lecture.html",
-    "content": "01. AI 컨설팅 방법론 - 컨설턴트 양성 강의실 홈으로 01 AI 컨설팅 방법론 기업의 AI 도입 니즈 발굴 및 솔루션 제안 PART 1 진단 및 전략 수립 DT 진단 프레임워크 기업의 디지털 성숙도를 측정하고, AI 도입을 통해 가치를 창출할 수 있는 핵심 영역을 발굴하는 법을 학습합니다. 강의 보기 강의 듣기 AI Consultant Specialist &copy; 2026 AI 컨설턴트 양성 과정. All Rights Reserved."
-  },
-  {
-    "id": "c10-day02_lecture.html",
-    "courseId": "c10",
-    "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c10_consultant",
-    "file": "day02_lecture.html",
-    "content": "02. 프로젝트 관리 및 커뮤니케이션 - 컨설턴트 양성 강의실 홈으로 02 프로젝트 관리 및 커뮤니케이션 성공적인 AI 프로젝트 리딩 PART 1 실전 프로젝트 매니지먼트 Agile 방법론 적용 빠른 변화에 대응하는 애자일 마인드셋과 실질적인 스크럼 운영 방식을 통해 프로젝트 성공률을 높이는 법을 학습합니다. 강의 보기 강의 듣기 AI Consultant Specialist &copy; 2026 AI 컨설턴트 양성 과정. All Rights Reserved."
-  },
-  {
-    "id": "c10-strategy_consultant.html",
-    "courseId": "c10",
-    "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "strategy_consultant.html",
-    "path": "c10_consultant",
-    "file": "strategy_consultant.html",
-    "content": "김사부와 함께 AI 비즈니스 컨설턴트 | 20일 (160시간) 완성 전체 과정 보기 공지사항 관리자 모드 전략 과정 20일 (160시간) 완성 · 이론 + 실습 + 앱 개발 AI 비즈니스 컨설턴트 AI 도입 ROI 분석, 프로세스 재설계(Re-design), 로드맵 수립 기업의 AI 도입 타당성을 분석하고, 비즈니스 프로세스를 재설계하여 실질적인 ROI를 창출하는 전문 컨설턴트로 성장합니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 AI 기업 진단 강점 기업의 데이터 준비 상태, 인프라, 조직 역량을 객관적으로 평가하는 AI 준비도 진단 프레임워크 를 익힙니다. 기대효과 막연했던 기업의 상태를 수치화하여 정확한 처방과 솔루션 을 제시합니다. STRENGTH 02 로드맵 설계 강점 단기적 도입부터 중장기적 전환까지, 단계별로 실행 가능한 AI 트랜스포메이션 마스터플랜 을 수립합니다. 기대효과 이상적인 그림이 아닌, 현실적이고 구체적인 실행 계획 으로 고객을 리드합니다. STRENGTH 03 컨설팅 설득 화법 강점 기술 용어를 비즈니스 언어로 통역하여, C-Level 경영진을 설득하고 프로젝트 수주를 이끌어내는 커뮤니케이션 스킬을 배웁니다. 기대효과 고객의 페인 포인트를 정확히 찌르는 제안으로 컨설팅 계약 성사율 을 높입니다. Curriculum 상세 커리큘럼 1 Week 1: AI 기술 및 생태계 이해 컨설턴트를 위한 심층 기술 지식 LLM, sLLM, RAG, Agent 등 핵심 기술 심화 AI Value Chain 및 주요 플레이어 분석 산업별(금융, 제조, 유통) AI 유스케이스 스터디 2 Week 2: 기업 진단 방법론 AS-IS 분석 및 Pain Point 발굴 AI 준비도 진단 툴킷 활용 실습 데이터 인프라 및 거버넌스 진단 임직원 인터뷰 및 프로세스 마이닝 기법 3 Week 3: AI 전략 수립 & 로드맵 TO-BE 모델 설계 및 실행 계획 고객 여정 지도(CJM) 기반 AI 서비스 기획 PoC 대상 과제 우선순위 도출 매트릭스 단계별 도입 로드맵 및 예산 산정 4 Week 4: 제안 및 프로젝트 관리 설득력 있는 제안서 작성 및 PM 역량 AI 도입 ROI 시뮬레이션 및 정량적 기대효과 산출 발주처를 설득하는 컨설팅 제안서 작성 실습 AI 프로젝트 리스크 관리 및 품질 보증 방안 Essential AI Tools AI 비즈니스 컨설턴트 4대 AI 도구 Miro AI 워크숍/매핑 ChatGPT 전략 프레임워크 Excel Copilot 데이터 분석 Notion 지식 관리 20 일 과정 10 핵심 도구 4 실습/프로젝트 0 앱 배포 AI 비즈니스 컨설턴트 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 AI 비즈니스 컨설턴트. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c10-textbook_consultant_class01.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class01.html",
+    "lectureTitle": "Class 1: AI 컨설팅 기초",
     "path": "c10_consultant",
     "file": "textbook_consultant_class01.html",
     "content": "강의 교재 - Class 01. AI 컨설팅 기초 강의로 돌아가기 LECTURE NOTE AI 컨설팅 기초 컨설턴트의 역할과 DT 진단 프레임워크 1. AI 컨설턴트의 역할 기술과 비즈니스를 연결하는 AI 컨설턴트의 핵심 역량과 역할을 정의합니다. 2. DT 진단 프레임워크 기업의 디지털 전환(DT) 성숙도를 진단하고 AI 도입 준비 상태를 평가하는 모델을 학습합니다. 3. Pain Point 발굴 기법 현업 인터뷰와 데이터 분석을 통해 비즈니스 페인 포인트(Pain Points)를 정확히 도출하는 방법론입니다. 4. AI 트렌드와 산업별 사례 최신 AI 기술 트렌드와 주요 산업(제조, 금융, 유통 등)의 성공적인 도입 사례를 분석합니다. 강의 목록 보기"
@@ -1030,7 +787,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class02.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class02.html",
+    "lectureTitle": "Class 2: As-Is vs To-Be 분석",
     "path": "c10_consultant",
     "file": "textbook_consultant_class02.html",
     "content": "강의 교재 - Class 02. As 강의로 돌아가기 LECTURE NOTE As-Is vs To-Be 분석 현황 분석 및 목표 설정 기법 1. As-Is 프로세스 분석 현재 업무 프로세스를 시각화하고 비효율적인 구간을 찾아내는 분석 기법을 실습합니다. 2. To-Be 모델 설계 AI 기술을 적용하여 개선된 미래 업무 환경(To-Be)을 설계하고 기대 효과를 정의합니다. 3. Gap Analysis 현재와 미래 상태 간의 격차(Gap)를 분석하여 해결해야 할 과제를 구체화합니다. 4. 우선순위 도출 (Eisenhower Matrix) 시급성과 중요도를 기준으로 도출된 과제들의 우선순위를 결정하는 매트릭스 기법을 익힙니다. 강의 목록 보기"
@@ -1039,7 +796,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class03.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class03.html",
+    "lectureTitle": "Class 3: AI 도입 타당성 분석",
     "path": "c10_consultant",
     "file": "textbook_consultant_class03.html",
     "content": "강의 교재 - Class 03. AI 도입 타당성 분석 강의로 돌아가기 LECTURE NOTE AI 도입 타당성 분석 ROI 분석 및 기술적 실현 가능성 검토 1. ROI (Return on Investment) 산정 AI 도입에 따른 비용 대비 효과(정량적 이익)를 예측하고 투자 회수 기간을 산출합니다. 2. 기술적 실현 가능성 검토 (PoC) 제안된 AI 솔루션이 기술적으로 구현 가능한지 검증하는 PoC(Proof of Concept) 기획법을 배웁니다. 3. 정성적 가치 평가 브랜드 이미지 제고, 직원 만족도 향상 등 돈으로 환산하기 어려운 정성적 가치를 평가합니다. 4. 리스크 분석 및 완화 방안 프로젝트 실패 요인, 데이터 보안 문제 등 잠재적 리스크를 식별하고 대응 전략을 수립합니다. 강의 목록 보기"
@@ -1048,7 +805,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class04.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class04.html",
+    "lectureTitle": "Class 4: RFP 및 제안서 작성",
     "path": "c10_consultant",
     "file": "textbook_consultant_class04.html",
     "content": "강의 교재 - Class 04. RFP 및 제안서 작성 강의로 돌아가기 LECTURE NOTE RFP 및 제안서 작성 제안요청서 분석 및 수주 전략 1. RFP (제안요청서) 분석 고객사가 발송한 제안요청서(RFP)의 핵심 요구사항과 숨겨진 의도를 파악하는 방법을 학습합니다. 2. 이기는 제안서 스토리텔링 고객을 설득할 수 있는 논리적 구조(Pyramid Principle)와 매력적인 스토리텔링 기법을 적용합니다. 3. 수행 인력 및 일정 계획 프로젝트 성공을 위한 최적의 인력 구성안과 현실적인 수행 일정을 수립하는 노하우를 공유합니다. 4. 견적 및 계약 조건 적정 투입 공수를 산정(Man-Month)하고 가격 경쟁력을 확보하기 위한 견적 전략을 세웁니다. 강의 목록 보기"
@@ -1057,7 +814,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class05.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class05.html",
+    "lectureTitle": "Class 5: 프로젝트 관리 (PM)",
     "path": "c10_consultant",
     "file": "textbook_consultant_class05.html",
     "content": "강의 교재 - Class 05. 프로젝트 관리 (PM) 강의로 돌아가기 LECTURE NOTE 프로젝트 관리 (PM) 일정, 범위, 품질 관리 및 애자일 방법론 1. 프로젝트 착수 및 계획 (WBS) Kick-off 미팅 주관 및 업무 분업 구조(WBS) 작성을 통해 체계적인 프로젝트 계획을 수립합니다. 2. Agile & Scrum 방법론 변화에 유연하게 대응하는 Agile 프로세스와 Sprint 운영, Daily Scrum 진행 방법을 배웁니다. 3. 품질 관리 (QA) 산출물의 품질 기준을 정의하고 테스트 계획을 수립하여 결과물의 완성도를 높이는 관리 기법입니다. 4. 중간/최종 보고 및 검수 프로젝트 진행 상황을 보고하고 최종 산출물에 대한 고객의 검수(Sign-off)를 받는 절차를 진행합니다. 강의 목록 보기"
@@ -1066,7 +823,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class06.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class06.html",
+    "lectureTitle": "Class 6: 커뮤니케이션 & 협상",
     "path": "c10_consultant",
     "file": "textbook_consultant_class06.html",
     "content": "강의 교재 - Class 06. 커뮤니케이션 & 협상 강의로 돌아가기 LECTURE NOTE 커뮤니케이션 & 협상 이해관계자 관리 및 갈등 해결 1. 이해관계자(Stakeholder) 분석 프로젝트에 영향을 미치는 주요 이해관계자를 식별하고 그들의 요구사항과 영향력을 분석합니다. 2. 설득과 협상 전략 상호 이익을 추구하는 Win-Win 협상 기법과 반대 의견을 설득하는 커뮤니케이션 스킬을 익힙니다. 3. 효과적인 회의 진행법 명확한 아젠다 설정, 시간 관리, 액션 아이템 도출 등 생산적인 회의를 이끄는 퍼실리테이션 기술입니다. 4. 갈등 관리 및 문제 해결 프로젝트 수행 중 발생하는 팀 내외의 갈등 원인을 파악하고 중재하여 문제를 해결합니다. 강의 목록 보기"
@@ -1075,7 +832,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class07.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class07.html",
+    "lectureTitle": "Class 7: 프로세스 혁신 (PI)",
     "path": "c10_consultant",
     "file": "textbook_consultant_class07.html",
     "content": "강의 교재 - Class 07. 프로세스 혁신 (PI) 강의로 돌아가기 LECTURE NOTE 프로세스 혁신 (PI) 업무 프로세스 최적화 및 자동화(RPA) 연계 1. 비즈니스 프로세스 재설계 (BPR) 기존 업무 방식을 근본적으로 재검토하여 획기적인 성과 향상을 도모하는 BPR 기법을 학습합니다. 2. RPA (Robotic Process Automation) 단순 반복 업무를 소프트웨어 로봇으로 자동화하는 RPA 기술의 원리와 AI와의 결합 시너지를 이해합니다. 3. 업무 흐름 최적화 (Workflwo Optimization) 불필요한 결재 단계를 축소하고 데이터 흐름을 원활하게 하여 업무 속도를 높이는 최적화 전략입니다. 4. 성과 모니터링 및 KPI 설정 프로세스 개선 효과를 측정하기 위한 핵심 성과 지표(KPI)를 설정하고 지속적으로 모니터링합니다. 강의 목록 보기"
@@ -1084,7 +841,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class08.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class08.html",
+    "lectureTitle": "Class 8: AI 전략 로드맵 수립",
     "path": "c10_consultant",
     "file": "textbook_consultant_class08.html",
     "content": "강의 교재 - Class 08. AI 전략 로드맵 수립 강의로 돌아가기 LECTURE NOTE AI 전략 로드맵 수립 중장기 AI 전환 계획 및 단계별 실행 전략 1. 단계별 실행 전략 (Short/Mid/Long-term) 단기적 성과(Quick Win)와 중장기 혁신 목표를 균형 있게 배치하는 로드맵 작성법을 실습합니다. 2. 자원 배분 및 예산 계획 각 단계별로 필요한 인적, 물적, 재무적 자원을 효율적으로 배분하고 예산을 수립합니다. 3. AI 조직 구성 및 거버넌스 AI 전담 조직(CoE) 구성 방안과 전사적 AI 거버넌스 체계를 수립합니다. 4. 변화 관리 (Change Management) 구성원들의 변화 저항을 최소화하고 AI 도입 문화를 확산시키기 위한 변화 관리 전략입니다. 강의 목록 보기"
@@ -1093,7 +850,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class09.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class09.html",
+    "lectureTitle": "Class 9: AI 윤리 및 리스크 관리",
     "path": "c10_consultant",
     "file": "textbook_consultant_class09.html",
     "content": "강의 교재 - Class 09. AI 윤리 및 리스크 관리 강의로 돌아가기 LECTURE NOTE AI 윤리 및 리스크 관리 AI 도입 시 법적/윤리적 고려사항 및 규제 대응 1. AI 윤리 가이드라인 공정성, 투명성, 책임성 등 AI 윤리 원칙과 국내외 주요 가이드라인을 학습합니다. 2. 개인정보보호 및 데이터 규제 GDPR, 개인정보보호법 등 AI 학습 및 활용 시 준수해야 할 법적 규제 사항을 검토합니다. 3. 알고리즘 편향성 및 리스크 학습 데이터 편향으로 인한 차별적 결과 도출 위험을 인지하고 이를 완화하는 방안을 모색합니다. 4. 저작권 및 지식재산권 이슈 생성형 AI 산출물의 저작권 귀속 문제와 침해 리스크를 관리하는 법적 지식을 습득합니다. 강의 목록 보기"
@@ -1102,52 +859,16 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c10-textbook_consultant_class10.html",
     "courseId": "c10",
     "courseTitle": "10. AI 컨설턴트 (Consultant)",
-    "lectureTitle": "textbook_consultant_class10.html",
+    "lectureTitle": "Class 10: 캡스톤 프로젝트: 전략 컨설팅",
     "path": "c10_consultant",
     "file": "textbook_consultant_class10.html",
     "content": "강의 교재 - Class 10. 캡스톤 프로젝트: 전략 컨설팅 강의로 돌아가기 LECTURE NOTE 캡스톤 프로젝트: 전략 컨설팅 가상 기업 대상 AI 도입 전략 제안서 작성 실습 1. 대상 기업 및 과제 선정 컨설팅을 수행할 타겟 산업과 가상 기업을 선정하고 해결해야 할 핵심 비즈니스 문제를 정의합니다. 2. 현황 분석 및 전략 수립 외부 환경 및 내부 역량 분석을 통해 차별화된 AI 도입 전략과 실행 로드맵을 수립합니다. 3. 최종 제안서 작성 논리적이고 설득력 있는 최종 제안서를 작성하고, 시각적 자료(장표)를 활용하여 완성도를 높입니다. 4. 모의 PT 및 피드백 실전과 같은 모의 프레젠테이션을 진행하고, 멘토와 동료들의 피드백을 통해 제안 역량을 점검합니다. 강의 목록 보기"
   },
   {
-    "id": "c11-classroom_app_creator.html",
-    "courseId": "c11",
-    "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "classroom_app_creator.html",
-    "path": "c11_app_creator",
-    "file": "classroom_app_creator.html",
-    "content": "나만의 앱 만들기 - 나의 강의실 Al Master Class 나의 강의실 로그아웃 MY CURRICULUM 나만의 앱 만들기 진도율에 맞춰 학습을 진행해 주세요 01 노코드/로우코드 기초 Bubble, FlutterFlow 등 툴 활용법 학습하기 02 UI/UX 디자인 & DB 설계 사용자 경험 설계 및 데이터베이스 구조화 학습하기 03 앱 배포 및 수익화 스토어 등록 및 비즈니스 모델(BM) 구축 학습하기 04 LangChain 기초 LLM 애플리케이션 프레임워크 활용법 학습하기 05 Vector DB & RAG 데이터 임베딩 및 검색 증강 생성 구현 학습하기 06 챗봇 개발 I: 프롬프트 엔지니어링 효과적인 프롬프트 설계 및 페르소나 설정 학습하기 07 챗봇 개발 II: Advanced 대화 메모리, Tool 사용, Agent 구현 학습하기 08 멀티채널 연동 Slack, Discord, KakaoTalk 챗봇 통합 학습하기 09 성능 최적화 및 운영 응답 속도 개선, 비용 최적화, 모니터링 구축 학습하기 10 캡스톤 프로젝트: 상용 앱 출시 나만의 AI 비즈니스 앱 기획부터 런칭까지 학습하기"
-  },
-  {
-    "id": "c11-day01_lecture.html",
-    "courseId": "c11",
-    "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "day01_lecture.html",
-    "path": "c11_app_creator",
-    "file": "day01_lecture.html",
-    "content": "01. 노코드/로우코드 툴 활용 - 나만의 앱 만들기 강의실 홈으로 01 노코드/로우코드 툴 활용 코딩 없이 앱 프로토타입 만들기 PART 1 노코드 개발 기초 Bubble, FlutterFlow 기초 대표적인 노코드 툴의 인터페이스를 익히고, 드래그 앤 드롭 방식으로 화면을 구성하는 실습을 진행합니다. 강의 보기 강의 듣기 AI App Creator Specialist &copy; 2026 나만의 앱 만들기 과정. All Rights Reserved."
-  },
-  {
-    "id": "c11-day02_lecture.html",
-    "courseId": "c11",
-    "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "day02_lecture.html",
-    "path": "c11_app_creator",
-    "file": "day02_lecture.html",
-    "content": "02. 앱 배포 및 수익화 - 나만의 앱 만들기 강의실 홈으로 02 앱 배포 및 수익화 실제 스토어 출시 및 운영 PART 1 비즈니스 모델 및 출시 스토어 등록 및 운영 애플 앱스토어와 구글 플레이스토어 등록 절차, 그리고 광고 및 구독 모델을 통한 수익화 전략을 학습합니다. 강의 보기 강의 듣기 AI App Creator Specialist &copy; 2026 나만의 앱 만들기 과정. All Rights Reserved."
-  },
-  {
-    "id": "c11-master_app_creator.html",
-    "courseId": "c11",
-    "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "master_app_creator.html",
-    "path": "c11_app_creator",
-    "file": "master_app_creator.html",
-    "content": "김사부와 함께 비즈니스 앱 크리에이터 | 60일 (480시간) 완성 전체 과정 보기 공지사항 관리자 모드 마스터 과정 60일 (480시간) 완성 · 이론 + 실습 + 앱 개발 비즈니스 앱 크리에이터 LangChain & Vector DB, 멀티채널 챗봇, 엔터프라이즈급 앱 배포 현업 수준의 복잡한 AI 애플리케이션을 직접 설계 및 개발하고, 실제 서비스로 배포하여 운영하는 최상위 과정입니다. 이론 학습 실습 프로젝트 직무 앱 개발 교육 신청 커리큘럼 보기 과정 소개(PDF) 강의실 입장 로그아웃 Why This Course 본 과정만의 3대 강점 STRENGTH 01 엔터프라이즈 아키텍처 강점 장난감 같은 앱이 아닌, 대규모 트래픽과 보안을 고려한 현업 수준의 시스템 설계 능력을 배양합니다. 기대효과 단순 코더를 넘어, 시스템 전체를 조망하고 설계하는 스페셜리스트 아키텍트 로 성장합니다. STRENGTH 02 LangChain 심화 강점 LLM과 외부 데이터를 정교하게 연결하는 LangChain의 고급 기능을 마스터하여 복합적인 추론이 가능한 AI 를 만듭니다. 기대효과 기존 챗봇으로는 불가능했던 고난이도 복합 업무 를 AI로 자동화 구현합니다. STRENGTH 03 실전 배포 및 운영 강점 AWS, Vercel 등 클라우드 환경에 실제 서비스를 배포하고, 로그 모니터링 및 유지보수하는 DevOps 기초 까지 다룹니다. 기대효과 내 아이디어를 세상에 내놓고 실제 수익을 창출 하는 나만의 SaaS 서비스를 갖게 됩니다. Curriculum 상세 커리큘럼 1 Month 1: 풀스택 AI 개발 기초 Python, JS, DB 및 기본기 다지기 Python & JavaScript 핵심 문법 심화 FastAPI 백엔드 & React 프론트엔드 기초 SQL vs NoSQL 데이터베이스 설계 및 구축 2 Month 2: LLM 애플리케이션 심화 LangChain, RAG, Agent 개발 LangChain LCEL 문법 및 Chain 설계 Pinecone/ChromaDB 활용 RAG 파이프라인 구축 멀티 모달 기능(이미지/음성) 연동 및 메모리 구현 3 Month 3: 엔터프라이즈 배포 & 운영 실서비스 수준의 아키텍처 및 DevOps Docker 컨테이너화 및 CI/CD 파이프라인 AWS/GCP 클라우드 인프라 구축 및 오토스케일링 시스템 모니터링, 로깅, 보안 가이드라인 4 Final: 캡스톤 프로젝트 나만의 상용화 가능한 SaaS 런칭 아이디어 기획부터 MVP 개발, 배포까지 전 과정 수행 실제 사용자 피드백 반영 및 기능 고도화 투자 유치를 위한 IR 피칭 덱 작성 및 발표 Essential AI Tools 비즈니스 앱 크리에이터 4대 AI 도구 VS Code IDE GitHub 버전 관리 AWS/Vercel 클라우드 Docker 컨테이너 60 일 과정 15 핵심 도구 10 실습/프로젝트 5 앱 배포 비즈니스 앱 크리에이터 8일 만에 AI 업무 혁신과 나만의 앱 개발을 시작하세요 이용약관 | 개인정보처리방침 © 2026 비즈니스 앱 크리에이터. All rights reserved. 과정 공지사항 공지사항을 불러오는 중... 닫기"
-  },
-  {
     "id": "c11-textbook_app_creator_class01.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class01.html",
+    "lectureTitle": "Class 1: 노코드/로우코드 기초",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class01.html",
     "content": "강의 교재 - Class 01. 노코드/로우코드 기초 강의로 돌아가기 LECTURE NOTE 노코드/로우코드 기초 Bubble, FlutterFlow 등 툴 활용법 1. 노코드/로우코드의 이해 코딩 없이 애플리케이션을 개발하는 노코드/로우코드 플랫폼의 장점과 종류를 알아봅니다. 2. Bubble 입문 대표적인 웹앱 빌더인 Bubble의 인터페이스를 익히고 간단한 페이지를 구성해봅니다. 3. FlutterFlow 기초 네이티브 모바일 앱 개발에 특화된 FlutterFlow의 위젯 활용법을 학습합니다. 4. API 연동 기초 외부 데이터를 가져오기 위한 REST API의 개념과 노코드 툴에서의 연동 방식을 실습합니다. 강의 목록 보기"
@@ -1156,7 +877,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class02.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class02.html",
+    "lectureTitle": "Class 2: UI/UX 디자인 & DB 설계",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class02.html",
     "content": "강의 교재 - Class 02. UI/UX 디자인 & DB 설계 강의로 돌아가기 LECTURE NOTE UI/UX 디자인 & DB 설계 사용자 경험 설계 및 데이터베이스 구조화 1. UI/UX 디자인 원칙 사용자 중심의 인터페이스 설계 원칙과 Figma를 활용한 프로토타이핑 기초를 배웁니다. 2. 관계형 DB 설계 기초 데이터의 효율적인 저장을 위한 테이블 설계와 관계 설정(ERD) 방법을 익힙니다. 3. Firebase/Supabase 연동 Backend-as-a-Service(BaaS) 플랫폼을 활용하여 손쉽게 서버와 DB를 구축합니다. 4. 디자인 시스템 구축 일관된 UI/UX를 제공하기 위한 컬러, 폰트, 컴포넌트 등 디자인 시스템을 정의합니다. 강의 목록 보기"
@@ -1165,7 +886,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class03.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class03.html",
+    "lectureTitle": "Class 3: 앱 배포 및 수익화",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class03.html",
     "content": "강의 교재 - Class 03. 앱 배포 및 수익화 강의로 돌아가기 LECTURE NOTE 앱 배포 및 수익화 스토어 등록 및 비즈니스 모델(BM) 구축 1. 앱스토어 등록 절차 Google Play Store와 Apple App Store에 앱을 등록하기 위한 준비 사항과 심사 과정을 알아봅니다. 2. 수익화 전략 (BM) 수립 인앱 결제, 구독 모델, 광고 탑재 등 앱 서비스의 지속 가능한 수익 모델을 설계합니다. 3. 앱 성과 분석 (Analytics) Google Analytics, Mixpanel 등을 연동하여 사용자 행동 데이터를 수집하고 분석합니다. 4. 마케팅 및 사용자 확보 ASO(앱 스토어 최적화), SNS 마케팅 등을 통해 초기 사용자를 확보하는 전략을 배웁니다. 강의 목록 보기"
@@ -1174,7 +895,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class04.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class04.html",
+    "lectureTitle": "Class 4: LangChain 기초",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class04.html",
     "content": "강의 교재 - Class 04. LangChain 기초 강의로 돌아가기 LECTURE NOTE LangChain 기초 LLM 애플리케이션 프레임워크 활용법 1. LangChain 아키텍처 이해 LLM 앱 개발을 위한 LangChain 프레임워크의 핵심 모듈(Model I/O, Chains 등)을 이해합니다. 2. Chains & Prompts 여러 작업을 순차적으로 연결하는 Chain과 효율적인 Prompt Template 관리 방법을 실습합니다. 3. Memory 기능 활용 챗봇이 이전 대화 맥락을 기억하도록 하는 ConversationBufferMemory 등의 활용법을 익힙니다. 4. Sequential Chains 실습 복잡한 업무 흐름을 처리하기 위해 여러 체인을 순차적 또는 분기적으로 연결해봅니다. 강의 목록 보기"
@@ -1183,7 +904,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class05.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class05.html",
+    "lectureTitle": "Class 5: Vector DB & RAG",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class05.html",
     "content": "강의 교재 - Class 05. Vector DB & RAG 강의로 돌아가기 LECTURE NOTE Vector DB & RAG 데이터 임베딩 및 검색 증강 생성 구현 1. 임베딩(Embeddings) 이해 텍스트를 벡터로 변환하는 임베딩 기술의 원리와 OpenAI Embeddings API 활용법을 배웁니다. 2. Vector DB 구축 (Pinecone, Chroma) 벡터 데이터를 저장하고 고속으로 검색할 수 있는 Vector DB를 구축하고 연동합니다. 3. RAG 파이프라인 구현 문서 로드 → 청킹(Chunking) → 임베딩 → 검색 → 답변 생성으로 이어지는 RAG 파이프라인을 구현합니다. 4. 자체 문서 기반 Q&A 챗봇 회사 매뉴얼이나 제품 소개서 등 자체 문서를 학습하여 답변하는 Q&A 챗봇을 완성합니다. 강의 목록 보기"
@@ -1192,7 +913,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class06.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class06.html",
+    "lectureTitle": "Class 6: 챗봇 개발 I: 프롬프트 엔지니어링",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class06.html",
     "content": "강의 교재 - Class 06. 챗봇 개발 I: 프롬프트 엔지니어링 강의로 돌아가기 LECTURE NOTE 챗봇 개발 I: 프롬프트 엔지니어링 효과적인 프롬프트 설계 및 페르소나 설정 1. 프롬프트 엔지니어링 기초 LLM의 성능을 극대화하기 위한 프롬프트 작성의 기본 원칙과 다양한 기법(Zero-shot, Few-shot 등)을 학습합니다. 2. 페르소나(Persona) 설계 챗봇에게 명확한 역할과 성격을 부여하여 일관된 어조와 태도로 응답하도록 설정합니다. 3. 프롬프트 최적화 및 테스팅 반복적인 테스트와 수정을 통해 프롬프트의 정확도와 안정성을 높이는 최적화 과정을 실습합니다. 4. 탈옥(Jailbreak) 방지 및 안전성 챗봇이 유해하거나 부적절한 응답을 하지 않도록 안전 장치(Safety Guardrails)를 프롬프트에 적용합니다. 강의 목록 보기"
@@ -1201,7 +922,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class07.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class07.html",
+    "lectureTitle": "Class 7: 챗봇 개발 II: Advanced",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class07.html",
     "content": "강의 교재 - Class 07. 챗봇 개발 II: Advanced 강의로 돌아가기 LECTURE NOTE 챗봇 개발 II: Advanced 대화 메모리, Tool 사용, Agent 구현 1. 대화 맥락 유지 (Memory) 심화 장기 기억(Long-term Memory)과 단기 기억을 조합하여 끊김 없는 대화 경험을 제공하는 고급 메모리 전략을 다룹니다. 2. Tool & Function Calling LLM이 외부 계산기, 검색 엔진, API 등을 호출하여 답변의 정확성을 높이는 Function Calling 기술을 익힙니다. 3. Autonomous Agents 구현 목표를 설정하면 스스로 계획을 수립하고 실행하는 자율 에이전트(Autonomous Agent)를 구현해봅니다. 4. 멀티모달 챗봇 (이미지/음성) 텍스트뿐만 아니라 이미지와 음성을 이해하고 생성하는 멀티모달(Multimodal) 챗봇 기능을 확장합니다. 강의 목록 보기"
@@ -1210,7 +931,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class08.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class08.html",
+    "lectureTitle": "Class 8: 멀티채널 연동",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class08.html",
     "content": "강의 교재 - Class 08. 멀티채널 연동 강의로 돌아가기 LECTURE NOTE 멀티채널 연동 Slack, Discord, KakaoTalk 챗봇 통합 1. Slack 봇 만들기 Slack API를 활용하여 업무 자동화 및 알림 기능을 수행하는 슬랙 봇을 개발합니다. 2. Discord 봇 만들기 Discord 커뮤니티 관리를 위한 챗봇을 만들고 서버에 배포하여 운영해봅니다. 3. 카카오톡 채널 연동 카카오 i 오픈빌더 또는 챗봇 API를 활용하여 전 국민이 사용하는 카카오톡 챗봇을 구현합니다. 4. 웹사이트 위젯 통합 기존 웹사이트 우측 하단에 챗봇 위젯을 삽입하고 커스터마이징하는 방법을 배웁니다. 강의 목록 보기"
@@ -1219,7 +940,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class09.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class09.html",
+    "lectureTitle": "Class 9: 성능 최적화 및 운영",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class09.html",
     "content": "강의 교재 - Class 09. 성능 최적화 및 운영 강의로 돌아가기 LECTURE NOTE 성능 최적화 및 운영 응답 속도 개선, 비용 최적화, 모니터링 구축 1. 응답 속도(Latency) 개선 스트리밍(Streaming) 응답 적용 및 캐싱(Caching) 전략을 통해 챗봇의 체감 반응 속도를 높입니다. 2. LLM API 비용 최적화 토큰 사용량을 줄이는 프롬프트 최적화와 더 저렴한 모델 혼용 전략을 통해 운영 비용을 절감합니다. 3. 모니터링 및 로깅 (LangSmith) LangSmith 등의 도구를 사용하여 챗봇의 대화 로그를 추적하고 성능을 지속적으로 모니터링합니다. 4. 유지보수 및 업데이트 사용자 피드백을 반영하여 챗봇을 지속적으로 개선하고 모델 업데이트에 대응하는 운영 전략입니다. 강의 목록 보기"
@@ -1228,7 +949,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     "id": "c11-textbook_app_creator_class10.html",
     "courseId": "c11",
     "courseTitle": "11. AI 앱 크리에이터 (App)",
-    "lectureTitle": "textbook_app_creator_class10.html",
+    "lectureTitle": "Class 10: 캡스톤 프로젝트: 상용 앱 출시",
     "path": "c11_app_creator",
     "file": "textbook_app_creator_class10.html",
     "content": "강의 교재 - Class 10. 캡스톤 프로젝트: 상용 앱 출시 강의로 돌아가기 LECTURE NOTE 캡스톤 프로젝트: 상용 앱 출시 나만의 AI 비즈니스 앱 기획부터 런칭까지 1. 아이디어 구체화 및 기획 해결하고자 하는 문제를 정의하고 AI 기술을 접목한 독창적인 서비스 아이디어를 기획합니다. 2. MVP 개발 및 구현 핵심 기능 위주로 최소 기능 제품(MVP)을 노코드 툴과 LangChain을 활용하여 빠르게 개발합니다. 3. 베타 테스트 및 디버깅 동료 학습자들과 함께 베타 테스트를 진행하며 버그를 수정하고 UI/UX를 개선합니다. 4. 최종 발표 및 데모 데이 완성된 앱을 발표하고 시연하는 데모 데이를 통해 프로젝트 성과를 공유하고 피드백을 받습니다. 강의 목록 보기"
