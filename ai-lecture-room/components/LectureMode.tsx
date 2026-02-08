@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { COURSES, Course, Lecture } from '../data/courses';
+import { SEARCH_INDEX, SearchItem } from '../data/searchIndex';
 
 interface LectureModeProps {
     onBack: () => void;
@@ -7,39 +8,63 @@ interface LectureModeProps {
 
 const LectureMode: React.FC<LectureModeProps> = ({ onBack }) => {
     const [activeCourseId, setActiveCourseId] = useState<string | null>(null);
-    const [selectedLecture, setSelectedLecture] = useState<{ coursePath: string; file: string; title: string } | null>(null);
+    const [selectedLecture, setSelectedLecture] = useState<Lecture & { coursePath: string } | null>(null);
 
-    const toggleCourse = (courseId: string) => {
-        setActiveCourseId(prev => prev === courseId ? null : courseId);
+    // Search State
+    const [searchQuery, setSearchQuery] = useState('');
+    const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+    const toggleCourse = (id: string) => {
+        setActiveCourseId(activeCourseId === id ? null : id);
     };
 
     const handleLectureClick = (course: Course, lecture: Lecture) => {
-        setSelectedLecture({
-            coursePath: course.path,
-            file: lecture.file,
-            title: lecture.title
-        });
+        setSelectedLecture({ ...lecture, coursePath: course.path });
     };
 
-    // Calculate the source URL for the iframe
-    // Assuming the app is served from ai-lecture-room/dist/, we need to go up two levels to access course folders.
-    // URL: ../../c01_basics/filename.html
+    // Search Logic
+    const searchResults = useMemo(() => {
+        if (!searchQuery.trim()) return [];
+
+        const lowerQuery = searchQuery.toLowerCase();
+        return SEARCH_INDEX.filter(item =>
+            item.lectureTitle.toLowerCase().includes(lowerQuery) ||
+            item.content.toLowerCase().includes(lowerQuery)
+        ).slice(0, 50); // Limit results
+    }, [searchQuery]);
+
+    const handleSearchResultClick = (item: SearchItem) => {
+        const course = COURSES.find(c => c.id === item.courseId);
+        if (course) {
+            const lecture = course.lectures.find(l => l.file === item.file);
+            if (lecture) {
+                setActiveCourseId(course.id);
+                handleLectureClick(course, lecture);
+                setSearchQuery(''); // Close search results
+                setIsSearchFocused(false);
+            }
+        }
+    };
+
     const iframeSrc = selectedLecture
         ? `../../${selectedLecture.coursePath}/${selectedLecture.file}`
         : '';
 
     return (
-        <div className="flex h-full w-full bg-gray-900 text-white overflow-hidden animate-in fade-in zoom-in-95 duration-500">
+        <div className="flex w-full h-full bg-gray-900 border-t border-gray-800">
             {/* Sidebar - Course List */}
-            <div className="w-80 flex-shrink-0 bg-gray-950 border-r border-gray-800 flex flex-col">
-                <div className="p-4 border-b border-gray-800 flex justify-between items-center">
-                    <h2 className="text-lg font-bold text-white"><i className="fas fa-book-reader mr-2 text-blue-500"></i>전체 강의</h2>
-                    <button onClick={onBack} className="text-gray-500 hover:text-white transition-colors text-xs uppercase font-bold tracking-wider">
-                        <i className="fas fa-times mr-1"></i> 닫기
+            <div className="w-80 border-r border-gray-800 bg-gray-950 flex flex-col">
+                <div className="p-4 border-b border-gray-800 flex items-center justify-between bg-gray-900">
+                    <h2 className="font-bold text-gray-100 flex items-center gap-2">
+                        <i className="fas fa-layer-group text-blue-500"></i>
+                        전체 강의
+                    </h2>
+                    <button onClick={onBack} className="text-gray-500 hover:text-white text-xs">
+                        <i className="fas fa-times"></i> 닫기
                     </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto p-4 space-y-2 custom-scrollbar">
+                <div className="flex-1 overflow-y-auto p-2 space-y-2 custom-scrollbar relative">
                     {COURSES.map(course => (
                         <div key={course.id} className="rounded-xl overflow-hidden border border-gray-800 bg-gray-900/50">
                             <button
@@ -70,9 +95,59 @@ const LectureMode: React.FC<LectureModeProps> = ({ onBack }) => {
                         </div>
                     ))}
                 </div>
+
+                {/* Search Input Area */}
+                <div className="p-4 border-t border-gray-800 bg-gray-900 relative">
+                    <div className="relative">
+                        <i className="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
+                        <input
+                            type="text"
+                            placeholder="강의 내용 검색..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setIsSearchFocused(true)}
+                            className="w-full bg-gray-950 border border-gray-700 text-gray-200 text-xs rounded-lg pl-9 pr-8 py-2.5 focus:outline-none focus:border-blue-500 transition-colors"
+                        />
+                        {searchQuery && (
+                            <button
+                                onClick={() => setSearchQuery('')}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white"
+                            >
+                                <i className="fas fa-times-circle"></i>
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Search Results Popover */}
+                    {(isSearchFocused || searchQuery) && searchResults.length > 0 && (
+                        <div className="absolute bottom-full left-0 w-full bg-gray-900 border border-gray-700 rounded-t-xl shadow-2xl max-h-96 overflow-y-auto custom-scrollbar z-50">
+                            <div className="p-2 sticky top-0 bg-gray-900 border-b border-gray-800 flex justify-between items-center">
+                                <span className="text-xs font-bold text-blue-400">{searchResults.length}건 발견</span>
+                                <button onClick={() => setIsSearchFocused(false)} className="text-gray-500 hover:text-white"><i className="fas fa-chevron-down"></i></button>
+                            </div>
+                            {searchResults.map((item, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => handleSearchResultClick(item)}
+                                    className="w-full text-left p-3 border-b border-gray-800 last:border-0 hover:bg-gray-800 transition-colors group"
+                                >
+                                    <div className="text-xs font-bold text-gray-300 group-hover:text-blue-400 mb-1">{item.lectureTitle}</div>
+                                    <div className="text-[10px] text-gray-500 mb-1">{item.courseTitle}</div>
+                                    <div className="text-[10px] text-gray-600 line-clamp-2">{item.content.substring(0, 150)}...</div>
+                                </button>
+                            ))}
+                        </div>
+                    )}
+
+                    {(isSearchFocused || searchQuery) && searchQuery && searchResults.length === 0 && (
+                        <div className="absolute bottom-full left-0 w-full bg-gray-900 border border-gray-700 p-4 text-center text-xs text-gray-500 rounded-t-xl">
+                            검색 결과가 없습니다.
+                        </div>
+                    )}
+                </div>
             </div>
 
-            {/* Main Content - Lecture Viewer */}
+            {/* Main Content Viewer */}
             <div className="flex-1 bg-white relative flex flex-col">
                 {selectedLecture ? (
                     <>
