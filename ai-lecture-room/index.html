@@ -19,22 +19,40 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
   </style>
+  <script>
+    window.process = { env: { NODE_ENV: 'production' } };
+    window.global = window;
+
+    function logToScreen(msg) {
+      var el = document.getElementById('debug-output');
+      if (el) el.innerText += '\n' + msg;
+    }
+
+    // Capture resource loading errors (404s)
+    window.addEventListener('error', function (e) {
+      if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+        logToScreen('Resource Error: ' + (e.target.src || e.target.href));
+      } else {
+        logToScreen('Runtime Error: ' + e.message);
+      }
+    }, true);
+
+    window.onunhandledrejection = function (event) {
+      logToScreen('Promise Rejection: ' + event.reason);
+    };
+
+    // Shim console
+    var oldLog = console.log;
+    var oldWarn = console.warn;
+    var oldError = console.error;
+
+    console.log = function () { oldLog.apply(console, arguments); logToScreen('[LOG] ' + Array.from(arguments).join(' ')); };
+    console.warn = function () { oldWarn.apply(console, arguments); logToScreen('[WARN] ' + Array.from(arguments).join(' ')); };
+    console.error = function () { oldError.apply(console, arguments); logToScreen('[ERR] ' + Array.from(arguments).join(' ')); };
+  </script>
 </head>
 
 <body class="bg-gray-900 text-gray-100 overflow-hidden">
-  <script>
-    window.process = { env: { NODE_ENV: 'production' } };
-
-    window.onerror = function (message, source, lineno, colno, error) {
-      alert('Runtime Error: ' + message + '\nSource: ' + source + '\nLine: ' + lineno);
-      document.getElementById('debug-output').innerText += '\nError: ' + message;
-    };
-
-    window.onunhandledrejection = function (event) {
-      alert('Unhandled Promise Rejection: ' + event.reason);
-      document.getElementById('debug-output').innerText += '\nRejection: ' + event.reason;
-    };
-  </script>
   <div id="root">
     <div
       style="display:flex; justify-content:center; align-items:center; height:100vh; flex-direction:column; color:white;">
