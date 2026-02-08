@@ -39,6 +39,10 @@
                     class="w-full flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
                     <i class="fas fa-bullhorn"></i> 공지사항 관리
                 </button>
+                <button onclick="switchTab('lectures')" id="nav-lectures"
+                    class="w-full flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
+                    <i class="fas fa-book"></i> 전체 강의 보기
+                </button>
                 <a href="#"
                     class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-800 rounded-lg transition-colors">
                     <i class="fas fa-chart-bar"></i> 매출 통계 (준비중)
@@ -289,6 +293,31 @@
                     </div>
                 </div>
             </main>
+            </main>
+
+            <!-- Main Section 4: Lecture Repository (New) -->
+            <main id="section-lectures" class="hidden flex-1 overflow-hidden bg-white flex flex-row">
+                <!-- Sidebar: Course List -->
+                <div class="w-80 border-r border-gray-200 bg-gray-50 flex flex-col">
+                    <div class="p-4 border-b border-gray-200 bg-white">
+                        <h3 class="font-bold text-gray-800">강의 목록</h3>
+                        <p class="text-xs text-gray-500 mt-1">전체 12개 과정 바로보기</p>
+                    </div>
+                    <div class="flex-1 overflow-y-auto p-2 space-y-2" id="courseListSidebar">
+                        <!-- Dynamic Course List -->
+                    </div>
+                </div>
+
+                <!-- Main Viewer: Iframe -->
+                <div class="flex-1 bg-gray-100 relative">
+                    <div id="emptyState"
+                        class="absolute inset-0 flex flex-col items-center justify-center text-gray-400">
+                        <i class="fas fa-book-open text-4xl mb-4 text-gray-300"></i>
+                        <p>좌측 목록에서 강의를 선택해주세요.</p>
+                    </div>
+                    <iframe id="lectureFrame" class="w-full h-full border-none hidden" src=""></iframe>
+                </div>
+            </main>
         </div>
     </div>
 
@@ -308,6 +337,7 @@
             onLogin: (user) => {
                 console.log("Admin logged in:", user.email);
                 loadApplications();
+                loadLectures();
             },
             onLogout: () => {
                 alert("로그아웃 되었습니다.");
@@ -328,13 +358,19 @@
             document.getElementById(`nav-${tabName}`).classList.remove('text-slate-300', 'hover:bg-slate-800');
 
             // Section Toggle
-            document.getElementById('section-applications').classList.add('hidden');
-            document.getElementById('section-resources').classList.add('hidden');
-            document.getElementById('section-notices').classList.add('hidden');
+            ['applications', 'resources', 'notices', 'lectures'].forEach(sec => {
+                const el = document.getElementById(`section-${sec}`);
+                if (el) el.classList.add('hidden');
+            });
             document.getElementById(`section-${tabName}`).classList.remove('hidden');
 
             // Title Update
-            const titles = { 'applications': '수강 신청 현황', 'resources': '자료실 관리', 'notices': '공지사항 관리' };
+            const titles = {
+                'applications': '수강 신청 현황',
+                'resources': '자료실 관리',
+                'notices': '공지사항 관리',
+                'lectures': '전체 강의 보기'
+            };
             document.getElementById('pageTitle').innerText = titles[tabName];
 
             // Data Load
@@ -638,6 +674,200 @@
 
         // Initialize with default tab
         // loadApplications(); // Handled by onAuthStateChanged
+
+        // ==========================================
+        // Lecture Repository Logic
+        // ==========================================
+        const COURSES = [
+            {
+                id: 'c01',
+                title: '01. AI 기초 (Basics)',
+                path: 'c01_basics',
+                lectures: [
+                    { title: 'Day 1: AI의 이해와 활용', file: 'textbook_basics_day1.html' }
+                ]
+            },
+            {
+                id: 'c02',
+                title: '02. AI 비즈니스 (Business)',
+                path: 'c02_business',
+                lectures: [
+                    { title: 'Day 1: AI 트렌드와 기회', file: 'textbook_business_day1.html' },
+                    { title: 'Day 2: AI 도입 전략', file: 'textbook_business_day2.html' }
+                ]
+            },
+            {
+                id: 'c03',
+                title: '03. 마스터 클래스 (Master)',
+                path: 'c03_master_class',
+                lectures: [
+                    { title: 'Day 1: 생성형 AI 입문', file: 'day01_lecture.html' },
+                    { title: 'Day 2: 프롬프트 고급', file: 'day02_lecture.html' },
+                    { title: 'Day 3: 이미지 생성', file: 'day03_lecture.html' },
+                    { title: 'Day 4: 비디오/오디오', file: 'day04_lecture.html' },
+                    { title: 'Day 5: 업무 자동화', file: 'day05_lecture.html' },
+                    { title: 'Day 6: 코딩과 개발', file: 'day06_lecture.html' },
+                    { title: 'Day 7: 웹 앱 개발', file: 'day07_lecture.html' },
+                    { title: 'Day 8: 배포 및 운영', file: 'day08_lecture.html' }
+                ]
+            },
+            {
+                id: 'c04',
+                title: '04. AI 심화 (Advanced)',
+                path: 'c04_advanced',
+                lectures: Array.from({ length: 20 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_advanced_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c05',
+                title: '05. AI 마케팅 (Marketing)',
+                path: 'c05_marketing',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_marketing_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c06',
+                title: '06. AI 제조혁신 (Manufacturing)',
+                path: 'c06_manufacturing',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_manufacturing_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c07',
+                title: '07. AI 데이터 분석 (Data)',
+                path: 'c07_data',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_data_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c08',
+                title: '08. AI 영상 제작 (Video)',
+                path: 'c08_video',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_video_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c09',
+                title: '09. AI 리더십 (Leadership)',
+                path: 'c09_leadership',
+                lectures: [
+                    { title: 'Class 01: AI 경영 전략', file: 'textbook_leadership_class01.html' },
+                    { title: 'Class 02: 조직 혁신', file: 'textbook_leadership_class02.html' }
+                ]
+            },
+            {
+                id: 'c10',
+                title: '10. AI 컨설턴트 (Consultant)',
+                path: 'c10_consultant',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_consultant_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c11',
+                title: '11. AI 앱 크리에이터 (App)',
+                path: 'c11_app_creator',
+                lectures: Array.from({ length: 10 }, (_, i) => ({
+                    title: `Class ${String(i + 1).padStart(2, '0')}`,
+                    file: `textbook_app_creator_class${String(i + 1).padStart(2, '0')}.html`
+                }))
+            },
+            {
+                id: 'c12',
+                title: '12. AI 윤리 (Ethics)',
+                path: 'c12_ethics',
+                lectures: [
+                    { title: '저작권 분쟁', file: 'textbook_ethics_copyright.html' },
+                    { title: '프롬프트 보안', file: 'textbook_ethics_prompt.html' },
+                    { title: 'AI 산출물 책임', file: 'textbook_ethics_accountability.html' },
+                    { title: '할루시네이션', file: 'textbook_ethics_hallucination.html' },
+                    { title: 'EU AI Act', file: 'textbook_ethics_eu_act.html' },
+                    { title: '개인정보보호', file: 'textbook_ethics_privacy.html' },
+                    { title: '정보유출 대응', file: 'textbook_ethics_leak.html' }
+                ]
+            }
+        ];
+
+        function loadLectures() {
+            const container = document.getElementById('courseListSidebar');
+            if (container.innerHTML.trim() !== "") return; // Avoid duplicate loading
+
+            const baseStyle = "w-full text-left px-4 py-3 text-sm text-gray-600 hover:text-indigo-600 hover:bg-slate-50 border-l-[3px] border-transparent hover:border-indigo-600 transition-all flex items-center gap-2 truncate";
+
+            COURSES.forEach(course => {
+                // Course Header
+                const courseWrapper = document.createElement('div');
+                courseWrapper.className = 'border-b border-gray-100 last:border-0';
+
+                const courseHeader = document.createElement('button');
+                courseHeader.className = 'w-full px-4 py-3 bg-white hover:bg-gray-50 flex justify-between items-center transition-colors';
+                courseHeader.innerHTML = `
+                    <span class="font-bold text-sm text-gray-800">${course.title}</span>
+                    <i class="fas fa-chevron-down text-xs text-gray-400 transform transition-transform" id="icon-${course.id}"></i>
+                `;
+
+                // Toggle Logic
+                courseHeader.onclick = () => {
+                    const list = document.getElementById(`list-${course.id}`);
+                    const icon = document.getElementById(`icon-${course.id}`);
+                    list.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                };
+                courseWrapper.appendChild(courseHeader);
+
+                // Lecture List (Hidden by default)
+                const listDiv = document.createElement('div');
+                listDiv.id = `list-${course.id}`;
+                listDiv.className = 'hidden bg-slate-50/50 py-2 transition-all';
+
+                course.lectures.forEach(lecture => {
+                    const btn = document.createElement('button');
+                    btn.className = baseStyle;
+                    btn.innerHTML = `<i class="fas fa-play-circle text-xs opacity-50"></i> ${lecture.title}`;
+                    btn.onclick = () => viewLecture(course.path, lecture.file, btn);
+                    listDiv.appendChild(btn);
+                });
+                courseWrapper.appendChild(listDiv);
+                container.appendChild(courseWrapper);
+            });
+        }
+
+        window.viewLecture = (path, file, btn) => {
+            // Highlight active button
+            document.querySelectorAll('#courseListSidebar button').forEach(b => {
+                b.classList.remove('bg-indigo-50', 'text-indigo-700', 'border-indigo-600', 'font-medium');
+                b.classList.add('border-transparent', 'text-gray-600');
+            });
+            btn.classList.add('bg-indigo-50', 'text-indigo-700', 'border-indigo-600', 'font-medium');
+            btn.classList.remove('border-transparent', 'text-gray-600');
+
+            // Show iframe
+            const frame = document.getElementById('lectureFrame');
+            const empty = document.getElementById('emptyState');
+
+            // Add loading state
+            empty.innerHTML = '<i class="fas fa-circle-notch fa-spin text-4xl text-indigo-500 mb-4"></i><p>강의 페이지를 불러오는 중입니다...</p>';
+            empty.classList.remove('hidden');
+            frame.classList.add('hidden');
+
+            // Set source and handle load
+            frame.src = `${path}/${file}`;
+            frame.onload = () => {
+                empty.classList.add('hidden');
+                frame.classList.remove('hidden');
+            };
+        }
     </script>
 </body>
 
