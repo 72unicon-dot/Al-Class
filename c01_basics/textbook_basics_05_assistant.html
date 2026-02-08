@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 AI 비서 - AI 기초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.7;
+        }
+
+        .textbook-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .textbook-content p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .textbook-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .textbook-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="lecture_basics_day1.html"
+                class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600">
+                <i class="fas fa-print"></i>
+            </button>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-10 md:p-14">
+                <span
+                    class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">SESSION
+                    05</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">나만의 AI 비서 만들기 & 마무리</h1>
+                <p class="text-white/80 text-lg font-light">Custom Instructions 활용과 윤리적 사용</p>
+            </div>
+
+            <div class="p-10 md:p-14 textbook-content">
+                <h3>5. 나만의 AI 비서 만들기 & 마무리</h3>
+                <p>나의 업무 스타일을 기억하는 Custom Instructions 기능과 나만의 GPTs를 활용해 업무 효율을 극대화합니다.</p>
+                <ul>
+                    <li><strong>ChatGPT 맞춤 설정(Custom Instructions):</strong> 매번 설명하지 않아도 나를 이해하도록 AI를 설정하는 법을 배웁니다.</li>
+                    <li><strong>나만의 GPTs 만들기 기초 실습:</strong> 코딩 없이 나만의 목적에 맞는 AI 챗봇을 만드는 과정을 경험합니다.</li>
+                    <li><strong>마무리: 저작권 및 윤리적 유의사항:</strong> AI 사용 시 주의해야 할 저작권 이슈와 보안 사항을 점검합니다.</li>
+                </ul>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-between items-center px-10 pb-10">
+                <a href="textbook_basics_04_analysis.html"
+                    class="px-6 py-3 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> 이전 세션
+                </a>
+                <a href="lecture_basics_day1.html"
+                    class="px-6 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition flex items-center gap-2">
+                    강의 목록으로 <i class="fas fa-list"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

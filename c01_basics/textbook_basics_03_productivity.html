@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 시간 단축 - AI 기초</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.7;
+        }
+
+        .textbook-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .textbook-content p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .textbook-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .textbook-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="lecture_basics_day1.html"
+                class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+            </a>
+            <button onclick="window.print()" class="text-slate-400 hover:text-slate-600">
+                <i class="fas fa-print"></i>
+            </button>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white p-10 md:p-14">
+                <span
+                    class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">SESSION
+                    03</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">AI로 업무 시간 3배 단축하기</h1>
+                <p class="text-white/80 text-lg font-light">이메일, 보고서, 엑셀 등 실무 자동화 실습</p>
+            </div>
+
+            <div class="p-10 md:p-14 textbook-content">
+                <h3>3. AI로 업무 시간 3배 단축하기</h3>
+                <p>이메일 작성, 회의록 요약, 보고서 초안 등 실무에서 즉시 활용 가능한 자동화 방법을 실습합니다.</p>
+                <ul>
+                    <li><strong>이메일/공문 자동 작성:</strong> 상황과 목적만 입력하여 비즈니스 매너를 갖춘 이메일을 3초 만에 작성합니다.</li>
+                    <li><strong>긴 문서 요약 및 핵심 내용 추출:</strong> PDF나 긴 아티클을 분석하여 핵심 요약 및 Action Item을 도출합니다.</li>
+                    <li><strong>엑셀 수식/함수 생성 도우미 활용:</strong> 복잡한 엑셀 함수를 AI에게 물어보고 바로 적용하는 법을 배웁니다.</li>
+                </ul>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-between items-center px-10 pb-10">
+                <a href="textbook_basics_02_prompt.html"
+                    class="px-6 py-3 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> 이전 세션
+                </a>
+                <a href="textbook_basics_04_analysis.html"
+                    class="px-6 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 transition flex items-center gap-2">
+                    다음 세션 <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
