@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
 
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 01. RAG 아키텍처 & Vector DB - AI 심화 개발</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 01. RAG 아키텍처 &amp; Vector DB - AI 심화 개발</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
         body {
             font-family: 'Pretendard', sans-serif;
         }
@@ -22,125 +22,95 @@
         }
     </style>
 </head>
-
 <body class="bg-slate-50 text-slate-900">
-    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
-        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
-            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
-            <a href="classroom_advanced.html"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all"><i
-                    class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
-        </div>
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
-            <div class="space-y-2">
-                <span class="text-6xl font-black opacity-20 block mb-[-10px]">01</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">RAG 아키텍처 & Vector DB</h1>
-                <p class="text-xl opacity-90 font-light">고급 검색 증강 생성 시스템의 이해</p>
-            </div>
-        </div>
-    </header>
-    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-        <section class="space-y-6">
-            <div
-                class="inline-flex items-center gap-3 bg-indigo-600 text-white px-5 py-2 rounded-full shadow-lg shadow-indigo-200">
-                <span class="font-bold text-xs tracking-widest">PART 1</span>
-                <h2 class="text-lg font-bold">RAG Fundamentals</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Item 1 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-database text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">Vector Store 개념 및 종류</h3>
-                            <p class="text-slate-500 text-sm mb-4">Pinecone, Milvus, ChromaDB 등 주요 벡터 데이터베이스의 특징과 선택 기준을
+<header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+<div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+<span class="text-sm text-white/90 font-medium hidden md:inline" id="userEmailDisplay"></span>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all" href="classroom_advanced.html"><i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
+</div>
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+<div class="space-y-2">
+<span class="text-6xl font-black opacity-20 block mb-[-10px]">01</span>
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">RAG 아키텍처 &amp; Vector DB</h1>
+<p class="text-xl opacity-90 font-light">고급 검색 증강 생성 시스템의 이해</p>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+<section class="space-y-6">
+<div class="inline-flex items-center gap-3 bg-indigo-600 text-white px-5 py-2 rounded-full shadow-lg shadow-indigo-200">
+<span class="font-bold text-xs tracking-widest">PART 1</span>
+<h2 class="text-lg font-bold">RAG Fundamentals</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Item 1 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+<i class="fas fa-database text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">Vector Store 개념 및 종류</h3>
+<p class="text-slate-500 text-sm mb-4">Pinecone, Milvus, ChromaDB 등 주요 벡터 데이터베이스의 특징과 선택 기준을
                                 학습합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-project-diagram text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">임베딩 모델 선택 가이드</h3>
-                            <p class="text-slate-500 text-sm mb-4">OpenAI, HuggingFace 등 다양한 임베딩 모델의 성능과 비용을 분석하고 최적의
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class01.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+<i class="fas fa-project-diagram text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">임베딩 모델 선택 가이드</h3>
+<p class="text-slate-500 text-sm mb-4">OpenAI, HuggingFace 등 다양한 임베딩 모델의 성능과 비용을 분석하고 최적의
                                 모델을 선정합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-search text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">인덱싱 파이프라인 구축</h3>
-                            <p class="text-slate-500 text-sm mb-4">문서 수집부터 임베딩 저장까지의 전체 인덱싱 자동화 파이프라인을 설계합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-tags text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">메타데이터 관리 전략</h3>
-                            <p class="text-slate-500 text-sm mb-4">정확한 검색 필터링을 위한 효율적인 메타데이터 스키마 설계 및 관리 방법을 다룹니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div id="completeButtonContainer"></div>
-    </div>
-    <script
-        type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; addCompleteButton(user.uid, 'advanced', 'class01', 'completeButtonContainer'); } });</script>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class01.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+<i class="fas fa-search text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">인덱싱 파이프라인 구축</h3>
+<p class="text-slate-500 text-sm mb-4">문서 수집부터 임베딩 저장까지의 전체 인덱싱 자동화 파이프라인을 설계합니다.</p>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class01.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-indigo-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-indigo-50 text-indigo-600 p-3 rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+<i class="fas fa-tags text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">메타데이터 관리 전략</h3>
+<p class="text-slate-500 text-sm mb-4">정확한 검색 필터링을 위한 효율적인 메타데이터 스키마 설계 및 관리 방법을 다룹니다.</p>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class01.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="max-w-4xl mx-auto px-6 mb-12">
+<div id="completeButtonContainer"></div>
+</div>
+<script type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { document.getElementById('userEmailDisplay').innerText = user.email + "님 환영합니다"; addCompleteButton(user.uid, 'advanced', 'class01', 'completeButtonContainer'); } });</script>
 </body>
-
 </html>

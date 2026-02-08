@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
 
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 06. AI 에이전트 기초 - AI 심화 개발</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 06. AI 에이전트 기초 - AI 심화 개발</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
         body {
             font-family: 'Pretendard', sans-serif;
         }
@@ -22,122 +22,92 @@
         }
     </style>
 </head>
-
 <body class="bg-slate-50 text-slate-900">
-    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
-            <div class="space-y-2">
-                <span class="text-6xl font-black opacity-20 block mb-[-10px]">06</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">AI 에이전트 기초</h1>
-                <p class="text-xl opacity-90 font-light">ReAct 패턴과 자율 행동 이해</p>
-            </div>
-            <a href="classroom_advanced.html"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all"><i
-                    class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
-        </div>
-    </header>
-    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-        <section class="space-y-6">
-            <div
-                class="inline-flex items-center gap-3 bg-sky-600 text-white px-5 py-2 rounded-full shadow-lg shadow-sky-200">
-                <span class="font-bold text-xs tracking-widest">PART 2</span>
-                <h2 class="text-lg font-bold">Agents Fundamentals</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Item 1 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-robot text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">에이전트 vs 챗봇 차이</h3>
-                            <p class="text-slate-500 text-sm mb-4">단순 응답을 넘어서 도구를 사용하고 환경과 상호작용하는 에이전트의 개념을 정의합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-brain text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">ReAct 패턴 이해</h3>
-                            <p class="text-slate-500 text-sm mb-4">Reasoning(추론)과 Acting(행동)을 결합하여 복잡한 문제를 해결하는 ReAct
+<header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+<div class="space-y-2">
+<span class="text-6xl font-black opacity-20 block mb-[-10px]">06</span>
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">AI 에이전트 기초</h1>
+<p class="text-xl opacity-90 font-light">ReAct 패턴과 자율 행동 이해</p>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all" href="classroom_advanced.html"><i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">강의실 홈으로</span></a>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+<section class="space-y-6">
+<div class="inline-flex items-center gap-3 bg-sky-600 text-white px-5 py-2 rounded-full shadow-lg shadow-sky-200">
+<span class="font-bold text-xs tracking-widest">PART 2</span>
+<h2 class="text-lg font-bold">Agents Fundamentals</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Item 1 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
+<i class="fas fa-robot text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">에이전트 vs 챗봇 차이</h3>
+<p class="text-slate-500 text-sm mb-4">단순 응답을 넘어서 도구를 사용하고 환경과 상호작용하는 에이전트의 개념을 정의합니다.</p>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class06.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
+<i class="fas fa-brain text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">ReAct 패턴 이해</h3>
+<p class="text-slate-500 text-sm mb-4">Reasoning(추론)과 Acting(행동)을 결합하여 복잡한 문제를 해결하는 ReAct
                                 프롬프팅 기법을 학습합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-sync text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">Thought-Action-Observation 루프</h3>
-                            <p class="text-slate-500 text-sm mb-4">에이전트가 사고하고, 행동하고, 결과를 관찰하여 다음 행동을 결정하는 실행 루프를 구현해봅니다.
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class06.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
+<i class="fas fa-sync text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">Thought-Action-Observation 루프</h3>
+<p class="text-slate-500 text-sm mb-4">에이전트가 사고하고, 행동하고, 결과를 관찰하여 다음 행동을 결정하는 실행 루프를 구현해봅니다.
                             </p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-sitemap text-2xl"></i></div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">에이전트 아키텍처 예시</h3>
-                            <p class="text-slate-500 text-sm mb-4">초기 에이전트 모델부터 최신 자율 에이전트 구조까지 다양한 아키텍처 패턴을 분석합니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div id="completeButtonContainer"></div>
-    </div>
-    <script
-        type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { addCompleteButton(user.uid, 'advanced', 'class06', 'completeButtonContainer'); } });</script>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class06.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-sky-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-sky-50 text-sky-600 p-3 rounded-2xl group-hover:bg-sky-600 group-hover:text-white transition-colors">
+<i class="fas fa-sitemap text-2xl"></i></div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">에이전트 아키텍처 예시</h3>
+<p class="text-slate-500 text-sm mb-4">초기 에이전트 모델부터 최신 자율 에이전트 구조까지 다양한 아키텍처 패턴을 분석합니다.</p>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_advanced_class06.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-lg hover:bg-sky-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="max-w-4xl mx-auto px-6 mb-12">
+<div id="completeButtonContainer"></div>
+</div>
+<script type="module">import { initApp } from '../js/app-core.js'; import { addCompleteButton } from '../js/progress-ui.js'; initApp({ requireAuth: true, onLogin: (user) => { addCompleteButton(user.uid, 'advanced', 'class06', 'completeButtonContainer'); } });</script>
 </body>
-
 </html>

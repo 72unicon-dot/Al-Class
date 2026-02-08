@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - Class 05. Vector DB & RAG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="lecture_app_creator_class05.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+            </a>
+            <div class="flex gap-2">
+                 <button onclick="window.print()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">Vector DB & RAG</h1>
+                <p class="text-white/80 text-lg font-light">데이터 임베딩 및 검색 증강 생성 구현</p>
+            </div>
+
+            <div class="p-10 md:p-14 textbook-content">
+                <h3>1. 임베딩(Embeddings) 이해</h3>
+<p>텍스트를 벡터로 변환하는 임베딩 기술의 원리와 OpenAI Embeddings API 활용법을
+                                배웁니다.</p>
+<h3>2. Vector DB 구축 (Pinecone, Chroma)</h3>
+<p>벡터 데이터를 저장하고 고속으로 검색할 수 있는 Vector DB를 구축하고 연동합니다.</p>
+<h3>3. RAG 파이프라인 구현</h3>
+<p>문서 로드 → 청킹(Chunking) → 임베딩 → 검색 → 답변 생성으로 이어지는 RAG
+                                파이프라인을 구현합니다.</p>
+<h3>4. 자체 문서 기반 Q&A 챗봇</h3>
+<p>회사 매뉴얼이나 제품 소개서 등 자체 문서를 학습하여 답변하는 Q&A 챗봇을 완성합니다.</p>
+
+            </div>
+    
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <a href="lecture_app_creator_class05.html" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition">
+                    강의 목록 보기
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

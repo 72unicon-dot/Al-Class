@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
 
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 04. 딥러닝 불량 탐지 실습 - 제조/생산 특화</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 04. 딥러닝 불량 탐지 실습 - 제조/생산 특화</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
         body {
             font-family: 'Pretendard', sans-serif;
             scroll-behavior: smooth;
@@ -23,142 +23,108 @@
         }
     </style>
 </head>
-
 <body class="bg-slate-50 text-slate-900">
-    <header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
-        <div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
-            <span id="userEmailDisplay" class="text-sm text-white/90 font-medium hidden md:inline"></span>
-            <a href="classroom_manufacturing.html"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all">
-                <i class="fas fa-arrow-left"></i>
-                <span class="hidden sm:inline">강의실 홈으로</span>
-            </a>
-        </div>
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
-            <div class="space-y-2">
-                <span class="text-6xl font-black opacity-20 block mb-[-10px]">04</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">딥러닝 불량 탐지</h1>
-                <p class="text-xl opacity-90 font-light">실제 제조 결함 데이터를 활용한 모델링</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-        <section class="space-y-6">
-            <div
-                class="inline-flex items-center gap-3 bg-purple-600 text-white px-5 py-2 rounded-full shadow-lg shadow-purple-200">
-                <span class="font-bold text-xs tracking-widest">PART 4</span>
-                <h2 class="text-lg font-bold">딥러닝 모델 실습</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Item 1 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-search-plus text-2xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">YOLO 객체 탐지</h3>
-                            <p class="text-slate-500 text-sm mb-4">You Only Look Once(YOLO) 모델을 사용하여 실시간으로 불량 위치를 탐지합니다.
+<header class="gradient-bg text-white py-12 px-8 relative overflow-hidden">
+<div class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-3 z-20">
+<span class="text-sm text-white/90 font-medium hidden md:inline" id="userEmailDisplay"></span>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white text-sm font-semibold rounded-full border border-white/30 hover:bg-white/30 transition-all" href="classroom_manufacturing.html">
+<i class="fas fa-arrow-left"></i>
+<span class="hidden sm:inline">강의실 홈으로</span>
+</a>
+</div>
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end relative z-10">
+<div class="space-y-2">
+<span class="text-6xl font-black opacity-20 block mb-[-10px]">04</span>
+<h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">딥러닝 불량 탐지</h1>
+<p class="text-xl opacity-90 font-light">실제 제조 결함 데이터를 활용한 모델링</p>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+<section class="space-y-6">
+<div class="inline-flex items-center gap-3 bg-purple-600 text-white px-5 py-2 rounded-full shadow-lg shadow-purple-200">
+<span class="font-bold text-xs tracking-widest">PART 4</span>
+<h2 class="text-lg font-bold">딥러닝 모델 실습</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Item 1 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+<i class="fas fa-search-plus text-2xl"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">YOLO 객체 탐지</h3>
+<p class="text-slate-500 text-sm mb-4">You Only Look Once(YOLO) 모델을 사용하여 실시간으로 불량 위치를 탐지합니다.
                             </p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-tags text-2xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">불량 유형 분류</h3>
-                            <p class="text-slate-500 text-sm mb-4">찍힘, 긁힘, 이물질 등 다양한 불량 유형을 자동으로 분류하는 모델을 만듭니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-exclamation-triangle text-2xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">Anomaly Detection</h3>
-                            <p class="text-slate-500 text-sm mb-4">정상 데이터만으로 학습하여 처음 보는 불량 유형도 탐지할 수 있는 이상 탐지 기법을 배웁니다.
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_manufacturing_class04.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+<i class="fas fa-tags text-2xl"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">불량 유형 분류</h3>
+<p class="text-slate-500 text-sm mb-4">찍힘, 긁힘, 이물질 등 다양한 불량 유형을 자동으로 분류하는 모델을 만듭니다.</p>
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_manufacturing_class04.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+<i class="fas fa-exclamation-triangle text-2xl"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">Anomaly Detection</h3>
+<p class="text-slate-500 text-sm mb-4">정상 데이터만으로 학습하여 처음 보는 불량 유형도 탐지할 수 있는 이상 탐지 기법을 배웁니다.
                             </p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div
-                    class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
-                    <div class="flex items-start gap-4">
-                        <div
-                            class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-check-double text-2xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-2">성능 평가 및 최적화</h3>
-                            <p class="text-slate-500 text-sm mb-4">Precision, Recall, F1-Score 등 평가지표를 이해하고 모델의 정확도를
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_manufacturing_class04.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white p-8 rounded-3xl border border-slate-100 card-shadow hover:border-purple-200 transition-all group">
+<div class="flex items-start gap-4">
+<div class="bg-purple-50 text-purple-600 p-3 rounded-2xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+<i class="fas fa-check-double text-2xl"></i>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-2">성능 평가 및 최적화</h3>
+<p class="text-slate-500 text-sm mb-4">Precision, Recall, F1-Score 등 평가지표를 이해하고 모델의 정확도를
                                 높입니다.</p>
-                            <div class="flex gap-2">
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors"><i
-                                        class="fas fa-book-reader"></i> 강의 보기</a>
-                                <a href="/ai-lecture-room/dist/index.html" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors"><i
-                                        class="fas fa-play-circle"></i> 강의 듣기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div id="completeButtonContainer"></div>
-    </div>
-
-    <footer class="bg-slate-900 text-white py-12 px-6 mt-20 text-center">
-        <h4 class="text-xl font-bold mb-2">AI Manufacturing Specialist</h4>
-        <p class="text-slate-500 text-sm">&copy; 2026 AI 제조/생산 특화 과정. All Rights Reserved.</p>
-    </footer>
-
-    <script type="module">
+<div class="flex gap-2">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-200 transition-colors" href="textbook_manufacturing_class04.html"><i class="fas fa-book-reader"></i> 강의 보기</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm font-bold rounded-lg hover:bg-purple-700 transition-colors" href="/ai-lecture-room/dist/index.html" target="_blank"><i class="fas fa-play-circle"></i> 강의 듣기</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="max-w-4xl mx-auto px-6 mb-12">
+<div id="completeButtonContainer"></div>
+</div>
+<footer class="bg-slate-900 text-white py-12 px-6 mt-20 text-center">
+<h4 class="text-xl font-bold mb-2">AI Manufacturing Specialist</h4>
+<p class="text-slate-500 text-sm">© 2026 AI 제조/생산 특화 과정. All Rights Reserved.</p>
+</footer>
+<script type="module">
         import { initApp } from '../js/app-core.js';
         import { addCompleteButton } from '../js/progress-ui.js';
         initApp({
@@ -171,5 +137,4 @@
         });
     </script>
 </body>
-
 </html>

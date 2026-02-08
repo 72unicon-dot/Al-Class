@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 교재 - Class 09. 성능 최적화 및 운영</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
+        .textbook-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .textbook-content p { margin-bottom: 1rem; color: #475569; }
+        .textbook-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <a href="lecture_app_creator_class09.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
+                <i class="fas fa-arrow-left"></i> 강의로 돌아가기
+            </a>
+            <div class="flex gap-2">
+                 <button onclick="window.print()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white p-10 md:p-14">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-4 backdrop-blur-sm tracking-wider">LECTURE NOTE</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-2">성능 최적화 및 운영</h1>
+                <p class="text-white/80 text-lg font-light">응답 속도 개선, 비용 최적화, 모니터링 구축</p>
+            </div>
+
+            <div class="p-10 md:p-14 textbook-content">
+                <h3>1. 응답 속도(Latency) 개선</h3>
+<p>스트리밍(Streaming) 응답 적용 및 캐싱(Caching) 전략을 통해 챗봇의 체감 반응
+                                속도를 높입니다.</p>
+<h3>2. LLM API 비용 최적화</h3>
+<p>토큰 사용량을 줄이는 프롬프트 최적화와 더 저렴한 모델 혼용 전략을 통해 운영 비용을
+                                절감합니다.</p>
+<h3>3. 모니터링 및 로깅 (LangSmith)</h3>
+<p>LangSmith 등의 도구를 사용하여 챗봇의 대화 로그를 추적하고 성능을 지속적으로
+                                모니터링합니다.</p>
+<h3>4. 유지보수 및 업데이트</h3>
+<p>사용자 피드백을 반영하여 챗봇을 지속적으로 개선하고 모델 업데이트에 대응하는 운영 전략입니다.</p>
+
+            </div>
+    
+            <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+                <a href="lecture_app_creator_class09.html" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition">
+                    강의 목록 보기
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
