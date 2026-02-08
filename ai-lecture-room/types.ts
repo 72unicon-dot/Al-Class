@@ -8,7 +8,8 @@ export interface SlideState {
 export enum ViewMode {
   SLIDE = 'SLIDE',
   SPLIT = 'SPLIT',
-  PRACTICE = 'PRACTICE'
+  PRACTICE = 'PRACTICE',
+  LECTURE = 'LECTURE'
 }
 
 export interface ChatMessage {

@@ -11,6 +11,8 @@ import LectureNotes from './components/LectureNotes';
 import LiveSubtitles from './components/LiveSubtitles';
 import LandingPage from './components/LandingPage';
 
+import LectureMode from './components/LectureMode';
+
 const App: React.FC = () => {
   const [isEntered, setIsEntered] = useState(false); // 강의실 입장 상태 관리
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.SLIDE);
@@ -24,11 +26,11 @@ const App: React.FC = () => {
   const [showSubtitles, setShowSubtitles] = useState(false);
   const [lectureNotes, setLectureNotes] = useState("");
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+
   const [activeResource, setActiveResource] = useState<Resource | null>(null);
   const [splitRatio, setSplitRatio] = useState(50);
   const [isResizing, setIsResizing] = useState(false);
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoInputRef = useRef<HTMLInputElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
@@ -44,13 +46,13 @@ const App: React.FC = () => {
   // AI 자막 상태 변화 감지 로직
   useEffect(() => {
     if (!isEntered) return;
-    
+
     // 1. 자막이 켜질 때 (마이크 ON)
     if (prevShowSubtitles.current === false && showSubtitles === true) {
       setLectureNotes("");
       setShowNotepad(true);
     }
-    
+
     // 2. 자막이 꺼질 때 (마이크 OFF)
     if (prevShowSubtitles.current === true && showSubtitles === false) {
       if (lectureNotes.trim().length > 0) {
@@ -71,12 +73,12 @@ const App: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     const now = new Date();
-    const timestamp = `${now.getFullYear()}${now.getMonth()+1}${now.getDate()}_${now.getHours()}${now.getMinutes()}`;
+    const timestamp = `${now.getFullYear()}${now.getMonth() + 1}${now.getDate()}_${now.getHours()}${now.getMinutes()}`;
     link.href = url;
     link.download = `김사부_강의노트_${timestamp}.txt`;
     link.click();
     URL.revokeObjectURL(url);
-    
+
     setLectureNotes("");
     alert("강의 노트 저장 완료! 다음 강의를 위해 메모장이 초기화되었습니다.");
   };
@@ -137,7 +139,7 @@ const App: React.FC = () => {
     if (file) {
       const url = URL.createObjectURL(file);
       const extension = file.name.split('.').pop()?.toLowerCase() || '';
-      
+
       if (fileCategory === 'video') {
         setActiveResource({ id: 'l-v-' + Date.now(), type: 'video', title: file.name, description: '로컬 영상', link: url, isLocal: true });
       } else if (fileCategory === 'image') {
@@ -154,7 +156,7 @@ const App: React.FC = () => {
   const getYoutubeEmbedUrl = (url: string) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
-    return match && match[2].length === 11 ? `https://www.youtube-nocookie.com/embed/${match[match.length-1]}?autoplay=1` : url;
+    return match && match[2].length === 11 ? `https://www.youtube-nocookie.com/embed/${match[match.length - 1]}?autoplay=1` : url;
   };
 
   // 강의실 입장 애니메이션을 위해 입장 상태가 바뀔 때 전체 화면 여부 확인 가능
@@ -164,6 +166,29 @@ const App: React.FC = () => {
 
   if (!isEntered) {
     return <LandingPage onEnter={enterLectureHall} />;
+  }
+
+  if (viewMode === ViewMode.LECTURE) {
+    return (
+      <div className="flex h-screen w-screen bg-gray-900 text-white font-sans overflow-hidden">
+        {/* Sidebar for Lecture Mode */}
+        <div className="w-20 bg-gray-950 border-r border-gray-800 flex flex-col items-center py-8 gap-6 z-[100]">
+          <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-xl shadow-blue-900/30 mb-4 cursor-pointer" onClick={() => setIsEntered(false)}>
+            <i className="fas fa-layer-group text-xl"></i>
+          </div>
+          <nav className="flex flex-col gap-4">
+            <button onClick={() => setViewMode(ViewMode.LECTURE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.LECTURE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="강의 모드"><i className="fas fa-book text-xl"></i></button>
+            <button onClick={() => setViewMode(ViewMode.SLIDE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.SLIDE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="슬라이드 모드"><i className="fas fa-desktop text-xl"></i></button>
+            <button onClick={() => setViewMode(ViewMode.SPLIT)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.SPLIT ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="분할 화면 모드"><i className="fas fa-columns text-xl"></i></button>
+            <button onClick={() => setViewMode(ViewMode.PRACTICE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.PRACTICE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="실습 전용 모드"><i className="fas fa-laptop-code text-xl"></i></button>
+          </nav>
+        </div>
+
+        <div className="flex-1 flex flex-col overflow-hidden relative">
+          <LectureMode onBack={() => setViewMode(ViewMode.SLIDE)} />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -178,6 +203,7 @@ const App: React.FC = () => {
           <i className="fas fa-layer-group text-xl"></i>
         </div>
         <nav className="flex flex-col gap-4">
+          <button onClick={() => setViewMode(ViewMode.LECTURE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.LECTURE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="강의 모드"><i className="fas fa-book text-xl"></i></button>
           <button onClick={() => setViewMode(ViewMode.SLIDE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.SLIDE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="슬라이드 모드"><i className="fas fa-desktop text-xl"></i></button>
           <button onClick={() => setViewMode(ViewMode.SPLIT)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.SPLIT ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="분할 화면 모드"><i className="fas fa-columns text-xl"></i></button>
           <button onClick={() => setViewMode(ViewMode.PRACTICE)} className={`p-4 rounded-2xl transition-all ${viewMode === ViewMode.PRACTICE ? 'bg-gray-800 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`} title="실습 전용 모드"><i className="fas fa-laptop-code text-xl"></i></button>
@@ -200,22 +226,22 @@ const App: React.FC = () => {
             <span className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">Smart Interactive System</span>
           </div>
           <div className="flex items-center gap-4">
-             <LectureRecorder />
-             <button onClick={toggleFullscreen} className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 text-gray-400 hover:text-white transition-all"><i className={`fas ${isFullscreen ? 'fa-compress' : 'fa-expand'}`}></i></button>
-             
-             <div className="flex items-center gap-2 bg-gray-950 p-1.5 rounded-2xl border border-gray-800 shadow-inner">
-               <button 
-                 onClick={() => setShowSubtitles(!showSubtitles)} 
-                 className={`flex items-center gap-2 px-4 py-1.5 rounded-xl text-[10px] font-black transition-all ${showSubtitles ? 'bg-red-600 text-white animate-pulse' : 'bg-transparent text-gray-500 hover:text-gray-300'}`}
-               >
-                 <i className={`fas ${showSubtitles ? 'fa-microphone' : 'fa-microphone-alt-slash'}`}></i>
-                 AI 자막 {showSubtitles ? 'ON' : 'OFF'}
-               </button>
-               <button onClick={() => setViewMode(viewMode === ViewMode.SLIDE ? ViewMode.SPLIT : ViewMode.SLIDE)} className={`px-6 py-1.5 rounded-xl text-[10px] font-black transition-all border ${viewMode !== ViewMode.SLIDE ? 'bg-red-500/10 border-red-500 text-red-500' : 'bg-blue-600 border-blue-500 text-white'}`}>
-                 <i className={`fas ${viewMode !== ViewMode.SLIDE ? 'fa-stop' : 'fa-laptop-code'} mr-2`}></i>
-                 {viewMode !== ViewMode.SLIDE ? '강의 모드' : '실습 시작'}
-               </button>
-             </div>
+            <LectureRecorder />
+            <button onClick={toggleFullscreen} className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 text-gray-400 hover:text-white transition-all"><i className={`fas ${isFullscreen ? 'fa-compress' : 'fa-expand'}`}></i></button>
+
+            <div className="flex items-center gap-2 bg-gray-950 p-1.5 rounded-2xl border border-gray-800 shadow-inner">
+              <button
+                onClick={() => setShowSubtitles(!showSubtitles)}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-xl text-[10px] font-black transition-all ${showSubtitles ? 'bg-red-600 text-white animate-pulse' : 'bg-transparent text-gray-500 hover:text-gray-300'}`}
+              >
+                <i className={`fas ${showSubtitles ? 'fa-microphone' : 'fa-microphone-alt-slash'}`}></i>
+                AI 자막 {showSubtitles ? 'ON' : 'OFF'}
+              </button>
+              <button onClick={() => setViewMode(viewMode === ViewMode.SLIDE ? ViewMode.SPLIT : ViewMode.SLIDE)} className={`px-6 py-1.5 rounded-xl text-[10px] font-black transition-all border ${viewMode !== ViewMode.SLIDE ? 'bg-red-500/10 border-red-500 text-red-500' : 'bg-blue-600 border-blue-500 text-white'}`}>
+                <i className={`fas ${viewMode !== ViewMode.SLIDE ? 'fa-stop' : 'fa-laptop-code'} mr-2`}></i>
+                {viewMode !== ViewMode.SLIDE ? '강의 모드' : '실습 시작'}
+              </button>
+            </div>
           </div>
         </header>
 
@@ -236,10 +262,10 @@ const App: React.FC = () => {
                   <PDFViewer url={fileData?.url || null} fileName={fileData?.name || ''} fileType={fileData?.type || ''} isPracticeMode={viewMode === ViewMode.SPLIT} currentPage={currentPage} zoom={zoom} onPageChange={setCurrentPage} onZoomChange={setZoom} onUploadClick={() => fileInputRef.current?.click()} />
                 )}
                 {showNotepad && (
-                  <LectureNotes 
-                    notes={lectureNotes} 
-                    setNotes={setLectureNotes} 
-                    onClose={() => setShowNotepad(false)} 
+                  <LectureNotes
+                    notes={lectureNotes}
+                    setNotes={setLectureNotes}
+                    onClose={() => setShowNotepad(false)}
                     onSave={triggerSaveNotes}
                   />
                 )}
@@ -258,18 +284,18 @@ const App: React.FC = () => {
               </div>
             )}
           </div>
-          
+
           <LiveSubtitles isActive={showSubtitles} onSentenceComplete={handleSubtitleComplete} />
           <CameraFeed isActive={showCamera} />
         </main>
 
         <footer className="h-10 bg-gray-950 border-t border-gray-800 flex items-center px-10 justify-between text-[9px] text-gray-500 font-bold uppercase tracking-widest">
           <div className="flex items-center gap-4">
-             <div>SERVER: OPTIMIZED</div>
-             <div className="flex items-center gap-2">
-               <div className={`w-1.5 h-1.5 rounded-full ${showSubtitles ? 'bg-red-500 animate-pulse' : 'bg-gray-700'}`}></div>
-               <span className={showSubtitles ? 'text-red-500' : 'text-gray-600'}>{showSubtitles ? 'AI LIVE TRANSCRIBING...' : 'STT READY'}</span>
-             </div>
+            <div>SERVER: OPTIMIZED</div>
+            <div className="flex items-center gap-2">
+              <div className={`w-1.5 h-1.5 rounded-full ${showSubtitles ? 'bg-red-500 animate-pulse' : 'bg-gray-700'}`}></div>
+              <span className={showSubtitles ? 'text-red-500' : 'text-gray-600'}>{showSubtitles ? 'AI LIVE TRANSCRIBING...' : 'STT READY'}</span>
+            </div>
           </div>
           <div>Smart Lecture v3.5.0 // Session Auto-Refresh Enabled</div>
         </footer>
@@ -277,8 +303,8 @@ const App: React.FC = () => {
 
       {showAI && <AIAssistant onClose={() => setShowAI(false)} />}
       {showResources && (
-        <LectureResources 
-          onClose={() => setShowResources(false)} 
+        <LectureResources
+          onClose={() => setShowResources(false)}
           onSelectResource={(res) => { setActiveResource(res); setShowResources(false); }}
           onStartPractice={() => {
             setShowResources(false);
